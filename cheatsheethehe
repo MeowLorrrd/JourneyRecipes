@@ -1,0 +1,69 @@
+            RecipeFinder CHANGER = new RecipeFinder();
+            CHANGER = new RecipeFinder();
+            CHANGER.AddIngredient(ItemID.INGREDIENT, STACK);
+            CHANGER.AddRecipeGroup("INGREDIENTGROUP", STACK);
+            CHANGER.AddTile(TileID.CRAFTINGSTATION);
+            CHANGER.SetResult(ItemID.RESULT);
+            Recipe CHANGERR = CHANGER.FindExactRecipe();
+            if (CHANGERR != null)
+            {
+                RecipeEditor CHANGEE = new RecipeEditor(CHANGERR);
+                CHANGEE.DeleteRecipe();
+            }
+
+            ModRecipe TeBl = new ModRecipe(this);
+                TeBl.AddIngredient(ItemID.TrueNightsEdge);
+                TeBl.AddIngredient(ItemID.TrueExcalibur);
+                TeBl.AddIngredient(ItemID.BrokenHeroSword);
+                TeBl.AddTile(TileID.MythrilAnvil);
+                TeBl.SetResult(ItemID.TerraBlade);
+                TeBl.AddRecipe();
+
+TODO:
+
+'Feral Claws' and upgrades enable autoswing for melee items,
+'Crystal Vile Shard' projectile stays alive longer,
+Summoner items have 1.4 stats,
+'Rocket Launcher' deals 2x damage to direct hits to the first target,
+'Piranha Gun' shoots 3x piranha's,
+'Phantom Phoenix' shoots 'Phoenix' projectile every 3rd shot, instead of 4th,
+'Flamethrower' & 'Elf Melter' has 15% damage penalty for every pierce,
+'Daedalus Stormbow' shoots 20% slower while using 'Holy, Unholy, Hellfire or Jester' arrows,
+'Scourge of the Corruptor spawns less max 'Tiny Eaters', spawns more average 'Tiny Eaters',
+'Fossil armor' has 1.4 set bonus and individual bonusses,
+Tank melee, mage and ranger armor sets from Tavernkeep have 1.4 stats.
+'Book of Skulls' home in on enemies, and sells for 1.5 Gold.
+Potion duration are compatible with Alchemist Mod.
+Change Crate Potion recipe.
+Localization :)
+
+
+
+Big thanks to 'goldenapple' for having their code open-sourced, it helped me with a lot of armor code stuff
+Also Fargo-man big pp brain github gud
+Don't forget 'gardenapple', luv all of u guys *mwah*
+
+
+Pickaxe
+Axe
+Hammer
+Broadsword
+Shortsword
+Bow
+Staff
+Helmet
+Breastplate
+Leggings
+
+            if (Config.Instance.allowToolRecipes)
+            {
+                
+            }
+            if (Config.Instance.allowWeaponRecipe)
+            {
+                
+            }
+            if (Config.Instance.allowArmorRecipes)
+            {
+                
+            }

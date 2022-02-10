@@ -1,0 +1,8 @@
+displayName = 1.4 Crafting Recipes
+author = MeowLorrrd
+version = 1.4.3
+includeSource = true
+hideCode = false
+hideResourcees = false
+buildIgnore = 
+homepage = https://docs.google.com/document/d/1tQXbsJhvmmDwGU16Jp2rnQxJZkGTD47651UVnY-h19U/edit?usp=sharing
