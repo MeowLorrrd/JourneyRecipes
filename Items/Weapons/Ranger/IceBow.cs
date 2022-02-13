@@ -8,15 +8,12 @@ namespace JourneyRecipes.Items.Weapons.Ranger
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.IceBow)
             {
-                if (item.type == ItemID.IceBow)
-                {
-                    item.damage = 39;
-                    item.autoReuse = true;
-                    item.useTime = 16;
-                    item.useAnimation = 16;
-                }
+                item.damage = 39;
+                item.autoReuse = true;
+                item.useTime = 16;
+                item.useAnimation = 16;
             }
         }
     }

@@ -8,12 +8,9 @@ namespace JourneyRecipes.Items.Weapons.Mage
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.ApprenticeStaffT3)
             {
-                if (item.type == ItemID.ApprenticeStaffT3)
-                {
-                    item.damage = 100;
-                }
+                item.damage = 100;
             }
         }
     }

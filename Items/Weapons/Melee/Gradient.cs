@@ -9,12 +9,9 @@ namespace JourneyRecipes.Items.Weapons.Melee
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.Gradient)
             {
-                if (item.type == ItemID.Gradient)
-                {
-                    item.damage = 49;
-                }
+                item.damage = 49;
             }
         }
     }

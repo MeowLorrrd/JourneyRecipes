@@ -8,12 +8,9 @@ namespace JourneyRecipes.Items.Weapons.Mage
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.SkyFracture)
             {
-                if (item.type == ItemID.SkyFracture)
-                {
-                    item.mana = 17;
-                }
+                item.mana = 17;
             }
         }
     }

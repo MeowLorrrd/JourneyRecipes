@@ -8,13 +8,10 @@ namespace JourneyRecipes.Items.Weapons.Ranger
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.Blowpipe)
             {
-                if (item.type == ItemID.Blowpipe)
-                {
-                    item.useAnimation = 25;
-                    item.useTime = 25;
-                }
+                item.useAnimation = 25;
+                item.useTime = 25;
             }
         }
     }

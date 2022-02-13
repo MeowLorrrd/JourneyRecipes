@@ -8,13 +8,10 @@ namespace JourneyRecipes.Items.Weapons.Mage
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.SpectreStaff)
             {
-                if (item.type == ItemID.SpectreStaff)
-                {
-                    item.damage = 65;
-                    item.mana = 15;
-                }
+                item.damage = 65;
+                item.mana = 15;
             }
         }
     }
@@ -22,12 +19,9 @@ namespace JourneyRecipes.Items.Weapons.Mage
     {
         public override void SetDefaults(Projectile projectile)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && projectile.type == ProjectileID.LostSoulFriendly)
             {
-                if (projectile.type == ProjectileID.LostSoulFriendly)
-                {
-                    projectile.penetrate = 3;
-                }
+                projectile.penetrate = 3;
             }
         }
     }

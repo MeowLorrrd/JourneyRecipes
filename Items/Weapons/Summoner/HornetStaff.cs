@@ -8,12 +8,9 @@ namespace JourneyRecipes.Items.Weapons.Summoner
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.HornetStaff)
             {
-                if (item.type == ItemID.HornetStaff)
-                {
-                    item.damage = 12;
-                }
+                item.damage = 12;
             }
         }
     }

@@ -8,12 +8,9 @@ namespace JourneyRecipes.Items.Weapons.Ranger
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.Marrow)
             {
-                if (item.type == ItemID.Marrow)
-                {
-                    item.damage = 50;
-                }
+                item.damage = 50;
             }
         }
     }

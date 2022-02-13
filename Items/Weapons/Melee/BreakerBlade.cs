@@ -9,14 +9,11 @@ namespace JourneyRecipes.Items.Weapons.Melee
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.BreakerBlade && Config.Instance.allowExperimentalFeatures)
             {
-                if (item.type == ItemID.BreakerBlade)
-                {
-                    item.useTime = 29;
-                    item.useAnimation = 29;
-                    item.damage = 43;
-                }
+                item.useTime = 29;
+                item.useAnimation = 30;
+                item.damage = 43;
             }
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)

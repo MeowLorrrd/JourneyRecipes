@@ -8,14 +8,11 @@ namespace JourneyRecipes.Items.Weapons.Melee
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.FieryGreatsword)
             {
-                if (item.type == ItemID.FieryGreatsword)
-                {
-                    item.useTime = 30;
-                    item.useAnimation = 30;
-                    item.damage = 40;
-                }
+                item.useTime = 30;
+                item.useAnimation = 30;
+                item.damage = 40;
             }
         }
     }

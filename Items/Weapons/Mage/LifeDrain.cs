@@ -8,12 +8,9 @@ namespace JourneyRecipes.Items.Weapons.Mage
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.SoulDrain)
             {
-                if (item.type == ItemID.SoulDrain)
-                {
-                    item.damage = 35;
-                }
+                item.damage = 35;
             }
         }
     }

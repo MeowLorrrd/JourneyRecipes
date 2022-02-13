@@ -8,12 +8,9 @@ namespace JourneyRecipes.Projectiles
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures)
+            if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures && item.type == ItemID.HolyArrow)
             {
-                if (item.type == ItemID.HolyArrow)
-                {
-                    item.damage = 13;
-                }
+                item.damage = 13;
             }
         }
     }
@@ -21,13 +18,10 @@ namespace JourneyRecipes.Projectiles
     {
         public override void SetDefaults(Projectile projectile)
         {
-            if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures)
+            if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures && projectile.type == ProjectileID.HallowStar)
             {
-                if (projectile.type == 92)
-                {
-                    projectile.penetrate = 1;
-                    projectile.damage /= 2;
-                }
+                projectile.penetrate = 1;
+                projectile.damage /= 2;
             }
         }
     }

@@ -90,6 +90,10 @@ namespace JourneyRecipes.Items
                 {
                     item.value = Item.sellPrice(0, 0, 21, 0);
                 }
+                if (item.type == ItemID.Handgun)
+                {
+                    item.value = Item.sellPrice(0, 1, 75, 0);
+                }
             }
         }
     }

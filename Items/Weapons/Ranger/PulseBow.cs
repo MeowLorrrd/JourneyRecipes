@@ -8,14 +8,11 @@ namespace JourneyRecipes.Items.Weapons.Ranger
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.PulseBow)
             {
-                if (item.type == ItemID.PulseBow)
-                {
-                    item.damage = 85;
-                    item.useTime = 20;
-                    item.useAnimation = 20;
-                }
+                item.damage = 85;
+                item.useTime = 20;
+                item.useAnimation = 20;
             }
         }
     }

@@ -8,14 +8,11 @@ namespace JourneyRecipes.Items.Weapons.Mage
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.RazorbladeTyphoon)
             {
-                if (item.type == ItemID.RazorbladeTyphoon)
-                {
-                    item.damage = 90;
-                    item.useTime = 37;
-                    item.useAnimation = 37;
-                }
+                item.damage = 90;
+                item.useTime = 37;
+                item.useAnimation = 37;
             }
         }
     }

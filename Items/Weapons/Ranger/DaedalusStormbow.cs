@@ -8,13 +8,10 @@ namespace JourneyRecipes.Items.Weapons.Ranger
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures)
+            if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures && item.type == ItemID.DaedalusStormbow)
             {
-                if (item.type == ItemID.DaedalusStormbow)
-                {
-                    item.damage = 38;
-                    //Make bow shoot at 80% speed when using Holy, Unholy, Hellfire or Jester arrows
-                }
+                item.damage = 38;
+                //Make bow shoot at 80% speed when using Holy, Unholy, Hellfire or Jester arrows
             }
         }
     }

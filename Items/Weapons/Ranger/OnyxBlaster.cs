@@ -8,14 +8,11 @@ namespace JourneyRecipes.Items.Weapons.Ranger
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.OnyxBlaster)
             {
-                if (item.type == ItemID.OnyxBlaster)
-                {
-                    item.damage = 24;
-                    item.useTime = 48;
-                    item.useAnimation = 48;
-                }
+                item.damage = 24;
+                item.useTime = 48;
+                item.useAnimation = 48;
             }
         }
     }

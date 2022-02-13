@@ -2,97 +2,35 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using System.Collections.Generic;
+using Terraria.Localization;
 
 namespace JourneyRecipes.Items.Armor
 {
     [AutoloadEquip(EquipType.Head)]
     public class NecroArmorHead : GlobalItem
     {
-        public override void UpdateEquip(Item item, Player player)
+        public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowArmorStat && item.type == ItemID.NecroHelmet || item.type == ItemID.AncientNecroHelmet)
-            {
-                player.statDefense += 1;
-            }
-        }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (Config.Instance.allowArmorStat && item.type == ItemID.NecroHelmet || item.type == ItemID.AncientNecroHelmet)
-            {
-                string NecroArmorHead = "6 defense";
-                string NecroArmorSet = "Set bonus: 10% increased ranged critical strike chance";
-                foreach (TooltipLine line in tooltips)
-                {
-                    if (line.text == "5 defense")
-                    {
-                        line.text = NecroArmorHead;
-                    }
-                    if (line.text == "Set bonus: 20% chance to not consume ammo")
-                    {
-                        line.text = NecroArmorSet;
-                    }
-                }
-            }
+            if (Config.Instance.allowArmorStat && (item.type == ItemID.NecroHelmet || item.type == ItemID.AncientNecroHelmet))
+                item.defense = 6;
         }
     }
     [AutoloadEquip(EquipType.Body)]
     public class NecroArmorBody : GlobalItem
     {
-        public override void UpdateEquip(Item item, Player player)
+        public override void SetDefaults(Item item)
         {
             if (Config.Instance.allowArmorStat && item.type == ItemID.NecroBreastplate)
-            {
-                player.statDefense += 1;
-            }
-        }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (Config.Instance.allowArmorStat && item.type == ItemID.NecroBreastplate)
-            {
-                string NecroArmorBody = "7 defense";
-                string NecroArmorSet = "Set bonus: 10% increased ranged critical strike chance";
-                foreach (TooltipLine line in tooltips)
-                {
-                    if (line.text == "6 defense")
-                    {
-                        line.text = NecroArmorBody;
-                    }
-                    if (line.text == "Set bonus: 20% chance to not consume ammo")
-                    {
-                        line.text = NecroArmorSet;
-                    }
-                }
-            }
+                item.defense = 7;
         }
     }
     [AutoloadEquip(EquipType.Legs)]
     public class NecroArmorLegs : GlobalItem
     {
-        public override void UpdateEquip(Item item, Player player)
+        public override void SetDefaults(Item item)
         {
             if (Config.Instance.allowArmorStat && item.type == ItemID.NecroGreaves)
-            {
-                player.statDefense += 1;
-            }
-        }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (Config.Instance.allowArmorStat && item.type == ItemID.NecroGreaves)
-            {
-                string NecroArmorLegs = "6 defense";
-                string NecroArmorSet = "Set bonus: 10% increased ranged critical strike chance";
-                foreach (TooltipLine line in tooltips)
-                {
-                    if (line.text == "5 defense")
-                    {
-                        line.text = NecroArmorLegs;
-                    }
-                    if (line.text == "Set bonus: 20% chance to not consume ammo")
-                    {
-                        line.text = NecroArmorSet;
-                    }
-                }
-            }
+                item.defense = 6;
         }
     }
     public class NecroSet : GlobalItem
@@ -112,6 +50,42 @@ namespace JourneyRecipes.Items.Armor
             {
                 player.ammoCost80 = false;
                 player.rangedCrit += 10;
+                if (GameCulture.German.IsActive)
+                {
+                    player.setBonus = "Um 10% erhöhte kritische Fernkampf-Trefferchance";
+                }
+                if (GameCulture.English.IsActive)
+                {
+                    player.setBonus = "10% increased ranged critical strike chance";
+                }
+                if (GameCulture.Spanish.IsActive)
+                {
+                    player.setBonus = "Aumenta un 10% la probabilidad de ataque crítico a distancia";
+                }
+                if (GameCulture.French.IsActive)
+                {
+                    player.setBonus = "+10 % de chances de coup critique à distance";
+                }
+                if (GameCulture.Italian.IsActive)
+                {
+                    player.setBonus = "Probabilità di colpo critico a distanza aumentata del 10%";
+                }
+                if (GameCulture.Polish.IsActive)
+                {
+                    player.setBonus = "10% większa szansa na dystansowe trafienie krytyczne";
+                }
+                if (GameCulture.Portuguese.IsActive)
+                {
+                    player.setBonus = "10% de aumento na chance de ataque à distância crítico";
+                }
+                if (GameCulture.Russian.IsActive)
+                {
+                    player.setBonus = "Увеличивает шанс критического дистанционного урона на 10 %";
+                }
+                if (GameCulture.Chinese.IsActive)
+                {
+                    player.setBonus = "远程暴击率增加10%";
+                }
             }    
         }
     }

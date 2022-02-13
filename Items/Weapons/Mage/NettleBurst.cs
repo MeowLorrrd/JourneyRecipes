@@ -7,38 +7,32 @@ namespace JourneyRecipes.Items.Weapons.Mage
 {
     public class NettleBurst : GlobalItem
     {
-        public override void SetDefaults(Item item)
+        /*public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.NettleBurst)
             {
-                if (item.type == ItemID.NettleBurst)
-                {
-                    item.mana = 12;
-                    item.damage = 35;
-                }
+                item.mana = 12;
+                item.damage = 35;
             }
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.NettleBurst)
             {
-                if (item.type == ItemID.NettleBurst)
+                string NettleburstTT = "Ignores 10 points of enemy Defense";
+                foreach (TooltipLine line in tooltips)
                 {
-                    string NettleburstTT = "Ignores 10 points of enemy Defense";
-                    foreach (TooltipLine line in tooltips)
+                    if (line.text == "Summons a thorn spear")
                     {
-                        if (line.text == "Summons a thorn spear")
-                        {
-                            line.text = NettleburstTT;
-                        }
+                        line.text = NettleburstTT;
                     }
                 }
             }
-        }
+        }*/
     }
     public class NettleBurs : GlobalProjectile
     {
-        public override void ModifyHitNPC(Projectile projectile, NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        /*public override void ModifyHitNPC(Projectile projectile, NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
         {
             if (Config.Instance.allowWeaponStat)
             {
@@ -134,6 +128,6 @@ namespace JourneyRecipes.Items.Weapons.Mage
                     }
                 }
             }
-        }
+        }*/
     }
 }

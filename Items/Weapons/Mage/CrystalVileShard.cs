@@ -9,12 +9,9 @@ namespace JourneyRecipes.Items.Weapons.Mage
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.CrystalVileShard)
             {
-                if (item.type == ItemID.CrystalVileShard)
-                {
-                    item.damage = 25;
-                }
+                item.damage = 25;
             }
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)

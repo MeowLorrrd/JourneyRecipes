@@ -9,14 +9,11 @@ namespace JourneyRecipes.Items.Weapons.Melee
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.FalconBlade)
             {
-                if (item.type == ItemID.FalconBlade)
-                {
-                    item.damage = 25;
-                    item.useTime = 20;
-                    item.useAnimation = 20;
-                }
+                item.damage = 25;
+                item.useTime = 20;
+                item.useAnimation = 20;
             }
         }
     }

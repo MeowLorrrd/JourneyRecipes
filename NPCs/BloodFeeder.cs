@@ -10,12 +10,10 @@ namespace JourneyRecipes.NPCs
         {
             if (Config.Instance.allowNPCStat && npc.type == NPCID.BloodFeeder)
             {
-                {
-                    npc.lifeMax = 150;
-                    npc.damage = 50;
-                    npc.defense = 20;
-                    npc.value = 500f;
-                }
+                npc.lifeMax = 150;
+                npc.damage = 50;
+                npc.defense = 20;
+                npc.value = 500f;
             }
         }
     }

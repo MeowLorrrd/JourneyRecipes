@@ -8,15 +8,12 @@ namespace JourneyRecipes.Items.Weapons.Melee
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.Anchor)
             {
-                if (item.type == ItemID.Anchor)
-                {
-                    item.damage = 70;
-                    item.useTime = 20;
-                    item.useAnimation = 20;
-                    item.knockBack = 8f;
-                }
+                item.damage = 70;
+                item.useTime = 20;
+                item.useAnimation = 20;
+                item.knockBack = 8f;
             }
         }
     }

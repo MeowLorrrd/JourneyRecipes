@@ -8,14 +8,11 @@ namespace JourneyRecipes.Items.Weapons.Mage
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.FrostStaff)
             {
-                if (item.type == ItemID.FrostStaff)
-                {
-                    item.mana = 12;
-                    item.useTime = 16;
-                    item.useAnimation = 16;
-                }
+                item.mana = 12;
+                item.useTime = 16;
+                item.useAnimation = 16;
             }
         }
     }

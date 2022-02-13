@@ -12,8 +12,6 @@ namespace JourneyRecipes.Items.Weapons.Melee
 {
     public class Umbrella : GlobalItem
     {
-        /*readonly float AimLeft = -1f;
-        readonly float AimRight = 1f;*/
         public override void SetDefaults(Item item)
         {
             /*if (item.type == ItemID.Umbrella)

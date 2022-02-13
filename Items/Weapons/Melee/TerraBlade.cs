@@ -19,4 +19,14 @@ namespace JourneyRecipes.Items.Weapons.Melee
             }
         }
     }
+    public class TerraBeam : GlobalProjectile
+    {
+        public override void AI(Projectile projectile)
+        {
+            if (Config.Instance.terraBladeStuff && projectile.type == ProjectileID.TerraBeam)
+            {
+                projectile.damage = 173;
+            }
+        }
+    }
 }

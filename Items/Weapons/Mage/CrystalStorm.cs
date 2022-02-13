@@ -9,13 +9,10 @@ namespace JourneyRecipes.Items.Weapons.Mage
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.CrystalStorm)
             {
-                if (item.type == ItemID.CrystalStorm)
-                {
-                    item.damage = 32;
-                    item.mana = 5;
-                }
+                item.damage = 32;
+                item.mana = 5;
             }
         }
     }

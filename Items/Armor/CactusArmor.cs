@@ -1,44 +1,18 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using System.Collections.Generic;
+using Terraria.Localization;
 
 namespace JourneyRecipes.Items.Armor
 {
-    [AutoloadEquip(EquipType.Head)]
-    public class CactusArmorHead : GlobalItem
-    {
-
-    }
     [AutoloadEquip(EquipType.Body)]
     public class CactusArmorBody : GlobalItem
     {
-        public override void UpdateEquip(Item item, Player player)
+        public override void SetDefaults(Item item)
         {
             if (Config.Instance.allowArmorStat && item.type == ItemID.CactusBreastplate)
-            {
-                player.statDefense -= 1;
-            }
+                item.defense = 1;
         }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (Config.Instance.allowArmorStat && item.type == ItemID.CactusBreastplate)
-            {
-                string CactusArmorBody = "1 defense";
-                foreach (TooltipLine line in tooltips)
-                {
-                    if (line.text == "2 defense")
-                    {
-                        line.text = CactusArmorBody;
-                    }
-                }
-            }
-        }
-    }
-    [AutoloadEquip(EquipType.Legs)]
-    public class CactusArmorLegs : GlobalItem
-    {
-
     }
     public class CactusArmorSet : GlobalItem
     {
@@ -56,15 +30,45 @@ namespace JourneyRecipes.Items.Armor
             if (Config.Instance.allowArmorStat && set == CactusSet)
             {
                 player.statDefense -= 1;
-                if (!Main.expertMode)
+                player.GetModPlayer<JourneyRecipesPlayer>().CactusThorns = true;
+                //^^ Make Thorns damage deal 15 flat damage, 30 in Expert
+                player.thorns = 1f;
+                if (GameCulture.German.IsActive)
                 {
-                    player.thorns = 1f;
+                    player.setBonus = "Angreifer erleiden Schaden durch Kaktusstacheln";
                 }
-                if (Main.expertMode)
+                if (GameCulture.English.IsActive)
                 {
-                    player.thorns = 2f;
+                    player.setBonus = "Attackers take damage from the cactus spines";
                 }
-                player.setBonus = "Attackers also take damage";
+                if (GameCulture.Spanish.IsActive)
+                {
+                    player.setBonus = "Los atacantes sufren daños por las espinas del cactus";
+                }
+                if (GameCulture.French.IsActive)
+                {
+                    player.setBonus = "Les agresseurs subissent des dégâts causés par les épines de cactus";
+                }
+                if (GameCulture.Italian.IsActive)
+                {
+                    player.setBonus = "Gli aggressori ricevono danni dalle spine di cactus";
+                }
+                if (GameCulture.Polish.IsActive)
+                {
+                    player.setBonus = "Atakujący otrzymują obrażenia od kolców kaktusa";
+                }
+                if (GameCulture.Portuguese.IsActive)
+                {
+                    player.setBonus = "Atacantes sofrem dano por espinhos de cactos";
+                }
+                if (GameCulture.Russian.IsActive)
+                {
+                    player.setBonus = "Атакующие получают урон от колючек кактуса";
+                }
+                if (GameCulture.Chinese.IsActive)
+                {
+                    player.setBonus = "攻击者因为仙人掌尖刺受到伤害";
+                }
             }
         }
     }

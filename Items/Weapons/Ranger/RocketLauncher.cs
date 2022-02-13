@@ -9,12 +9,9 @@ namespace JourneyRecipes.Items.Weapons.Ranger
         
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures)
+            if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures && item.type == ItemID.RocketLauncher)
             {
-                if (item.type == ItemID.RocketLauncher)
-                {
-                    item.damage = 45;
-                }
+                item.damage = 45;
             }
         }
         //Add 2x damage multiplier for first direct hit on entity

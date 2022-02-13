@@ -8,15 +8,11 @@ namespace JourneyRecipes.Items.Weapons.Ranger
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures)
+            if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures && item.type == ItemID.DD2PhoenixBow)
             {
-                if (item.type == ItemID.DD2PhoenixBow)
-                {
-                    item.useTime = 18;
-                    item.useAnimation = 18;
-                    item.damage = 32;
-                    //Shoot Phoenix every 3rd shot instead of 4th
-                }
+                item.useTime = 18;
+                item.useAnimation = 18;
+                item.damage = 32;
             }
         }
     }

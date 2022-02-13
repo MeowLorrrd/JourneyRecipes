@@ -8,14 +8,11 @@ namespace JourneyRecipes.Items.Weapons.Mage
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.HeatRay)
             {
-                if (item.type == ItemID.HeatRay)
-                {
-                    item.damage = 80;
-                    item.useAnimation = 10;
-                    item.useTime = 10;
-                }
+                item.damage = 80;
+                item.useAnimation = 10;
+                item.useTime = 10;
             }
         }
     }
@@ -23,12 +20,9 @@ namespace JourneyRecipes.Items.Weapons.Mage
     {
         public override void SetDefaults(Projectile projectile)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && projectile.type == ProjectileID.HeatRay)
             {
-                if (projectile.type == ProjectileID.HeatRay)
-                {
-                    projectile.penetrate = 1;
-                }
+                projectile.penetrate = 1;
             }
         }
     }

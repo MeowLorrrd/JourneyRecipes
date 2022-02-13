@@ -18,4 +18,14 @@ namespace JourneyRecipes.Items.Weapons.Melee
             }
         }
     }
+    public class LightBeam : GlobalProjectile
+    {
+        public override void SetDefaults(Projectile projectile)
+        {
+            if (Config.Instance.terraBladeStuff && projectile.type == ProjectileID.LightBeam)
+            {
+                projectile.penetrate = 2;
+            }
+        }
+    }
 }

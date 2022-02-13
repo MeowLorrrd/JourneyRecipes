@@ -12,7 +12,8 @@ namespace JourneyRecipes.NPCs
             {
                 if (Main.rand.Next(7) == 0)
                 {
-                    switch (Main.rand.Next(3))
+                    int i = Main.rand.Next(3);
+                    switch (i)
                     {
                         case 0:
                             Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.GladiatorHelmet);

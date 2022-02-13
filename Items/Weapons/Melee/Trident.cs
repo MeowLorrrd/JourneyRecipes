@@ -8,13 +8,10 @@ namespace JourneyRecipes.Items.Weapons.Melee
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.Trident)
             {
-                if (item.type == ItemID.Trident)
-                {
-                    item.damage = 14;
-                    item.knockBack = 6f;
-                }
+                item.damage = 14;
+                item.knockBack = 6f;
             }
         }
     }

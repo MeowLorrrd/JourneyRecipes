@@ -21,6 +21,7 @@ namespace JourneyRecipes
         public bool PlayerTitanGlove;
         public static float PlayerMeleeOriginalScale;
         public float PlayerMeleeBigger;
+        public bool CactusThorns;
         public override void ResetEffects()
         {
             PlayerInvis = false;
@@ -28,6 +29,7 @@ namespace JourneyRecipes
             PlayerTitanGlove = false;
             PlayerAutouse = false;
             PlayerMeleeOriginalScale = -1;
+            CactusThorns = false;
         }
         public override bool PreItemCheck()
         {

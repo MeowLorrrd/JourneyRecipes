@@ -6,6 +6,8 @@ namespace JourneyRecipes.NPCs
 {
     public class GlobalNPCBreakerBlade : GlobalNPC
     {
+        public override bool InstancePerEntity => true;
+
         public override void ModifyHitByItem(NPC npc, Player player, Item item, ref int damage, ref float knockback, ref bool crit)
         {
             if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures)

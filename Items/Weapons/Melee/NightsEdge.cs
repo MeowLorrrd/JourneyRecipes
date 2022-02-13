@@ -8,14 +8,11 @@ namespace JourneyRecipes.Items.Weapons.Melee
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.NightsEdge)
             {
-                if (item.type == ItemID.NightsEdge)
-                {
-                    item.autoReuse = true;
-                    item.useTime = 21;
-                    item.useAnimation = 21;
-                }
+                item.autoReuse = true;
+                item.useTime = 21;
+                item.useAnimation = 21;
             }
         }
     }

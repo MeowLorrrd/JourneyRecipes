@@ -7,12 +7,10 @@ namespace JourneyRecipes.Items.Accessories
 {
     public class CharmofMyths : GlobalItem
     {
-        public override void UpdateAccessory(Item item, Player player, bool hideVisual)
+        public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowAccessoryStat && item.type == ItemID.CharmofMyths)
-            {
-                player.lifeRegen += 1;
-            }
+            if (Config.Instance.allowAccessoryStat && (item.type == ItemID.CharmofMyths || item.type == ItemID.BandofRegeneration))
+                item.lifeRegen = 2;
         }
     }
 }

@@ -8,15 +8,10 @@ namespace JourneyRecipes.Items.Weapons.Ranger
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.Handgun)
             {
-                if (item.type == ItemID.Handgun)
-                {
-                    item.useTime = 10;
-                    item.useAnimation = 10;
-                    //item.autoReuse = true; //done for testing kek
-                    item.value = Item.sellPrice(0, 1, 75, 0);
-                }
+                item.useTime = 10;
+                item.useAnimation = 10;
             }
         }
     }

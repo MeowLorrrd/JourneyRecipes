@@ -8,12 +8,9 @@ namespace JourneyRecipes.Items.Weapons.Ranger
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.Tsunami)
             {
-                if (item.type == ItemID.Tsunami)
-                {
-                    item.damage = 53;
-                }
+                item.damage = 53;
             }
         }
     }

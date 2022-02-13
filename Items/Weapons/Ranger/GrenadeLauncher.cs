@@ -8,13 +8,10 @@ namespace JourneyRecipes.Items.Weapons.Ranger
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.GrenadeLauncher)
             {
-                if (item.type == ItemID.GrenadeLauncher)
-                {
-                    item.useAnimation = 20;
-                    item.useTime = 20;
-                }
+                item.useAnimation = 20;
+                item.useTime = 20;
             }
         }
     }

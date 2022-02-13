@@ -8,15 +8,12 @@ namespace JourneyRecipes.Items.Weapons.Mage
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.BookStaff)
             {
-                if (item.type == ItemID.BookStaff)
-                {
-                    item.autoReuse = true;
-                    item.damage = 32;
-                    item.useTime = 25;
-                    item.useAnimation = 25;
-                }
+                item.autoReuse = true;
+                item.damage = 32;
+                item.useTime = 25;
+                item.useAnimation = 25;
             }
         }
     }

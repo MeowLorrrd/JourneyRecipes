@@ -8,13 +8,10 @@ namespace JourneyRecipes.Items.Weapons.Melee
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.Muramasa)
             {
-                if (item.type == ItemID.Muramasa)
-                {
-                    item.damage = 26;
-                    item.knockBack = 3f;
-                }
+                item.damage = 26;
+                item.knockBack = 3f;
             }
         }
     }

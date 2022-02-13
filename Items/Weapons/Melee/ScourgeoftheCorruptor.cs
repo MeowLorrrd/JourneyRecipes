@@ -8,12 +8,9 @@ namespace JourneyRecipes.Items.Weapons.Melee
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures)
+            if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures && item.type == ItemID.ScourgeoftheCorruptor)
             {
-                if (item.type == ItemID.ScourgeoftheCorruptor)
-                {
-                    item.damage = 70;
-                }
+                item.damage = 70;
             }
         }
     }
@@ -22,12 +19,9 @@ namespace JourneyRecipes.Items.Weapons.Melee
     {
         public override void SetDefaults(Projectile projectile)
         {
-            if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures)
+            if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures && projectile.type == ProjectileID.TinyEater)
             {
-                if (projectile.type == ProjectileID.TinyEater)
-                {
-                    projectile.damage = 53;
-                }
+                projectile.damage = 53;
             }
         }
     }

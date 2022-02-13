@@ -8,13 +8,10 @@ namespace JourneyRecipes.Items.Weapons.Melee
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.Bananarang)
             {
-                if (item.type == ItemID.Bananarang)
-                {
-                    item.useTime = 11;
-                    item.useAnimation = 11;
-                }
+                item.useTime = 11;
+                item.useAnimation = 11;
             }
         }
     }

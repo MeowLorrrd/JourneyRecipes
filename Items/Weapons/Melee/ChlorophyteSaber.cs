@@ -8,12 +8,9 @@ namespace JourneyRecipes.Items.Weapons.Melee
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.ChlorophyteSaber)
             {
-                if (item.type == ItemID.ChlorophyteSaber)
-                {
-                    item.damage = 57;
-                }
+                item.damage = 57;
             }
         }
     }

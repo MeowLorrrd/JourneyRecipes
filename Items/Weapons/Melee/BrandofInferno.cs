@@ -2,7 +2,6 @@
 using Terraria.ID;
 using Terraria;
 
-
 namespace JourneyRecipes.Items.Weapons.Melee
 {
     public class BrandofInferno : GlobalItem

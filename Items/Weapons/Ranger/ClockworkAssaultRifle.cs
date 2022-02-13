@@ -8,12 +8,9 @@ namespace JourneyRecipes.Items.Weapons.Ranger
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.ClockworkAssaultRifle)
             {
-                if (item.type == ItemID.ClockworkAssaultRifle)
-                {
-                    item.damage = 17;
-                }
+                item.damage = 17;
             }
         }
     }

@@ -11,20 +11,65 @@ namespace JourneyRecipes.Items.Accessories
         {
             if (item.type == ItemID.MagicQuiver)
             {
-                string MagicQuiver1 = "Increases arrow damage by 10% and greatly increases arrow speed";
-                string MagicQuiver2 = "20% chance to not consume arrows";
+                string GermanOld = "";
+                string GermanNew = "";
+                string EnglishOld = "";
+                string EnglishNew = "";
+                string SpanishOld = "";
+                string SpanishNew = "";
+                string FrenchOld = "";
+                string FrenchNew = "";
+                string ItalianOld = "";
+                string ItalianNew = "";
+                string PolishOld = "";
+                string PolishNew = "";
+                string PortugeseOld = "";
+                string PortugeseNew = "";
+                string RussianOld = "";
+                string RussianNew = "";
+                string ChineseOld = "";
+                string ChineseNew = "";
+                #region new tooltip stuff
                 foreach (TooltipLine line in tooltips)
                 {
-                    if (line.text == "Increases damage by 10% and greatly increases arrow speed")
+                    if (line.text == GermanOld)
                     {
-                        line.text = MagicQuiver1;
+                        line.text = GermanNew;
                     }
-                    if (line.text == "20% chance to not consume arrows")
+                    if (line.text == EnglishOld)
                     {
-                        line.text = MagicQuiver2;
+                        line.text = EnglishNew;
                     }
-
+                    if (line.text == SpanishOld)
+                    {
+                        line.text = SpanishNew;
+                    }
+                    if (line.text == FrenchOld)
+                    {
+                        line.text = FrenchNew;
+                    }
+                    if (line.text == ItalianOld)
+                    {
+                        line.text = ItalianNew;
+                    }
+                    if (line.text == PolishOld)
+                    {
+                        line.text = PolishNew;
+                    }
+                    if (line.text == PortugeseOld)
+                    {
+                        line.text = PortugeseNew;
+                    }
+                    if (line.text == RussianOld)
+                    {
+                        line.text = RussianNew;
+                    }
+                    if (line.text == ChineseOld)
+                    {
+                        line.text = ChineseNew;
+                    }
                 }
+                #endregion d
             }
         }
     }

@@ -9,13 +9,10 @@ namespace JourneyRecipes.Items.Weapons.Melee
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.Kraken)
             {
-                if (item.type == ItemID.Kraken)
-                {
-                    item.damage = 95;
-                    item.crit = 14;
-                }
+                item.damage = 95;
+                item.crit = 14;
             }
         }
     }

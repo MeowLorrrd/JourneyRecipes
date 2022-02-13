@@ -21,6 +21,7 @@ namespace JourneyRecipes.Items.Weapons.Summoner
             if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures && projectile.type == ProjectileID.Raven)
             {
                 //Double Raven speed
+                //learn Vectors ffs smh my head
             }
         }
     }

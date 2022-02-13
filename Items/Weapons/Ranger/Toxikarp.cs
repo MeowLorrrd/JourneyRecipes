@@ -8,13 +8,10 @@ namespace JourneyRecipes.Items.Weapons.Ranger
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && item.type == ItemID.Toxikarp)
             {
-                if (item.type == ItemID.Toxikarp)
-                {
-                    item.useTime = 10;
-                    item.useAnimation = 10;
-                }
+                item.useTime = 10;
+                item.useAnimation = 10;
             }
         }
     }
