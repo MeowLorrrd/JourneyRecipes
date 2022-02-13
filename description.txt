@@ -67,6 +67,8 @@ This mod changes some 1.4 recipes into the 1.3 Modloader! With this mod, it take
 
 
 [i:549]Updates[i:549]:
+1.4.5 - Added crappy mod icon
+
 1.4.4 - Band of Regeneration gives +1 HP/s
 Spider Staff takes a full minion slot
 Removed a feature that allowed the player to deal +10000% damage while equipping a Fire Gauntlet and drinking an Invis potion???
@@ -82,8 +84,6 @@ Apparantly tModLoader can't handle all the descriptions, so removed old changelo
 Made new configs for buffs,
 Buffs have 1.4 stats
 Feral Claws grant autoswing to melee weapons
-
-1.4.2 - Gave config descriptions more descriptions
 
 
 
