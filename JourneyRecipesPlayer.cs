@@ -23,6 +23,7 @@ namespace JourneyRecipes
         public float PlayerMeleeBigger;
         public bool CactusThorns;
         public bool Ammo10;
+        public bool Ammo20;
         public override void ResetEffects()
         {
             PlayerInvis = false;
@@ -32,6 +33,7 @@ namespace JourneyRecipes
             PlayerMeleeOriginalScale = -1;
             CactusThorns = false;
             Ammo10 = false;
+            Ammo20 = false;
         }
         public override bool PreItemCheck()
         {
@@ -52,6 +54,10 @@ namespace JourneyRecipes
         public override bool ConsumeAmmo(Item weapon, Item ammo)
         {
             if (Config.Instance.allowArmorStat && Ammo10 && Main.rand.Next(10) == 0)
+            {
+                return false;
+            }
+            if (Config.Instance.allowArmorStat && Ammo20 && Main.rand.Next(5) == 0)
             {
                 return false;
             }
