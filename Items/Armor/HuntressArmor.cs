@@ -80,7 +80,7 @@ namespace JourneyRecipes.Items.Armor
         {
             if (Config.Instance.allowArmorStat && item.type == ItemID.HuntressJerkin)
             {
-
+                player.GetModPlayer<JourneyRecipesPlayer>().Ammo10 = true;
             }
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
