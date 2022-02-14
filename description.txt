@@ -68,6 +68,7 @@ This mod changes some 1.4 recipes into the 1.3 Modloader! With this mod, it take
 
 [i:549]Updates[i:549]:
 1.4.6 - Red Riding, Huntress, Squire, Valhalla Knight armor have 1.4 stats
+Sleepy Octopod has 1.4 stats (Experimental)
 
 1.4.5 - Added crappy mod icon
 
