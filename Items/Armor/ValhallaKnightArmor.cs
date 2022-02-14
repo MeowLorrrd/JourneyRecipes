@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace JourneyRecipes.Items.Armor
 {
+    [AutoloadEquip(EquipType.Head)]
     public class ValhallaKnightArmorHead : GlobalItem
     {
         public override void SetDefaults(Item item)
@@ -83,6 +84,7 @@ namespace JourneyRecipes.Items.Armor
             }
         }
     }
+    [AutoloadEquip(EquipType.Body)]
     public class ValhallaKnightArmorBody : GlobalItem
     {
         public override void SetDefaults(Item item)
@@ -96,6 +98,7 @@ namespace JourneyRecipes.Items.Armor
                 player.lifeRegen = 8;
         }
     }
+    [AutoloadEquip(EquipType.Legs)]
     public class ValhallaKnightArmorLegs : GlobalItem
     {
         public override void SetDefaults(Item item)
