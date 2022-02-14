@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 namespace JourneyRecipes.Items.Armor
 {
+    [AutoloadEquip(EquipType.Head)]
     public class RedRidingArmorHead : GlobalItem
     {
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -74,6 +75,7 @@ namespace JourneyRecipes.Items.Armor
             }
         }
     }
+    [AutoloadEquip(EquipType.Body)]
     public class RedRidingArmorBody : GlobalItem
     {
         public override void UpdateEquip(Item item, Player player)
@@ -146,6 +148,7 @@ namespace JourneyRecipes.Items.Armor
             #endregion
         }
     }
+    [AutoloadEquip(EquipType.Legs)]
     public class RedRidingArmorLegs : GlobalItem
     {
         public override void UpdateEquip(Item item, Player player)
