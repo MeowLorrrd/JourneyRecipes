@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 namespace JourneyRecipes.Items.Armor
 {
+    [AutoloadEquip(EquipType.Head)]
     public class HuntressArmorHead : GlobalItem
     {
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -74,6 +75,7 @@ namespace JourneyRecipes.Items.Armor
             }
         }
     }
+    [AutoloadEquip(EquipType.Body)]
     public class HuntressArmorBody : GlobalItem
     {
         public override void UpdateEquip(Item item, Player player)
