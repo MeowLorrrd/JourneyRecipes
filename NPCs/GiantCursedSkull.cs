@@ -25,5 +25,36 @@ namespace JourneyRecipes.NPCs
                 }
             }
         }
+        public override void OnHitPlayer(NPC npc, Player target, int damage, bool crit)
+        {
+            if (Config.Instance.allowNPCStat && npc.type == NPCID.GiantCursedSkull)
+            {
+                if (Main.rand.Next(3) == 0 && !Main.expertMode)
+                {
+                    target.AddBuff(BuffID.Cursed, 240);
+                }
+                if (Main.rand.Next(3) == 0 && Main.expertMode)
+                {
+                    target.AddBuff(BuffID.Cursed, 120);
+                }
+            }
+        }
+    }
+    public class GiantCursedSkullProjectile : GlobalProjectile
+    {
+        public override void OnHitPlayer(Projectile projectile, Player target, int damage, bool crit)
+        {
+            if (Config.Instance.allowNPCStat && projectile.type == 299)
+            {
+                if (Main.rand.Next(3) == 0 && !Main.expertMode)
+                {
+                    target.AddBuff(BuffID.Cursed, 240);
+                }
+                if (Main.rand.Next(3) == 0 && Main.expertMode)
+                {
+                    target.AddBuff(BuffID.Cursed, 121);
+                }
+            }
+        }
     }
 }
