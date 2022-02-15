@@ -178,7 +178,8 @@ namespace JourneyRecipes
             "\nAll Throwing weapons do Ranged damage," +
             "\nNinja and Fossil armor have 1.4 stats" +
             "\nSturdy Fossil recipes use 1.4 recipes" +
-            "\nThis setting is unaffected by all other configs")]
+            "\nThis setting is unaffected by all other configs" +
+            "\n¡Highly recommended to turn this off when using Calamity or Thorium, as these mods use the Throwing class!")]
         [ReloadRequired]
         public bool allowThrowingToRanged;
 
