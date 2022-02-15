@@ -63,7 +63,6 @@ This mod changes some 1.4 recipes into the 1.3 Modloader! With this mod, it take
 [i:549]Planned[i:549]:
 -Accessories and their effects (e.g. Titan Glove)
 -(More) armor sets
--Localization, because tooltips in other languages are outdated with the mod while this mod still changes items :p
 
 
 [i:549]Updates[i:549]:
@@ -71,6 +70,8 @@ This mod changes some 1.4 recipes into the 1.3 Modloader! With this mod, it take
 Meteorite can't be blown up before hardmode
 Throwing config description has extra description
 Acorns are auto reusable
+Updated potions code, making them compatible with AlchemistMod's charms, and should be correctly localized
+Fixed wrong buff tooltip for Calming Potion
 
 1.4.6 - Red Riding, Huntress, Squire, Valhalla Knight armor have 1.4 stats
 Sleepy Octopod has 1.4 stats (Experimental)
