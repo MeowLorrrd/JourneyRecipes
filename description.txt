@@ -77,6 +77,7 @@ Throwing config description has extra description
 Acorns are auto reusable
 Updated potions code, making them compatible with AlchemistMod's charms, and should be correctly localized
 Fixed wrong buff tooltip for Calming Potion
+Breathing Reed is a weapon now...
 
 1.4.6 - Red Riding, Huntress, Squire, Valhalla Knight armor have 1.4 stats
 Sleepy Octopod has 1.4 stats (Experimental)
