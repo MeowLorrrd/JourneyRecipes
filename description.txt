@@ -68,6 +68,7 @@ This mod changes some 1.4 recipes into the 1.3 Modloader! With this mod, it take
 [i:549]Updates[i:549]:
 1.4.7 - Meteor Head, Giant Antlion Swarmer, Giant Cursed Skull has 1.4 stats
 Skeletron Prime is no longer immune to Cursed Inferno
+Increased Bone Pickaxe drop chances
 Meteorite can't be blown up before hardmode
 Throwing config description has extra description
 Acorns are auto reusable
