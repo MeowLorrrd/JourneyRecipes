@@ -8,11 +8,26 @@ namespace JourneyRecipes.NPCs
     {
         public override void SetupShop(int type, Chest shop, ref int nextSlot)
         {
-            if (Config.Instance.allowNPCStat && type == NPCID.Merchant && Main.hardMode)
+            if (Config.Instance.allowNPCStat)
             {
-                shop.item[nextSlot].SetDefaults(ItemID.SharpeningStation);
-                shop.item[nextSlot].shopCustomPrice = 100000;
-                nextSlot++;
+                if (type == NPCID.Merchant && Main.hardMode)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.SharpeningStation);
+                    shop.item[nextSlot].shopCustomPrice = 100000;
+                    nextSlot++;
+                }
+                if (type == NPCID.Mechanic)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.Timer1Second);
+                    shop.item[nextSlot].shopCustomPrice = 10000;
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.Timer3Second);
+                    shop.item[nextSlot].shopCustomPrice = 10000;
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.Timer5Second);
+                    shop.item[nextSlot].shopCustomPrice = 10000;
+                    nextSlot++;
+                }
             }
         }
     }
