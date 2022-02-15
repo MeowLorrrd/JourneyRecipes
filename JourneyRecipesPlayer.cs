@@ -19,8 +19,6 @@ namespace JourneyRecipes
         public bool PlayerFeral;
         public bool PlayerAutouse;
         public bool PlayerTitanGlove;
-        public static float PlayerMeleeOriginalScale;
-        public float PlayerMeleeBigger;
         public bool CactusThorns;
         public bool Ammo10;
         public bool Ammo20;
@@ -30,7 +28,6 @@ namespace JourneyRecipes
             PlayerFeral = false;
             PlayerTitanGlove = false;
             PlayerAutouse = false;
-            PlayerMeleeOriginalScale = -1;
             CactusThorns = false;
             Ammo10 = false;
             Ammo20 = false;
