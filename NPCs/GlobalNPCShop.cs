@@ -28,6 +28,12 @@ namespace JourneyRecipes.NPCs
                     shop.item[nextSlot].shopCustomPrice = 10000;
                     nextSlot++;
                 }
+                if (type == NPCID.Wizard)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.Book);
+                    shop.item[nextSlot].shopCustomPrice = 1500;
+                    nextSlot++;
+                }
             }
         }
     }
