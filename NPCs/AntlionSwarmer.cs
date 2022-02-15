@@ -10,7 +10,7 @@ namespace JourneyRecipes.NPCs
         {
             if (Config.Instance.allowNPCStat && npc.type == NPCID.FlyingAntlion)
             {
-                npc.value = 1950f;
+                npc.value = 195f;
             }
         }
         public override void NPCLoot(NPC npc)
