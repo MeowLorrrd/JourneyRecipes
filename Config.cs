@@ -116,11 +116,19 @@ namespace JourneyRecipes
 
         [DefaultValue(true)]
         [Label("[i:2221]   Change accessory stats?")]
-        [Tooltip("If this setting is turned off, this mod will not change tool stats, e.g. the 1.3 Celestial Cuffs won't grant +20 mana" +
+        [Tooltip("If this setting is turned off, this mod will not change accessory stats, e.g. the 1.3 Celestial Cuffs won't grant +20 mana" +
             "\nBy enabling this setting, certain accessories will use 1.4 stats" + 
             "\nCurrently only affects Lava Waders, Celesial Cuffs, Charm of Myths, Fire Gauntlet and Flesh Knuckles")]
         [ReloadRequired]
         public bool allowAccessoryStat;
+
+        [DefaultValue(true)]
+        [Label("[i:493]   Change wing stats?")]
+        [Tooltip("If this setting is turned off, this mod will not change wings stats, e.g. the 1.3 Fin Wings being doodoo" +
+            "\nBy enabling this setting, certain wings will use 1.4 stats" +
+            "\nCurrently only affects ")]
+        [ReloadRequired]
+        public bool allowWingStat;
 
         [DefaultValue(true)]
         [Label("[i:293]   Change buff duration?")]
