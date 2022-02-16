@@ -8,6 +8,7 @@ namespace JourneyRecipes
 {
     public class JourneyRecipesGlobalNPC : GlobalNPC
     {
+        public override bool InstancePerEntity => true;
         public override void SetDefaults(NPC npc)
         {
             if (Config.Instance.allowNPCStat && npc.type == NPCID.Mothron || npc.type == NPCID.GoblinSummoner || npc.type == NPCID.Squid || npc.type == NPCID.SeaSnail || npc.type == NPCID.PirateCaptain || npc.type == NPCID.Clown || npc.type == NPCID.UndeadMiner)
