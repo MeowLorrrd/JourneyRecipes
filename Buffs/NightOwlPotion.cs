@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace JourneyRecipes.Buffs
 {
-    public class ShinePotion : GlobalItem
+    public class NightOwlPotion : GlobalItem
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowBuffDuration && item.type == ItemID.ShinePotion)
+            if (Config.Instance.allowBuffDuration && item.type == ItemID.NightOwlPotion)
             {
-                item.buffType = BuffID.Shine;
+                item.buffType = BuffID.NightOwl;
                 item.buffTime = 36000;
             }
         }

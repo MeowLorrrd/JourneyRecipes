@@ -11,7 +11,7 @@ namespace JourneyRecipes.Buffs
             if (Config.Instance.allowBuffDuration && item.type == ItemID.WaterWalkingPotion)
             {
                 item.buffType = BuffID.WaterWalking;
-                item.buffTime = 21600;
+                item.buffTime = 36000;
             }
         }
     }

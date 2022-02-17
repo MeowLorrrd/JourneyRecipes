@@ -1,6 +1,7 @@
 ﻿using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
+using Terraria;
 
 namespace JourneyRecipes.Buffs
 {
@@ -28,6 +29,17 @@ namespace JourneyRecipes.Buffs
                     tip = "Замедляет воскрешение врагов";
                 if (GameCulture.Chinese.IsActive)
                     tip = "降低敌人生成速度";
+            }
+        }
+    }
+    public class CalmingPotion : GlobalItem
+    {
+        public override void SetDefaults(Item item)
+        {
+            if (Config.Instance.allowBuffDuration && item.type == ItemID.CalmingPotion)
+            {
+                item.buffType = BuffID.Calm;
+                item.buffTime = 28800;
             }
         }
     }

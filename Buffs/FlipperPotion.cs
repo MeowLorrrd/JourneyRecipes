@@ -4,13 +4,13 @@ using Terraria.ModLoader;
 
 namespace JourneyRecipes.Buffs
 {
-    public class ShinePotion : GlobalItem
+    public class FlipperPotion : GlobalItem
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.allowBuffDuration && item.type == ItemID.ShinePotion)
+            if (Config.Instance.allowBuffDuration && item.type == ItemID.FlipperPotion)
             {
-                item.buffType = BuffID.Shine;
+                item.buffType = BuffID.Flipper;
                 item.buffTime = 36000;
             }
         }

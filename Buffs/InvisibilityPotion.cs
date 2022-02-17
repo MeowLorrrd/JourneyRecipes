@@ -7,6 +7,14 @@ namespace JourneyRecipes.Buffs
 {
     public class InvisibilityPotion : GlobalItem
     {
+        public override void SetDefaults(Item item)
+        {
+            if (Config.Instance.allowBuffDuration && item.type == ItemID.InvisibilityPotion)
+            {
+                item.buffType = BuffID.Invisibility;
+                item.buffTime = 10800;
+            }
+        }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
             if (Config.Instance.allowBuffStat && item.type == ItemID.InvisibilityPotion)

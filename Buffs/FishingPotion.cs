@@ -8,6 +8,14 @@ namespace JourneyRecipes.Buffs
 {
     public class FishingPotion : GlobalItem
     {
+        public override void SetDefaults(Item item)
+        {
+            if (Config.Instance.allowBuffDuration && item.type == ItemID.FishingPotion)
+            {
+                item.buffType = BuffID.Fishing;
+                item.buffTime = 28800;
+            }
+        }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
             if (item.type == ItemID.FishingPotion)
