@@ -6,7 +6,6 @@ namespace JourneyRecipes.Items.Accessories
 {
     public class GlobalWings : GlobalItem
     {
-
         public override void UpdateAccessory(Item item, Player player, bool hideVisual)
         {
             if (Config.Instance.allowWingStat)
@@ -24,14 +23,6 @@ namespace JourneyRecipes.Items.Accessories
                 if (item.type == ItemID.FestiveWings || item.type == ItemID.WingsNebula || item.type == ItemID.WingsVortex)
                     player.wingTimeMax = 180;
             }
-        }
-        public override bool WingUpdate(int wings, Player player, bool inUse)
-        {
-            if (Config.Instance.allowWingStat)
-            {
-
-            }
-            return base.WingUpdate(wings, player, inUse);
         }
         public override void HorizontalWingSpeeds(Item item, Player player, ref float speed, ref float acceleration)
         {
