@@ -181,3 +181,11 @@ Don't forget 'gardenapple', luv all of u guys *mwah*
                 {
                     player.setBonus = "";
                 }
+
+
+            //wing related stuff
+    constantAscend          = num;
+    ascentWhenFalling       = num2;
+    maxAscentMultiplier     = num3;
+    maxCanAscendMultiplier  = num4;
+    ascentWhenRising        = num5;
