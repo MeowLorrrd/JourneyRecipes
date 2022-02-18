@@ -20,7 +20,7 @@ namespace JourneyRecipes.Projectiles
         {
             if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures && projectile.type == ProjectileID.HallowStar)
             {
-                projectile.maxPenetrate = 1;
+                projectile.penetrate = 1;
                 projectile.damage /= 2;
             }
         }
