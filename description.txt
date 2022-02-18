@@ -71,6 +71,7 @@ Skeletron Prime is no longer immune to Cursed Inferno
 Wall of Flesh is no longer immune to Poisoned
 Chaos Elemental has 1/400 chance to drop RoD in Expert Mode
 Moon Lord drops 1 Platinum (2.5x in Expert)
+Moon Lord drops Super Healing Potions (experimental)
 Increased Bone Pickaxe drop chances
 Merchant sells Sharpening Station in hardmode
 Mechanic sells timers
