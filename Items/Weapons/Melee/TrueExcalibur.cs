@@ -27,13 +27,5 @@ namespace JourneyRecipes.Items.Weapons.Melee
                 projectile.penetrate = 2;
             }
         }
-        public override bool InstancePerEntity => true;
-        public void Damage(Projectile p)
-        {
-            if (Config.Instance.allowWeaponStat && p.type == ProjectileID.LightBeam)
-            {
-                p.damage = (int)((double)p.damage * 10.85);
-            }
-        }
     }
 }
