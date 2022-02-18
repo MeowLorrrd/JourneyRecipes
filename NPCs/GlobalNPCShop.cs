@@ -34,6 +34,10 @@ namespace JourneyRecipes.NPCs
                     shop.item[nextSlot].shopCustomPrice = 1500;
                     nextSlot++;
                 }
+                if (type == NPCID.WitchDoctor)
+                {
+                    
+                }
             }
         }
     }
