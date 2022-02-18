@@ -22,7 +22,7 @@ namespace JourneyRecipes.Items.Weapons.Mage
         {
             if (Config.Instance.allowWeaponStat && projectile.type == ProjectileID.HeatRay)
             {
-                projectile.penetrate = 1;
+                projectile.maxPenetrate = 1;
             }
         }
     }

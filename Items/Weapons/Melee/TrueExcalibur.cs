@@ -24,7 +24,7 @@ namespace JourneyRecipes.Items.Weapons.Melee
         {
             if (Config.Instance.terraBladeStuff && projectile.type == ProjectileID.LightBeam)
             {
-                projectile.penetrate = 2;
+                projectile.maxPenetrate = 2;
             }
         }
     }

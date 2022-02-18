@@ -20,7 +20,7 @@ namespace JourneyRecipes.Items.Ammo
         {
             if (Config.Instance.allowWeaponStat && projectile.type == ProjectileID.BulletHighVelocity)
             {
-                projectile.penetrate = 3;
+                projectile.maxPenetrate = 3;
             }
         }
     }

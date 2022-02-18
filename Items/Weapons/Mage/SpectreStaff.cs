@@ -21,7 +21,7 @@ namespace JourneyRecipes.Items.Weapons.Mage
         {
             if (Config.Instance.allowWeaponStat && projectile.type == ProjectileID.LostSoulFriendly)
             {
-                projectile.penetrate = 3;
+                projectile.maxPenetrate = 3;
             }
         }
     }
