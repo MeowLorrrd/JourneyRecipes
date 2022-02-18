@@ -9,7 +9,7 @@ namespace JourneyRecipes.NPCs
     {
         public override void NPCLoot(NPC npc)
         {
-            if (Config.Instance.allowNPCStat && npc.type == NPCID.MoonLordCore)
+            if (Config.Instance.allowNPCStat && Config.Instance.allowExperimentalFeatures && npc.type == NPCID.MoonLordCore)
             {
                 Item.NewItem(npc.Hitbox, ItemID.SuperHealingPotion, Main.rand.Next(5, 15));
                 //
