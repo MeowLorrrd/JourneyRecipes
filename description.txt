@@ -83,6 +83,7 @@ Fixed wrong buff tooltip for Calming Potion
 Fixed some Potions not having correct buff timer or having old buff timers
 Breathing Reed is a weapon now...
 Forbidden armor has 1.4 stats
+Fixed some projectiles having incorrect pierce values
 
 1.4.6 - Red Riding, Huntress, Squire, Valhalla Knight armor have 1.4 stats
 Sleepy Octopod has 1.4 stats (Experimental)
