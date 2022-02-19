@@ -66,7 +66,8 @@ This mod changes some 1.4 recipes into the 1.3 Modloader! With this mod, it take
 
 
 [i:549]Updates[i:549]:
-1.4.7 - Meteor Head, Giant Antlion Swarmer, Giant Cursed Skull has 1.4 stats
+1.4.7 - Meteor Head, Giant Antlion Swarmer, Giant
+    Cursed Skull has 1.4 stats
 Skeletron Prime is no longer immune to Cursed Inferno
 Wall of Flesh is no longer immune to Poisoned
 Chaos Elemental has 1/400 chance to drop RoD in Expert Mode
@@ -78,15 +79,19 @@ Mechanic sells timers
 Meteorite can't be blown up before hardmode
 Throwing config description has extra description
 Acorns are auto reusable
-Updated potions code, making them compatible with AlchemistMod's charms, and should be correctly localized
+Updated potions code, making them compatible with
+    AlchemistMod's charms, and should be correctly localized
 Fixed wrong buff tooltip for Calming Potion
-Fixed some Potions not having correct buff timer or having old buff timers
-Station buffs have 1.4.4 stats (infinite duration, no timer, removed upon leaving game)
+Fixed some Potions not having correct buff timer or having old
+ buff timers
+Station buffs have 1.4.4 stats (infinite duration, no timer, 
+    removed upon leaving game)
 Sharpened buff grants 12 melee armor penetration
 Breathing Reed is a weapon now...
 Forbidden armor has 1.4 stats
 Shroomite Breastplate correctly show a +13% ranged damage 
-Wings have 1.4 stats (needs to be enabled manually in config as I haven't tested them all. Please report any issues!)
+Wings have 1.4 stats (needs to be enabled manually in config as
+    I haven't tested them all. Please report any issues!)
 
 1.4.6 - Red Riding, Huntress, Squire, Valhalla Knight armor have 1.4 stats
 Sleepy Octopod has 1.4 stats (Experimental)
