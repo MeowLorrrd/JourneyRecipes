@@ -14,6 +14,10 @@ namespace JourneyRecipes.Buffs.StationBuffs
                 Main.buffNoTimeDisplay[type] = true;//doesn't show timer for this buff
                 Main.buffNoSave[type] = true;//removes buff on leaving world
             }
+            if (Config.Instance.allowBuffStat && type == BuffID.Sharpened)
+            {
+                player.GetModPlayer<JourneyRecipesPlayer>().Sharpened = true;//sets bool in this ModPlayer to true  
+            }
         }
     }
 }

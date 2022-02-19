@@ -22,6 +22,7 @@ namespace JourneyRecipes
         public bool CactusThorns;
         public bool Ammo10;
         public bool Ammo20;
+        public bool Sharpened;
         public override void ResetEffects()
         {
             PlayerInvis = false;
@@ -31,6 +32,7 @@ namespace JourneyRecipes
             CactusThorns = false;
             Ammo10 = false;
             Ammo20 = false;
+            Sharpened = false;
         }
         public override bool PreItemCheck()
         {
@@ -38,6 +40,10 @@ namespace JourneyRecipes
             {
                 PlayerAutouse = player.HeldItem.autoReuse;
                 player.HeldItem.autoReuse = true;
+            }
+            if (Config.Instance.allowBuffStat && Sharpened && player.HeldItem.melee)
+            {
+                player.armorPenetration += 8;
             }
             return true;
         }
