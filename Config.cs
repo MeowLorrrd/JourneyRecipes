@@ -125,7 +125,8 @@ namespace JourneyRecipes
         [DefaultValue(false)]
         [Label("[i:493]   Change wing stats?")]
         [Tooltip("If this setting is turned off, this mod will not change wings stats, e.g. the 1.3 Fin Wings being doodoo" +
-            "\nBy enabling this setting, certain wings will use 1.4 stats")]
+            "\nBy enabling this setting, certain wings will use 1.4 stats" +
+            "\nStill in testing phase, I haven't encountered any issues so far, but if you do, please report them in the Homepage!")]
         [ReloadRequired]
         public bool allowWingStat;
 
