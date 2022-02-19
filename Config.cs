@@ -122,7 +122,7 @@ namespace JourneyRecipes
         [ReloadRequired]
         public bool allowAccessoryStat;
 
-        [DefaultValue(true)]
+        [DefaultValue(false)]
         [Label("[i:493]   Change wing stats?")]
         [Tooltip("If this setting is turned off, this mod will not change wings stats, e.g. the 1.3 Fin Wings being doodoo" +
             "\nBy enabling this setting, certain wings will use 1.4 stats" +

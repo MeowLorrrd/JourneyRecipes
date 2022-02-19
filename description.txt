@@ -83,8 +83,8 @@ Fixed wrong buff tooltip for Calming Potion
 Fixed some Potions not having correct buff timer or having old buff timers
 Breathing Reed is a weapon now...
 Forbidden armor has 1.4 stats
-Wings have 1.4 stats (please report any issues, as I haven't tested them all!)
 Shroomite Breastplate correctly show a +13% ranged damage 
+Wings have 1.4 stats (needs to be enabled manually in config as I haven't tested them all. Please report any issues!)
 
 1.4.6 - Red Riding, Huntress, Squire, Valhalla Knight armor have 1.4 stats
 Sleepy Octopod has 1.4 stats (Experimental)
