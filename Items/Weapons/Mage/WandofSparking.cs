@@ -13,7 +13,7 @@ namespace JourneyRecipes.Items.Weapons.Mage
                 item.useTime = 26;
                 item.useAnimation = 26;
                 item.damage = 14;
-                item.crit = 14;
+                item.crit = 10;
             }
         }
         public override void OnHitNPC(Item item, Player player, NPC target, int damage, float knockBack, bool crit)

@@ -12,7 +12,7 @@ namespace JourneyRecipes.Items.Weapons.Melee
             if (Config.Instance.allowWeaponStat && item.type == ItemID.Kraken)
             {
                 item.damage = 95;
-                item.crit = 14;
+                item.crit = 10;
             }
         }
     }
