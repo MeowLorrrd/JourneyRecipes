@@ -112,17 +112,19 @@ namespace JourneyRecipes.Items.Accessories
                         maxCanAscendMultiplier = 1f;
                         ascentWhenRising = .15f;
                         break;
+                    //code taken from Terraria (1.4.2.3) source code
                 }
             }
         }
         public override void HorizontalWingSpeeds(Item item, Player player, ref float speed, ref float acceleration)
         {
-            if (Config.Instance.allowWingStat)
+            if (Config.Instance.allowWingStat)//checks if wing config is enabled
             {
-                if (!player.mount.Active && player.wingsLogic > 0 )//&& player.velocity.Y != 0f)
+                if (!player.mount.Active && player.wingsLogic > 0 && player.velocity.Y != 0f)//checks if player is not on mount, if is vanilla wing and if player is moving up or down (Y could be small number, just not 0)
                 {
                     WingAirLogicTweaks(player);
                 }
+                #region unused wing code
                 /* yeah probably don't use this
                 switch (item.type)
                 {
@@ -169,152 +171,102 @@ namespace JourneyRecipes.Items.Accessories
                         speed = 9f;
                         break;
                 }*/
-
+                #endregion
             }
         }
-
-        private void WingAirLogicTweaks(Player player)
+        private void WingAirLogicTweaks(Player player)//code taken from Terraria (1.4.3.2) source code
         {
 
-            if (player.wingsLogic < 1)
+            if (player.wingsLogic < 1)//checks if vanilla wing, otherwise change nothing
             {
                 return;
             }
-            bool flag = player.controlDown && player.controlJump && player.wingTime > 1;
-            bool flag2 = player.wingTime > 1;
-            if ((player.wingsLogic == 22 || player.wingsLogic == 28 || player.wingsLogic == 30 || player.wingsLogic == 31 || player.wingsLogic == 33 || player.wingsLogic == 35 || player.wingsLogic == 37 || player.wingsLogic == 45) && flag && !player.merman)
-            {
-                float f = 0.9f;
-                player.velocity.Y *= f;
-                if (player.velocity.Y > -2f && player.velocity.Y < 1f)
-                {
-                    player.velocity.Y = 1E-05f;
-                }
-                //code from 1.4 source code that doesn't let player float up while hovering (try it it super annoying)
-                if (player.wingsLogic == 22 && flag)
-                {
-                    player.accRunSpeed = 10f;
-                }
-                else if (player.wingsLogic == 22 && !flag)
-                {
-                    player.accRunSpeed = 6.4f;
-                }
+            #region wing bools
+            bool flag = player.controlDown && player.controlJump && player.wingTime > 1;//checks if player is hovering and has wingtime left
+            bool flag2 = player.controlJump && player.wingTime > 1;//checks if player is flying and has wingtime left
+            bool flag3 = player.wingsLogic == 22 || player.wingsLogic == 28 || player.wingsLogic == 30 || player.wingsLogic == 31 || player.wingsLogic == 33 || player.wingsLogic == 35 || player.wingsLogic == 37 || player.wingsLogic == 45;//checks if player CAN hover
+            #endregion
 
-                else if (player.wingsLogic == 30 && flag)
+            #region Hover-able wings
+            if (flag2 && flag3 && !player.merman)
+            {
+                
+                if (flag)
                 {
-                    player.accRunSpeed = 12f;
+                    player.velocity.Y *= 0.9f;
+                    if (player.velocity.Y > -2f && player.velocity.Y < 1f)
+                    {
+                        player.velocity.Y = 1E-05f;
+                    }
+                    //^^code from 1.4 source code that doesn't let player float up while hovering (try it it super annoying)
+                    switch (player.wingsLogic)
+                    {
+                        case 22:
+                            player.accRunSpeed = 10f;
+                            break;
+                        case 30:
+                        case 31:
+                            player.accRunSpeed = 12f;
+                            break;
+                        case 37:
+                            player.accRunSpeed = 12f;
+                            break;
+                    }
                 }
-                else if (player.wingsLogic == 30 && !flag)
+                else if (!flag)
                 {
-                    player.accRunSpeed = 6.6f;
+                    switch (player.wingsLogic)
+                    {
+                        case 22:
+                            player.accRunSpeed = 6.4f;
+                            player.maxRunSpeed = 6.4f;
+                            break;
+                        case 30:
+                        case 31:
+                            player.accRunSpeed = 6.8f;
+                            player.maxRunSpeed = 6.8f;
+                            break;
+                        case 37:
+                            player.accRunSpeed = 7.2f;
+                            player.maxRunSpeed = 7.2f;
+                            break;
+                    }
                 }
-                else if (player.wingsLogic == 31 && flag)
+            }
+            #endregion
+            #region Non-hover-able wings
+            else if (flag2 && !flag3 && !player.merman)
+            {
+                switch (player.wingsLogic)
                 {
-                    player.accRunSpeed = 12f;
+                    case 1:
+                    case 2:
+                    case 13:
+                        player.accRunSpeed = 6.3f;
+                        break;
+                    case 6:
+                    case 7:
+                    case 10:
+                    case 25:
+                        player.accRunSpeed = 6.7f;
+                        break;
+                    case 5:
+                    case 8:
+                    case 9:
+                    case 11:
+                    case 12:
+                    case 14:
+                    case 15:
+                    case 20:
+                    case 21:
+                    case 23:
+                    case 24:
+                    case 27:
+                        player.accRunSpeed = 7.5f;
+                        break;
                 }
-                else if (player.wingsLogic == 31 && !flag)
-                {
-                    player.accRunSpeed = 6.6f;
-                }
             }
-            //code (incomplete) from 1.4 source code that matches wings on both versions
-
-            else if (player.wingsLogic == 37 && flag && !player.merman)
-            {
-                player.velocity.Y = 0.92f;
-                if (player.velocity.Y > 2f && player.velocity.Y < 1f)
-                {
-                    player.velocity.Y = 1E-05f;
-                }
-                if (player.wingsLogic == 37 && flag)
-                {
-                    player.accRunSpeed = 12f;
-                }
-                else if (player.wingsLogic == 37 && !flag)
-                {
-                    player.accRunSpeed = 7f;
-                }
-            }
-            //code for betsy wings, that unenables weird floaty thing and does the speed thing
-
-
-            else if (player.wingsLogic == 1 && flag2)
-            {
-                player.accRunSpeed = 6.3f;
-            }
-            else if (player.wingsLogic == 2 && flag2)
-            {
-                player.accRunSpeed = 6.3f;
-            }
-            else if (player.wingsLogic == 13 && flag2)
-            {
-                player.accRunSpeed = 6.3f;
-            }
-            else if (player.wingsLogic == 6 && flag2)
-            {
-                player.accRunSpeed = 6.7f;
-            }
-            else if (player.wingsLogic == 25 && flag2)
-            {
-                player.accRunSpeed = 6.7f;
-            }
-            else if (player.wingsLogic == 10 && flag2)
-            {
-                player.accRunSpeed = 6.7f;
-            }
-            else if (player.wingsLogic == 7 && flag2)
-            {
-                player.accRunSpeed = 6.7f;
-            }
-            else if (player.wingsLogic == 14 && flag2)
-            {
-                player.accRunSpeed = 7.5f;
-            }
-            else if (player.wingsLogic == 15 && flag2)
-            {
-                player.accRunSpeed = 7.5f;
-            }
-            else if (player.wingsLogic == 5 && flag2)
-            {
-                player.accRunSpeed = 7.5f;
-            }
-            else if (player.wingsLogic == 9 && flag2)
-            {
-                player.accRunSpeed = 7.5f;
-            }
-            else if (player.wingsLogic == 8 && flag2)
-            {
-                player.accRunSpeed = 7.5f;
-            }
-            else if (player.wingsLogic == 27 && flag2)
-            {
-                player.accRunSpeed = 7.5f;
-            }
-            else if (player.wingsLogic == 11 && flag2)
-            {
-                player.accRunSpeed = 7.5f;
-            }
-            else if (player.wingsLogic == 24 && flag2)
-            {
-                player.accRunSpeed = 7.5f;
-            }
-            else if (player.wingsLogic == 23 && flag2)
-            {
-                player.accRunSpeed = 7.5f;
-            }
-            else if (player.wingsLogic == 21 && flag2)
-            {
-                player.accRunSpeed = 7.5f;
-            }
-            else if (player.wingsLogic == 20 && flag2)
-            {
-                player.accRunSpeed = 7.5f;
-            }
-            else if (player.wingsLogic == 12 && flag2)
-            {
-                player.accRunSpeed = 7.5f;
-            }
-
+            #endregion
         }
     }
 }
