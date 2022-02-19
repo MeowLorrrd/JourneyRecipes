@@ -59,14 +59,71 @@ namespace JourneyRecipes.Items.Accessories
                 }
             }
         }
+        public override void VerticalWingSpeeds(Item item, Player player, ref float ascentWhenFalling, ref float ascentWhenRising, ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)
+        {
+            if (Config.Instance.allowWingStat)
+            {
+                switch (item.type)
+                {
+                    case ItemID.BoneWings:
+                    case ItemID.Hoverboard:
+                    case ItemID.MothronWings:
+                    case ItemID.GhostWings:
+                    case ItemID.BeetleWings:
+                        constantAscend = .1f;
+                        ascentWhenFalling = .5f;
+                        maxAscentMultiplier = 1.66f;
+                        maxCanAscendMultiplier = .5f;
+                        ascentWhenRising = .1f;
+                        break;
+                    case ItemID.FestiveWings:
+                    case ItemID.SpookyWings:
+                    case ItemID.TatteredFairyWings:
+                    case ItemID.SteampunkWings:
+                        constantAscend = .1f;
+                        ascentWhenFalling = .5f;
+                        maxAscentMultiplier = 1.805f;
+                        maxCanAscendMultiplier = .5f;
+                        ascentWhenRising = .1f;
+                        break;
+                    case ItemID.FishronWings:
+                    case ItemID.BetsyWings:
+                        constantAscend = .125f;
+                        ascentWhenFalling = .75f;
+                        maxAscentMultiplier = 2.5f;
+                        maxCanAscendMultiplier = 1f;
+                        ascentWhenRising = .15f;
+                        break;
+                    case ItemID.WingsNebula:
+                    case ItemID.WingsVortex:
+                        maxAscentMultiplier = 2.45f;
+                        maxCanAscendMultiplier = 1f;
+                        if (!player.controlDown)
+                        {
+                            constantAscend = .15f;
+                            break;
+                        }
+                        break;
+                    case ItemID.WingsSolar:
+                    case ItemID.WingsStardust:
+                        constantAscend = .135f;
+                        ascentWhenFalling = .85f;
+                        maxAscentMultiplier = 3f;
+                        maxCanAscendMultiplier = 1f;
+                        ascentWhenRising = .15f;
+                        break;
+                }
+            }
+        }
         public override void HorizontalWingSpeeds(Item item, Player player, ref float speed, ref float acceleration)
         {
             if (Config.Instance.allowWingStat)
             {
-                if (!player.mount.Active && player.wingsLogic > 0 && player.velocity.Y != 0f)
+                if (!player.mount.Active && player.wingsLogic > 0 )//&& player.velocity.Y != 0f)
                 {
                     WingAirLogicTweaks(player);
-                }/*
+                }
+                /* yeah probably don't use this
                 switch (item.type)
                 {
                     case ItemID.LeafWings:
@@ -115,57 +172,7 @@ namespace JourneyRecipes.Items.Accessories
 
             }
         }
-        public override void VerticalWingSpeeds(Item item, Player player, ref float ascentWhenFalling, ref float ascentWhenRising, ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)
-        {
-            if (Config.Instance.allowWingStat)
-            {
-                switch (item.type)
-                {
-                    case ItemID.BoneWings:
-                    case ItemID.Hoverboard:
-                    case ItemID.MothronWings:
-                    case ItemID.GhostWings:
-                    case ItemID.BeetleWings:
-                        constantAscend = .1f;
-                        ascentWhenFalling = .5f;
-                        maxAscentMultiplier = 1.66f;
-                        maxCanAscendMultiplier = .5f;
-                        ascentWhenRising = .1f;
-                        break;
-                    case ItemID.FestiveWings:
-                    case ItemID.SpookyWings:
-                    case ItemID.TatteredFairyWings:
-                    case ItemID.SteampunkWings:
-                        constantAscend = .1f;
-                        ascentWhenFalling = .5f;
-                        maxAscentMultiplier = 1.805f;
-                        maxCanAscendMultiplier = .5f;
-                        ascentWhenRising = .1f;
-                        break;
-                    case ItemID.FishronWings:
-                    case ItemID.BetsyWings:
-                        constantAscend = .125f;
-                        ascentWhenFalling = .75f;
-                        maxAscentMultiplier = 2.5f;
-                        maxCanAscendMultiplier = 1f;
-                        ascentWhenRising = .15f;
-                        break;
-                    case ItemID.WingsNebula:
-                    case ItemID.WingsVortex:
-                        maxAscentMultiplier = 2.45f;
-                        maxCanAscendMultiplier = 1f;
-                        break;
-                    case ItemID.WingsSolar:
-                    case ItemID.WingsStardust:
-                        constantAscend = .135f;
-                        ascentWhenFalling = .85f;
-                        maxAscentMultiplier = 3f;
-                        maxCanAscendMultiplier = 1f;
-                        ascentWhenRising = .15f;
-                        break;
-                }
-            }
-        }
+
         private void WingAirLogicTweaks(Player player)
         {
 
@@ -175,38 +182,62 @@ namespace JourneyRecipes.Items.Accessories
             }
             bool flag = player.controlDown && player.controlJump && player.wingTime > 1;
             bool flag2 = player.wingTime > 1;
-            if (player.wingsLogic == 22 && flag)
+            if ((player.wingsLogic == 22 || player.wingsLogic == 28 || player.wingsLogic == 30 || player.wingsLogic == 31 || player.wingsLogic == 33 || player.wingsLogic == 35 || player.wingsLogic == 37 || player.wingsLogic == 45) && flag && !player.merman)
             {
-                player.accRunSpeed = 10f;
+                float f = 0.9f;
+                player.velocity.Y *= f;
+                if (player.velocity.Y > -2f && player.velocity.Y < 1f)
+                {
+                    player.velocity.Y = 1E-05f;
+                }
+                //code from 1.4 source code that doesn't let player float up while hovering (try it it super annoying)
+                if (player.wingsLogic == 22 && flag)
+                {
+                    player.accRunSpeed = 10f;
+                }
+                else if (player.wingsLogic == 22 && !flag)
+                {
+                    player.accRunSpeed = 6.4f;
+                }
+
+                else if (player.wingsLogic == 30 && flag)
+                {
+                    player.accRunSpeed = 12f;
+                }
+                else if (player.wingsLogic == 30 && !flag)
+                {
+                    player.accRunSpeed = 6.6f;
+                }
+                else if (player.wingsLogic == 31 && flag)
+                {
+                    player.accRunSpeed = 12f;
+                }
+                else if (player.wingsLogic == 31 && !flag)
+                {
+                    player.accRunSpeed = 6.6f;
+                }
             }
-            else if (player.wingsLogic == 22 && !flag)
+            //code (incomplete) from 1.4 source code that matches wings on both versions
+
+            else if (player.wingsLogic == 37 && flag && !player.merman)
             {
-                player.accRunSpeed = 6.4f;
+                player.velocity.Y = 0.92f;
+                if (player.velocity.Y > 2f && player.velocity.Y < 1f)
+                {
+                    player.velocity.Y = 1E-05f;
+                }
+                if (player.wingsLogic == 37 && flag)
+                {
+                    player.accRunSpeed = 12f;
+                }
+                else if (player.wingsLogic == 37 && !flag)
+                {
+                    player.accRunSpeed = 7f;
+                }
             }
-            else if (player.wingsLogic == 37 && flag)
-            {
-                player.accRunSpeed = 12f;
-            }
-            else if (player.wingsLogic == 37 && !flag)
-            {
-                player.accRunSpeed = 7f;
-            }
-            else if (player.wingsLogic == 30 && flag)
-            {
-                player.accRunSpeed = 12f;
-            }
-            else if (player.wingsLogic == 30 && !flag)
-            {
-                player.accRunSpeed = 6.6f;
-            }
-            else if (player.wingsLogic == 31 && flag)
-            {
-                player.accRunSpeed = 12f;
-            }
-            else if (player.wingsLogic == 31 && !flag)
-            {
-                player.accRunSpeed = 6.6f;
-            }
+            //code for betsy wings, that unenables weird floaty thing and does the speed thing
+
+
             else if (player.wingsLogic == 1 && flag2)
             {
                 player.accRunSpeed = 6.3f;

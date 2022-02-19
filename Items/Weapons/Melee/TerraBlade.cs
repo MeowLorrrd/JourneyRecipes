@@ -8,14 +8,11 @@ namespace JourneyRecipes.Items.Weapons.Melee
     {
         public override void SetDefaults(Item item)
         {
-            if (Config.Instance.terraBladeStuff)
+            if (Config.Instance.terraBladeStuff && item.type == ItemID.TerraBlade)
             {
-                if (item.type == ItemID.TerraBlade)
-                {
-                    item.damage = 115;
-                    item.useTime = 14;
-                    item.useAnimation = 14;
-                }
+                item.damage = 115;
+                item.useTime = 14;
+                item.useAnimation = 14;
             }
         }
     }
