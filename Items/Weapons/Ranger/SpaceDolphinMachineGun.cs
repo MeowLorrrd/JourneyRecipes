@@ -25,7 +25,7 @@ namespace JourneyRecipes.Items.Weapons.Ranger
             {
                 return Main.rand.NextBool(3);
             }
-            return true;
+            return base.ConsumeAmmo(item, player);
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {

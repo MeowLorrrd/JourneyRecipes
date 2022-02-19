@@ -23,12 +23,6 @@ namespace JourneyRecipes.Items.Weapons.Ranger
                     item.useAnimation = 12;
                 }
             }
-            //Fix bc Bone Javelin has fire gauntlet fire thingy but is not melee??
-            //Actually not a bug from this mod so will leave it bugged ig
-            if (item.type == ItemID.BoneJavelin)
-            {
-                item.melee = false;
-            }
             if (Config.Instance.allowWeaponStat)
             {
                 if (item.type == ItemID.Beenade)

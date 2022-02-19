@@ -13,7 +13,7 @@ namespace JourneyRecipes.Items.Accessories
 {
     public class FireGauntlet : GlobalItem
     {
-        public override void UpdateEquip(Item item, Player player)
+        public override void UpdateAccessory(Item item, Player player, bool hideVisual)
         {
             if (Config.Instance.allowAccessoryStat && item.type == ItemID.FireGauntlet)
             {

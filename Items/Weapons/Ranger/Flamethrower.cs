@@ -11,7 +11,7 @@ namespace JourneyRecipes.Items.Weapons.Ranger
         {
             if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures && item.type == ItemID.Flamethrower)
             {
-                    item.damage = 35;
+                item.damage = 35;
             }
         }
     }

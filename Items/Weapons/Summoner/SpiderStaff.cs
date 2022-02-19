@@ -18,12 +18,9 @@ namespace JourneyRecipes.Items.Weapons.Summoner
     {
         public override void AI(Projectile projectile)
         {
-            if (Config.Instance.allowWeaponStat)
+            if (Config.Instance.allowWeaponStat && (projectile.type == ProjectileID.VenomSpider || projectile.type == ProjectileID.JumperSpider || projectile.type == ProjectileID.DangerousSpider))
             {
-                if (projectile.type == ProjectileID.VenomSpider || projectile.type == ProjectileID.JumperSpider || projectile.type == ProjectileID.DangerousSpider)
-                {
-                    projectile.minionSlots = 1;
-                }   
+                projectile.minionSlots = 1;
             }
         }
     }

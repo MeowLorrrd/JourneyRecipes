@@ -9,7 +9,7 @@ namespace JourneyRecipes.Items.Accessories
     [AutoloadEquip]
     public class FeralClaws : GlobalItem
     {
-        public override void UpdateEquip(Item item, Player player)
+        public override void UpdateAccessory(Item item, Player player, bool hideVisual)
         {
             if (Config.Instance.allowAccessoryStat && (item.type == ItemID.FeralClaws || item.type == ItemID.PowerGlove || item.type == ItemID.MechanicalGlove || item.type == ItemID.FireGauntlet))
             {
@@ -142,7 +142,7 @@ namespace JourneyRecipes.Items.Accessories
                 }
                 #endregion
             }
-            if (Config.Instance.allowAccessoryStat && item.type == ItemID.FireGauntlet)//Tooltip for Fire G, showing 12% melee damage n speed, autoswing
+            if (Config.Instance.allowAccessoryStat && item.type == ItemID.FireGauntlet)//Tooltip for Fire G, showing 12% melee damage, speed, autoswing
             {
                 string GermanOld = "Um 10% erhöhter Nahkampfschaden und -geschwindigkeit";
                 string GermanNew = "Um 12% erhöhter Nahkampfschaden & erhöhtes Nahkampftempo\nAktiviert automatisches Schwingen für Nahkampfwaffen";
