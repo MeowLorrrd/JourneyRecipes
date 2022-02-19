@@ -81,6 +81,7 @@ Acorns are auto reusable
 Updated potions code, making them compatible with AlchemistMod's charms, and should be correctly localized
 Fixed wrong buff tooltip for Calming Potion
 Fixed some Potions not having correct buff timer or having old buff timers
+Station buffs have 1.4.4 stats (infinite duration, no timer, removed upon leaving game)
 Breathing Reed is a weapon now...
 Forbidden armor has 1.4 stats
 Shroomite Breastplate correctly show a +13% ranged damage 

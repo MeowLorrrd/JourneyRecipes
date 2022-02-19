@@ -134,7 +134,8 @@ namespace JourneyRecipes
         [Label("[i:293]   Change buff duration?")]
         [Tooltip("If this setting is turned off, this mod will not change buff durations, e.g. the 1.3 Builder Potion won't last for 45 minutes" +
             "\nBy enabling this setting, certain buffs will have 1.4 durations" +
-            "\nCurrently only affects Archery, Builder, Calming, Fishing, Gills, Ironskin, Magic Power, Magic Regeneration, Mining, Obsidian Skin, Shine, Thorns, Titan & Water Walking potions")]
+            "\nCurrently affects all potions" +
+            "\nAlso makes buff stations give their buff for an unlimited time")]
         [ReloadRequired]
         public bool allowBuffDuration;
 
