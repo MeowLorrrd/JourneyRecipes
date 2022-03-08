@@ -66,6 +66,8 @@ This mod changes some 1.4 recipes into the 1.3 Modloader! With this mod, it take
 
 
 [i:549]Updates[i:549]:
+1.4.9 - Fixed Silver Bullet with Tungsten bar recipe only giving 1 bullet
+
 1.4.8 - Fixed mod not being downloadable (?)
 
 1.4.7 - Meteor Head, Giant Antlion Swarmer, Giant

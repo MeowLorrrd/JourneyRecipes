@@ -1473,7 +1473,7 @@ namespace JourneyRecipes
                 TungstenBulletbutactuallyitssilverbulletbecauseisaidiwontaddnewitemsinthismodsoiwontaddnewitemsinthismodsosilverbulletswilldoinstead.AddIngredient(ItemID.MusketBall, 70);
                 TungstenBulletbutactuallyitssilverbulletbecauseisaidiwontaddnewitemsinthismodsoiwontaddnewitemsinthismodsosilverbulletswilldoinstead.AddIngredient(ItemID.TungstenBar);
                 TungstenBulletbutactuallyitssilverbulletbecauseisaidiwontaddnewitemsinthismodsoiwontaddnewitemsinthismodsosilverbulletswilldoinstead.AddTile(TileID.Anvils);
-                TungstenBulletbutactuallyitssilverbulletbecauseisaidiwontaddnewitemsinthismodsoiwontaddnewitemsinthismodsosilverbulletswilldoinstead.SetResult(ItemID.SilverBullet);
+                TungstenBulletbutactuallyitssilverbulletbecauseisaidiwontaddnewitemsinthismodsoiwontaddnewitemsinthismodsosilverbulletswilldoinstead.SetResult(ItemID.SilverBullet, 70);
                 TungstenBulletbutactuallyitssilverbulletbecauseisaidiwontaddnewitemsinthismodsoiwontaddnewitemsinthismodsosilverbulletswilldoinstead.AddRecipe();
                 #endregion
                 ModRecipe EnchantedBoomerang = new ModRecipe(this);
