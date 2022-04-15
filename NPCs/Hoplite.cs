@@ -6,6 +6,16 @@ namespace JourneyRecipes.NPCs
 {
     public class Hoplite : GlobalNPC
     {
+        public override bool PreNPCLoot(NPC npc)
+        {
+            if (Config.Instance.allowNPCStat && npc.type == NPCID.GreekSkeleton)
+            {
+                NPCLoader.blockLoot.Add(ItemID.GladiatorHelmet);
+                NPCLoader.blockLoot.Add(ItemID.GladiatorBreastplate);
+                NPCLoader.blockLoot.Add(ItemID.GladiatorLeggings);
+            }
+            return base.PreNPCLoot(npc);
+        }
         public override void NPCLoot(NPC npc)
         {
             if (Config.Instance.allowNPCStat && npc.type == NPCID.GreekSkeleton)
