@@ -1,8 +1,8 @@
 displayName = 1.4 Crafting Recipes
 author = MeowLorrrd
-version = 1.4.9
+version = 1.4.10
 includeSource = true
 hideCode = false
 hideResourcees = false
-buildIgnore = *.xcf
+buildIgnore = 
 homepage = https://docs.google.com/document/d/1tQXbsJhvmmDwGU16Jp2rnQxJZkGTD47651UVnY-h19U/edit?usp=sharing
