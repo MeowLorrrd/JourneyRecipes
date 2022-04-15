@@ -6,6 +6,14 @@ namespace JourneyRecipes.NPCs
 {
     public class ChaosElemental : GlobalNPC
     {
+        /*public override bool PreNPCLoot(NPC npc)
+        {
+            if (Config.Instance.allowNPCStat && npc.type == NPCID.ChaosElemental && Main.expertMode)
+            {
+                NPCLoader.blockLoot.Add(ItemID.RodofDiscord);
+            }
+            return base.PreNPCLoot(npc);
+        }*/
         public override void NPCLoot(NPC npc)
         {
             if (Config.Instance.allowNPCStat && npc.type == NPCID.ChaosElemental && Main.expertMode)
