@@ -1,4 +1,4 @@
-displayName = 1.4 Crafting Recipes
+displayName = 1.4 Crafting Recipes (Check Config!)
 author = MeowLorrrd
 version = 1.4.10
 includeSource = true
