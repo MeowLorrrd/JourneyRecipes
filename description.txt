@@ -70,6 +70,7 @@ Check the config to disable features you don't like!
 Moon Lord drops Greater Healing Potions again ://
 Fixed bug relating to player receiving Cursed for 2 frames too many in Expert Mode by Giant Cursed Skull's projectile :///
 Saved bytes by removing old / shortening code :p
+Panic Necklace and Band of Starpower no longer require a tombstone to be nearby :pp
 
 1.4.9 - Fixed Silver Bullet with Tungsten bar recipe only giving 1 bullet
 
