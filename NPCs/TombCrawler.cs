@@ -13,7 +13,7 @@ namespace JourneyRecipes.NPCs
                 if (Main.rand.Next(0, 2) == 0)
                 {
                     int i = Main.rand.Next(1, 2);
-                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.FossilOre, i);
+                    Item.NewItem(npc.Hitbox, ItemID.FossilOre, i);
                 }
             }
         }

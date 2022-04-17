@@ -6,19 +6,19 @@ namespace JourneyRecipes.NPCs
 {
     public class Hoplite : GlobalNPC
     {
-        /*public override bool PreNPCLoot(NPC npc)
+        public override bool PreNPCLoot(NPC npc)
         {
-            if (Config.Instance.allowNPCStat && npc.type == NPCID.GreekSkeleton)
+            /*if (Config.Instance.allowNPCStat && npc.type == NPCID.GreekSkeleton)
             {
                 NPCLoader.blockLoot.Add(ItemID.GladiatorHelmet);
                 NPCLoader.blockLoot.Add(ItemID.GladiatorBreastplate);
                 NPCLoader.blockLoot.Add(ItemID.GladiatorLeggings);
-            }
+            }*/
             return base.PreNPCLoot(npc);
-        }*/
+        }
         public override void NPCLoot(NPC npc)
         {
-            if (Config.Instance.allowNPCStat && npc.type == NPCID.GreekSkeleton)
+            /*if (Config.Instance.allowNPCStat && npc.type == NPCID.GreekSkeleton)
             {
                 if (Main.rand.Next(7) == 0)
                 {
@@ -26,17 +26,17 @@ namespace JourneyRecipes.NPCs
                     switch (i)
                     {
                         case 0:
-                            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.GladiatorHelmet);
+                            Item.NewItem(npc.Hitbox, ItemID.GladiatorHelmet);
                             break;
                         case 1:
-                            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.GladiatorBreastplate);
+                            Item.NewItem(npc.Hitbox, ItemID.GladiatorBreastplate);
                             break;
                         case 2:
-                            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.GladiatorLeggings);
+                            Item.NewItem(npc.Hitbox, ItemID.GladiatorLeggings);
                             break;
                     }
                 }
-            }
+            }*/
         }
     }
     public class GladiatorProjectile : GlobalProjectile

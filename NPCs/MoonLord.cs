@@ -13,14 +13,14 @@ namespace JourneyRecipes.NPCs
                 NPCLoader.blockLoot.Add(ItemID.GreaterHealingPotion);
             }
             return base.PreNPCLoot(npc);
-        }*/
+        }
         public override void NPCLoot(NPC npc)
         {
             if (Config.Instance.allowNPCStat && Config.Instance.allowExperimentalFeatures && npc.type == NPCID.MoonLordCore)
             {
                 Item.NewItem(npc.Hitbox, ItemID.SuperHealingPotion, Main.rand.Next(5, 15));
             }
-        }
+        }*/
         public override void SetDefaults(NPC npc)
         {
             if (Config.Instance.allowNPCStat && npc.type == NPCID.MoonLordCore)

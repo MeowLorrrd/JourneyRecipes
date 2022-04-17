@@ -6,17 +6,17 @@ namespace JourneyRecipes.NPCs
 {
     public class UndeadMiner : GlobalNPC
     {
-        /*public override bool PreNPCLoot(NPC npc)
+        public override bool PreNPCLoot(NPC npc)
         {
-            if (Config.Instance.allowNPCStat && npc.type == NPCID.UndeadMiner)
+            /*if (Config.Instance.allowNPCStat && npc.type == NPCID.UndeadMiner)
             {
 
-            }
+            }*/
             return base.PreNPCLoot(npc);
-        }*/
+        }
         public override void NPCLoot(NPC npc)
         {
-            if (Config.Instance.allowNPCStat && npc.type == NPCID.UndeadMiner)
+            /*if (Config.Instance.allowNPCStat && npc.type == NPCID.UndeadMiner)
             {
                 if (Main.rand.Next(20) == 0)
                     Item.NewItem(npc.Hitbox, ItemID.BonePickaxe);
@@ -102,7 +102,7 @@ namespace JourneyRecipes.NPCs
                         Item.NewItem(npc.Hitbox, ItemID.Bomb, Main.rand.Next(1, 3));
                         break;
                 }
-            }
+            }*/
         }
     }
 }

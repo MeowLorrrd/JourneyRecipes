@@ -13,7 +13,7 @@ namespace JourneyRecipes.NPCs
                 NPCLoader.blockLoot.Add(ItemID.RodofDiscord);
             }
             return base.PreNPCLoot(npc);
-        }*/
+        }
         public override void NPCLoot(NPC npc)
         {
             if (Config.Instance.allowNPCStat && npc.type == NPCID.ChaosElemental && Main.expertMode)
@@ -22,6 +22,6 @@ namespace JourneyRecipes.NPCs
                 if (i == 0)
                     Item.NewItem(npc.Hitbox, ItemID.RodofDiscord);
             }
-        }
+        }*/
     }
 }

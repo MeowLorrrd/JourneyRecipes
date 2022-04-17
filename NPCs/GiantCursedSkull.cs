@@ -13,14 +13,14 @@ namespace JourneyRecipes.NPCs
                 {
                     if (Main.rand.Next(100) == 0)
                     {
-                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Nazar);
+                        Item.NewItem(npc.Hitbox, ItemID.Nazar);
                     }
                 }
                 if (Main.expertMode)
                 {
                     if (Main.rand.Next(50) == 0)
                     {
-                        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Nazar);
+                        Item.NewItem(npc.Hitbox, ItemID.Nazar);
                     }
                 }
             }
@@ -52,7 +52,7 @@ namespace JourneyRecipes.NPCs
                 }
                 if (Main.rand.Next(3) == 0 && Main.expertMode)
                 {
-                    target.AddBuff(BuffID.Cursed, 121);
+                    target.AddBuff(BuffID.Cursed, 120);
                 }
             }
         }
