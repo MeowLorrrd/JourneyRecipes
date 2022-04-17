@@ -1513,7 +1513,6 @@ namespace JourneyRecipes
                 BandOfStarpower.AddIngredient(ItemID.PanicNecklace);
                 BandOfStarpower.AddIngredient(ItemID.ManaCrystal);
                 BandOfStarpower.AddTile(TileID.TinkerersWorkbench);
-                BandOfStarpower.AddTile(TileID.Tombstones);
                 BandOfStarpower.SetResult(ItemID.BandofStarpower);
                 BandOfStarpower.AddRecipe();
 
@@ -1521,7 +1520,6 @@ namespace JourneyRecipes
                 PanicNecklace.AddIngredient(ItemID.BandofStarpower);
                 PanicNecklace.AddIngredient(ItemID.LifeCrystal);
                 PanicNecklace.AddTile(TileID.TinkerersWorkbench);
-                PanicNecklace.AddTile(TileID.Tombstones);
                 PanicNecklace.SetResult(ItemID.PanicNecklace);
                 PanicNecklace.AddRecipe();
 
