@@ -12,7 +12,8 @@ namespace JourneyRecipes.Items.Tools
             {
                 item.pick = 59;
                 item.useTime = 13;
-                item.useAnimation = 13;
+                item.useAnimation = 22;
+                item.useTurn = true;
             }
         }
     }

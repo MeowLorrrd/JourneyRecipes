@@ -8,12 +8,13 @@ namespace JourneyRecipes.NPCs
     {
         public override bool PreNPCLoot(NPC npc)
         {
-            /*if (Config.Instance.allowNPCStat && npc.type == NPCID.GreekSkeleton)
+            if (Config.Instance.allowNPCStat && npc.type == NPCID.GreekSkeleton)
             {
                 NPCLoader.blockLoot.Add(ItemID.GladiatorHelmet);
-                NPCLoader.blockLoot.Add(ItemID.GladiatorBreastplate);
-                NPCLoader.blockLoot.Add(ItemID.GladiatorLeggings);
-            }*/
+                //NPCLoader.blockLoot.Add(ItemID.GladiatorBreastplate);
+                //NPCLoader.blockLoot.Add(ItemID.GladiatorLeggings);
+                //NPCLoader.blockLoot.Remove(ItemID.GladiatorHelmet);
+            }
             return base.PreNPCLoot(npc);
         }
         public override void NPCLoot(NPC npc)
@@ -37,6 +38,22 @@ namespace JourneyRecipes.NPCs
                     }
                 }
             }*/
+            if (Config.Instance.allowNPCStat && npc.type == NPCID.GreekSkeleton)
+            {
+                /*if (Main.rand.Next(7) == 0)
+                {
+                    Item.NewItem(npc.Hitbox, 3187 + Main.rand.Next(3));
+                }*/
+                //Item.NewItem(npc.Hitbox, 5);
+                NewDropRules();
+                Item.NewItem(npc.Hitbox, 3187);// + Main.rand.Next(3));
+
+                //2 Helmets can drop at same time, fix
+            }
+        }
+        public void NewDropRules()
+        {
+            NPCLoader.blockLoot.Remove(ItemID.GladiatorHelmet);
         }
     }
     public class GladiatorProjectile : GlobalProjectile
