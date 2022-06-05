@@ -10,7 +10,7 @@ namespace JourneyRecipes.NPCs
         {
             if (Config.Instance.allowNPCStat && projectile.type == ProjectileID.FrostBlastHostile)
             {
-                if (Main.rand.Next(3) == 0)
+                if (Main.rand.NextBool(3))
                 {
                     target.AddBuff(BuffID.Frostburn, 360);
                 }
