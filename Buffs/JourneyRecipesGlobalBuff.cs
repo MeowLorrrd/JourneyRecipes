@@ -168,12 +168,18 @@ namespace JourneyRecipes.Buffs
         }
         public override void Update(int type, Player player, ref int buffIndex)
         {
-            bool bt = Config.Instance.allowBuffDuration;
             bool bs = Config.Instance.allowBuffStat;
             if (bs)
             {
                 if (type == BuffID.Thorns) player.thorns = 1f;
             }
+        }
+    }
+    public class JourneyRecipesGlobalBuffStation : GlobalBuff
+    {
+        public override void Update(int type, Player player, ref int buffIndex)
+        {
+            bool bt = Config.Instance.allowBuffDuration;
             if (bt)
             {
                 if (type == BuffID.Sharpened || type == BuffID.Clairvoyance || type == BuffID.Bewitched || type == BuffID.AmmoBox)
