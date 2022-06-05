@@ -2506,5 +2506,24 @@ namespace JourneyRecipes
             }
             #endregion
         }
+        public override void Load()
+        {
+            bool flag1 = Config.Instance.Resprite && !Main.dedServ;
+            if (!Main.dedServ)//as no textures are ever loaded on servers anyways
+            {
+                Main.projectileTexture[ProjectileID.RainbowRodBullet] = GetTexture("Resprite/Projectile_79");
+            }
+            if (flag1)
+            {
+                Main.itemTexture[ItemID.CyanHusk] = GetTexture("Resprite/Item_1116");
+                Main.itemTexture[ItemID.RedHusk] = GetTexture("Resprite/Item_1115");
+                Main.itemTexture[ItemID.VioletHusk] = GetTexture("Resprite/Item_1117");
+                Main.itemTexture[ItemID.BundleofBalloons] = GetTexture("Resprite/Item_1164");
+                Item bundleOfBalloons = new Item();
+                bundleOfBalloons.SetDefaults(ItemID.BundleofBalloons);
+                Main.accballoonLoaded[bundleOfBalloons.balloonSlot] = true;
+                Main.accBalloonTexture[bundleOfBalloons.balloonSlot] = GetTexture("Resprite/Acc_Balloon_3");//code from ExampleMod lol
+            }
+        }
     }
 }

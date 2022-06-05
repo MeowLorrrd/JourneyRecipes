@@ -20,12 +20,16 @@ using Terraria.GameContent.UI;
 using Terraria.Localization;
 using Terraria.Utilities;
 using Microsoft.Xna.Framework.Graphics;
+using ReLogic.Graphics;
+using ReLogic;
 
 namespace JourneyRecipes.Items.Weapons.Mage
 {
     public class RainbowRod : GlobalItem
     {
         public bool c = Config.Instance.allowWeaponStat;
+        public override bool InstancePerEntity => true;
+        public override bool CloneNewInstances => true;
         public override void SetDefaults(Item item)
         {
             if (item.type == ItemID.RainbowRod && c)
@@ -41,10 +45,14 @@ namespace JourneyRecipes.Items.Weapons.Mage
     public class RainbowRodProjectile : GlobalProjectile
     {
         public bool c = Config.Instance.allowWeaponStat;
+        public override bool InstancePerEntity => true;
+        public override bool CloneNewInstances => true;
         public override void SetDefaults(Projectile projectile)
         {
-            if (projectile.type == ProjectileID.RainbowRodBullet && c) projectile.penetrate = 3;
-
+            if (projectile.type == ProjectileID.RainbowRodBullet && c)
+            {
+                projectile.penetrate = 3;
+            }
         }
         public override void AI(Projectile projectile)
         {

@@ -7,6 +7,12 @@ namespace JourneyRecipes
     {
         public static Config Instance;
         public override ConfigScope Mode => ConfigScope.ClientSide;
+        [DefaultValue(true)]
+        [Label("Change item sprites?")]
+        [Tooltip("If this setting is turned on, this mod will update 1.3 textures, e.g. 1.4 Husks")]
+        [ReloadRequired]
+        public bool Resprite;
+
         [Header("Recipe Settings")]
         [DefaultValue(true)]
         [Label("[i:3281]   Change weapon recipes?")]

@@ -185,8 +185,8 @@ namespace JourneyRecipes.Buffs
                 if (type == BuffID.Sharpened || type == BuffID.Clairvoyance || type == BuffID.Bewitched || type == BuffID.AmmoBox)
                 {
                     player.buffTime[buffIndex] = 1;
-                    Main.buffNoTimeDisplay[buffIndex] = true;
-                    Main.buffNoSave[buffIndex] = true;
+                    Main.buffNoTimeDisplay[type] = true;
+                    Main.buffNoSave[type] = true;
                 }
             }
         }
