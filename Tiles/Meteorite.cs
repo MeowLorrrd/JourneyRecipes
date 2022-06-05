@@ -8,8 +8,7 @@ namespace JourneyRecipes.Tiles
     {
         public override bool CanExplode(int i, int j, int type)
         {
-            if (type == TileID.Meteorite && !Main.hardMode)
-                return false;
+            if (type == TileID.Meteorite && !Main.hardMode) return false;
             return base.CanExplode(i, j, type);
         }
     }
