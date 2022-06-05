@@ -9,8 +9,8 @@ namespace JourneyRecipes.Buffs
     {
         public override void SetDefaults(Item item)
         {
-            bool c = Config.Instance.allowBuffDuration;
-            if (c)
+            bool bt = Config.Instance.allowBuffDuration;
+            if (bt)//no {} needed as this will simply check in order to execute switch
             switch (item.type)
             {
                 case ItemID.CratePotion:
@@ -168,24 +168,51 @@ namespace JourneyRecipes.Buffs
         }
         public override void Update(int type, Player player, ref int buffIndex)
         {
-            switch (type)
+            bool bt = Config.Instance.allowBuffDuration;
+            bool bs = Config.Instance.allowBuffStat;
+            if (bs)
             {
-                case BuffID.Thorns:
-                    player.thorns = 1f;
-                    break;
-                case BuffID.Sharpened:
-                    player.GetModPlayer<JourneyRecipesPlayer>().Sharpened = true;
+                if (type == BuffID.Thorns) player.thorns = 1f;
+            }
+            if (bt)
+            {
+                if (type == BuffID.Sharpened || type == BuffID.Clairvoyance || type == BuffID.Bewitched || type == BuffID.AmmoBox)
+                {
                     player.buffTime[buffIndex] = 1;
                     Main.buffNoTimeDisplay[buffIndex] = true;
                     Main.buffNoSave[buffIndex] = true;
-                    break;
-                case BuffID.Clairvoyance:
-                case BuffID.Bewitched:
-                case BuffID.AmmoBox:
-                    player.buffTime[buffIndex] = 1;
-                    Main.buffNoTimeDisplay[buffIndex] = true;
-                    Main.buffNoSave[buffIndex] = true;
-                    break;
+                }
+            }
+        }
+    }
+    public class JourneyRecipesGlobalBuffTile : GlobalTile
+    {
+        public override void RightClick(int i, int j, int type)
+        {
+            bool bt = Config.Instance.allowBuffDuration;
+            Player p = Main.LocalPlayer;
+            if (bt)
+            {
+                if (type == TileID.SharpeningStation)
+                {
+                    p.ClearBuff(BuffID.Sharpened);//remove buff first, as this happens in same frame and buff timer will never show (otherwise single frame of timer will appear)
+                    p.AddBuff(BuffID.Sharpened, 1);//give 1 frame of buff, but in Update() will constantly refresh with 1 frame
+                }
+                if (type == TileID.BewitchingTable)
+                {
+                    p.ClearBuff(BuffID.Bewitched);
+                    p.AddBuff(BuffID.Bewitched, 1);
+                }
+                if (type == TileID.AmmoBox)
+                {
+                    p.ClearBuff(BuffID.AmmoBox);
+                    p.AddBuff(BuffID.AmmoBox, 1);
+                }
+                if (type == TileID.CrystalBall)
+                {
+                    p.ClearBuff(BuffID.Clairvoyance);
+                    p.AddBuff(BuffID.Clairvoyance, 1);
+                }
             }
         }
     }
