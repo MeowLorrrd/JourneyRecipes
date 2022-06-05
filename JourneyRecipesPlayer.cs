@@ -56,11 +56,11 @@ namespace JourneyRecipes
         }
         public override bool ConsumeAmmo(Item weapon, Item ammo)
         {
-            if (Config.Instance.allowArmorStat && Ammo10 && Main.rand.Next(10) == 0)
+            if (Config.Instance.allowArmorStat && Ammo10 && Main.rand.NextBool(10))
             {
                 return false;
             }
-            if (Config.Instance.allowArmorStat && Ammo20 && Main.rand.Next(5) == 0)
+            if (Config.Instance.allowArmorStat && Ammo20 && Main.rand.NextBool(5))
             {
                 return false;
             }
