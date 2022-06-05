@@ -68,6 +68,9 @@ Check the config to disable features you don't like!
 
 [i:549]Updates[i:549]:
 1.4.12 - Updated potions code, resulting in less clutter
+Umbrella can be used as a weapon
+Fixed bugs and finished incomplete code to match 1.4 more
+Lunar armor sell prices are now unaffected by Weapon Stat config (dunno why it did before)
 
 1.4.11 - Updated Reaver Shark code to be more matchy with 1.4
 Fixed Valhalla Knight's Leggings and Solar Flare set bugs
@@ -84,6 +87,6 @@ I won't add items added in 1.4, such as 'Stone Platform' or 'Ultrabright Helmet'
 
 You can freely use and decompile this mod for educational purposes, just don't re-upload it and take credit. Thank you.
 
-If you have any issues/feedback/suggestions, please report them to MeowLorrrd#4776 (Discord) or use the link inside the link from the homepage.
+If you have any issues/feedback/suggestions, please report them to MeowLorrrd#4776 (Discord) or use the Forms link from the homepage.
 
 Thank you for downloading!
