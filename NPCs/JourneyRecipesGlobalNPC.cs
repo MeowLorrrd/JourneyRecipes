@@ -26,6 +26,10 @@ namespace JourneyRecipes.NPCs
             {
                 npc.rarity = 5;
             }
+            if (Config.Instance.allowNPCStat && npc.type == NPCID.DukeFishron)
+            {
+                npc.value = 250000;
+            }
         }
         public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)
         {
