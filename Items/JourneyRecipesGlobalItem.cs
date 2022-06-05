@@ -126,10 +126,11 @@ namespace JourneyRecipes.Items
                     case 3021:
                     case 3022:
                     case 3023:
-                        item.value = Item.sellPrice(gold: 6);//+2hook
+                        item.value = Item.sellPrice(gold: 6);//+3hook nights edge
                         break;
                     case 1829:
                     case 1916:
+                    case 273:
                         item.value = Item.sellPrice(gold: 4);
                         break;
                     case 533:
