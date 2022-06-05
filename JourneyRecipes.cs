@@ -2515,14 +2515,104 @@ namespace JourneyRecipes
             }
             if (flag1)
             {
+                Main.buffTexture[BuffID.Wisp] = GetTexture("Resprite/Buff_57");
+                Main.itemTexture[ItemID.Flamarang] = GetTexture("Resprite/Item_119");
+                Main.itemTexture[ItemID.MoltenFury] = GetTexture("Resprite/Item_120");
+                Main.itemTexture[ItemID.FieryGreatsword] = GetTexture("Resprite/Item_121");
+                Main.itemTexture[ItemID.Bomb] = GetTexture("Resprite/Item_166");
+                Main.itemTexture[ItemID.Grenade] = GetTexture("Resprite/Item_168");
+                Main.itemTexture[ItemID.MoltenHamaxe] = GetTexture("Resprite/Item_217");
+                Main.itemTexture[ItemID.PhoenixBlaster] = GetTexture("Resprite/Item_219");
+                Main.itemTexture[ItemID.TrueNightsEdge] = GetTexture("Resprite/Item_675");
+                Main.itemTexture[ItemID.FrostStaff] = GetTexture("Resprite/Item_726");
+                Main.itemTexture[ItemID.TheRottedFork] = GetTexture("Resprite/Item_802");
+                Main.itemTexture[ItemID.CoinGun] = GetTexture("Resprite/Item_905");
+                Main.itemTexture[ItemID.ClimbingClaws] = GetTexture("Resprite/Item_953");
+                Main.itemTexture[ItemID.BlackBelt] = GetTexture("Resprite/Item_963");
+                Main.itemTexture[ItemID.Boomstick] = GetTexture("Resprite/Item_964");
+                Main.itemTexture[ItemID.ShoeSpikes] = GetTexture("Resprite/Item_975");
+                Main.itemTexture[ItemID.TigerClimbingGear] = GetTexture("Resprite/Item_976");
+                Main.itemTexture[ItemID.Tabi] = GetTexture("Resprite/Item_977");
+                Main.itemTexture[ItemID.Blowgun] = GetTexture("Resprite/Item_986");
+                Main.itemTexture[ItemID.EatersBone] = GetTexture("Resprite/Item_994");
                 Main.itemTexture[ItemID.CyanHusk] = GetTexture("Resprite/Item_1116");
                 Main.itemTexture[ItemID.RedHusk] = GetTexture("Resprite/Item_1115");
                 Main.itemTexture[ItemID.VioletHusk] = GetTexture("Resprite/Item_1117");
+                Main.itemTexture[ItemID.BeeGun] = GetTexture("Resprite/Item_1121");
+                Main.itemTexture[ItemID.PossessedHatchet] = GetTexture("Resprite/Item_1122");
+                Main.itemTexture[ItemID.BeeKeeper] = GetTexture("Resprite/Item_1123");
+                Main.itemTexture[ItemID.Beenade] = GetTexture("Resprite/Item_1130");
+                Main.itemTexture[ItemID.TempleKey] = GetTexture("Resprite/Item_1141");
+                Main.itemTexture[ItemID.WaspGun] = GetTexture("Resprite/Item_1155");
+                Main.itemTexture[ItemID.PiranhaGun] = GetTexture("Resprite/Item_1156");
                 Main.itemTexture[ItemID.BundleofBalloons] = GetTexture("Resprite/Item_1164");
                 Item bundleOfBalloons = new Item();
                 bundleOfBalloons.SetDefaults(ItemID.BundleofBalloons);
                 Main.accballoonLoaded[bundleOfBalloons.balloonSlot] = true;
                 Main.accBalloonTexture[bundleOfBalloons.balloonSlot] = GetTexture("Resprite/Acc_Balloon_3");//code from ExampleMod lol
+                Main.itemTexture[ItemID.LeafBlower] = GetTexture("Resprite/Item_1178");
+                Main.itemTexture[ItemID.Seedling] = GetTexture("Resprite/Item_1182");
+                Main.itemTexture[ItemID.WispinaBottle] = GetTexture("Resprite/Item_1183");
+                Main.itemTexture[ItemID.ChlorophytePartisan] = GetTexture("Resprite/Item_1228");
+                Main.itemTexture[ItemID.NimbusRod] = GetTexture("Resprite/Item_1244");
+                Main.itemTexture[ItemID.EyeoftheGolem] = GetTexture("Resprite/Item_1248");
+                Main.itemTexture[ItemID.SniperRifle] = GetTexture("Resprite/Item_1254");
+                Main.itemTexture[ItemID.VenusMagnum] = GetTexture("Resprite/Item_1255");
+                Main.itemTexture[ItemID.Stynger] = GetTexture("Resprite/Item_1258");
+                Main.itemTexture[ItemID.RainbowGun] = GetTexture("Resprite/Item_1260");
+                Main.itemTexture[ItemID.StyngerBolt] = GetTexture("Resprite/Item_1261");
+                Main.itemTexture[ItemID.FlowerofFrost] = GetTexture("Resprite/Item_1264");
+                Main.itemTexture[ItemID.Uzi] = GetTexture("Resprite/Item_1265");
+                Main.itemTexture[ItemID.PanicNecklace] = GetTexture("Resprite/Item_1290");
+                Main.itemTexture[ItemID.Picksaw] = GetTexture("Resprite/Item_1294");
+                Main.itemTexture[ItemID.HeatRay] = GetTexture("Resprite/Item_1295");
+                Main.itemTexture[ItemID.StaffofEarth] = GetTexture("Resprite/Item_1296");
+                Main.itemTexture[ItemID.GolemFist] = GetTexture("Resprite/Item_1297");
+                Main.itemTexture[ItemID.Binoculars] = GetTexture("Resprite/Item_1299");
+                Main.itemTexture[ItemID.TheAxe] = GetTexture("Resprite/Item_1305");
+                Main.itemTexture[ItemID.IceSickle] = GetTexture("Resprite/Item_1306");
+                Main.itemTexture[ItemID.ClothierVoodooDoll] = GetTexture("Resprite/Item_1307");
+                Main.itemTexture[ItemID.VenomStaff] = GetTexture("Resprite/Item_1308");
+                Main.itemTexture[ItemID.KOCannon] = GetTexture("Resprite/Item_1314");
+                Main.itemTexture[ItemID.ObsidianRose] = GetTexture("Resprite/Item_1323");
+                Main.itemTexture[ItemID.ChainKnife] = GetTexture("Resprite/Item_1325");
+                Main.itemTexture[ItemID.DeathSickle] = GetTexture("Resprite/Item_1327");
+                Main.itemTexture[ItemID.GoldenShower] = GetTexture("Resprite/Item_1336");
+                Main.itemTexture[ItemID.InfernoFork] = GetTexture("Resprite/Item_1445");
+                Main.itemTexture[ItemID.SpectreHamaxe] = GetTexture("Resprite/Item_1507");
+                Main.itemTexture[ItemID.PaladinsHammer] = GetTexture("Resprite/Item_1513");
+                Main.itemTexture[ItemID.SDMG] = GetTexture("Resprite/Item_1553");
+                Main.itemTexture[ItemID.VampireKnives] = GetTexture("Resprite/Item_1569");
+                Main.itemTexture[ItemID.SweetheartNecklace] = GetTexture("Resprite/Item_1578");
+                Main.itemTexture[ItemID.BlueFlare] = GetTexture("Resprite/Item_1614");
+                Main.itemTexture[ItemID.Sickle] = GetTexture("Resprite/Item_1786");
+                Main.itemTexture[ItemID.EldMelter] = GetTexture("Resprite/Item_1910");
+                Main.itemTexture[ItemID.BeesKnees] = GetTexture("Resprite/Item_2888");
+                Main.itemTexture[ItemID.DartPistol] = GetTexture("Resprite/Item_3007");
+                Main.itemTexture[ItemID.DartRifle] = GetTexture("Resprite/Item_3008");
+                Main.itemTexture[ItemID.HellwingBow] = GetTexture("Resprite/Item_3019");
+                Main.itemTexture[ItemID.WoodYoyo] = GetTexture("Resprite/Item_3278");
+                Main.itemTexture[ItemID.CorruptYoyo] = GetTexture("Resprite/Item_3279");
+                Main.itemTexture[ItemID.CrimsonYoyo] = GetTexture("Resprite/Item_3280");
+                Main.itemTexture[ItemID.JungleYoyo] = GetTexture("Resprite/Item_3281");
+                Main.itemTexture[ItemID.Cascade] = GetTexture("Resprite/Item_3282");
+                Main.itemTexture[ItemID.Chik] = GetTexture("Resprite/Item_3283");
+                Main.itemTexture[ItemID.Code2] = GetTexture("Resprite/Item_3284");
+                Main.itemTexture[ItemID.Rally] = GetTexture("Resprite/Item_3285");
+                Main.itemTexture[ItemID.Yelets] = GetTexture("Resprite/Item_3286");
+                Main.itemTexture[ItemID.RedsYoyo] = GetTexture("Resprite/Item_3287");
+                Main.itemTexture[ItemID.ValkyrieYoyo] = GetTexture("Resprite/Item_3288");
+                Main.itemTexture[ItemID.Amarok] = GetTexture("Resprite/Item_3289");
+                Main.itemTexture[ItemID.HelFire] = GetTexture("Resprite/Item_3290");
+                Main.itemTexture[ItemID.Kraken] = GetTexture("Resprite/Item_3291");
+                Main.itemTexture[ItemID.TheEyeOfCthulhu] = GetTexture("Resprite/Item_3292");
+                Main.itemTexture[ItemID.FormatC] = GetTexture("Resprite/Item_3315");
+                Main.itemTexture[ItemID.Gradient] = GetTexture("Resprite/Item_3316");
+                Main.itemTexture[ItemID.Valor] = GetTexture("Resprite/Item_3317");
+                Main.itemTexture[ItemID.HiveBackpack] = GetTexture("Resprite/Item_3333");
+                Main.itemTexture[ItemID.Terrarian] = GetTexture("Resprite/Item_3389");
+
+
             }
         }
     }
