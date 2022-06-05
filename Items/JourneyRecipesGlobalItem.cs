@@ -105,9 +105,86 @@ namespace JourneyRecipes.Items
                     case 3062:
                         item.value = Item.sellPrice(gold: 1, silver: 50);
                         break;
+                    case 2757:
+                    case 2760:
+                    case 2763:
+                    case 3381:
+                        item.value = Item.sellPrice(gold: 7);
+                        break;
+                    case 2758:
+                    case 2761:
+                    case 2764:
+                    case 3382:
+                        item.value = Item.sellPrice(gold: 14);
+                        break;
+                    case 2759:
+                    case 2762:
+                    case 2765:
+                    case 3383:
+                        item.value = Item.sellPrice(gold: 10, silver: 50);
+                        break;
+                    case 3020:
+                    case 3021:
+                    case 3022:
+                    case 3023:
+                        item.value = Item.sellPrice(gold: 6);
+                        break;
+                    case 1829:
+                    case 1916:
+                        item.value = Item.sellPrice(gold: 4);
+                        break;
+                    case 533:
+                    case 1265:
+                        item.value = Item.sellPrice(gold: 7);
+                        break;
+                    case 3006:
+                    case 3007:
+                    case 3008:
+                    case 3012:
+                    case 3013:
+                    case 3014:
+                    case 3015:
+                    case 3016:
+                    case 3029:
+                    case 3030:
+                    case 3051:
+                        item.value = Item.sellPrice(gold: 8);
+                        break;
+                    case 56:
+                        item.value = Item.sellPrice(silver: 10);
+                        break;
+                    case 57:
+                        item.value = Item.sellPrice(silver: 30);
+                        break;
+                    case 164:
+                        item.value = Item.sellPrice(gold: 1, silver: 75);
+                        break;
+                    case 391:
+                        item.value = Item.sellPrice(silver: 60);
+                        break;
+                    case 880:
+                        item.value = Item.sellPrice(silver: 39);
+                        break;
+                    case 1198:
+                        item.value = Item.sellPrice(silver: 68);
+                        break;
+                    case 1257:
+                        item.value = Item.sellPrice(silver: 13);
+                        break;
+                    case 3094:
+                        item.value = Item.sellPrice(copper: 5);
+                        break;
+                    case 3187:
+                        item.value = Item.sellPrice(silver: 35);
+                        break;
+                    case 3188:
+                        item.value = Item.sellPrice(silver: 28);
+                        break;
+                    case 3189:
+                        item.value = Item.sellPrice(silver: 21);
+                        break;
                 }
-            if (item.type == ItemID.Acorn)
-                item.autoReuse = true;
+            if (item.type == ItemID.Acorn) item.autoReuse = true;
             #region remove after testing
             if (Config.Instance.allowMaxStack)
             {
@@ -125,19 +202,19 @@ namespace JourneyRecipes.Items
             {
                 if (item.type == ItemID.Musket || item.type == ItemID.ShadowOrb || item.type == ItemID.Vilethorn || item.type == ItemID.BallOHurt || item.type == ItemID.BandofStarpower || item.type == ItemID.TheRottedFork || item.type == ItemID.TheUndertaker || item.type == ItemID.CrimsonHeart || item.type == ItemID.PanicNecklace || item.type == ItemID.CrimsonRod)
                 {
-                    item.value = Item.sellPrice(0, 1, 50, 0);
+                    //item.value = Item.sellPrice(0, 1, 50, 0);
                 }
                 if (Config.Instance.allowWeaponStat && item.type == ItemID.SolarFlareHelmet || item.type == ItemID.VortexHelmet || item.type == ItemID.NebulaHelmet || item.type == ItemID.StardustHelmet)
                 {
-                    item.value = Item.sellPrice(0, 7, 0, 0);
+                    //item.value = Item.sellPrice(0, 7, 0, 0);
                 }
                 if (Config.Instance.allowWeaponStat && item.type == ItemID.SolarFlareBreastplate || item.type == ItemID.VortexBreastplate || item.type == ItemID.NebulaBreastplate || item.type == ItemID.StardustBreastplate)
                 {
-                    item.value = Item.sellPrice(0, 14, 0, 0);
+                    //item.value = Item.sellPrice(0, 14, 0, 0);
                 }
                 if (Config.Instance.allowWeaponStat && item.type == ItemID.SolarFlareLeggings || item.type == ItemID.VortexLeggings || item.type == ItemID.NebulaLeggings || item.type == ItemID.StardustLeggings)
                 {
-                    item.value = Item.sellPrice(0, 10, 50, 0);
+                    //item.value = Item.sellPrice(0, 10, 50, 0);
                 }
                 if (item.type == ItemID.TitaniumBar)
                 {
