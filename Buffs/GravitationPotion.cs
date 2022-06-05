@@ -10,8 +10,8 @@ namespace JourneyRecipes.Buffs
         {
             if (Config.Instance.allowBuffDuration && item.type == ItemID.GravitationPotion)
             {
-                item.buffType = BuffID.Gravitation;
-                item.buffTime = 10800;
+                //item.buffType = BuffID.Gravitation;
+                //item.buffTime = 10800;
             }
         }
     }

@@ -110,7 +110,7 @@ namespace JourneyRecipes.Items.Armor
         {
             if (Config.Instance.allowArmorStat && item.type == ItemID.SquireAltPants)
             {
-                player.moveSpeed -= .2f;
+                player.moveSpeed -= .1f;
             }    
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)

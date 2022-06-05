@@ -143,7 +143,7 @@ namespace JourneyRecipes
         [Label("[i:297]   Change buff stats?")]
         [Tooltip("If this setting is turned off, this mod wiull not change buff stats, e.g. the 1.3 Invisibility Potion won't grant reduced enemy spawn rates" +
             "\nBy enabling this setting, certain buffs will have 1.4 stats" +
-            "\nCurrently only affects Invisibility Potion")]
+            "\nCurrently only affects Invisibility Potion and Sharpening Station")]
         [ReloadRequired]
         public bool allowBuffStat;
 

@@ -10,8 +10,8 @@ namespace JourneyRecipes.Buffs
         {
             if (Config.Instance.allowBuffDuration && item.type == ItemID.CratePotion)
             {
-                item.buffType = BuffID.Crate;
-                item.buffTime = 10800;
+                //item.buffType = BuffID.Crate;
+                //item.buffTime = 10800;
             }
         }
     }

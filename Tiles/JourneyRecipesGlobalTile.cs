@@ -3,7 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using System.Collections.Generic;
 
-namespace JourneyRecipes
+namespace JourneyRecipes.Tiles
 {
     public class JourneyRecipesGlobalTile : GlobalTile
     {

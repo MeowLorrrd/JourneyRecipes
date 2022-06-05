@@ -11,8 +11,8 @@ namespace JourneyRecipes.Buffs
         {
             if (Config.Instance.allowBuffDuration && item.type == ItemID.InvisibilityPotion)
             {
-                item.buffType = BuffID.Invisibility;
-                item.buffTime = 10800;
+                //item.buffType = BuffID.Invisibility;
+                //item.buffTime = 10800;
             }
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)

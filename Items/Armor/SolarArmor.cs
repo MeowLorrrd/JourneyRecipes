@@ -308,26 +308,12 @@ namespace JourneyRecipes.Items.Armor
     {
         public override void Update(int type, Player player, ref int buffIndex)
         {
-            if (Config.Instance.allowArmorStat && type == BuffID.SolarShield1)
-            {
-                player.endurance += .07f;
-            }
-            if (Config.Instance.allowArmorStat && type == BuffID.SolarShield2)
-            {
-                player.endurance += .13f;
-            }
-            if (Config.Instance.allowArmorStat && type == BuffID.SolarShield3)
-            {
-                player.endurance += .2f;
-            }
+            if (Config.Instance.allowArmorStat && (type == BuffID.SolarShield1 || type == BuffID.SolarShield2 || type == BuffID.SolarShield3)) player.endurance += .2f;
         }
         public override void ModifyBuffTip(int type, ref string tip, ref int rare)
         {
             base.ModifyBuffTip(type, ref tip, ref rare);
-            if (Config.Instance.allowArmorStat && type == BuffID.SolarShield1 || type == BuffID.SolarShield2 || type == BuffID.SolarShield3)
-            {
-                tip = "Damage taken reduced by 20%, repel enemies when taking damage";
-            }
+            if (Config.Instance.allowArmorStat && type == BuffID.SolarShield1 || type == BuffID.SolarShield2 || type == BuffID.SolarShield3) tip = "Damage taken reduced by 20%, repel enemies when taking damage";
         }
     }
 }

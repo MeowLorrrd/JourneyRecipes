@@ -2,9 +2,8 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using System.Collections.Generic;
-using JourneyRecipes;
 
-namespace JourneyRecipes
+namespace JourneyRecipes.NPCs
 {
     public class JourneyRecipesGlobalNPC : GlobalNPC
     {
@@ -32,7 +31,7 @@ namespace JourneyRecipes
         {
             if (Config.Instance.allowBuffStat && player.GetModPlayer<JourneyRecipesPlayer>().PlayerInvis)
             {
-                spawnRate = (int)(spawnRate *( 1.2f));
+                spawnRate = (int)(spawnRate * 1.2f);
             }
         }
     }

@@ -1,7 +1,8 @@
-This mod changes some 1.4 recipes into the 1.3 Modloader! With this mod, it takes less materials to craft items, and you can craft previously unavailable items, such as the Band of Starpower in a Crimson world!
+This mod changes some 1.4 recipes (and item stats) into the 1.3 Modloader! With this mod, it takes less materials to craft items, and you can craft previously unavailable items, such as the Band of Starpower in a Crimson world!
 
 Check the config to disable features you don't like!
 
+[c/ff0000:NOTE]: 1.4 tModLoader is coming closer to full release, so I won't be updating this mod anymore (or not as much). I will probably make a 1.4 QoL mod, but we'll see :)
 
 [i:549]Current changes[i:549]:
 -[c/FF0000:D][c/FFFE00:y][c/00FF00:e][c/0000FF:s]
@@ -67,6 +68,7 @@ Check the config to disable features you don't like!
 
 [i:549]Updates[i:549]:
 1.4.11 - Updated Reaver Shark code to be more matchy with 1.4
+Fixed Valhalla Knight's Leggings and Solar Flare set bugs
 
 1.4.10 - Hoplite, Chaos Elemental & Undead Miner have 1.3 drop stats again :/
 Moon Lord drops Greater Healing Potions again ://
