@@ -103,13 +103,13 @@ namespace JourneyRecipes.Items
                     case 1256:
                     case 1290:
                     case 3062:
-                        item.value = Item.sellPrice(gold: 1, silver: 50);
+                        item.value = Item.sellPrice(gold: 1, silver: 50);//orb/heart loot
                         break;
                     case 2757:
                     case 2760:
                     case 2763:
                     case 3381:
-                        item.value = Item.sellPrice(gold: 7);
+                        item.value = Item.sellPrice(gold: 7);//+3 lunar arm
                         break;
                     case 2758:
                     case 2761:
@@ -127,7 +127,7 @@ namespace JourneyRecipes.Items
                     case 3021:
                     case 3022:
                     case 3023:
-                        item.value = Item.sellPrice(gold: 6);
+                        item.value = Item.sellPrice(gold: 6);//+2hook
                         break;
                     case 1829:
                     case 1916:
@@ -135,7 +135,7 @@ namespace JourneyRecipes.Items
                         break;
                     case 533:
                     case 1265:
-                        item.value = Item.sellPrice(gold: 7);
+                        item.value = Item.sellPrice(gold: 7);//uzi megashark
                         break;
                     case 3006:
                     case 3007:
@@ -148,34 +148,34 @@ namespace JourneyRecipes.Items
                     case 3029:
                     case 3030:
                     case 3051:
-                        item.value = Item.sellPrice(gold: 8);
+                        item.value = Item.sellPrice(gold: 8);//mimic drops
                         break;
                     case 56:
-                        item.value = Item.sellPrice(silver: 10);
+                        item.value = Item.sellPrice(silver: 10);//demon ore
                         break;
                     case 57:
-                        item.value = Item.sellPrice(silver: 30);
+                        item.value = Item.sellPrice(silver: 30);//demon bar
                         break;
                     case 164:
-                        item.value = Item.sellPrice(gold: 1, silver: 75);
+                        item.value = Item.sellPrice(gold: 1, silver: 75);//handg
                         break;
                     case 391:
-                        item.value = Item.sellPrice(silver: 60);
+                        item.value = Item.sellPrice(silver: 60);//adam bar
                         break;
                     case 880:
-                        item.value = Item.sellPrice(silver: 39);
+                        item.value = Item.sellPrice(silver: 39);//crim bar
                         break;
                     case 1198:
-                        item.value = Item.sellPrice(silver: 68);
+                        item.value = Item.sellPrice(silver: 68);//tit bar
                         break;
                     case 1257:
-                        item.value = Item.sellPrice(silver: 13);
+                        item.value = Item.sellPrice(silver: 13);//crim ore
                         break;
                     case 3094:
-                        item.value = Item.sellPrice(copper: 5);
+                        item.value = Item.sellPrice(copper: 5);//jav
                         break;
                     case 3187:
-                        item.value = Item.sellPrice(silver: 35);
+                        item.value = Item.sellPrice(silver: 35);//+3 glad arm
                         break;
                     case 3188:
                         item.value = Item.sellPrice(silver: 28);
@@ -185,8 +185,8 @@ namespace JourneyRecipes.Items
                         break;
                 }
             if (item.type == ItemID.Acorn) item.autoReuse = true;
-            #region remove after testing
-            if (Config.Instance.allowMaxStack)
+            #region remove after testing stack
+            /*if (Config.Instance.allowMaxStack)
             {
                 if (item.type == ItemID.CopperBar || item.type == ItemID.TinBar || item.type == ItemID.IronBar || item.type == ItemID.LeadBar || item.type == ItemID.SilverBar || item.type == ItemID.TungstenBar || item.type == ItemID.GoldBar || item.type == ItemID.PlatinumBar || item.type == ItemID.DemoniteBar || item.type == ItemID.CrimtaneBar || item.type == ItemID.HellstoneBar || item.type == ItemID.CobaltBar || item.type == ItemID.PalladiumBar || item.type == ItemID.MythrilBar || item.type == ItemID.OrichalcumBar || item.type == ItemID.AdamantiteBar || item.type == ItemID.TitaniumBar || item.type == ItemID.HallowedBar || item.type == ItemID.ChlorophyteBar || item.type == ItemID.ShroomiteBar || item.type == ItemID.SpectreBar || item.type == ItemID.LunarBar || item.type == ItemID.MeteoriteBar || item.type == ItemID.Glowstick || item.type == ItemID.StickyGlowstick || item.type == ItemID.BouncyGlowstick || item.type == ItemID.SpelunkerGlowstick || item.type == ItemID.Torch || item.type == ItemID.BlueTorch || item.type == ItemID.BoneTorch || item.type == ItemID.CursedTorch || item.type == ItemID.DemonTorch || item.type == ItemID.GreenTorch || item.type == ItemID.IceTorch || item.type == ItemID.IchorTorch || item.type == ItemID.OrangeTorch || item.type == ItemID.PinkTorch || item.type == ItemID.PurpleTorch || item.type == ItemID.RainbowTorch || item.type == ItemID.RedTorch || item.type == ItemID.UltrabrightTorch || item.type == ItemID.WhiteTorch || item.type == ItemID.YellowTorch || item.type == ItemID.FallenStar || item.type == ItemID.Daybloom || item.type == ItemID.Blinkroot || item.type == ItemID.Deathweed || item.type == ItemID.Shiverthorn || item.type == ItemID.Waterleaf || item.type == ItemID.Moonglow || item.type == ItemID.Fireblossom || item.type == ItemID.DaybloomSeeds || item.type == ItemID.BlinkrootSeeds || item.type == ItemID.DeathweedSeeds || item.type == ItemID.ShiverthornSeeds || item.type == ItemID.WaterleafSeeds || item.type == ItemID.MoonglowSeeds || item.type == ItemID.FireblossomSeeds || item.type == ItemID.PumpkinSeed || item.type == ItemID.ShadowScale || item.type == ItemID.TissueSample)
                 {
@@ -196,9 +196,10 @@ namespace JourneyRecipes.Items
                 {
                     //item.maxStack = 99;
                 }
-            }
+            }*/
             #endregion
-            if (Config.Instance.allowSellChange)
+            #region remove after testing sell
+            /*if (Config.Instance.allowSellChange)
             {
                 if (item.type == ItemID.Musket || item.type == ItemID.ShadowOrb || item.type == ItemID.Vilethorn || item.type == ItemID.BallOHurt || item.type == ItemID.BandofStarpower || item.type == ItemID.TheRottedFork || item.type == ItemID.TheUndertaker || item.type == ItemID.CrimsonHeart || item.type == ItemID.PanicNecklace || item.type == ItemID.CrimsonRod)
                 {
@@ -272,7 +273,8 @@ namespace JourneyRecipes.Items
                 {
                     item.value = Item.sellPrice(0, 1, 75, 0);
                 }
-            }
+            }*/
+            #endregion
         }
     }
 }
