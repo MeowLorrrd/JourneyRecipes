@@ -156,8 +156,14 @@ namespace JourneyRecipes.Items
                     case 57:
                         item.value = Item.sellPrice(silver: 30);//demon bar
                         break;
+                    case 113:
+                    case 155:
+                    case 157:
+                    case 163:
                     case 164:
-                        item.value = Item.sellPrice(gold: 1, silver: 75);//handg
+                    case 329:
+                    case 3313:
+                        item.value = Item.sellPrice(gold: 1, silver: 75);//dungeon loot
                         break;
                     case 391:
                         item.value = Item.sellPrice(silver: 60);//adam bar
