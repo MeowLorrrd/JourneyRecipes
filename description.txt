@@ -67,6 +67,8 @@ Check the config to disable features you don't like!
 
 
 [i:549]Updates[i:549]:
+1.4.12 - Updated potions code, resulting in less clutter
+
 1.4.11 - Updated Reaver Shark code to be more matchy with 1.4
 Fixed Valhalla Knight's Leggings and Solar Flare set bugs
 
@@ -75,8 +77,6 @@ Moon Lord drops Greater Healing Potions again ://
 Fixed bug relating to player receiving Cursed for 2 frames too many in Expert Mode by Giant Cursed Skull's projectile :///
 Saved bytes by removing old / shortening code :p
 Panic Necklace and Band of Starpower no longer require a tombstone to be nearby :pp
-
-1.4.9 - Fixed Silver Bullet with Tungsten bar recipe only giving 1 bullet
 
 
 [i:549]Notes[i:549]:
