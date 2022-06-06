@@ -202,8 +202,14 @@ namespace JourneyRecipes
         [Header("Misc settings")]
         [DefaultValue(true)]
         [Label("Change textures?")]
-        [Tooltip("If this setting is turned on, this mod will update 1.3 textures, e.g. 1.4 Husks, dungeon enemies, etc")]
+        [Tooltip("If this setting is turned on, this mod will update 1.3 textures, e.g. 1.4, dungeon enemies, projectiles\nCurrently disabled for items")]
         [ReloadRequired]
         public bool Resprite;
+
+        [DefaultValue(false)]
+        [Label("Change item textures?")]
+        [Tooltip("If this setting is turned on, this mod will update 1.3 item textures, e.g. 1.4 Husks, weapons, accessories, etc\nCurrently unstable (will crash game if unloaded, otherwise works as intended)\n \n ")]
+        [ReloadRequired]
+        public bool ItemResprite;
     }
 }

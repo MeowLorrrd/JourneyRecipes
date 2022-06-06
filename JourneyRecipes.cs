@@ -1,13 +1,24 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using System.Collections.Generic;
+using log4net;
+using System;
+using System.IO;
+using Microsoft.Xna;
+using Microsoft.Xna.Framework;
+using Terraria.UI;
 
 namespace JourneyRecipes
 {
     public class JourneyRecipes : Mod
     {
-        public override void AddRecipes()
+        public static JourneyRecipes Instance;
+        public static TextureHandler Textures => Instance.textures;
+        private TextureHandler textures;
+        public override void AddRecipes()//the actual focus of this mod, just ctrl+c ctrl+v
         {
+            base.AddRecipes();
             #region Tools, Weapons, Armor Recipe
             #region Copper
             if (Config.Instance.allowToolRecipes)
@@ -2502,16 +2513,208 @@ namespace JourneyRecipes
                 CratePotion.AddTile(TileID.Bottles);
                 CratePotion.SetResult(ItemID.CratePotion);
                 CratePotion.AddRecipe();
-                
+
             }
             #endregion
         }
         public override void Load()
         {
-            bool flag1 = Config.Instance.Resprite && !Main.dedServ;
-            if (flag1)
+            //LoadSprites()
+        }
+        public override void Unload()
+        {
+            base.Unload();
+            
+            bool flag3 = Config.Instance.allowBuffDuration;
+
+            if (flag3)
             {
-                Main.buffTexture[BuffID.Wisp] = GetTexture("Resprite/Buff_57");
+                Main.buffNoTimeDisplay[BuffID.Sharpened] = false;
+                Main.buffNoTimeDisplay[BuffID.Clairvoyance] = false;
+                Main.buffNoTimeDisplay[BuffID.Bewitched] = false;
+                Main.buffNoTimeDisplay[BuffID.AmmoBox] = false;
+                Main.buffNoSave[BuffID.Sharpened] = false;
+                Main.buffNoSave[BuffID.Clairvoyance] = false;
+                Main.buffNoSave[BuffID.Bewitched] = false;
+                Main.buffNoSave[BuffID.AmmoBox] = false;
+            }
+            //UnloadSprites();
+        }
+        private void LoadSprites()
+        {
+            bool flag1 = Config.Instance.Resprite && !Main.dedServ;
+            bool flag2 = Config.Instance.ItemResprite && !Main.dedServ;
+            if (!flag1)
+            {
+                Main.instance.LoadNPC(NPCID.AngryBones);
+                Main.npcTexture[NPCID.AngryBones] = GetTexture("Resprite/NPC_31");
+                Main.instance.LoadNPC(NPCID.Harpy);
+                Main.npcTexture[NPCID.Harpy] = GetTexture("Resprite/NPC_48");
+                Main.instance.LoadNPC(NPCID.Vulture);
+                Main.npcTexture[NPCID.Vulture] = GetTexture("Resprite/NPC_61");
+                Main.instance.LoadNPC(NPCID.Demon);
+                Main.npcTexture[NPCID.Demon] = GetTexture("Resprite/NPC_62");
+                Main.instance.LoadNPC(NPCID.VoodooDemon);
+                Main.npcTexture[NPCID.VoodooDemon] = GetTexture("Resprite/NPC_66");
+                Main.instance.LoadNPC(NPCID.Mummy);
+                Main.npcTexture[NPCID.Mummy] = GetTexture("Resprite/NPC_78");
+                Main.instance.LoadNPC(NPCID.DarkMummy);
+                Main.npcTexture[NPCID.DarkMummy] = GetTexture("Resprite/NPC_79");
+                Main.instance.LoadNPC(NPCID.LightMummy);
+                Main.npcTexture[NPCID.LightMummy] = GetTexture("Resprite/NPC_80");
+                Main.instance.LoadNPC(NPCID.Wolf);
+                Main.npcTexture[NPCID.Wolf] = GetTexture("Resprite/NPC_155");
+                Main.instance.LoadNPC(NPCID.CochinealBeetle);
+                Main.npcTexture[NPCID.CochinealBeetle] = GetTexture("Resprite/NPC_217");
+                Main.instance.LoadNPC(NPCID.CyanBeetle);
+                Main.npcTexture[NPCID.CyanBeetle] = GetTexture("Resprite/NPC_218");
+                Main.instance.LoadNPC(NPCID.LacBeetle);
+                Main.npcTexture[NPCID.LacBeetle] = GetTexture("Resprite/NPC_219");
+                Main.instance.LoadNPC(NPCID.QueenBee);
+                Main.npcTexture[NPCID.QueenBee] = GetTexture("Resprite/NPC_222");
+                Main.instance.LoadNPC(NPCID.JungleCreeper);
+                Main.npcTexture[NPCID.JungleCreeper] = GetTexture("Resprite/NPC_236");
+                Main.instance.LoadNPC(NPCID.JungleCreeperWall);
+                Main.npcTexture[NPCID.JungleCreeperWall] = GetTexture("Resprite/NPC_237");
+                Main.instance.LoadNPC(NPCID.BloodFeeder);
+                Main.npcTexture[NPCID.BloodFeeder] = GetTexture("Resprite/NPC_241");
+                Main.instance.LoadNPC(NPCID.IceGolem);
+                Main.npcTexture[NPCID.IceGolem] = GetTexture("Resprite/NPC_243");
+                Main.instance.LoadNPC(NPCID.Golem);
+                Main.npcTexture[NPCID.Golem] = GetTexture("Resprite/NPC_245");
+                Main.instance.LoadNPC(NPCID.GolemHead);
+                Main.npcTexture[NPCID.GolemHead] = GetTexture("Resprite/NPC_246");
+                Main.instance.LoadNPC(NPCID.GolemFistLeft);
+                Main.npcTexture[NPCID.GolemFistLeft] = GetTexture("Resprite/NPC_247");
+                Main.instance.LoadNPC(NPCID.GolemFistRight);
+                Main.npcTexture[NPCID.GolemFistRight] = GetTexture("Resprite/NPC_248");
+                Main.instance.LoadNPC(NPCID.GolemHeadFree);
+                Main.npcTexture[NPCID.GolemHeadFree] = GetTexture("Resprite/NPC_249");
+                Main.instance.LoadNPC(NPCID.Eyezor);
+                Main.npcTexture[NPCID.Eyezor] = GetTexture("Resprite/NPC_251");
+                Main.instance.LoadNPC(NPCID.ZombieMushroom);
+                Main.npcTexture[NPCID.ZombieMushroom] = GetTexture("Resprite/NPC_254");
+                Main.instance.LoadNPC(NPCID.ZombieMushroomHat);
+                Main.npcTexture[NPCID.ZombieMushroomHat] = GetTexture("Resprite/NPC_255");
+                Main.instance.LoadNPC(NPCID.FungoFish);
+                Main.npcTexture[NPCID.FungoFish] = GetTexture("Resprite/NPC_256");
+                Main.instance.LoadNPC(NPCID.MushiLadybug);
+                Main.npcTexture[NPCID.MushiLadybug] = GetTexture("Resprite/NPC_258");
+                Main.instance.LoadNPC(NPCID.FungiBulb);
+                Main.npcTexture[NPCID.FungiBulb] = GetTexture("Resprite/NPC_259");
+                Main.instance.LoadNPC(NPCID.GiantFungiBulb);
+                Main.npcTexture[NPCID.GiantFungiBulb] = GetTexture("Resprite/NPC_260");
+                Main.instance.LoadNPC(NPCID.Plantera);
+                Main.npcTexture[NPCID.Plantera] = GetTexture("Resprite/NPC_262");
+                Main.instance.LoadNPC(NPCID.PlanterasHook);
+                Main.npcTexture[NPCID.PlanterasHook] = GetTexture("Resprite/NPC_263");
+                Main.instance.LoadNPC(NPCID.PlanterasTentacle);
+                Main.npcTexture[NPCID.PlanterasTentacle] = GetTexture("Resprite/NPC_264");
+                Main.instance.LoadNPC(NPCID.Spore);
+                Main.npcTexture[NPCID.Spore] = GetTexture("Resprite/NPC_265");
+                Main.instance.LoadNPC(NPCID.Creeper);
+                Main.npcTexture[NPCID.Creeper] = GetTexture("Resprite/NPC_267");
+                Main.instance.LoadNPC(NPCID.RustyArmoredBonesAxe);
+                Main.npcTexture[NPCID.RustyArmoredBonesAxe] = GetTexture("Resprite/NPC_269");
+                Main.instance.LoadNPC(NPCID.RustyArmoredBonesFlail);
+                Main.npcTexture[NPCID.RustyArmoredBonesFlail] = GetTexture("Resprite/NPC_270");
+                Main.instance.LoadNPC(NPCID.RustyArmoredBonesSword);
+                Main.npcTexture[NPCID.RustyArmoredBonesSword] = GetTexture("Resprite/NPC_271");
+                Main.instance.LoadNPC(NPCID.RustyArmoredBonesSwordNoArmor);
+                Main.npcTexture[NPCID.RustyArmoredBonesSwordNoArmor] = GetTexture("Resprite/NPC_272");
+                Main.instance.LoadNPC(NPCID.BlueArmoredBones);
+                Main.npcTexture[NPCID.BlueArmoredBones] = GetTexture("Resprite/NPC_273");
+                Main.instance.LoadNPC(NPCID.BlueArmoredBonesMace);
+                Main.npcTexture[NPCID.BlueArmoredBonesMace] = GetTexture("Resprite/NPC_274");
+                Main.instance.LoadNPC(NPCID.BlueArmoredBonesNoPants);
+                Main.npcTexture[NPCID.BlueArmoredBonesNoPants] = GetTexture("Resprite/NPC_275");
+                Main.instance.LoadNPC(NPCID.BlueArmoredBonesSword);
+                Main.npcTexture[NPCID.BlueArmoredBonesSword] = GetTexture("Resprite/NPC_276");
+                Main.instance.LoadNPC(NPCID.HellArmoredBones);
+                Main.npcTexture[NPCID.HellArmoredBones] = GetTexture("Resprite/NPC_277");
+                Main.instance.LoadNPC(NPCID.HellArmoredBonesSpikeShield);
+                Main.npcTexture[NPCID.HellArmoredBonesSpikeShield] = GetTexture("Resprite/NPC_278");
+                Main.instance.LoadNPC(NPCID.HellArmoredBonesMace);
+                Main.npcTexture[NPCID.HellArmoredBonesMace] = GetTexture("Resprite/NPC_279");
+                Main.instance.LoadNPC(NPCID.HellArmoredBonesSword);
+                Main.npcTexture[NPCID.HellArmoredBonesSword] = GetTexture("Resprite/NPC_280");
+                Main.instance.LoadNPC(NPCID.RaggedCaster);
+                Main.npcTexture[NPCID.RaggedCaster] = GetTexture("Resprite/NPC_281");
+                Main.instance.LoadNPC(NPCID.RaggedCasterOpenCoat);
+                Main.npcTexture[NPCID.RaggedCasterOpenCoat] = GetTexture("Resprite/NPC_282");
+                Main.instance.LoadNPC(NPCID.Necromancer);
+                Main.npcTexture[NPCID.Necromancer] = GetTexture("Resprite/NPC_283");
+                Main.instance.LoadNPC(NPCID.NecromancerArmored);
+                Main.npcTexture[NPCID.NecromancerArmored] = GetTexture("Resprite/NPC_284");
+                Main.instance.LoadNPC(NPCID.DiabolistRed);
+                Main.npcTexture[NPCID.DiabolistRed] = GetTexture("Resprite/NPC_285");
+                Main.instance.LoadNPC(NPCID.DiabolistWhite);
+                Main.npcTexture[NPCID.DiabolistWhite] = GetTexture("Resprite/NPC_286");
+                Main.instance.LoadNPC(NPCID.BoneLee);
+                Main.npcTexture[NPCID.BoneLee] = GetTexture("Resprite/NPC_287");
+                Main.instance.LoadNPC(NPCID.Paladin);
+                Main.npcTexture[NPCID.Paladin] = GetTexture("Resprite/NPC_290");
+                Main.instance.LoadNPC(NPCID.SkeletonSniper);
+                Main.npcTexture[NPCID.SkeletonSniper] = GetTexture("Resprite/NPC_291");
+                Main.instance.LoadNPC(NPCID.TacticalSkeleton);
+                Main.npcTexture[NPCID.TacticalSkeleton] = GetTexture("Resprite/NPC_292");
+                Main.instance.LoadNPC(NPCID.SkeletonCommando);
+                Main.npcTexture[NPCID.SkeletonCommando] = GetTexture("Resprite/NPC_293");
+                Main.instance.LoadNPC(NPCID.AngryBonesBig);
+                Main.npcTexture[NPCID.AngryBonesBig] = GetTexture("Resprite/NPC_294");
+                Main.instance.LoadNPC(NPCID.AngryBonesBigMuscle);
+                Main.npcTexture[NPCID.AngryBonesBigMuscle] = GetTexture("Resprite/NPC_295");
+                Main.instance.LoadNPC(NPCID.AngryBonesBigHelmet);
+                Main.npcTexture[NPCID.AngryBonesBigHelmet] = GetTexture("Resprite/NPC_296");
+                Main.instance.LoadNPC(NPCID.Everscream);
+                Main.npcTexture[NPCID.Everscream] = GetTexture("Resprite/NPC_344");
+                Main.instance.LoadProjectile(ProjectileID.Flamarang);
+                Main.projectileTexture[ProjectileID.Flamarang] = GetTexture("Resprite/Projectile_19");
+                Main.instance.LoadProjectile(ProjectileID.Grenade);
+                Main.projectileTexture[ProjectileID.Grenade] = GetTexture("Resprite/Projectile_30");
+                Main.instance.LoadProjectile(ProjectileID.TheRottedFork);
+                Main.projectileTexture[ProjectileID.TheRottedFork] = GetTexture("Resprite/Projectile_153");
+                Main.instance.LoadProjectile(ProjectileID.MechanicalPiranha);
+                Main.projectileTexture[ProjectileID.MechanicalPiranha] = GetTexture("Resprite/Projectile_190");
+                Main.instance.LoadProjectile(ProjectileID.PygmySpear);
+                Main.projectileTexture[ProjectileID.PygmySpear] = GetTexture("Resprite/Projectile_195");
+                Main.instance.LoadProjectile(ProjectileID.Sapling);
+                Main.projectileTexture[ProjectileID.Sapling] = GetTexture("Resprite/Projectile_210");
+                Main.instance.LoadProjectile(ProjectileID.ChlorophytePartisan);
+                Main.projectileTexture[ProjectileID.ChlorophytePartisan] = GetTexture("Resprite/Projectile_222");
+                Main.instance.LoadProjectile(ProjectileID.SporeCloud);
+                Main.projectileTexture[ProjectileID.SporeCloud] = GetTexture("Resprite/Projectile_228");
+                Main.instance.LoadProjectile(ProjectileID.Stynger);
+                Main.projectileTexture[ProjectileID.Stynger] = GetTexture("Resprite/Projectile_246");
+                Main.instance.LoadProjectile(ProjectileID.StyngerShrapnel);
+                Main.projectileTexture[ProjectileID.StyngerShrapnel] = GetTexture("Resprite/Projectile_249");
+                Main.instance.LoadProjectile(ProjectileID.BoulderStaffOfEarth);
+                Main.projectileTexture[ProjectileID.BoulderStaffOfEarth] = GetTexture("Resprite/Projectile_261");
+                Main.instance.LoadProjectile(ProjectileID.GolemFist);
+                Main.projectileTexture[ProjectileID.GolemFist] = GetTexture("Resprite/Projectile_262");
+                Main.instance.LoadProjectile(ProjectileID.PoisonFang);
+                Main.projectileTexture[ProjectileID.PoisonFang] = GetTexture("Resprite/Projectile_265");
+                Main.instance.LoadProjectile(ProjectileID.BabySlime);
+                Main.projectileTexture[ProjectileID.BabySlime] = GetTexture("Resprite/Projectile_266");
+                Main.instance.LoadProjectile(ProjectileID.EyeSpring);
+                Main.projectileTexture[ProjectileID.EyeSpring] = GetTexture("Resprite/Projectile_268");
+                Main.instance.LoadProjectile(ProjectileID.BoxingGlove);
+                Main.projectileTexture[ProjectileID.BoxingGlove] = GetTexture("Resprite/Projectile_271");
+                Main.instance.LoadProjectile(ProjectileID.ChainKnife);
+                Main.projectileTexture[ProjectileID.ChainKnife] = GetTexture("Resprite/Projectile_273");
+                Main.instance.LoadProjectile(ProjectileID.InfernoFriendlyBolt);
+                Main.projectileTexture[ProjectileID.InfernoFriendlyBolt] = GetTexture("Resprite/Projectile_295");
+                Main.instance.LoadProjectile(ProjectileID.InfernoFriendlyBlast);
+                Main.projectileTexture[ProjectileID.InfernoFriendlyBlast] = GetTexture("Resprite/Projectile_296");
+                Main.instance.LoadProjectile(ProjectileID.Hellwing);
+                Main.projectileTexture[ProjectileID.Hellwing] = GetTexture("Resprite/Projectile_485");
+                //find Short Bones, Big Bones texture files (?)
+                Main.instance.LoadTiles(TileID.DyePlants);
+                Main.tileTexture[TileID.DyePlants] = GetTexture("Resprite/Tiles_227");
+                //Main.buffTexture[BuffID.Wisp] = GetTexture("Resprite/Buff_57");
+            }
+            if (!flag2)
+            {
                 Main.itemTexture[ItemID.Flamarang] = GetTexture("Resprite/Item_119");
                 Main.itemTexture[ItemID.MoltenFury] = GetTexture("Resprite/Item_120");
                 Main.itemTexture[ItemID.FieryGreatsword] = GetTexture("Resprite/Item_121");
@@ -2584,6 +2787,7 @@ namespace JourneyRecipes
                 Main.itemTexture[ItemID.ObsidianRose] = GetTexture("Resprite/Item_1323");
                 Main.itemTexture[ItemID.ChainKnife] = GetTexture("Resprite/Item_1325");
                 Main.itemTexture[ItemID.DeathSickle] = GetTexture("Resprite/Item_1327");
+                Main.itemTexture[ItemID.TurtleShell] = GetTexture("Resprite/Item_1328");
                 Main.itemTexture[ItemID.GoldenShower] = GetTexture("Resprite/Item_1336");
                 Main.itemTexture[ItemID.InfernoFork] = GetTexture("Resprite/Item_1445");
                 Main.itemTexture[ItemID.SpectreHamaxe] = GetTexture("Resprite/Item_1507");
@@ -2592,6 +2796,7 @@ namespace JourneyRecipes
                 Main.itemTexture[ItemID.SDMG] = GetTexture("Resprite/Item_1553");
                 Main.itemTexture[ItemID.VampireKnives] = GetTexture("Resprite/Item_1569");
                 Main.itemTexture[ItemID.BrokenHeroSword] = GetTexture("Resprite/Item_1570");
+                Main.itemTexture[ItemID.ScourgeoftheCorruptor] = GetTexture("Resprite/Item_1571");
                 Main.itemTexture[ItemID.SweetheartNecklace] = GetTexture("Resprite/Item_1578");
                 Main.itemTexture[ItemID.BlueFlare] = GetTexture("Resprite/Item_1614");
                 Main.itemTexture[ItemID.PumpkinPie] = GetTexture("Resprite/Item_1787");
@@ -2622,90 +2827,181 @@ namespace JourneyRecipes
                 Main.itemTexture[ItemID.Valor] = GetTexture("Resprite/Item_3317");
                 Main.itemTexture[ItemID.HiveBackpack] = GetTexture("Resprite/Item_3333");
                 Main.itemTexture[ItemID.Terrarian] = GetTexture("Resprite/Item_3389");
-                Main.npcTexture[NPCID.AngryBones] = GetTexture("Resprite/NPC_31");
-                Main.npcTexture[NPCID.Harpy] = GetTexture("Resprite/NPC_48");
-                Main.npcTexture[NPCID.Vulture] = GetTexture("Resprite/NPC_61");
-                Main.npcTexture[NPCID.Demon] = GetTexture("Resprite/NPC_62");
-                Main.npcTexture[NPCID.VoodooDemon] = GetTexture("Resprite/NPC_66");
-                Main.npcTexture[NPCID.Mummy] = GetTexture("Resprite/NPC_78");
-                Main.npcTexture[NPCID.DarkMummy] = GetTexture("Resprite/NPC_79");
-                Main.npcTexture[NPCID.LightMummy] = GetTexture("Resprite/NPC_80");
-                Main.npcTexture[NPCID.Wolf] = GetTexture("Resprite/NPC_155");
-                Main.npcTexture[NPCID.CochinealBeetle] = GetTexture("Resprite/NPC_217");
-                Main.npcTexture[NPCID.CyanBeetle] = GetTexture("Resprite/NPC_218");
-                Main.npcTexture[NPCID.LacBeetle] = GetTexture("Resprite/NPC_219");
-                Main.npcTexture[NPCID.QueenBee] = GetTexture("Resprite/NPC_222");
-                Main.npcTexture[NPCID.JungleCreeper] = GetTexture("Resprite/NPC_236");
-                Main.npcTexture[NPCID.JungleCreeperWall] = GetTexture("Resprite/NPC_237");
-                Main.npcTexture[NPCID.BloodFeeder] = GetTexture("Resprite/NPC_241");
-                Main.npcTexture[NPCID.IceGolem] = GetTexture("Resprite/NPC_243");
-                Main.npcTexture[NPCID.Golem] = GetTexture("Resprite/NPC_245");
-                Main.npcTexture[NPCID.GolemHead] = GetTexture("Resprite/NPC_246");
-                Main.npcTexture[NPCID.GolemFistLeft] = GetTexture("Resprite/NPC_247");
-                Main.npcTexture[NPCID.GolemFistRight] = GetTexture("Resprite/NPC_248");
-                Main.npcTexture[NPCID.GolemHeadFree] = GetTexture("Resprite/NPC_249");
-                Main.npcTexture[NPCID.Eyezor] = GetTexture("Resprite/NPC_251");
-                Main.npcTexture[NPCID.ZombieMushroom] = GetTexture("Resprite/NPC_254");
-                Main.npcTexture[NPCID.ZombieMushroomHat] = GetTexture("Resprite/NPC_255");
-                Main.npcTexture[NPCID.FungoFish] = GetTexture("Resprite/NPC_256");
-                Main.npcTexture[NPCID.MushiLadybug] = GetTexture("Resprite/NPC_258");
-                Main.npcTexture[NPCID.FungiBulb] = GetTexture("Resprite/NPC_259");
-                Main.npcTexture[NPCID.GiantFungiBulb] = GetTexture("Resprite/NPC_260");
-                Main.npcTexture[NPCID.Plantera] = GetTexture("Resprite/NPC_262");
-                Main.npcTexture[NPCID.PlanterasHook] = GetTexture("Resprite/NPC_263");
-                Main.npcTexture[NPCID.PlanterasTentacle] = GetTexture("Resprite/NPC_264");
-                Main.npcTexture[NPCID.Spore] = GetTexture("Resprite/NPC_265");
-                Main.npcTexture[NPCID.Creeper] = GetTexture("Resprite/NPC_267");
-                Main.npcTexture[NPCID.RustyArmoredBonesAxe] = GetTexture("Resprite/NPC_269");
-                Main.npcTexture[NPCID.RustyArmoredBonesFlail] = GetTexture("Resprite/NPC_270");
-                Main.npcTexture[NPCID.RustyArmoredBonesSword] = GetTexture("Resprite/NPC_271");
-                Main.npcTexture[NPCID.RustyArmoredBonesSwordNoArmor] = GetTexture("Resprite/NPC_272");
-                Main.npcTexture[NPCID.BlueArmoredBones] = GetTexture("Resprite/NPC_273");
-                Main.npcTexture[NPCID.BlueArmoredBonesMace] = GetTexture("Resprite/NPC_274");
-                Main.npcTexture[NPCID.BlueArmoredBonesNoPants] = GetTexture("Resprite/NPC_275");
-                Main.npcTexture[NPCID.BlueArmoredBonesSword] = GetTexture("Resprite/NPC_276");
-                Main.npcTexture[NPCID.HellArmoredBones] = GetTexture("Resprite/NPC_277");
-                Main.npcTexture[NPCID.HellArmoredBonesSpikeShield] = GetTexture("Resprite/NPC_278");
-                Main.npcTexture[NPCID.HellArmoredBonesMace] = GetTexture("Resprite/NPC_279");
-                Main.npcTexture[NPCID.HellArmoredBonesSword] = GetTexture("Resprite/NPC_280");
-                Main.npcTexture[NPCID.RaggedCaster] = GetTexture("Resprite/NPC_281");
-                Main.npcTexture[NPCID.RaggedCasterOpenCoat] = GetTexture("Resprite/NPC_282");
-                Main.npcTexture[NPCID.Necromancer] = GetTexture("Resprite/NPC_283");
-                Main.npcTexture[NPCID.NecromancerArmored] = GetTexture("Resprite/NPC_284");
-                Main.npcTexture[NPCID.DiabolistRed] = GetTexture("Resprite/NPC_285");
-                Main.npcTexture[NPCID.DiabolistWhite] = GetTexture("Resprite/NPC_286");
-                Main.npcTexture[NPCID.BoneLee] = GetTexture("Resprite/NPC_287");
-                Main.npcTexture[NPCID.Paladin] = GetTexture("Resprite/NPC_290");
-                Main.npcTexture[NPCID.SkeletonSniper] = GetTexture("Resprite/NPC_291");
-                Main.npcTexture[NPCID.TacticalSkeleton] = GetTexture("Resprite/NPC_292");
-                Main.npcTexture[NPCID.SkeletonCommando] = GetTexture("Resprite/NPC_293");
-                Main.npcTexture[NPCID.AngryBonesBig] = GetTexture("Resprite/NPC_294");
-                Main.npcTexture[NPCID.AngryBonesBigMuscle] = GetTexture("Resprite/NPC_295");
-                Main.npcTexture[NPCID.AngryBonesBigHelmet] = GetTexture("Resprite/NPC_296");
-                Main.npcTexture[NPCID.Everscream] = GetTexture("Resprite/NPC_344");
-                Main.projectileTexture[ProjectileID.Flamarang] = GetTexture("Resprite/Projectile_19");
-                Main.projectileTexture[ProjectileID.Grenade] = GetTexture("Resprite/Projectile_30");
-                Main.projectileTexture[ProjectileID.TheRottedFork] = GetTexture("Resprite/Projectile_153");
-                Main.projectileTexture[ProjectileID.MechanicalPiranha] = GetTexture("Resprite/Projectile_190");
-                Main.projectileTexture[ProjectileID.PygmySpear] = GetTexture("Resprite/Projectile_195");
-                Main.projectileTexture[ProjectileID.Sapling] = GetTexture("Resprite/Projectile_210");
-                Main.projectileTexture[ProjectileID.ChlorophytePartisan] = GetTexture("Resprite/Projectile_222");
-                Main.projectileTexture[ProjectileID.SporeCloud] = GetTexture("Resprite/Projectile_228");
-                Main.projectileTexture[ProjectileID.Stynger] = GetTexture("Resprite/Projectile_246");
-                Main.projectileTexture[ProjectileID.StyngerShrapnel] = GetTexture("Resprite/Projectile_249");
-                Main.projectileTexture[ProjectileID.BoulderStaffOfEarth] = GetTexture("Resprite/Projectile_261");
-                Main.projectileTexture[ProjectileID.GolemFist] = GetTexture("Resprite/Projectile_262");
-                Main.projectileTexture[ProjectileID.PoisonFang] = GetTexture("Resprite/Projectile_265");
-                Main.projectileTexture[ProjectileID.BabySlime] = GetTexture("Resprite/Projectile_266");
-                Main.projectileTexture[ProjectileID.EyeSpring] = GetTexture("Resprite/Projectile_268");
-                Main.projectileTexture[ProjectileID.BoxingGlove] = GetTexture("Resprite/Projectile_271");
-                Main.projectileTexture[ProjectileID.ChainKnife] = GetTexture("Resprite/Projectile_273");
-                Main.projectileTexture[ProjectileID.InfernoFriendlyBolt] = GetTexture("Resprite/Projectile_295");
-                Main.projectileTexture[ProjectileID.InfernoFriendlyBlast] = GetTexture("Resprite/Projectile_296");
-                Main.projectileTexture[ProjectileID.Hellwing] = GetTexture("Resprite/Projectile_485");
-                //find Short Bones, Big Bones texture files
-                Main.tileTexture[TileID.DyePlants] = GetTexture("Resprite/Tiles_227");
             }
-        }//todo: unload
+        }
+        private void UnloadSprites()
+        {
+
+            Main.accballoonLoaded[ItemID.BundleofBalloons] = false;
+
+            Main.npcFrameCount[NPCID.AngryBones] = 0;
+            Main.NPCLoaded[NPCID.AngryBones] = false;
+            Main.npcFrameCount[NPCID.Harpy] = 0;
+            Main.NPCLoaded[NPCID.Harpy] = false;
+            Main.npcFrameCount[NPCID.Vulture] = 0;
+            Main.NPCLoaded[NPCID.Vulture] = false;
+            Main.npcFrameCount[NPCID.Demon] = 0;
+            Main.NPCLoaded[NPCID.Demon] = false;
+            Main.npcFrameCount[NPCID.VoodooDemon] = 0;
+            Main.NPCLoaded[NPCID.VoodooDemon] = false;
+            Main.npcFrameCount[NPCID.Mummy] = 0;
+            Main.NPCLoaded[NPCID.Mummy] = false;
+            Main.npcFrameCount[NPCID.DarkMummy] = 0;
+            Main.NPCLoaded[NPCID.DarkMummy] = false;
+            Main.npcFrameCount[NPCID.LightMummy] = 0;
+            Main.NPCLoaded[NPCID.LightMummy] = false;
+            Main.npcFrameCount[NPCID.Wolf] = 0;
+            Main.NPCLoaded[NPCID.Wolf] = false;
+            Main.npcFrameCount[NPCID.CochinealBeetle] = 0;
+            Main.NPCLoaded[NPCID.CochinealBeetle] = false;
+            Main.npcFrameCount[NPCID.CyanBeetle] = 0;
+            Main.NPCLoaded[NPCID.CyanBeetle] = false;
+            Main.npcFrameCount[NPCID.LacBeetle] = 0;
+            Main.NPCLoaded[NPCID.LacBeetle] = false;
+            Main.npcFrameCount[NPCID.QueenBee] = 0;
+            Main.NPCLoaded[NPCID.QueenBee] = false;
+            Main.npcFrameCount[NPCID.JungleCreeper] = 0;
+            Main.NPCLoaded[NPCID.JungleCreeper] = false;
+            Main.npcFrameCount[NPCID.JungleCreeperWall] = 0;
+            Main.NPCLoaded[NPCID.JungleCreeperWall] = false;
+            Main.npcFrameCount[NPCID.BloodFeeder] = 0;
+            Main.NPCLoaded[NPCID.BloodFeeder] = false;
+            Main.npcFrameCount[NPCID.IceGolem] = 0;
+            Main.NPCLoaded[NPCID.IceGolem] = false;
+            Main.npcFrameCount[NPCID.Golem] = 0;
+            Main.NPCLoaded[NPCID.Golem] = false;
+            Main.npcFrameCount[NPCID.GolemHead] = 0;
+            Main.NPCLoaded[NPCID.GolemHead] = false;
+            Main.npcFrameCount[NPCID.GolemFistLeft] = 0;
+            Main.NPCLoaded[NPCID.GolemFistLeft] = false;
+            Main.npcFrameCount[NPCID.GolemFistRight] = 0;
+            Main.NPCLoaded[NPCID.GolemFistRight] = false;
+            Main.npcFrameCount[NPCID.GolemHeadFree] = 0;
+            Main.NPCLoaded[NPCID.GolemHeadFree] = false;
+            Main.npcFrameCount[NPCID.Eyezor] = 0;
+            Main.NPCLoaded[NPCID.Eyezor] = false;
+            Main.npcFrameCount[NPCID.ZombieMushroom] = 0;
+            Main.NPCLoaded[NPCID.ZombieMushroom] = false;
+            Main.npcFrameCount[NPCID.ZombieMushroomHat] = 0;
+            Main.NPCLoaded[NPCID.ZombieMushroomHat] = false;
+            Main.npcFrameCount[NPCID.FungoFish] = 0;
+            Main.NPCLoaded[NPCID.FungoFish] = false;
+            Main.npcFrameCount[NPCID.MushiLadybug] = 0;
+            Main.NPCLoaded[NPCID.MushiLadybug] = false;
+            Main.npcFrameCount[NPCID.FungiBulb] = 0;
+            Main.NPCLoaded[NPCID.FungiBulb] = false;
+            Main.npcFrameCount[NPCID.GiantFungiBulb] = 0;
+            Main.NPCLoaded[NPCID.GiantFungiBulb] = false;
+            Main.npcFrameCount[NPCID.Plantera] = 0;
+            Main.NPCLoaded[NPCID.Plantera] = false;
+            Main.npcFrameCount[NPCID.PlanterasHook] = 0;
+            Main.NPCLoaded[NPCID.PlanterasHook] = false;
+            Main.npcFrameCount[NPCID.PlanterasTentacle] = 0;
+            Main.NPCLoaded[NPCID.PlanterasTentacle] = false;
+            Main.npcFrameCount[NPCID.Spore] = 0;
+            Main.NPCLoaded[NPCID.Spore] = false;
+            Main.npcFrameCount[NPCID.Creeper] = 0;
+            Main.NPCLoaded[NPCID.Creeper] = false;
+            Main.npcFrameCount[NPCID.RustyArmoredBonesAxe] = 0;
+            Main.NPCLoaded[NPCID.RustyArmoredBonesAxe] = false;
+            Main.npcFrameCount[NPCID.RustyArmoredBonesFlail] = 0;
+            Main.NPCLoaded[NPCID.RustyArmoredBonesFlail] = false;
+            Main.npcFrameCount[NPCID.RustyArmoredBonesSword] = 0;
+            Main.NPCLoaded[NPCID.RustyArmoredBonesSword] = false;
+            Main.npcFrameCount[NPCID.RustyArmoredBonesSwordNoArmor] = 0;
+            Main.NPCLoaded[NPCID.RustyArmoredBonesSwordNoArmor] = false;
+            Main.npcFrameCount[NPCID.BlueArmoredBones] = 0;
+            Main.NPCLoaded[NPCID.BlueArmoredBones] = false;
+            Main.npcFrameCount[NPCID.BlueArmoredBonesMace] = 0;
+            Main.NPCLoaded[NPCID.BlueArmoredBonesMace] = false;
+            Main.npcFrameCount[NPCID.BlueArmoredBonesNoPants] = 0;
+            Main.NPCLoaded[NPCID.BlueArmoredBonesNoPants] = false;
+            Main.npcFrameCount[NPCID.BlueArmoredBonesSword] = 0;
+            Main.NPCLoaded[NPCID.BlueArmoredBonesSword] = false;
+            Main.npcFrameCount[NPCID.HellArmoredBones] = 0;
+            Main.NPCLoaded[NPCID.HellArmoredBones] = false;
+            Main.npcFrameCount[NPCID.HellArmoredBonesMace] = 0;
+            Main.NPCLoaded[NPCID.HellArmoredBonesMace] = false;
+            Main.npcFrameCount[NPCID.HellArmoredBonesSpikeShield] = 0;
+            Main.NPCLoaded[NPCID.HellArmoredBonesSpikeShield] = false;
+            Main.npcFrameCount[NPCID.HellArmoredBonesSword] = 0;
+            Main.NPCLoaded[NPCID.HellArmoredBonesSword] = false;
+            Main.npcFrameCount[NPCID.RaggedCaster] = 0;
+            Main.NPCLoaded[NPCID.RaggedCaster] = false;
+            Main.npcFrameCount[NPCID.RaggedCasterOpenCoat] = 0;
+            Main.NPCLoaded[NPCID.RaggedCasterOpenCoat] = false;
+            Main.npcFrameCount[NPCID.Necromancer] = 0;
+            Main.NPCLoaded[NPCID.Necromancer] = false;
+            Main.npcFrameCount[NPCID.NecromancerArmored] = 0;
+            Main.NPCLoaded[NPCID.NecromancerArmored] = false;
+            Main.npcFrameCount[NPCID.DiabolistRed] = 0;
+            Main.NPCLoaded[NPCID.DiabolistRed] = false;
+            Main.npcFrameCount[NPCID.DiabolistWhite] = 0;
+            Main.NPCLoaded[NPCID.DiabolistWhite] = false;
+            Main.npcFrameCount[NPCID.BoneLee] = 0;
+            Main.NPCLoaded[NPCID.BoneLee] = false;
+            Main.npcFrameCount[NPCID.Paladin] = 0;
+            Main.NPCLoaded[NPCID.Paladin] = false;
+            Main.npcFrameCount[NPCID.SkeletonSniper] = 0;
+            Main.NPCLoaded[NPCID.SkeletonSniper] = false;
+            Main.npcFrameCount[NPCID.TacticalSkeleton] = 0;
+            Main.NPCLoaded[NPCID.TacticalSkeleton] = false;
+            Main.npcFrameCount[NPCID.SkeletonCommando] = 0;
+            Main.NPCLoaded[NPCID.SkeletonCommando] = false;
+            Main.npcFrameCount[NPCID.AngryBonesBig] = 0;
+            Main.NPCLoaded[NPCID.AngryBonesBig] = false;
+            Main.npcFrameCount[NPCID.AngryBonesBigMuscle] = 0;
+            Main.NPCLoaded[NPCID.AngryBonesBigMuscle] = false;
+            Main.npcFrameCount[NPCID.AngryBonesBigHelmet] = 0;
+            Main.NPCLoaded[NPCID.AngryBonesBigHelmet] = false;
+            Main.npcFrameCount[NPCID.Everscream] = 0;
+            Main.NPCLoaded[NPCID.Everscream] = false;
+
+            Main.projFrames[ProjectileID.Flamarang] = 0;
+            Main.projectileLoaded[ProjectileID.Flamarang] = false;
+            Main.projFrames[ProjectileID.Grenade] = 0;
+            Main.projectileLoaded[ProjectileID.Grenade] = false;
+            Main.projFrames[ProjectileID.TheRottedFork] = 0;
+            Main.projectileLoaded[ProjectileID.TheRottedFork] = false;
+            Main.projFrames[ProjectileID.MechanicalPiranha] = 0;
+            Main.projectileLoaded[ProjectileID.MechanicalPiranha] = false;
+            Main.projFrames[ProjectileID.PygmySpear] = 0;
+            Main.projectileLoaded[ProjectileID.PygmySpear] = false;
+            Main.projFrames[ProjectileID.Sapling] = 0;
+            Main.projectileLoaded[ProjectileID.Sapling] = false;
+            Main.projFrames[ProjectileID.ChlorophytePartisan] = 0;
+            Main.projectileLoaded[ProjectileID.ChlorophytePartisan] = false;
+            Main.projFrames[ProjectileID.SporeCloud] = 0;
+            Main.projectileLoaded[ProjectileID.SporeCloud] = false;
+            Main.projFrames[ProjectileID.Stynger] = 0;
+            Main.projectileLoaded[ProjectileID.Stynger] = false;
+            Main.projFrames[ProjectileID.StyngerShrapnel] = 0;
+            Main.projectileLoaded[ProjectileID.StyngerShrapnel] = false;
+            Main.projFrames[ProjectileID.BoulderStaffOfEarth] = 0;
+            Main.projectileLoaded[ProjectileID.BoulderStaffOfEarth] = false;
+            Main.projFrames[ProjectileID.GolemFist] = 0;
+            Main.projectileLoaded[ProjectileID.GolemFist] = false;
+            Main.projFrames[ProjectileID.PoisonFang] = 0;
+            Main.projectileLoaded[ProjectileID.PoisonFang] = false;
+            Main.projFrames[ProjectileID.BabySlime] = 0;
+            Main.projectileLoaded[ProjectileID.BabySlime] = false;
+            Main.projFrames[ProjectileID.EyeSpring] = 0;
+            Main.projectileLoaded[ProjectileID.EyeSpring] = false;
+            Main.projFrames[ProjectileID.BoxingGlove] = 0;
+            Main.projectileLoaded[ProjectileID.BoxingGlove] = false;
+            Main.projFrames[ProjectileID.ChainKnife] = 0;
+            Main.projectileLoaded[ProjectileID.ChainKnife] = false;
+            Main.projFrames[ProjectileID.InfernoFriendlyBolt] = 0;
+            Main.projectileLoaded[ProjectileID.InfernoFriendlyBolt] = false;
+            Main.projFrames[ProjectileID.InfernoFriendlyBlast] = 0;
+            Main.projectileLoaded[ProjectileID.InfernoFriendlyBlast] = false;
+            Main.projFrames[ProjectileID.Hellwing] = 0;
+            Main.projectileLoaded[ProjectileID.Hellwing] = false;
+
+            Main.tileFrame[TileID.DyePlants] = 0;
+            Main.tileSetsLoaded[TileID.DyePlants] = false;
+
+            //Main.itemTexture = null;
+        }
     }
 }
