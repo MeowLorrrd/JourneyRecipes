@@ -7,11 +7,6 @@ namespace JourneyRecipes
     {
         public static Config Instance;
         public override ConfigScope Mode => ConfigScope.ClientSide;
-        [DefaultValue(true)]
-        [Label("Change item sprites?")]
-        [Tooltip("If this setting is turned on, this mod will update 1.3 textures, e.g. 1.4 Husks")]
-        [ReloadRequired]
-        public bool Resprite;
 
         [Header("Recipe Settings")]
         [DefaultValue(true)]
@@ -203,5 +198,12 @@ namespace JourneyRecipes
         [Tooltip("If this config is turned on, all unstable features will be enabled alongside the working ones.\nSome items, like the Breaker Blade have known bugs and are listed as experimental.\nSome items, like Flamethrower are simply unfinished and are listed as experimental.\nFor a balanced playthrough, it is recommended to leave this setting off.")]
         [ReloadRequired]
         public bool allowExperimentalFeatures;
+
+        [Header("Misc settings")]
+        [DefaultValue(true)]
+        [Label("Change textures?")]
+        [Tooltip("If this setting is turned on, this mod will update 1.3 textures, e.g. 1.4 Husks, dungeon enemies, etc")]
+        [ReloadRequired]
+        public bool Resprite;
     }
 }

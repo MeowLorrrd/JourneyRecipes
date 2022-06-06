@@ -2706,6 +2706,6 @@ namespace JourneyRecipes
                 //find Short Bones, Big Bones texture files
                 Main.tileTexture[TileID.DyePlants] = GetTexture("Resprite/Tiles_227");
             }
-        }
+        }//todo: unload
     }
 }
