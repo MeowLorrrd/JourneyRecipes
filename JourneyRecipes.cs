@@ -2509,10 +2509,6 @@ namespace JourneyRecipes
         public override void Load()
         {
             bool flag1 = Config.Instance.Resprite && !Main.dedServ;
-            if (!Main.dedServ)//as no textures are ever loaded on servers anyways
-            {
-                Main.projectileTexture[ProjectileID.RainbowRodBullet] = GetTexture("Resprite/Projectile_79");
-            }
             if (flag1)
             {
                 Main.buffTexture[BuffID.Wisp] = GetTexture("Resprite/Buff_57");
@@ -2535,6 +2531,16 @@ namespace JourneyRecipes
                 Main.itemTexture[ItemID.Tabi] = GetTexture("Resprite/Item_977");
                 Main.itemTexture[ItemID.Blowgun] = GetTexture("Resprite/Item_986");
                 Main.itemTexture[ItemID.EatersBone] = GetTexture("Resprite/Item_994");
+                Main.itemTexture[ItemID.TealMushroom] = GetTexture("Resprite/Item_1107");
+                Main.itemTexture[ItemID.GreenMushroom] = GetTexture("Resprite/Item_1108");
+                Main.itemTexture[ItemID.SkyBlueFlower] = GetTexture("Resprite/Item_1109");
+                Main.itemTexture[ItemID.YellowMarigold] = GetTexture("Resprite/Item_1110");
+                Main.itemTexture[ItemID.BlueBerries] = GetTexture("Resprite/Item_1111");
+                Main.itemTexture[ItemID.LimeKelp] = GetTexture("Resprite/Item_1112");
+                Main.itemTexture[ItemID.PinkPricklyPear] = GetTexture("Resprite/Item_1113");
+                Main.itemTexture[ItemID.OrangeBloodroot] = GetTexture("Resprite/Item_1114");
+                Main.itemTexture[ItemID.PurpleMucos] = GetTexture("Resprite/Item_1118");
+                Main.itemTexture[ItemID.BlackInk] = GetTexture("Resprite/Item_1119");
                 Main.itemTexture[ItemID.CyanHusk] = GetTexture("Resprite/Item_1116");
                 Main.itemTexture[ItemID.RedHusk] = GetTexture("Resprite/Item_1115");
                 Main.itemTexture[ItemID.VioletHusk] = GetTexture("Resprite/Item_1117");
@@ -2573,6 +2579,7 @@ namespace JourneyRecipes
                 Main.itemTexture[ItemID.IceSickle] = GetTexture("Resprite/Item_1306");
                 Main.itemTexture[ItemID.ClothierVoodooDoll] = GetTexture("Resprite/Item_1307");
                 Main.itemTexture[ItemID.VenomStaff] = GetTexture("Resprite/Item_1308");
+                Main.itemTexture[ItemID.SlimeStaff] = GetTexture("Resprite/Item_1309");
                 Main.itemTexture[ItemID.KOCannon] = GetTexture("Resprite/Item_1314");
                 Main.itemTexture[ItemID.ObsidianRose] = GetTexture("Resprite/Item_1323");
                 Main.itemTexture[ItemID.ChainKnife] = GetTexture("Resprite/Item_1325");
@@ -2581,13 +2588,16 @@ namespace JourneyRecipes
                 Main.itemTexture[ItemID.InfernoFork] = GetTexture("Resprite/Item_1445");
                 Main.itemTexture[ItemID.SpectreHamaxe] = GetTexture("Resprite/Item_1507");
                 Main.itemTexture[ItemID.PaladinsHammer] = GetTexture("Resprite/Item_1513");
+                Main.itemTexture[ItemID.BrokenBatWing] = GetTexture("Resprite/Item_1520");
                 Main.itemTexture[ItemID.SDMG] = GetTexture("Resprite/Item_1553");
                 Main.itemTexture[ItemID.VampireKnives] = GetTexture("Resprite/Item_1569");
+                Main.itemTexture[ItemID.BrokenHeroSword] = GetTexture("Resprite/Item_1570");
                 Main.itemTexture[ItemID.SweetheartNecklace] = GetTexture("Resprite/Item_1578");
                 Main.itemTexture[ItemID.BlueFlare] = GetTexture("Resprite/Item_1614");
                 Main.itemTexture[ItemID.PumpkinPie] = GetTexture("Resprite/Item_1787");
                 Main.itemTexture[ItemID.Sickle] = GetTexture("Resprite/Item_1786");
                 Main.itemTexture[ItemID.EldMelter] = GetTexture("Resprite/Item_1910");
+                Main.itemTexture[ItemID.PirateStaff] = GetTexture("Resprite/Item_2584");
                 Main.itemTexture[ItemID.BeesKnees] = GetTexture("Resprite/Item_2888");
                 Main.itemTexture[ItemID.DartPistol] = GetTexture("Resprite/Item_3007");
                 Main.itemTexture[ItemID.DartRifle] = GetTexture("Resprite/Item_3008");
@@ -2612,19 +2622,66 @@ namespace JourneyRecipes
                 Main.itemTexture[ItemID.Valor] = GetTexture("Resprite/Item_3317");
                 Main.itemTexture[ItemID.HiveBackpack] = GetTexture("Resprite/Item_3333");
                 Main.itemTexture[ItemID.Terrarian] = GetTexture("Resprite/Item_3389");
+                Main.npcTexture[NPCID.AngryBones] = GetTexture("Resprite/NPC_31");
+                Main.npcTexture[NPCID.Harpy] = GetTexture("Resprite/NPC_48");
+                Main.npcTexture[NPCID.Vulture] = GetTexture("Resprite/NPC_61");
+                Main.npcTexture[NPCID.Demon] = GetTexture("Resprite/NPC_62");
+                Main.npcTexture[NPCID.VoodooDemon] = GetTexture("Resprite/NPC_66");
+                Main.npcTexture[NPCID.Mummy] = GetTexture("Resprite/NPC_78");
+                Main.npcTexture[NPCID.DarkMummy] = GetTexture("Resprite/NPC_79");
+                Main.npcTexture[NPCID.LightMummy] = GetTexture("Resprite/NPC_80");
+                Main.npcTexture[NPCID.Wolf] = GetTexture("Resprite/NPC_155");
+                Main.npcTexture[NPCID.CochinealBeetle] = GetTexture("Resprite/NPC_217");
+                Main.npcTexture[NPCID.CyanBeetle] = GetTexture("Resprite/NPC_218");
+                Main.npcTexture[NPCID.LacBeetle] = GetTexture("Resprite/NPC_219");
+                Main.npcTexture[NPCID.QueenBee] = GetTexture("Resprite/NPC_222");
+                Main.npcTexture[NPCID.JungleCreeper] = GetTexture("Resprite/NPC_236");
+                Main.npcTexture[NPCID.JungleCreeperWall] = GetTexture("Resprite/NPC_237");
+                Main.npcTexture[NPCID.BloodFeeder] = GetTexture("Resprite/NPC_241");
                 Main.npcTexture[NPCID.IceGolem] = GetTexture("Resprite/NPC_243");
                 Main.npcTexture[NPCID.Golem] = GetTexture("Resprite/NPC_245");
                 Main.npcTexture[NPCID.GolemHead] = GetTexture("Resprite/NPC_246");
                 Main.npcTexture[NPCID.GolemFistLeft] = GetTexture("Resprite/NPC_247");
                 Main.npcTexture[NPCID.GolemFistRight] = GetTexture("Resprite/NPC_248");
                 Main.npcTexture[NPCID.GolemHeadFree] = GetTexture("Resprite/NPC_249");
+                Main.npcTexture[NPCID.Eyezor] = GetTexture("Resprite/NPC_251");
+                Main.npcTexture[NPCID.ZombieMushroom] = GetTexture("Resprite/NPC_254");
+                Main.npcTexture[NPCID.ZombieMushroomHat] = GetTexture("Resprite/NPC_255");
+                Main.npcTexture[NPCID.FungoFish] = GetTexture("Resprite/NPC_256");
+                Main.npcTexture[NPCID.MushiLadybug] = GetTexture("Resprite/NPC_258");
+                Main.npcTexture[NPCID.FungiBulb] = GetTexture("Resprite/NPC_259");
+                Main.npcTexture[NPCID.GiantFungiBulb] = GetTexture("Resprite/NPC_260");
                 Main.npcTexture[NPCID.Plantera] = GetTexture("Resprite/NPC_262");
                 Main.npcTexture[NPCID.PlanterasHook] = GetTexture("Resprite/NPC_263");
                 Main.npcTexture[NPCID.PlanterasTentacle] = GetTexture("Resprite/NPC_264");
                 Main.npcTexture[NPCID.Spore] = GetTexture("Resprite/NPC_265");
                 Main.npcTexture[NPCID.Creeper] = GetTexture("Resprite/NPC_267");
+                Main.npcTexture[NPCID.RustyArmoredBonesAxe] = GetTexture("Resprite/NPC_269");
+                Main.npcTexture[NPCID.RustyArmoredBonesFlail] = GetTexture("Resprite/NPC_270");
+                Main.npcTexture[NPCID.RustyArmoredBonesSword] = GetTexture("Resprite/NPC_271");
+                Main.npcTexture[NPCID.RustyArmoredBonesSwordNoArmor] = GetTexture("Resprite/NPC_272");
+                Main.npcTexture[NPCID.BlueArmoredBones] = GetTexture("Resprite/NPC_273");
+                Main.npcTexture[NPCID.BlueArmoredBonesMace] = GetTexture("Resprite/NPC_274");
+                Main.npcTexture[NPCID.BlueArmoredBonesNoPants] = GetTexture("Resprite/NPC_275");
+                Main.npcTexture[NPCID.BlueArmoredBonesSword] = GetTexture("Resprite/NPC_276");
+                Main.npcTexture[NPCID.HellArmoredBones] = GetTexture("Resprite/NPC_277");
+                Main.npcTexture[NPCID.HellArmoredBonesSpikeShield] = GetTexture("Resprite/NPC_278");
+                Main.npcTexture[NPCID.HellArmoredBonesMace] = GetTexture("Resprite/NPC_279");
+                Main.npcTexture[NPCID.HellArmoredBonesSword] = GetTexture("Resprite/NPC_280");
+                Main.npcTexture[NPCID.RaggedCaster] = GetTexture("Resprite/NPC_281");
+                Main.npcTexture[NPCID.RaggedCasterOpenCoat] = GetTexture("Resprite/NPC_282");
+                Main.npcTexture[NPCID.Necromancer] = GetTexture("Resprite/NPC_283");
+                Main.npcTexture[NPCID.NecromancerArmored] = GetTexture("Resprite/NPC_284");
+                Main.npcTexture[NPCID.DiabolistRed] = GetTexture("Resprite/NPC_285");
+                Main.npcTexture[NPCID.DiabolistWhite] = GetTexture("Resprite/NPC_286");
+                Main.npcTexture[NPCID.BoneLee] = GetTexture("Resprite/NPC_287");
                 Main.npcTexture[NPCID.Paladin] = GetTexture("Resprite/NPC_290");
+                Main.npcTexture[NPCID.SkeletonSniper] = GetTexture("Resprite/NPC_291");
                 Main.npcTexture[NPCID.TacticalSkeleton] = GetTexture("Resprite/NPC_292");
+                Main.npcTexture[NPCID.SkeletonCommando] = GetTexture("Resprite/NPC_293");
+                Main.npcTexture[NPCID.AngryBonesBig] = GetTexture("Resprite/NPC_294");
+                Main.npcTexture[NPCID.AngryBonesBigMuscle] = GetTexture("Resprite/NPC_295");
+                Main.npcTexture[NPCID.AngryBonesBigHelmet] = GetTexture("Resprite/NPC_296");
                 Main.npcTexture[NPCID.Everscream] = GetTexture("Resprite/NPC_344");
                 Main.projectileTexture[ProjectileID.Flamarang] = GetTexture("Resprite/Projectile_19");
                 Main.projectileTexture[ProjectileID.Grenade] = GetTexture("Resprite/Projectile_30");
@@ -2639,6 +2696,8 @@ namespace JourneyRecipes
                 Main.projectileTexture[ProjectileID.BoulderStaffOfEarth] = GetTexture("Resprite/Projectile_261");
                 Main.projectileTexture[ProjectileID.GolemFist] = GetTexture("Resprite/Projectile_262");
                 Main.projectileTexture[ProjectileID.PoisonFang] = GetTexture("Resprite/Projectile_265");
+                Main.projectileTexture[ProjectileID.BabySlime] = GetTexture("Resprite/Projectile_266");
+                Main.projectileTexture[ProjectileID.EyeSpring] = GetTexture("Resprite/Projectile_268");
                 Main.projectileTexture[ProjectileID.BoxingGlove] = GetTexture("Resprite/Projectile_271");
                 Main.projectileTexture[ProjectileID.ChainKnife] = GetTexture("Resprite/Projectile_273");
                 Main.projectileTexture[ProjectileID.InfernoFriendlyBolt] = GetTexture("Resprite/Projectile_295");
