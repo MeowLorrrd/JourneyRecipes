@@ -45,7 +45,7 @@ namespace JourneyRecipes
             {
                 player.armorPenetration += 8;
             }
-            if (Config.Instance.allowWeaponStat && player.HeldItem.type == ItemID.NettleBurst)
+            if (Config.Instance.allowWeaponStat && (player.HeldItem.type == ItemID.NettleBurst || player.HeldItem.type == ItemID.WaspGun || player.HeldItem.type == ItemID.CrystalVileShard))
             {
                 player.armorPenetration += 10;
             }
