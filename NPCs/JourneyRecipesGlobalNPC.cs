@@ -31,6 +31,21 @@ namespace JourneyRecipes.NPCs
                 NPCLootRules(npc);
             }
         }
+        public override bool PreNPCLoot(NPC npc)
+        {
+            switch (npc.type)
+            {
+                case 392:
+                case 393:
+                case 394:
+                case 395:
+                    NPCLoader.blockLoot.Add(ItemID.AntiGravityHook);
+                    NPCLoader.blockLoot.Add(ItemID.LaserDrill);
+                    NPCLoader.blockLoot.Add(ItemID.ChargedBlasterCannon);
+                    break;
+            }
+            return base.PreNPCLoot(npc);
+        }
         public static void NPCValues(NPC npc)
         {
             switch (npc.type)
@@ -125,6 +140,15 @@ namespace JourneyRecipes.NPCs
             {
                 case 289:
                     if (Main.rand.NextBool(100)) Item.NewItem(npc.Hitbox, ItemID.Nazar);
+                    break;
+                case 381:
+                case 382:
+                case 383:
+                case 385:
+                case 389:
+                    if (Main.rand.NextBool(800)) Item.NewItem(npc.Hitbox, ItemID.AntiGravityHook);
+                    if (Main.rand.NextBool(800)) Item.NewItem(npc.Hitbox, ItemID.LaserDrill);
+                    if (Main.rand.NextBool(800)) Item.NewItem(npc.Hitbox, ItemID.ChargedBlasterCannon);
                     break;
                 case 509:
                     if (Main.rand.NextBool(50)) Item.NewItem(npc.Hitbox, ItemID.AntlionMandible);
