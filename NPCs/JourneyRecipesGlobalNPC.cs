@@ -10,25 +10,10 @@ namespace JourneyRecipes.NPCs
         public override bool InstancePerEntity => true;
         public override void SetDefaults(NPC npc)
         {
-            if (Config.Instance.allowNPCStat && npc.type == NPCID.Mothron || npc.type == NPCID.GoblinSummoner || npc.type == NPCID.Squid || npc.type == NPCID.SeaSnail || npc.type == NPCID.PirateCaptain || npc.type == NPCID.Clown || npc.type == NPCID.UndeadMiner)
+            bool ns = Config.Instance.allowNPCStat;
+            if (ns)
             {
-                npc.rarity = 1;
-            }
-            if (Config.Instance.allowNPCStat && npc.type == NPCID.Eyezor || npc.type == NPCID.IceGolem || npc.type == NPCID.LacBeetle || npc.type == NPCID.CyanBeetle || npc.type == NPCID.CochinealBeetle)
-            {
-                npc.rarity = 2;
-            }
-            if (Config.Instance.allowNPCStat && npc.type == NPCID.Mimic)
-            {
-                npc.rarity = 4;
-            }
-            if (Config.Instance.allowNPCStat && npc.type == NPCID.BigMimicCorruption || npc.type == NPCID.BigMimicCrimson || npc.type == NPCID.BigMimicHallow || npc.type == NPCID.BigMimicJungle)
-            {
-                npc.rarity = 5;
-            }
-            if (Config.Instance.allowNPCStat && npc.type == NPCID.DukeFishron)
-            {
-                npc.value = 250000;
+                NPCValues(npc);
             }
         }
         public static void NPCValues(NPC npc)
