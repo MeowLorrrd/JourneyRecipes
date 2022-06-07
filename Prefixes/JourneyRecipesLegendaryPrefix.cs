@@ -15,10 +15,10 @@ namespace JourneyRecipes.Prefixes
         private readonly byte _power;
         public override bool CanRoll(Item item)
         {
-            if (item.type == ItemID.Terrarian && Config.Instance.allowWeaponStat) return true;
+            if (item.type == ItemID.Terrarian && Config.Instance.allowWeaponStat) return true;//check for config please yes thank you
             else return false;
         }
-        public override PrefixCategory Category => PrefixCategory.Melee;
+        public override PrefixCategory Category => PrefixCategory.Melee;//only this yoyo, but yoyo is melee so eh
         public JourneyRecipesLegendaryPrefix() { }
         public JourneyRecipesLegendaryPrefix(byte power)
         {
@@ -34,11 +34,11 @@ namespace JourneyRecipes.Prefixes
         public override void ModifyValue(ref float valueMult)
         {
             float mp = 1 + 0.05f * _power;
-            valueMult *= mp;
+            valueMult *= mp;//how much value changes with this tooltip
         }
         public override void SetStats(ref float damageMult, ref float knockbackMult, ref float useTimeMult, ref float scaleMult, ref float shootSpeedMult, ref float manaMult, ref int critBonus)
         {
-            damageMult *= 1.17f;
+            damageMult *= 1.17f;//the actual stats of the prefix
             critBonus += 8;
             knockbackMult *= 1.17f;
         }
