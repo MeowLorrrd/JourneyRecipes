@@ -170,6 +170,13 @@ namespace JourneyRecipes
         public bool allowSellChange;
 
         [DefaultValue(true)]
+        [Label("[i:1147]   Change tiles?")]
+        [Tooltip("If this setting is turned on, this mod will change some tile properties." +
+            "\nE.g. Meteorite can't be blown up before hardmode")]
+        [ReloadRequired]
+        public bool allowTileChange;
+
+        [DefaultValue(true)]
         [Label("[i:757 ]    Change Terra Blade crafting process?")]
         [Tooltip("If this setting is turned on, this mod will change the recipes for the Terra Blade and components to match 1.4" +
             "\nBy enabling this config:" +
