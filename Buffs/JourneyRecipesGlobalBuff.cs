@@ -172,6 +172,7 @@ namespace JourneyRecipes.Buffs
             if (bs)
             {
                 if (type == BuffID.Thorns) player.thorns = 1f;
+                if (type == BuffID.Sharpened) player.GetModPlayer<JourneyRecipesPlayer>().Sharpened = true;
             }
         }
     }

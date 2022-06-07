@@ -45,6 +45,10 @@ namespace JourneyRecipes
             {
                 player.armorPenetration += 8;
             }
+            if (Config.Instance.allowWeaponStat && player.HeldItem.type == ItemID.NettleBurst)
+            {
+                player.armorPenetration += 10;
+            }
             return true;
         }
         public override void PostItemCheck()

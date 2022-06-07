@@ -40,6 +40,7 @@ namespace JourneyRecipes.Items.Weapons.Melee
                     player.itemRotation = -1.575f;
                     player.itemLocation -= new Vector2(-5, 25);
                 }
+                return true;
             }
             return base.UseItem(item, player);
         }

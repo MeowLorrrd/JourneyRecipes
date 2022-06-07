@@ -82,6 +82,7 @@ Don't forget 'gardenapple', luv all of u guys *mwah*
 
 //use this universally for changing old tooltips
 
+                    #region strings
                     string GermanOld = "";
                     string GermanNew = "";
                     string EnglishOld = "";
@@ -100,87 +101,34 @@ Don't forget 'gardenapple', luv all of u guys *mwah*
                     string RussianNew = "";
                     string ChineseOld = "";
                     string ChineseNew = "";
+                    #endregion
                     #region new tooltips
                     foreach (TooltipLine line in tooltips)
                     {
-                        if (line.text == GermanOld)
-                        {
-                            line.text = GermanNew;
-                        }
-                        if (line.text == EnglishOld)
-                        {
-                            line.text = EnglishNew;
-                        }
-                        if (line.text == SpanishOld)
-                        {
-                            line.text = SpanishNew;
-                        }
-                        if (line.text == FrenchOld)
-                        {
-                            line.text = FrenchNew;
-                        }
-                        if (line.text == ItalianOld)
-                        {
-                            line.text = ItalianNew;
-                        }
-                        if (line.text == PolishOld)
-                        {
-                            line.text = PolishNew;
-                        }
-                        if (line.text == PortugeseOld)
-                        {
-                            line.text = PortugeseNew;
-                        }
-                        if (line.text == RussianOld)
-                        {
-                            line.text = RussianNew;
-                        }
-                        if (line.text == ChineseOld)
-                        {
-                            line.text = ChineseNew;
-                        }
+                        if (line.text == GermanOld) line.text = GermanNew;
+                        if (line.text == EnglishOld) line.text = EnglishNew;
+                        if (line.text == SpanishOld) line.text = SpanishNew;
+                        if (line.text == FrenchOld) line.text = FrenchNew;
+                        if (line.text == ItalianOld) line.text = ItalianNew;
+                        if (line.text == PolishOld) line.text = PolishNew;
+                        if (line.text == PortugeseOld) line.text = PortugeseNew;
+                        if (line.text == RussianOld) line.text = RussianNew;
+                        if (line.text == ChineseOld) line.text = ChineseNew;
                     }
                     #endregion
 
 
 //Armor sets Tooltips
 
-                if (GameCulture.German.IsActive)
-                {
-                    player.setBonus = "";
-                }
-                if (GameCulture.English.IsActive)
-                {
-                    player.setBonus = "";
-                }
-                if (GameCulture.Spanish.IsActive)
-                {
-                    player.setBonus = "";
-                }
-                if (GameCulture.French.IsActive)
-                {
-                    player.setBonus = "";
-                }
-                if (GameCulture.Italian.IsActive)
-                {
-                    player.setBonus = "";
-                }
-                if (GameCulture.Polish.IsActive)
-                {
-                    player.setBonus = "";
-                }
-                if (GameCulture.Portuguese.IsActive)
-                {
-                    player.setBonus = "";
-                }
-                if (GameCulture.Russian.IsActive)
-                {
-                    player.setBonus = "";
-                }
-                if (GameCulture.Chinese.IsActive)
-                {
-                    player.setBonus = "";
-                }
+                if (GameCulture.German.IsActive) player.setBonus = "";
+                if (GameCulture.English.IsActive) player.setBonus = "";
+                if (GameCulture.Spanish.IsActive) player.setBonus = "";
+                if (GameCulture.French.IsActive) player.setBonus = "";
+                if (GameCulture.Italian.IsActive) player.setBonus = "";
+                if (GameCulture.Polish.IsActive) player.setBonus = "";
+                if (GameCulture.Portuguese.IsActive) player.setBonus = "";
+                if (GameCulture.Russian.IsActive) player.setBonus = "";
+                if (GameCulture.Chinese.IsActive) player.setBonus = "";
 
 
             //wing related stuff

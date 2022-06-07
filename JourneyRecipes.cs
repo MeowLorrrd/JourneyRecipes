@@ -1,6 +1,8 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using System.Collections.Generic;
+using JourneyRecipes.Items.Armor;
 
 namespace JourneyRecipes
 {
@@ -2511,10 +2513,11 @@ namespace JourneyRecipes
         {
             base.Load();
             //LoadSprites();
+            List<TooltipLine> line = new List<TooltipLine>();
             Main.instance.LoadTiles(TileID.DyePlants);
             Main.tileTexture[TileID.DyePlants] = GetTexture("Resprite/Tiles_227");
 
-            Main.instance.LoadNPC(NPCID.AngryBones);
+            Main.instance.LoadNPC(NPCID.AngryBones);                                    //load all called NPCs first
             Main.instance.LoadNPC(NPCID.Harpy);
             Main.instance.LoadNPC(NPCID.Vulture);
             Main.instance.LoadNPC(NPCID.Demon);
@@ -2564,27 +2567,27 @@ namespace JourneyRecipes
             Main.instance.LoadNPC(NPCID.TacticalSkeleton);
             Main.instance.LoadNPC(NPCID.SkeletonCommando);
             Main.instance.LoadNPC(NPCID.Everscream);
-            Main.npcTexture[NPCID.AngryBones] = GetTexture("Resprite/NPC_31");
-            Main.npcTexture[NPCID.Harpy] = GetTexture("Resprite/NPC_48");//
-            Main.npcFrameCount[NPCID.Harpy] = 6;
-            Main.npcTexture[NPCID.Vulture] = GetTexture("Resprite/NPC_61");//
+            Main.npcTexture[NPCID.AngryBones] = GetTexture("Resprite/NPC_31");          //then replace their sprites with own
+            Main.npcTexture[NPCID.Harpy] = GetTexture("Resprite/NPC_48");
+            Main.npcFrameCount[NPCID.Harpy] = 6;                                        //and if needed, change number of animation frames
+            Main.npcTexture[NPCID.Vulture] = GetTexture("Resprite/NPC_61");
             Main.npcFrameCount[NPCID.Vulture] = 6;
-            Main.npcTexture[NPCID.Demon] = GetTexture("Resprite/NPC_62");//
+            Main.npcTexture[NPCID.Demon] = GetTexture("Resprite/NPC_62");
             Main.npcFrameCount[NPCID.Demon] = 5;
-            Main.npcTexture[NPCID.VoodooDemon] = GetTexture("Resprite/NPC_66");//
+            Main.npcTexture[NPCID.VoodooDemon] = GetTexture("Resprite/NPC_66");
             Main.npcFrameCount[NPCID.VoodooDemon] = 5;
-            Main.npcTexture[NPCID.Mummy] = GetTexture("Resprite/NPC_78");//
+            Main.npcTexture[NPCID.Mummy] = GetTexture("Resprite/NPC_78");
             Main.npcFrameCount[NPCID.Mummy] = 16;
-            Main.npcTexture[NPCID.DarkMummy] = GetTexture("Resprite/NPC_79");//
+            Main.npcTexture[NPCID.DarkMummy] = GetTexture("Resprite/NPC_79");
             Main.npcFrameCount[NPCID.DarkMummy] = 16;
-            Main.npcTexture[NPCID.LightMummy] = GetTexture("Resprite/NPC_80");//
+            Main.npcTexture[NPCID.LightMummy] = GetTexture("Resprite/NPC_80");
             Main.npcFrameCount[NPCID.LightMummy] = 16;
-            Main.npcTexture[NPCID.Wolf] = GetTexture("Resprite/NPC_155");//
+            Main.npcTexture[NPCID.Wolf] = GetTexture("Resprite/NPC_155");
             Main.npcFrameCount[NPCID.Wolf] = 13;
             Main.npcTexture[NPCID.QueenBee] = GetTexture("Resprite/NPC_222");
-            Main.npcTexture[NPCID.JungleCreeper] = GetTexture("Resprite/NPC_236");//
+            Main.npcTexture[NPCID.JungleCreeper] = GetTexture("Resprite/NPC_236");
             Main.npcFrameCount[NPCID.JungleCreeper] = 5;
-            Main.npcTexture[NPCID.JungleCreeperWall] = GetTexture("Resprite/NPC_237");//
+            Main.npcTexture[NPCID.JungleCreeperWall] = GetTexture("Resprite/NPC_237");
             Main.npcFrameCount[NPCID.JungleCreeperWall] = 4;
             Main.npcTexture[NPCID.BloodFeeder] = GetTexture("Resprite/NPC_241");
             Main.npcTexture[NPCID.IceGolem] = GetTexture("Resprite/NPC_243");
@@ -2606,7 +2609,7 @@ namespace JourneyRecipes
             Main.npcTexture[NPCID.RustyArmoredBonesSwordNoArmor] = GetTexture("Resprite/NPC_272");
             Main.npcTexture[NPCID.BlueArmoredBones] = GetTexture("Resprite/NPC_273");
             Main.npcTexture[NPCID.BlueArmoredBonesMace] = GetTexture("Resprite/NPC_274");
-            Main.npcTexture[NPCID.BlueArmoredBonesNoPants] = GetTexture("Resprite/NPC_275");//
+            Main.npcTexture[NPCID.BlueArmoredBonesNoPants] = GetTexture("Resprite/NPC_275");
             Main.npcFrameCount[NPCID.BlueArmoredBonesNoPants] = 16;
             Main.npcTexture[NPCID.BlueArmoredBonesSword] = GetTexture("Resprite/NPC_276");
             Main.npcTexture[NPCID.HellArmoredBones] = GetTexture("Resprite/NPC_277");
@@ -2630,11 +2633,11 @@ namespace JourneyRecipes
         {
             base.Unload();
             Main.tileFrame[TileID.DyePlants] = 0;
-            Main.tileSetsLoaded[TileID.DyePlants] = false;
+            Main.tileSetsLoaded[TileID.DyePlants] = false;//forces game to reload texture for this tile, as this declares that it is not loaded
 
-            Main.NPCLoaded[NPCID.AngryBones] = false;
+            Main.NPCLoaded[NPCID.AngryBones] = false;//same as tileSetsLoaded, but for NPCs
             Main.NPCLoaded[NPCID.Harpy] = false;
-            Main.npcFrameCount[NPCID.Harpy] = 4;
+            Main.npcFrameCount[NPCID.Harpy] = 4;//use 1.3 animation and sprite, which has a different framecount than 1.4 sprites
             Main.NPCLoaded[NPCID.Vulture] = false;
             Main.npcFrameCount[NPCID.Vulture] = 3;
             Main.NPCLoaded[NPCID.Demon] = false;
@@ -2689,12 +2692,14 @@ namespace JourneyRecipes
             Main.NPCLoaded[NPCID.DiabolistWhite] = false;
             Main.NPCLoaded[NPCID.BoneLee] = false;
             Main.NPCLoaded[NPCID.Paladin] = false;
-            Main.NPCLoaded[NPCID.SkeletonSniper] = false;
+            Main.NPCLoaded[NPCID.SkeletonSniper] = false;//should use FrameCount, but fotoshopped works too oops
             Main.NPCLoaded[NPCID.TacticalSkeleton] = false;
             Main.NPCLoaded[NPCID.SkeletonCommando] = false;
             Main.NPCLoaded[NPCID.Everscream] = false;
             
             bool flag3 = Config.Instance.allowBuffDuration;
+            bool flag4 = Config.Instance.allowBuffStat;
+            bool flag5 = Config.Instance.allowArmorStat;
             if (flag3)
             {
                 Main.buffNoTimeDisplay[BuffID.Sharpened] = false;
@@ -2705,6 +2710,15 @@ namespace JourneyRecipes
                 Main.buffNoSave[BuffID.Clairvoyance] = false;
                 Main.buffNoSave[BuffID.Bewitched] = false;
                 Main.buffNoSave[BuffID.AmmoBox] = false;
+            }
+            if (flag4)//don't know if this actually does anything, but just to be safe and to avoid any potentional bugs
+            {
+                Player p = Main.LocalPlayer;
+                p.armorPenetration -= 8;
+            }
+            if (flag5)
+            {
+
             }
             //UnloadSprites();
         }
