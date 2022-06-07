@@ -15,6 +15,22 @@ namespace JourneyRecipes.NPCs
                 NPCValues(npc);
             }
         }
+        public override void OnHitPlayer(NPC npc, Player target, int damage, bool crit)
+        {
+            bool ns = Config.Instance.allowNPCStat;
+            if (ns)
+            {
+                ActiveNPC(npc, target);
+            }
+        }
+        public override void NPCLoot(NPC npc)
+        {
+            bool ns = Config.Instance.allowNPCStat;
+            if (ns)
+            {
+                NPCLootRules(npc);
+            }
+        }
         public static void NPCValues(NPC npc)
         {
             switch (npc.type)
@@ -87,6 +103,34 @@ namespace JourneyRecipes.NPCs
                     break;
                 case 509:
                     npc.value = 195f;
+                    break;
+            }
+        }
+        public void ActiveNPC(NPC npc, Player target)
+        {
+            switch (npc.type)
+            {
+                case 289:
+                    if (Main.rand.NextBool(3)) target.AddBuff(BuffID.Cursed, 120);
+                    break;
+                case 236:
+                case 237:
+                    if (Main.rand.NextBool(10)) target.AddBuff(BuffID.Venom, 240);
+                    break;
+            }
+        }
+        public void NPCLootRules(NPC npc)
+        {
+            switch (npc.type)
+            {
+                case 289:
+                    if (Main.rand.NextBool(100)) Item.NewItem(npc.Hitbox, ItemID.Nazar);
+                    break;
+                case 509:
+                    if (Main.rand.NextBool(50)) Item.NewItem(npc.Hitbox, ItemID.AntlionMandible);
+                    break;
+                case 513:
+                    if (Main.rand.NextBool(2)) Item.NewItem(npc.Hitbox, ItemID.FossilOre, Main.rand.Next(1, 2));
                     break;
             }
         }
