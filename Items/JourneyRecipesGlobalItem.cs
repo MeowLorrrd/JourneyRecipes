@@ -486,6 +486,9 @@ namespace JourneyRecipes.Items
                     item.useTime = 40;
                     item.useAnimation = item.useTime;
                     break;
+                case 3003:
+                    item.damage = 8;
+                    break;
                 case 3009:
                     item.damage = 14;
                     break;
