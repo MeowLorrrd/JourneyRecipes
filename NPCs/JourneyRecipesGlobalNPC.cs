@@ -34,6 +34,7 @@ namespace JourneyRecipes.NPCs
         public override bool PreNPCLoot(NPC npc)
         {
             bool ns = Config.Instance.allowNPCStat;
+            if (ns)
             {
                 switch (npc.type)
                 {
