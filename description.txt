@@ -82,6 +82,7 @@ Laser Drill has 1.4 stats
 Fixed bug relating to Razorblade Typhoon firing 0.05 seconds earlier
 Terrarian can receive its own Legendary modifier
 Fixed bugs relating to enemies giving debuffs for an incorrect duration
+Added new config for tile changes
 
 1.4.11 - Updated Reaver Shark code to be more matchy with 1.4
 Fixed Valhalla Knight's Leggings and Solar Flare set bugs
