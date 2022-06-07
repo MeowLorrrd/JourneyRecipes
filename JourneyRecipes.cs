@@ -2513,7 +2513,6 @@ namespace JourneyRecipes
         {
             base.Load();
             //LoadSprites();
-            List<TooltipLine> line = new List<TooltipLine>();
             Main.instance.LoadTiles(TileID.DyePlants);
             Main.tileTexture[TileID.DyePlants] = GetTexture("Resprite/Tiles_227");
 
@@ -2622,7 +2621,7 @@ namespace JourneyRecipes
             Main.npcTexture[NPCID.NecromancerArmored] = GetTexture("Resprite/NPC_284");
             Main.npcTexture[NPCID.DiabolistRed] = GetTexture("Resprite/NPC_285");
             Main.npcTexture[NPCID.DiabolistWhite] = GetTexture("Resprite/NPC_286");
-            Main.npcTexture[NPCID.BoneLee] = GetTexture("Resprite/NPC_287");
+            Main.npcTexture[NPCID.BoneLee] = GetTexture("Resprite/NPC_287");            //or be a dumb nut like me and edit the sprites to match 1.3 textures ah
             Main.npcTexture[NPCID.Paladin] = GetTexture("Resprite/NPC_290");
             Main.npcTexture[NPCID.SkeletonSniper] = GetTexture("Resprite/NPC_291");
             Main.npcTexture[NPCID.TacticalSkeleton] = GetTexture("Resprite/NPC_292");
@@ -2633,11 +2632,11 @@ namespace JourneyRecipes
         {
             base.Unload();
             Main.tileFrame[TileID.DyePlants] = 0;
-            Main.tileSetsLoaded[TileID.DyePlants] = false;//forces game to reload texture for this tile, as this declares that it is not loaded
+            Main.tileSetsLoaded[TileID.DyePlants] = false;                              //forces game to reload texture for this tile, as this declares that it is not loaded
 
-            Main.NPCLoaded[NPCID.AngryBones] = false;//same as tileSetsLoaded, but for NPCs
+            Main.NPCLoaded[NPCID.AngryBones] = false;                                   //same as tileSetsLoaded, but for NPCs
             Main.NPCLoaded[NPCID.Harpy] = false;
-            Main.npcFrameCount[NPCID.Harpy] = 4;//use 1.3 animation and sprite, which has a different framecount than 1.4 sprites
+            Main.npcFrameCount[NPCID.Harpy] = 4;                                        //use 1.3 animation and sprite, which has a different framecount than 1.4 sprites
             Main.NPCLoaded[NPCID.Vulture] = false;
             Main.npcFrameCount[NPCID.Vulture] = 3;
             Main.NPCLoaded[NPCID.Demon] = false;
