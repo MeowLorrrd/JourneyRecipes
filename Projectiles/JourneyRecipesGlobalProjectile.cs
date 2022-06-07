@@ -1,14 +1,12 @@
 ﻿using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.Utilities;
-using ReLogic.Utilities;
+using Terraria.ID;
 
 namespace JourneyRecipes.Projectiles
 {
     public class JourneyRecipesGlobalProjectile : GlobalProjectile
     {
-        public override void SetDefaults(Projectile projectile)
+        public override void SetDefaults(Projectile projectile)//i dont think there's a reason to make it look like this, it just looks neater??
         {
             bool ws = Config.Instance.allowWeaponStat;
             bool tb = Config.Instance.terraBladeStuff;
@@ -24,6 +22,14 @@ namespace JourneyRecipes.Projectiles
             if (ns)
             {
                 EnemyProjectile(projectile);
+            }
+        }
+        public override void OnHitPlayer(Projectile projectile, Player target, int damage, bool crit)
+        {
+            bool ns = Config.Instance.allowNPCStat;
+            if (ns)
+            {
+                ActiveEnemyProjectile(projectile, target);
             }
         }
         public static void FriendlyProjectile(Projectile projectile)
@@ -87,6 +93,18 @@ namespace JourneyRecipes.Projectiles
             {
                 case 508:
                     projectile.damage = 36;
+                    break;
+            }
+        }
+        public void ActiveEnemyProjectile(Projectile projectile, Player target)
+        {
+            switch (projectile.type)
+            {
+                case 128:
+                    if (Main.rand.NextBool(3)) target.AddBuff(BuffID.Frostburn, 360);
+                    break;
+                case 299:
+                    if (Main.rand.NextBool(3)) target.AddBuff(BuffID.Cursed, 120);
                     break;
             }
         }
