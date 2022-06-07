@@ -33,18 +33,33 @@ namespace JourneyRecipes.NPCs
         }
         public override bool PreNPCLoot(NPC npc)
         {
-            switch (npc.type)
+            bool ns = Config.Instance.allowNPCStat;
             {
-                case 392:
-                case 393:
-                case 394:
-                case 395:
-                    NPCLoader.blockLoot.Add(ItemID.AntiGravityHook);
-                    NPCLoader.blockLoot.Add(ItemID.LaserDrill);
-                    NPCLoader.blockLoot.Add(ItemID.ChargedBlasterCannon);
-                    break;
+                switch (npc.type)
+                {
+                    case 392:
+                    case 393:
+                    case 394:
+                    case 395:
+                        NPCLoader.blockLoot.Add(ItemID.AntiGravityHook);
+                        NPCLoader.blockLoot.Add(ItemID.LaserDrill);
+                        NPCLoader.blockLoot.Add(ItemID.ChargedBlasterCannon);
+                        break;
+                }
             }
             return base.PreNPCLoot(npc);
+        }
+        public override void ScaleExpertStats(NPC npc, int numPlayers, float bossLifeScale)
+        {
+            bool ns = Config.Instance.allowNPCStat;
+            if (ns)
+            {
+                if (npc.type == NPCID.MeteorHead && Main.expertMode)
+                {
+                    if (Main.hardMode) npc.lifeMax = 52;
+                    else npc.lifeMax = 56;
+                }
+            }
         }
         public static void NPCValues(NPC npc)
         {
