@@ -10,9 +10,19 @@ namespace JourneyRecipes.NPCs
         public override void SetDefaults(NPC npc)
         {
             bool ns = Config.Instance.allowNPCStat;
+            bool flag1 = Config.Instance.terraBladeStuff && !NPC.downedPlantBoss;//checks for config and if plantera has been defeated
             if (ns)
             {
                 NPCValues(npc);
+            }
+            if (flag1)
+            {
+                switch (npc.type)
+                {
+                    case 477:
+                        npc.lifeMax = 0;
+                        break;
+                }
             }
         }
         public override void OnHitPlayer(NPC npc, Player target, int damage, bool crit)
@@ -61,6 +71,10 @@ namespace JourneyRecipes.NPCs
                     else npc.lifeMax = 56;
                 }
             }
+        }
+        public void BossLoot(NPC npc, ref int potionType)
+        {
+            if (npc.type == NPCID.MoonLordCore) potionType = ItemID.SuperHealingPotion;
         }
         public static void NPCValues(NPC npc)
         {

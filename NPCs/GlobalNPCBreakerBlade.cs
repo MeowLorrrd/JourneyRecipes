@@ -1,6 +1,7 @@
 ﻿using Terraria.ModLoader;
 using Terraria.ID;
 using Terraria;
+using Microsoft.Xna.Framework;
 
 namespace JourneyRecipes.NPCs
 {
