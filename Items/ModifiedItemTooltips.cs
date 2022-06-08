@@ -54,7 +54,25 @@ namespace JourneyRecipes.Items
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeAltHead", ItemID.ApprenticeAltHead);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeAltShirt", ItemID.ApprenticeAltShirt);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeAltPants", ItemID.ApprenticeAltPants);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.AncientBattleArmorHat", ItemID.AncientBattleArmorHat);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.AncientBattleArmorShirt", ItemID.AncientBattleArmorShirt);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.AncientBattleArmorPants", ItemID.AncientBattleArmorPants);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MoltenHelmet", ItemID.MoltenHelmet);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MoltenBreastplate", ItemID.MoltenBreastplate);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MoltenGreaves", ItemID.MoltenGreaves);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.HuntressWig", ItemID.HuntressWig);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.HuntressJerkin", ItemID.HuntressJerkin);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.HuntressPants", ItemID.HuntressPants);
 
+            }
+            if (Config.Instance.allowThrowingToRanged)
+            {
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.FossilHelm", ItemID.FossilHelm);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.FossilShirt", ItemID.FossilShirt);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.FossilPants", ItemID.FossilPants);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.NinjaHood", ItemID.NinjaHood);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.NinjaShirt", ItemID.NinjaShirt);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.NinjaPants", ItemID.NinjaPants); 
             }
         }
         public static void ResetTooltips()
