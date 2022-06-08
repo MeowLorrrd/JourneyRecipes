@@ -16,7 +16,7 @@ namespace JourneyRecipes.Items.Accessories
                 player.GetModPlayer<JourneyRecipesPlayer>().PlayerFeral = true;
             }
         }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+        /*public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
             if (Config.Instance.allowAccessoryStat && (item.type == ItemID.FeralClaws || item.type == ItemID.PowerGlove))//Tooltip for Feral Claws and Power glove, mentioning that they have autoswing
             {
@@ -204,7 +204,7 @@ namespace JourneyRecipes.Items.Accessories
                 }
                 #endregion
             }
-        }
+        }*/
     }
     public class FeralClawsProjectileHandler : GlobalProjectile
     {

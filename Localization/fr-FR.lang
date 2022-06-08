@@ -1,0 +1,9 @@
+-- French language localization file
+-- 
+
+ItemTooltip.CelestialCuffs=Augmente la portée de collecte des étoiles de mana\nRestaure du mana quand le porteur subit des dégâts +20 points de mana max
+ItemTooltip.FeralClaws=+12 % de vitesse au corps à corps\nActive l'utilisation automatique des armes de mêlée
+ItemTooltip.MechanicalGlove=Augmente le recul au corps à corps\n+12 % de dégâts et de vitesse au corps à corps\nActive l'utilisation automatique des armes de mêlée
+ItemTooltip.FireGauntlet=Augmente le recul au corps à corps et les attaques au corps à corps infligent des dégâts de feu\n+12 % de dégâts et de vitesse au corps à corps\nActive l'utilisation automatique des armes de mêlée
+ItemTooltip.LavaWaders=Permettent de marcher sur l'eau, le miel et la lave\nImmunisent contre les blocs de feu et pendant 7 secondes contre la lave\nRéduisent les dégâts au contact de la lave
+ItemTooltip.MagicQuiver=+10 % de dégâts de flèches et augmente considérablement la vitesse des flèches\n20 % de chances de ne pas utiliser de flèches

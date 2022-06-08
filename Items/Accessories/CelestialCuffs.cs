@@ -15,7 +15,7 @@ namespace JourneyRecipes.Items.Accessories
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            if (Config.Instance.allowAccessoryStat && item.type == ItemID.CelestialCuffs)
+            /*if (Config.Instance.allowAccessoryStat && item.type == ItemID.CelestialCuffs)
             {
                 string GermanOld = "Stellt bei Beschädigung Mana wieder her";
                 string GermanNew = "Stellt bei erlittenem Schaden Mana wieder her\nErhöht maximales Mana um 20";
@@ -76,7 +76,7 @@ namespace JourneyRecipes.Items.Accessories
                     }
                 }
                 #endregion
-            }
+            }*/
         }
     }
 }

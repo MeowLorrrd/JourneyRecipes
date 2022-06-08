@@ -1,0 +1,9 @@
+﻿-- Polish language localization file
+-- 
+
+ItemTooltip.CelestialCuffs=Zwiększa zasięg podnoszenia gwiazdek many\nPo otrzymaniu obrażeń odnawia manę\nZwiększa maksymalną liczbę punktów many o 20
+ItemTooltip.FeralClaws=12% zwiększona szybkość walki w zwarciu\nUmożliwia automatyczny atak broni do walki w zwarciu
+ItemTooltip.MechanicalGlove=Zwiększa odrzut w walce w zwarciu\n12% zwiększone obrażenia i szybkość w walce w zwarciu\nUmożliwia automatyczny atak broni do walki w zwarciu
+ItemTooltip.FireGauntlet=Zwiększa odrzut w walce w zwarciu, a ataki w zwarciu zadają obrażenia od ognia\n12% zwiększone obrażenia i szybkość walki w zwarciu\nUmożliwia automatyczny atak broni do walki w zwarciu
+ItemTooltip.LavaWaders=Pozwala chodzić po wodzie, miodzie i lawie\nZapewnia odporność na bloki ognia oraz 7 sekund odporności na lawę\nObniża obrażenia spowodowane dotknięciem lawy
+ItemTooltip.MagicQuiver=Zwiększa obrażenia strzał o 10%, a także znacznie zwiększa ich szybkość\n20% szans niezużycia strzał

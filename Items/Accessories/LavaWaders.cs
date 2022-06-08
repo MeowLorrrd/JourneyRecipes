@@ -13,7 +13,7 @@ namespace JourneyRecipes.Items.Accessories
             if (Config.Instance.allowAccessoryStat && item.type == ItemID.LavaWaders)
                 player.lavaRose = true;
         }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+        /*public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
             if (Config.Instance.allowAccessoryStat && item.type == ItemID.LavaWaders)
             {
@@ -77,6 +77,6 @@ namespace JourneyRecipes.Items.Accessories
                 }
                 #endregion
             }
-        }
+        }*/
     }
 }

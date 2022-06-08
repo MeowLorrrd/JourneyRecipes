@@ -1,0 +1,9 @@
+-- Portugese language localization file
+-- 
+
+ItemTooltip.CelestialCuffs=Aumenta o alcance de coleta das estrelas de mana\nRestaura mana quando sofrer dano\nAumenta a mana máxima em 20
+ItemTooltip.FeralClaws=12% de aumento na velocidade de ataque físico\nPermite o ataque automático com armas de ataque físico
+ItemTooltip.MechanicalGlove=Aumenta o recuo de ataques físicos\n12% de aumento no dano por ataques físicos\nPermite o ataque automático com armas de ataque físico
+ItemTooltip.FireGauntlet=Aumenta o recuo de ataques físicos e faz ataques físicos causarem dano de fogo\n12% de aumento no dano por ataques físicos\nPermite o ataque automático com armas de ataque físico
+ItemTooltip.LavaWaders=Permite andar sobre a água, o mel e a lava\nOferece imunidade a blocos de fogo e 7 segundos de imunidade a lava\nReduz dano sofrido ao entrar em contato com lava
+ItemTooltip.MagicQuiver=Aumenta o dano das flechas em 10%\nAumenta muito a velocidade das flechas\n20% de chance de não consumir flechas

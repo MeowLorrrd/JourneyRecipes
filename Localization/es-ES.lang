@@ -1,0 +1,9 @@
+-- Spanish language localization file
+-- 
+
+ItemTooltip.CelestialCuffs=Aumenta el rango de recogida de estrellas de maná\nRecupera maná al sufrir daños\nAumenta el maná máximo en 20
+ItemTooltip.FeralClaws=Aumenta un 12% la velocidad del cuerpo a cuerpo\nPermite el uso automático de las armas cuerpo a cuerpo
+ItemTooltip.MechanicalGlove=Aumenta el retroceso del cuerpo a cuerpo\nAumenta un 12% la velocidad y el daño del cuerpo a cuerpo\nActiva el ataque automático de las armas cuerpo a cuerpo
+ItemTooltip.FireGauntlet=Aumenta el retroceso del cuerpo a cuerpo y los ataques cuerpo a cuerpo infligen daño de fuego\nAumenta un 12% la velocidad y el daño del cuerpo a cuerpo\nActiva el ataque automático de las armas cuerpo a cuerpo
+ItemTooltip.LavaWaders=Otorga la capacidad de caminar sobre el agua, la miel y la lava\nOfrece inmunidad ante los bloques de fuego y 7 segundos de inmunidad a la lava\nReduce el daño al tocar lava
+ItemTooltip.MagicQuiver=Aumenta en un 10% el daño de flechas y aumenta drásticamente la velocidad de las flechas\nProbabilidad del 20% de no consumir flechas

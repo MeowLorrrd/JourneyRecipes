@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using System.Collections.Generic;
-using JourneyRecipes.Items.Armor;
+using JourneyRecipes.Items;
 
 namespace JourneyRecipes
 {
@@ -2511,6 +2511,7 @@ namespace JourneyRecipes
 
                 }
                 #endregion
+                ModifiedItemTooltips.EditTooltips();
             }
         }
         public override void Load()
@@ -2637,6 +2638,8 @@ namespace JourneyRecipes
         public override void Unload()
         {
             base.Unload();
+            ModifiedItemTooltips.ResetTooltips();
+            instance = null;
             Main.tileFrame[TileID.DyePlants] = 0;
             Main.tileSetsLoaded[TileID.DyePlants] = false;                              //forces game to reload texture for this tile, as this declares that it is not loaded
 
@@ -2701,7 +2704,7 @@ namespace JourneyRecipes
             Main.NPCLoaded[NPCID.TacticalSkeleton] = false;
             Main.NPCLoaded[NPCID.SkeletonCommando] = false;
             Main.NPCLoaded[NPCID.Everscream] = false;
-            
+
             bool flag3 = Config.Instance.allowBuffDuration;
             bool flag4 = Config.Instance.allowBuffStat;
             bool flag5 = Config.Instance.allowArmorStat;

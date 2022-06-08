@@ -1,0 +1,9 @@
+-- English language localization file
+-- 
+
+ItemTooltip.CelestialCuffs=Increases pickup range for mana stars\nRestores mana when damaged\nIncreases maximum mana by 20
+ItemTooltip.FeralClaws=12% increased melee speed\nEnables auto swing for melee weapons
+ItemTooltip.MechanicalGlove=Increases melee knockback\n12% increased melee damage and speed\nEnables auto swing for melee weapons
+ItemTooltip.FireGauntlet=Increases melee knockback and melee attacks inflict fire damage\n12% increased melee damage and speed\nEnables auto swing for melee weapons
+ItemTooltip.LavaWaders=Provides the ability to walk on water, honey & lava\nGrants immunity to fire blocks and 7 seconds of immunity to lava\nReduces damage from touching lava
+ItemTooltip.MagicQuiver=Increases arrow damage by 10% and greatly increases arrow speed\n20% chance to not consume arrows
