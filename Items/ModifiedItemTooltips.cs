@@ -46,6 +46,16 @@ namespace JourneyRecipes.Items
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.LavaWaders", ItemID.LavaWaders);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MagicQuiver", ItemID.MagicQuiver);
             }
+            if (Config.Instance.allowArmorStat)
+            {
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeHat", ItemID.ApprenticeHat);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeRobe", ItemID.ApprenticeRobe);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeTrousers", ItemID.ApprenticeTrousers);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeAltHead", ItemID.ApprenticeAltHead);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeAltShirt", ItemID.ApprenticeAltShirt);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeAltPants", ItemID.ApprenticeAltPants);
+
+            }
         }
         public static void ResetTooltips()
         {

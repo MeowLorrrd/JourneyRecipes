@@ -1,9 +1,19 @@
 -- Spanish language localization file
--- 
+-- Accessory, armor, armor set bonus
 
 ItemTooltip.CelestialCuffs=Aumenta el rango de recogida de estrellas de maná\nRecupera maná al sufrir daños\nAumenta el maná máximo en 20
 ItemTooltip.FeralClaws=Aumenta un 12% la velocidad del cuerpo a cuerpo\nPermite el uso automático de las armas cuerpo a cuerpo
+ItemTooltip.MagicQuiver=Aumenta en un 10% el daño de flechas y aumenta drásticamente la velocidad de las flechas\nProbabilidad del 20% de no consumir flechas
 ItemTooltip.MechanicalGlove=Aumenta el retroceso del cuerpo a cuerpo\nAumenta un 12% la velocidad y el daño del cuerpo a cuerpo\nActiva el ataque automático de las armas cuerpo a cuerpo
 ItemTooltip.FireGauntlet=Aumenta el retroceso del cuerpo a cuerpo y los ataques cuerpo a cuerpo infligen daño de fuego\nAumenta un 12% la velocidad y el daño del cuerpo a cuerpo\nActiva el ataque automático de las armas cuerpo a cuerpo
 ItemTooltip.LavaWaders=Otorga la capacidad de caminar sobre el agua, la miel y la lava\nOfrece inmunidad ante los bloques de fuego y 7 segundos de inmunidad a la lava\nReduce el daño al tocar lava
-ItemTooltip.MagicQuiver=Aumenta en un 10% el daño de flechas y aumenta drásticamente la velocidad de las flechas\nProbabilidad del 20% de no consumir flechas
+
+ItemTooltip.ApprenticeHat=Aumenta en 1 el máximo de centinelas que puedes tener, aumenta el daño por magia en un 10% y reduce en un 10% los costes de maná
+ItemTooltip.ApprenticeRobe=Aumenta un 20% el daño de súbditos y un 10% el daño mágico
+ItemTooltip.ApprenticeTrousers=Aumenta un 10% el daño de súbditos, un 20% la probabilidad de impacto crítico mágico y la velocidad de movimiento
+ItemTooltip.ApprenticeAltHead=Aumenta en 2 el máximo de centinelas que puedes tener\nAumenta un 15% el daño de los súbditos y de la magia
+ItemTooltip.ApprenticeAltShirt=Aumenta un 25% el daño de súbditos y un 10% el daño mágico\nReduce en un 15% los costes de maná
+ItemTooltip.ApprenticeAltPants=Aumenta un 20% el daño de súbditos y un 25% la probabilidad de ataque mágico crítico\nAumenta un 20% la velocidad de movimiento
+
+ArmorSetbonus.Cactus=Los atacantes sufren daños por las espinas del cactus
+ArmorSetbonus.ChlorophyteMask=Invoca una poderosa hoja de cristal que se lanza a los enemigos cercanos\nReduce en un 5% el daño sufrido

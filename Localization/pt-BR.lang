@@ -1,9 +1,19 @@
 -- Portugese language localization file
--- 
+-- Accessory, armor, armor set bonus
 
 ItemTooltip.CelestialCuffs=Aumenta o alcance de coleta das estrelas de mana\nRestaura mana quando sofrer dano\nAumenta a mana máxima em 20
 ItemTooltip.FeralClaws=12% de aumento na velocidade de ataque físico\nPermite o ataque automático com armas de ataque físico
+ItemTooltip.MagicQuiver=Aumenta o dano das flechas em 10%\nAumenta muito a velocidade das flechas\n20% de chance de não consumir flechas
 ItemTooltip.MechanicalGlove=Aumenta o recuo de ataques físicos\n12% de aumento no dano por ataques físicos\nPermite o ataque automático com armas de ataque físico
 ItemTooltip.FireGauntlet=Aumenta o recuo de ataques físicos e faz ataques físicos causarem dano de fogo\n12% de aumento no dano por ataques físicos\nPermite o ataque automático com armas de ataque físico
 ItemTooltip.LavaWaders=Permite andar sobre a água, o mel e a lava\nOferece imunidade a blocos de fogo e 7 segundos de imunidade a lava\nReduz dano sofrido ao entrar em contato com lava
-ItemTooltip.MagicQuiver=Aumenta o dano das flechas em 10%\nAumenta muito a velocidade das flechas\n20% de chance de não consumir flechas
+
+ItemTooltip.ApprenticeHat=Aumenta o número máximo de sentinelas em 1 e o dano por magia em 10% e reduz o custo de mana em 10%
+ItemTooltip.ApprenticeRobe=20% de aumento nos danos por lacaios e 10% de aumento nos danos mágicos
+ItemTooltip.ApprenticeTrousers=10% de aumento nos danos por lacaios, 20% de aumento na chance de acerto mágico crítico e na velocidade dos movimentos
+ItemTooltip.ApprenticeAltHead=Aumenta o número máximo de sentinelas em 2\n15% de aumento no dano por lacaios e no dano por magia
+ItemTooltip.ApprenticeAltShirt=25% de aumento no dano por lacaios e 10% de aumento no dano por magia\nReduz o custo de mana em 15%
+ItemTooltip.ApprenticeAltPants=20% de aumento no dano por lacaios e 25% de aumento na chance de ataque mágico crítico\n20% de aumento na velocidade dos movimentos
+
+ArmorSetbonus.Cactus=Atacantes sofrem dano por espinhos de cactos
+ArmorSetbonus.ChlorophyteMask=Invoca um poderoso cristal de folha para atirar em inimigos próximos\nReduz os danos sofridos em 5%

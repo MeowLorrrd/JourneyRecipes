@@ -1,9 +1,19 @@
 ﻿-- Polish language localization file
--- 
+-- Accessory, armor, armor set bonus
 
 ItemTooltip.CelestialCuffs=Zwiększa zasięg podnoszenia gwiazdek many\nPo otrzymaniu obrażeń odnawia manę\nZwiększa maksymalną liczbę punktów many o 20
 ItemTooltip.FeralClaws=12% zwiększona szybkość walki w zwarciu\nUmożliwia automatyczny atak broni do walki w zwarciu
+ItemTooltip.MagicQuiver=Zwiększa obrażenia strzał o 10%, a także znacznie zwiększa ich szybkość\n20% szans niezużycia strzał
 ItemTooltip.MechanicalGlove=Zwiększa odrzut w walce w zwarciu\n12% zwiększone obrażenia i szybkość w walce w zwarciu\nUmożliwia automatyczny atak broni do walki w zwarciu
 ItemTooltip.FireGauntlet=Zwiększa odrzut w walce w zwarciu, a ataki w zwarciu zadają obrażenia od ognia\n12% zwiększone obrażenia i szybkość walki w zwarciu\nUmożliwia automatyczny atak broni do walki w zwarciu
 ItemTooltip.LavaWaders=Pozwala chodzić po wodzie, miodzie i lawie\nZapewnia odporność na bloki ognia oraz 7 sekund odporności na lawę\nObniża obrażenia spowodowane dotknięciem lawy
-ItemTooltip.MagicQuiver=Zwiększa obrażenia strzał o 10%, a także znacznie zwiększa ich szybkość\n20% szans niezużycia strzał
+
+ItemTooltip.ApprenticeHat=Zwiększa maksymalną liczbę twoich wartowników o 1 oraz obrażenia magiczne o 10% , a także zmniejsza koszt many o 10%
+ItemTooltip.ApprenticeRobe=20% zwiększone obrażenia sług oraz 10% zwiększone obrażenia magiczne
+ItemTooltip.ApprenticeTrousers=10% zwiększone obrażenia sług, 20% zwiększona szansa na magiczne trafienie krytyczne oraz szybkość poruszania się
+ItemTooltip.ApprenticeAltHead=Zwiększa maksymalną liczbę wartowników o 2\n15% zwiększone obrażenia sług oraz obrażenia magiczne
+ItemTooltip.ApprenticeAltShirt=25% zwiększone obrażenia sług oraz 10% zwiększone obrażenia magiczne\nZmniejsza koszt many o 15%
+ItemTooltip.ApprenticeAltPants=20% zwiększone obrażenia sług oraz 25% zwiększona szansa na magiczne trafienie krytyczne\n20% zwiększona szybkość poruszania się
+
+ArmorSetbonus.Cactus=Atakujący otrzymują obrażenia od kolców kaktusa
+ArmorSetbonus.ChlorophyteMask=Przywołuje potężnego liścia kryształowego, który rani pobliskich wrogów\nZmniejsza otrzymywane obrażenia o 5%

@@ -1,9 +1,19 @@
 ﻿-- Chinese (Simplified) language localization file
--- 
+-- Accessory, armor, armor set bonus
 
 ItemTooltip.CelestialCuffs=扩大魔力星的拾取范围\n受到伤害后恢复魔力\n最大魔力值增加20
 ItemTooltip.FeralClaws=近战速度提高12%\n为近战武器启用自动摆动
+ItemTooltip.MagicQuiver=箭的伤害增加10%，箭的速度大大提高\n20%的几率不消耗箭
 ItemTooltip.MechanicalGlove=提高近战击退力\n近战伤害和速度各增加12%\n为近战武器启用自动摆动
 ItemTooltip.FireGauntlet=提高近战击退力，近战攻击造成燃火伤害\n近战伤害和速度各增加12%\n为近战武器启用自动摆动
 ItemTooltip.LavaWaders=可让人在水、蜂蜜和熔岩上行走\n对火块免疫并在7秒内对熔岩免疫\n减少因触碰熔岩而受到的伤害
-ItemTooltip.MagicQuiver=箭的伤害增加10%，箭的速度大大提高\n20%的几率不消耗箭
+
+ItemTooltip.ApprenticeHat=哨兵数量上限提高1个，魔法伤害增加10%，魔力花费减少10%
+ItemTooltip.ApprenticeRobe=仆从伤害增加20%，魔法伤害增加10%
+ItemTooltip.ApprenticeTrousers=仆从伤害增加10%，魔法暴击率和移动速度各提高20%
+ItemTooltip.ApprenticeAltHead=哨兵数量上限提高2个\n仆从和魔法伤害各增加15%
+ItemTooltip.ApprenticeAltShirt=仆从伤害增加25%，魔法伤害增加10%\n魔力花费减少15%
+ItemTooltip.ApprenticeAltPants=仆从伤害增加20%，魔法暴击率增加25%\n移动速度提高20%
+
+ArmorSetbonus.Cactus=攻击者因为仙人掌尖刺受到伤害
+ArmorSetbonus.ChlorophyteMask=召唤强大的叶状水晶来射击附近的敌人\n所受伤害减少5%
