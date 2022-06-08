@@ -123,5 +123,20 @@ namespace JourneyRecipes.Projectiles
                     break;
             }
         }
+        public override void AI(Projectile projectile)
+        {
+            //code from omniswing source code
+            //fixes spear ai
+            {
+                if (Config.Instance.allowAccessoryStat)
+                {
+                    if (projectile.aiStyle == 19 || projectile.aiStyle == 699)
+                    {
+                        projectile.timeLeft = Main.player[projectile.owner].itemAnimation;
+                        projectile.netUpdate = true;
+                    }
+                }
+            }
+        }
     }
 }

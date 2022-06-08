@@ -16,6 +16,7 @@ namespace JourneyRecipes.Items
             bool ws = Config.Instance.allowWeaponStat;
             bool tr = Config.Instance.allowThrowingToRanged;
             bool ts = Config.Instance.allowToolStat;
+            bool ac = Config.Instance.allowAccessoryStat;
             if (ms)
                 switch (item.type)
                 {
@@ -216,6 +217,47 @@ namespace JourneyRecipes.Items
             if (ts)
             {
                 UpdateToolStat(item);
+            }
+            if (ac)
+            {
+                switch (item.type)
+                {
+                    case 49:
+                    case 860:
+                        item.lifeRegen = 2;
+                        break;
+                    case 3016:
+                        item.defense = 8;
+                        break;
+                }
+            }
+        }
+        public override void UpdateAccessory(Item item, Player player, bool hideVisual)
+        {
+            bool ac = Config.Instance.allowAccessoryStat;
+            if (ac)
+            {
+                switch (item.type)
+                {
+                    case 211:
+                    case 897:
+                        player.GetModPlayer<JourneyRecipesPlayer>().PlayerFeral = true;
+                        break;
+                    case 908:
+                        player.lavaRose = true;
+                        break;
+                    case 936:
+                        player.GetModPlayer<JourneyRecipesPlayer>().PlayerFeral = true;
+                        break;
+                    case 1343:
+                        player.meleeDamage += .02f;
+                        player.meleeSpeed += .02f;
+                        player.GetModPlayer<JourneyRecipesPlayer>().PlayerFeral = true;
+                        break;
+                    case 2221:
+                        player.statManaMax2 += 20;
+                        break;
+                }
             }
         }
         public static void UpdateWeaponStat(Item item)
