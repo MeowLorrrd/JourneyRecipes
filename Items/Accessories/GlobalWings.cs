@@ -1,21 +1,6 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.Enums;
-using Terraria.GameContent;
-using Terraria.Initializers;
-using Terraria.Modules;
-using static Terraria.Player;
-using Terraria.Utilities;
-using Terraria.DataStructures;
-using Terraria.IO;
-using Terraria.ObjectData;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework;
 
 namespace JourneyRecipes.Items.Accessories
 {
@@ -184,7 +169,7 @@ namespace JourneyRecipes.Items.Accessories
             #region wing bools
             bool flag = player.controlDown && player.controlJump && player.wingTime > 1;//checks if player is hovering and has wingtime left
             bool flag2 = player.controlJump && player.wingTime > 1;//checks if player is flying and has wingtime left
-            bool flag3 = player.wingsLogic == 22 || player.wingsLogic == 28 || player.wingsLogic == 30 || player.wingsLogic == 31 || player.wingsLogic == 33 || player.wingsLogic == 35 || player.wingsLogic == 37 || player.wingsLogic == 45;//checks if player CAN hover
+            bool flag3 = player.wingsLogic == 22 || player.wingsLogic == 28 || player.wingsLogic == 30 || player.wingsLogic == 31 || player.wingsLogic == 33 || player.wingsLogic == 35 || player.wingsLogic == 37 || player.wingsLogic == 45;//checks if player CAN hover with these vanilla wings
             #endregion
 
             #region Hover-able wings
