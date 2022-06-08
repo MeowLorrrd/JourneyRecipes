@@ -48,23 +48,52 @@ namespace JourneyRecipes.Items
             }
             if (Config.Instance.allowArmorStat)
             {
-                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeHat", ItemID.ApprenticeHat);
-                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeRobe", ItemID.ApprenticeRobe);
-                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeTrousers", ItemID.ApprenticeTrousers);
-                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeAltHead", ItemID.ApprenticeAltHead);
-                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeAltShirt", ItemID.ApprenticeAltShirt);
-                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeAltPants", ItemID.ApprenticeAltPants);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.AncientBattleArmorHat", ItemID.AncientBattleArmorHat);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.AncientBattleArmorShirt", ItemID.AncientBattleArmorShirt);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.AncientBattleArmorPants", ItemID.AncientBattleArmorPants);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.AncientCobaltHelmet", ItemID.AncientCobaltHelmet);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.AncientCobaltBreastplate", ItemID.AncientCobaltBreastplate);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.AncientCobaltLeggings", ItemID.AncientCobaltLeggings);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeAltHead", ItemID.ApprenticeAltHead);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeAltShirt", ItemID.ApprenticeAltShirt);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeAltPants", ItemID.ApprenticeAltPants);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeHat", ItemID.ApprenticeHat);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeRobe", ItemID.ApprenticeRobe);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ApprenticeTrousers", ItemID.ApprenticeTrousers);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MoltenHelmet", ItemID.MoltenHelmet);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MoltenBreastplate", ItemID.MoltenBreastplate);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MoltenGreaves", ItemID.MoltenGreaves);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.HuntressAltHead", ItemID.HuntressAltHead);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.HuntressAltShirt", ItemID.HuntressAltShirt);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.HuntressAltPants", ItemID.HuntressAltPants);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.HuntressWig", ItemID.HuntressWig);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.HuntressJerkin", ItemID.HuntressJerkin);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.HuntressPants", ItemID.HuntressPants);
-
-            }
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.JungleHat", ItemID.JungleHat);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.JungleShirt", ItemID.JungleShirt);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.JunglePants", ItemID.JunglePants);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MeteorHelmet", ItemID.MeteorHelmet);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MeteorSuit", ItemID.MeteorSuit);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MeteorLeggings", ItemID.MeteorLeggings);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MonkAltHead", ItemID.MonkAltHead);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MonkAltShirt", ItemID.MonkAltShirt);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MonkAltPants", ItemID.MonkAltPants);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MonkBrows", ItemID.MonkBrows);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MonkShirt", ItemID.MonkShirt);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MonkPants", ItemID.MonkPants);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SolarFlareHelmet", ItemID.SolarFlareHelmet);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SolarFlareBreastplate", ItemID.SolarFlareBreastplate);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SolarFlareLeggings", ItemID.SolarFlareLeggings);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SpookyHelmet", ItemID.SpookyHelmet);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SpookyBreastplate", ItemID.SpookyBreastplate);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SpookyLeggings", ItemID.SpookyLeggings);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SquireGreatHelm", ItemID.SquireGreatHelm);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SquirePlating", ItemID.SquirePlating);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SquireGreaves", ItemID.SquireGreaves);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.TikiMask", ItemID.TikiMask);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.TikiShirt", ItemID.TikiShirt);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.TikiPants", ItemID.TikiPants);
+            }//continue at shroomite and valhalla knights
             if (Config.Instance.allowThrowingToRanged)
             {
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.FossilHelm", ItemID.FossilHelm);
