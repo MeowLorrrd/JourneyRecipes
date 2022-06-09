@@ -920,10 +920,12 @@ namespace JourneyRecipes.Items
         }
         public override bool ConsumeAmmo(Item item, Player player)
         {
-            bool ws = Config.Instance.allowWeaponStat;
-            if (ws && item.type == ItemID.SDMG)
+            if (ModContent.GetInstance<Config>().allowWeaponStat)
             {
-                return Main.rand.NextBool(3);
+                if (item.type == ItemID.SDMG)
+                {
+                    return Main.rand.NextBool(3);
+                }
             }
             return base.ConsumeAmmo(item, player);
         }

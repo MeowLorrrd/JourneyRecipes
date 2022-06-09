@@ -1,39 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.DataStructures;
-using Terraria.GameContent.Events;
-using Terraria.GameInput;
-using Terraria.ModLoader.IO;
-using System.IO;
-using System.Security.Cryptography;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-using ReLogic.Utilities;
-using Terraria.Audio;
-using Terraria.Chat;
-using Terraria.Enums;
-using Terraria.GameContent;
-using Terraria.GameContent.Achievements;
-using Terraria.GameContent.Tile_Entities;
-using Terraria.GameContent.UI;
-using Terraria.Graphics;
-using Terraria.Graphics.Capture;
-using Terraria.Graphics.Effects;
-using Terraria.Graphics.Shaders;
-using Terraria.IO;
-using Terraria.Localization;
-using Terraria.ObjectData;
-using Terraria.Social;
-using Terraria.UI;
-using Terraria.UI.Chat;
-using Terraria.UI.Gamepad;
-using Terraria.Utilities;
 
 namespace JourneyRecipes
 {
@@ -77,13 +44,16 @@ namespace JourneyRecipes
         }
         public override bool ConsumeAmmo(Item weapon, Item ammo)
         {
-            if (Config.Instance.allowArmorStat && Ammo10 && Main.rand.NextBool(10))
+            if (ModContent.GetInstance<Config>().allowArmorStat)
             {
-                return false;
-            }
-            if (Config.Instance.allowArmorStat && Ammo20 && Main.rand.NextBool(5))
-            {
-                return false;
+                if (Ammo10)
+                {
+                    return !Main.rand.NextBool(10);
+                }
+                else if (Ammo20)
+                {
+                    return !Main.rand.NextBool(5);
+                }
             }
             return base.ConsumeAmmo(weapon, ammo);
         }
