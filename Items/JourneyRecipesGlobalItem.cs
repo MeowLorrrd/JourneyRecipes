@@ -993,6 +993,8 @@ namespace JourneyRecipes.Items
                         break;
                     case Solar:
                         player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Solar");
+                        player.endurance += .12f;
+                        player.solarCounter++;
                         break;
                     case Turtle:
                         player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Turtle");
