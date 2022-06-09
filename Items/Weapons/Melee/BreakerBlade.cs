@@ -16,16 +16,5 @@ namespace JourneyRecipes.Items.Weapons.Melee
                 item.damage = 43;
             }
         }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (Config.Instance.allowWeaponStat && Config.Instance.allowExperimentalFeatures)
-            {
-                if (item.type == ItemID.BreakerBlade)
-                {
-                    var line = new TooltipLine(mod, "Breaker Blade new tooltip", "Deals more damage to unhurt enemies");
-                    tooltips.Add(line);
-                }
-            }
-        }
     }
 }
