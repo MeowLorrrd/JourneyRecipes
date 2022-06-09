@@ -77,6 +77,7 @@ ArmorSetbonus.ChlorophyteMelee=Invoca una poderosa hoja de cristal que se lanza 
 ArmorSetbonus.Fossil=Probabilidad del 20% de no gastar munición
 ArmorSetbonus.Gladiator=Vuelve inmune al retroceso
 ArmorSetbonus.Molten=10% de daño extra en el cuerpo a cuerpo\nNo se le puede prender fuego
+ArmorSetbonus.Necro=Aumenta un 10% la probabilidad de ataque crítico a distancia
 ArmorSetbonus.Ninja=Aumenta en un 20% la velocidad de movimiento
 ArmorSetbonus.Solar=Los escudos solares se cargan con el tiempo para protegerte y dejarte correr\nSe usa una carga para dañar a los enemigos a los que toques\nLas cargas consumidas explotan y dañan a los enemigos
 ArmorSetbonus.Turtle=Los atacantes también reciben el doble de daño\nSe reduce en un 15% el daño sufrido

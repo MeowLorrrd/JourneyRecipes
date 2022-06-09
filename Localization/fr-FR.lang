@@ -77,6 +77,7 @@ ArmorSetbonus.ChlorophyteMelee=Invoque une feuille de cristal puissante pour tir
 ArmorSetbonus.Fossil=20 % de chances de ne pas utiliser de munitions
 ArmorSetbonus.Gladiator=Immunise contre le recul
 ArmorSetbonus.Molten=+10 % de dégâts supplémentaires au corps à corps, ne peut pas prendre feu
+ArmorSetbonus.Necro=+10 % de chances de coup critique à distance
 ArmorSetbonus.Ninja=+20 % de vitesse de déplacement
 ArmorSetbonus.Solar=Les boucliers solaires se chargent avec le temps pour vous protéger et pour vous permettre de foncer\nUne charge est utilisée pour infliger des dégâts aux ennemis touchés\nLes charges consommées explosent et infligent des dégâts aux ennemis
 ArmorSetbonus.Turtle=Les agresseurs subissent également des dégâts\nRéduit les dégâts subis de 15 %

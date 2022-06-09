@@ -77,6 +77,7 @@ ArmorSetbonus.ChlorophyteMelee=Summons a powerful leaf crystal to shoot at nearb
 ArmorSetbonus.Fossil=20% chance to not consume ammo
 ArmorSetbonus.Gladiator=Grants immunity to knockback
 ArmorSetbonus.Molten=10% extra melee damage,\nCannot be set on fire
+ArmorSetbonus.Necro=10% increased ranged critical strike chance
 ArmorSetbonus.Ninja=20% increased movement speed
 ArmorSetbonus.Solar=Solar shields charge over time to protect you & let you dash\nA charge is used to damage enemies you touch\nConsumed charges explode & damage enemies
 ArmorSetbonus.Turtle=Attackers also take double damage\nReduces damage taken by 15%

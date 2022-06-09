@@ -1,9 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Utilities;
+using Terraria.Localization;
 
 namespace JourneyRecipes.Items
 {
@@ -17,6 +17,7 @@ namespace JourneyRecipes.Items
         const string Molten = "moltenSet";
         const string Necro = "necroSet";
         const string Ninja = "ninjaSet";
+        const string Solar = "solarFlareSet";
         const string Turtle = "turtleSet";
         public override void SetDefaults(Item item)
         {
@@ -951,6 +952,7 @@ namespace JourneyRecipes.Items
             if (head.type == ItemID.MoltenHelmet && body.type == ItemID.MoltenBreastplate && legs.type == ItemID.MoltenGreaves) return Molten;
             if ((head.type == ItemID.NecroHelmet || head.type == ItemID.AncientNecroHelmet) && body.type == ItemID.NecroBreastplate && legs.type == ItemID.NecroGreaves) return Necro;
             if (head.type == ItemID.NinjaHood && body.type == ItemID.NinjaShirt && legs.type == ItemID.NinjaPants) return Ninja;
+            if (head.type == ItemID.SolarFlareHelmet && body.type == ItemID.SolarFlareBreastplate && legs.type == ItemID.SolarFlareLeggings) return Solar;
             if (head.type == ItemID.TurtleHelmet && body.type == ItemID.TurtleScaleMail && legs.type == ItemID.TurtleLeggings) return Turtle;
             return base.IsArmorSet(head, body, legs);
         }
@@ -963,25 +965,34 @@ namespace JourneyRecipes.Items
                 switch (set)
                 {
                     case Cactus:
+                        player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Cactus");
                         player.statDefense -= 1;
                         player.thorns = .5f;
                         break;
                     case ChlorophyteMelee:
+                        player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.ChlorophyteMelee");
                         player.endurance += .05f;
                         break;
                     case Gladiator:
+                        player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Gladiator");
                         player.noKnockback = true;
                         break;
                     case Necro:
+                        player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Necro");
                         player.ammoCost80 = false;
                         player.ammoCost75 = false;
                         player.rangedCrit += 10;
                         break;
                     case Molten:
+                        player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Molten");
                         player.meleeDamage -= .07f;
                         player.buffImmune[BuffID.OnFire] = true;
                         break;
+                    case Solar:
+                        player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Solar");
+                        break;
                     case Turtle:
+                        player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Turtle");
                         player.endurance += .15f;
                         player.turtleThorns = false;
                         player.turtleArmor = false;
@@ -994,11 +1005,13 @@ namespace JourneyRecipes.Items
                 switch (set)
                 {
                     case Fossil:
+                        player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Fossil");
                         player.thrownCost33 = false;
                         player.thrownCost50 = false;
                         player.ammoCost80 = true;
                         break;
                     case Ninja:
+                        player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Ninja");
                         player.thrownCost33 = false;
                         player.thrownCost50 = false;
                         player.moveSpeed += .2f;
