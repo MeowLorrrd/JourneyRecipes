@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace JourneyRecipes.Items.Accessories
+namespace JourneyRecipes.Items
 {
     public class GlobalWings : GlobalItem
     {
@@ -97,7 +97,7 @@ namespace JourneyRecipes.Items.Accessories
                         maxCanAscendMultiplier = 1f;
                         ascentWhenRising = .15f;
                         break;
-                    //code taken from Terraria (1.4.2.3) source code
+                        //code taken from Terraria (1.4.2.3) source code
                 }
             }
         }
@@ -175,7 +175,7 @@ namespace JourneyRecipes.Items.Accessories
             #region Hover-able wings
             if (flag2 && flag3 && !player.merman)
             {
-                
+
                 if (flag)
                 {
                     player.velocity.Y *= 0.9f;
