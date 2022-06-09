@@ -125,7 +125,7 @@ namespace JourneyRecipes
         [Label("[i:2341]    Change tool stats?")]
         [Tooltip("If this setting is turned off, this mod will not change tool stats, e.g. the 1.3 Reaver Shark stats will be used" +
             "\nBy enabling this setting, certain tools will use 1.4 stats" +
-            "\nCurrently only affects Reaver Shark")]
+            "\nCurrently only affects Reaver Shark and Laser Drill")]
         [ReloadRequired]
         public bool allowToolStat;
 
