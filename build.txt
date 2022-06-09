@@ -4,5 +4,5 @@ version = 1.4.12
 includeSource = true
 hideCode = false
 hideResourcees = false
-buildIgnore = *.editorconfig, *.gitattributes, *.gitignore, *.md, .vs\*, bin\*, git\*, xcf\*
+buildIgnore = *.editorconfig, *.gitattributes, *.gitignore, *.md, .vs\*, bin\*, git\*, xcf\*, GlobalSuppressions.cs
 homepage = https://docs.google.com/document/d/1tQXbsJhvmmDwGU16Jp2rnQxJZkGTD47651UVnY-h19U/edit?usp=sharing
