@@ -7,8 +7,17 @@ using Terraria.Utilities;
 
 namespace JourneyRecipes.Items
 {
+
     public class JourneyRecipesGlobalItem : GlobalItem
     {
+        const string Cactus = "cactusSet";
+        const string ChlorophyteMelee = "chlorophyteMaskSet";
+        const string Fossil = "fossilSet";
+        const string Gladiator = "gladiatorSet";
+        const string Molten = "moltenSet";
+        const string Necro = "necroSet";
+        const string Ninja = "ninjaSet";
+        const string Turtle = "turtleSet";
         public override void SetDefaults(Item item)
         {
             bool ms = Config.Instance.allowMaxStack;
@@ -221,7 +230,7 @@ namespace JourneyRecipes.Items
             }
             if (ac)
             {
-                switch (item.type)
+                switch (item.type)//small so no method needed
                 {
                     case 49:
                     case 860:
@@ -231,6 +240,10 @@ namespace JourneyRecipes.Items
                         item.defense = 8;
                         break;
                 }
+            }
+            if (ar)
+            {
+                UpdateArmorSetDefaults(item);
             }
         }
         public override void UpdateAccessory(Item item, Player player, bool hideVisual)
@@ -257,6 +270,51 @@ namespace JourneyRecipes.Items
                         break;
                     case 2221:
                         player.statManaMax2 += 20;
+                        break;
+                }
+            }
+        }
+        public override void UpdateEquip(Item item, Player player)
+        {
+            bool ar = Config.Instance.allowArmorStat;
+            bool tr = Config.Instance.allowThrowingToRanged;
+            if (ar)
+            {
+                UpdateArmorStats(item, player);
+            }
+            if (tr)
+            {
+                switch (item.type)
+                {
+                    case 256:
+                        player.thrownVelocity -= .15f;
+                        player.magicCrit += 3;
+                        player.meleeCrit += 3;
+                        player.rangedCrit += 3;
+                        break;
+                    case 257:
+                        player.thrownDamage -= .15f;
+                        player.magicCrit += 3;
+                        player.meleeCrit += 3;
+                        player.rangedCrit += 3;
+                        break;
+                    case 258:
+                        player.thrownCrit -= 10;
+                        player.magicCrit += 3;
+                        player.meleeCrit += 3;
+                        player.rangedCrit += 3;
+                        break;
+                    case 3374:
+                        player.rangedCrit += 4;
+                        player.thrownVelocity -= .2f;
+                        break;
+                    case 3375:
+                        player.rangedDamage += .05f;
+                        player.thrownDamage -= .2f;
+                        break;
+                    case 3376:
+                        player.rangedCrit += 4;
+                        player.thrownCrit -= 15;
                         break;
                 }
             }
@@ -650,6 +708,18 @@ namespace JourneyRecipes.Items
                 item.thrown = false;
                 item.ranged = true;
             }
+            switch (item.type)
+            {
+                case 3374:
+                    item.defense = 4;
+                    break;
+                case 3375:
+                    item.defense = 5;
+                    break;
+                case 3376:
+                    item.defense = 4;
+                    break;
+            }
         }
         private void UpdateToolStat(Item item)
         {
@@ -670,12 +740,168 @@ namespace JourneyRecipes.Items
                     break;
             }
         }
+        private void UpdateArmorStats(Item item, Player player)
+        {
+            switch (item.type)
+            {
+                case 123:
+                case 124:
+                case 125:
+                    player.magicDamage += .02f;
+                    break;
+                case 228:
+                case 230:
+                case 960:
+                case 962:
+                    player.magicCrit += 2;
+                    break;
+                case 229:
+                case 961:
+                    player.magicCrit -= 4;
+                    player.magicDamage += .06f;
+                    break;
+                case 231:
+                    player.meleeCrit += 7;
+                    break;
+                case 232:
+                    player.meleeDamage += .07f;
+                    break;
+                case 233:
+                    player.meleeSpeed += .07f;
+                    break;
+                case 1833:
+                    player.maxMinions += 1;
+                    break;
+                case 1834:
+                    player.moveSpeed += .2f;
+                    break;
+                case 2763:
+                    player.meleeCrit += 9;
+                    break;
+                case 2764:
+                    player.meleeDamage += .07f;
+                    break;
+                case 3777:
+                    player.maxMinions += 1;
+                    player.statManaMax2 -= 40;
+                    player.minionDamage += .1f;
+                    break;
+                case 3778:
+                    player.maxMinions -= 1;
+                    player.statManaMax2 += 40;
+                    player.magicDamage += .1f;
+                    break;
+                case 3797:
+                    player.magicDamage += .1f;
+                    break;
+                case 3802:
+                    player.meleeCrit -= 5;
+                    break;
+                case 3804:
+                    player.GetModPlayer<JourneyRecipesPlayer>().Ammo10 = true;
+                    break;
+                case 3808:
+                    player.meleeCrit += 5;
+                    break;
+                case 3871:
+                    player.meleeDamage += .1f;
+                    break;
+                case 3873:
+                    player.moveSpeed -= .1f;
+                    break;
+                case 3874:
+                    player.magicDamage += .05f;
+                    player.minionDamage += .05f;
+                    break;
+                case 3875:
+                    player.magicDamage -= .05f;
+                    player.minionDamage -= .05f;
+                    player.manaCost -= .15f;
+                    break;
+                case 3876:
+                    player.moveSpeed += .2f;
+                    break;
+                case 3878:
+                    player.GetModPlayer<JourneyRecipesPlayer>().Ammo20 = true;
+                    break;
+                case 3879:
+                    player.rangedCrit += 10;
+                    break;
+                case 3881:
+                    player.meleeCrit += 5;
+                    break;
+                case 3882:
+                    player.moveSpeed += 0.1f;
+                    break;
+            }
+        }
+        private void UpdateArmorSetDefaults(Item item)
+        {
+            switch (item.type)
+            {
+                case 151:
+                case 959:
+                    item.defense = 6;
+                    break;
+                case 152:
+                    item.defense = 7;
+                    break;
+                case 153:
+                    item.defense = 6;
+                    break;
+                case 895:
+                    item.defense = 1;
+                    break;
+                case 1001:
+                    item.defense = 20;
+                    break;
+                case 1832:
+                    item.defense = 9;
+                    break;
+                case 1833:
+                    item.defense = 11;
+                    break;
+                case 1934:
+                    item.defense = 10;
+                    break;
+                case 2763:
+                case 2764:
+                case 2765:
+                    item.lifeRegen = 2;
+                    break;
+                case 3187:
+                case 3189:
+                    item.defense = 5;
+                    break;
+                case 3188:
+                    item.defense = 6;
+                    break;
+                case 3800:
+                    item.defense = 13;
+                    item.lifeRegen = 4;
+                    break;
+                case 3802:
+                    item.defense = 18;
+                    break;
+                case 3871:
+                    item.defense = 20;
+                    break;
+                case 3872:
+                    item.defense = 24;
+                    item.lifeRegen = 8;
+                    break;
+                case 3873:
+                    item.defense = 24;
+                    break;
+
+            }
+        }
         public override void OnHitNPC(Item item, Player player, NPC target, int damage, float knockBack, bool crit)
         {
             bool ws = Config.Instance.allowWeaponStat;
             if (ws)
             {
-                if (item.type == ItemID.FlowerofFrost) target.AddBuff(BuffID.Frostburn, 8*60);//yes im too dumb to calculate this
+                if (item.type == ItemID.FlowerofFrost) target.AddBuff(BuffID.Frostburn, 8 * 60);//yes im too dumb to calculate this
                 if (item.type == ItemID.WandofSparking && Main.rand.NextBool(1)) target.AddBuff(BuffID.OnFire, Main.rand.Next(30, 180));
             }
         }
@@ -715,6 +941,70 @@ namespace JourneyRecipes.Items
                 return true;
             }
             return base.UseItem(item, player);
+        }
+        public override string IsArmorSet(Item head, Item body, Item legs)
+        {
+            if (head.type == ItemID.CactusHelmet && body.type == ItemID.CactusBreastplate && legs.type == ItemID.CactusLeggings) return Cactus;
+            if (head.type == ItemID.ChlorophyteMask && body.type == ItemID.ChlorophytePlateMail && legs.type == ItemID.ChlorophyteGreaves) return ChlorophyteMelee;
+            if (head.type == ItemID.FossilHelm && body.type == ItemID.FossilShirt && legs.type == ItemID.FossilPants) return Fossil;
+            if (head.type == ItemID.GladiatorHelmet && body.type == ItemID.GladiatorBreastplate && legs.type == ItemID.GladiatorLeggings) return Gladiator;
+            if (head.type == ItemID.MoltenHelmet && body.type == ItemID.MoltenBreastplate && legs.type == ItemID.MoltenGreaves) return Molten;
+            if ((head.type == ItemID.NecroHelmet || head.type == ItemID.AncientNecroHelmet) && body.type == ItemID.NecroBreastplate && legs.type == ItemID.NecroGreaves) return Necro;
+            if (head.type == ItemID.NinjaHood && body.type == ItemID.NinjaShirt && legs.type == ItemID.NinjaPants) return Ninja;
+            if (head.type == ItemID.TurtleHelmet && body.type == ItemID.TurtleScaleMail && legs.type == ItemID.TurtleLeggings) return Turtle;
+            return base.IsArmorSet(head, body, legs);
+        }
+        public override void UpdateArmorSet(Player player, string set)
+        {
+            bool ar = Config.Instance.allowArmorStat;
+            bool tr = Config.Instance.allowThrowingToRanged;
+            if (ar)
+            {
+                switch (set)
+                {
+                    case Cactus:
+                        player.statDefense -= 1;
+                        player.thorns = .5f;
+                        break;
+                    case ChlorophyteMelee:
+                        player.endurance += .05f;
+                        break;
+                    case Gladiator:
+                        player.noKnockback = true;
+                        break;
+                    case Necro:
+                        player.ammoCost80 = false;
+                        player.ammoCost75 = false;
+                        player.rangedCrit += 10;
+                        break;
+                    case Molten:
+                        player.meleeDamage -= .07f;
+                        player.buffImmune[BuffID.OnFire] = true;
+                        break;
+                    case Turtle:
+                        player.endurance += .15f;
+                        player.turtleThorns = false;
+                        player.turtleArmor = false;
+                        player.thorns = 2f;
+                        break;
+                }
+            }
+            if (tr)
+            {
+                switch (set)
+                {
+                    case Fossil:
+                        player.thrownCost33 = false;
+                        player.thrownCost50 = false;
+                        player.ammoCost80 = true;
+                        break;
+                    case Ninja:
+                        player.thrownCost33 = false;
+                        player.thrownCost50 = false;
+                        player.moveSpeed += .2f;
+                        break;
+                }
+            }
         }
     }
 }
