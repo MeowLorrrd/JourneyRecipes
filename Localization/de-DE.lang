@@ -56,9 +56,17 @@ ItemTooltip.SpookyLeggings=Erhöht die maximale Anzahl deiner Günstlinge um 1\nEr
 ItemTooltip.SquireGreatHelm=Erhöht deine maximale Anzahl an Wächtern auf 1 und erhöht Lebensregeneration
 ItemTooltip.SquirePlating=Um 15% erhöhter Günstlings- und Nahkampfschaden
 ItemTooltip.SquireGreaves=Um 15% erhöhter Günstlingschaden, erhöhte kritische Nahkampf-Trefferchance und erhöhtes Bewegungstempo
+ItemTooltip.ShroomiteHeadgear=Um 15% erhöhter Pfeilschaden\nUm 5% erhöhte kritische Fernkampf-Trefferchance
+ItemTooltip.ShroomiteHelmet=Um 15% erhöhter Raketenschaden\nUm 5% erhöhte kritische Fernkampf-Trefferchance
+ItemTooltip.ShroomiteMask=Um 15% erhöhter Kugelschaden\nUm 5% erhöhte kritische Fernkampf-Trefferchance
+ItemTooltip.ShroomiteBreastplate=Um 13% erhöhter Fernkampfschaden & erhöhte kritische Trefferchance\n20% Chance, keine Munition zu verbrauchen
+ItemTooltip.ShroomiteLeggings=Um 7% erhöhte kritische Fernkampf-Trefferchance\nUm 12% erhöhte Bewegungsgeschwindigkeit
 ItemTooltip.TikiMask=Erhöht die maximale Anzahl deiner Günstlinge um 1\nErhöht Günstlingschaden um 10%
 ItemTooltip.TikiShirt=Erhöht die maximale Anzahl deiner Günstlinge um 1\nErhöht Günstlingschaden um 10%
 ItemTooltip.TikiPants=Erhöht die maximale Anzahl deiner Günstlinge um 1\nErhöht Günstlingschaden um 10%
+ItemTooltip.SquireAltHead=Erhöht deine maximale Anzahl an Wächtern um 2 und erhöht Günstling- und Nahkampfschaden um 10%
+ItemTooltip.SquireAltShirt=Um 30% erhöhter Günstlingschaden und massiv erhöhte Lebensregeneration
+ItemTooltip.SquireAltPants=Um 20% erhöhter Günstlingschaden, erhöhte kritische Nahkampf-Trefferchance und erhöhtes Bewegungstempo
 
 ArmorSetbonus.Cactus=Angreifer erleiden Schaden durch Kaktusstacheln
 ArmorSetbonus.ChlorophyteMelee=Beschwört einen mächtigen Blattkristall mit dem du auf Gegner in der Nähe schießen kannst\nReduziert erlittenen Schaden um 5%

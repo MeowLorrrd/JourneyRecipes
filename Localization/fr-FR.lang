@@ -56,9 +56,17 @@ ItemTooltip.SpookyLeggings=Augmente votre nombre maximal de sbires de 1\n+11 % d
 ItemTooltip.SquireGreatHelm=Augmente votre nombre maximal de sbires de 1 et votre régénération de santé
 ItemTooltip.SquirePlating=+15 % de dégâts des sbires et de dégâts au corps à corps
 ItemTooltip.SquireGreaves=+15 % de dégâts des sbires, +15 % de chances de coup critique au corps à corps et de vitesse de déplacement
+ItemTooltip.ShroomiteHeadgear=+15 % de dégâts de flèches\n+5 % de chances de coup critique à distance
+ItemTooltip.ShroomiteHelmet=+15 % de dégâts de fusées\n+5 % de chances de coup critique à distance
+ItemTooltip.ShroomiteMask=+15 % de dégâts de balles\n+5 % de chances de coup critique à distance
+ItemTooltip.ShroomiteBreastplate=+13 % de dégâts à distance et de chances de coup critique\n20 % de chances de ne pas utiliser de munitions
+ItemTooltip.ShroomiteLeggings=+7 % de chances de coup critique à distance\n+12 % de vitesse de déplacement
 ItemTooltip.TikiMask=Augmente le nombre de sbires max de 1\n+10 % de dégâts des sbires
 ItemTooltip.TikiShirt=Augmente le nombre de sbires max de 1\n+10 % de dégâts des sbires
 ItemTooltip.TikiPants=Augmente le nombre de sbires max de 1\n+10 % de dégâts des sbires
+ItemTooltip.SquireAltHead=Augmente votre nombre maximal de sentinelles de 2 et vous octroie +10 % de dégâts des sbires et au corps à corps
+ItemTooltip.SquireAltShirt=+30 % de dégâts des sbires et régénération énorme de santé
+ItemTooltip.SquireAltPants=+20 % de dégâts de sbires, de chances de coup critique au corps à corps et de vitesse de déplacement
 
 ArmorSetbonus.Cactus=Les agresseurs subissent des dégâts causés par les épines de cactus
 ArmorSetbonus.ChlorophyteMelee=Invoque une feuille de cristal puissante pour tirer sur les ennemis à proximité\nRéduit les dégâts subis de 5 %

@@ -56,9 +56,17 @@ ItemTooltip.SpookyLeggings=Aumenta il numero massimo dei tuoi seguaci di 1\nAume
 ItemTooltip.SquireGreatHelm=Aumenta il numero massimo di sentinelle di 1 e la tua rigenerazione vita
 ItemTooltip.SquirePlating=Danno dei seguaci e in mischia aumentato del 15%
 ItemTooltip.SquireGreaves=Danno dei seguaci aumentato del 15%, probabilità colpi critici in mischia e velocità di movimento aumentate del 15%
+ItemTooltip.ShroomiteHeadgear=Danno da freccia aumentato del 15%\nPossibilità di colpo critico a distanza aumentata del 5%
+ItemTooltip.ShroomiteHelmet=Danno da razzo aumentato del 15%\nPossibilità di colpo critico a distanza aumentata del 5%
+ItemTooltip.ShroomiteMask=Danno da proiettile aumentato del 15%\nPossibilità di colpo critico a distanza aumentata del 5%
+ItemTooltip.ShroomiteBreastplate=13% in più di probabilità di colpo critico e danni dalla distanza\n20% di probabilità di non consumare munizioni
+ItemTooltip.ShroomiteLeggings=Possibilità di colpo critico a distanza aumentata del 7%\nVelocità di movimento aumentata del 12%
 ItemTooltip.TikiMask=Aumenta il numero massimo dei tuoi seguaci di 1\nAumenta il danno dei seguaci del 10%
 ItemTooltip.TikiShirt=Aumenta il numero massimo dei tuoi seguaci di 1\nAumenta il danno dei seguaci del 10%
 ItemTooltip.TikiPants=Aumenta il numero massimo dei tuoi seguaci di 1\nAumenta il danno dei seguaci del 10%
+ItemTooltip.SquireAltHead=Aumenta il numero massimo di sentinelle di 2 e aumenta il danno dei seguaci e in mischia del 10%
+ItemTooltip.SquireAltShirt=Danno dei seguaci aumentato del 30% e rigenerazione vita enormemente aumentata
+ItemTooltip.SquireAltPants=Danno dei seguaci, probabilità colpi critici in mischia e velocità di movimento aumentati del 20%
 
 ArmorSetbonus.Cactus=Gli aggressori ricevono danni dalle spine di cactus
 ArmorSetbonus.ChlorophyteMelee=Evoca una potente cristallo a foglia da sparare ai nemici vicini \nRiduce il danno subito del 5%

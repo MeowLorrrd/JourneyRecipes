@@ -56,9 +56,17 @@ ItemTooltip.SpookyLeggings=Aumenta o número máximo de lacaios que você pode ter 
 ItemTooltip.SquireGreatHelm=Aumenta o número máximo de sentinelas em 1\nAumenta a regeneração de vida
 ItemTooltip.SquirePlating=15% de aumento nos danos por lacaios e por ataques físicos
 ItemTooltip.SquireGreaves=15% de aumento no dano por lacaios, 15% de aumento na chance de ataque físico crítico e na velocidade dos movimentos
+ItemTooltip.ShroomiteHeadgear=15% de aumento nos danos por flechas\n5% de aumento na chance de acerto crítico à distância
+ItemTooltip.ShroomiteHelmet=15% de aumento nos danos por foguetes\n5% de aumento na chance de acerto crítico à distância
+ItemTooltip.ShroomiteMask=15% de aumento nos danos por projéteis\n5% de aumento na chance de acerto crítico à distância
+ItemTooltip.ShroomiteBreastplate=13% de aumento nos danos por ataque à distância e na chance de ataque crítico\n20% de chance de não consumir munição
+ItemTooltip.ShroomiteLeggings=7% de aumento na chance de acerto crítico à distância\n12% de aumento na velocidade dos movimentos
 ItemTooltip.TikiMask=Aumenta o número máximo de lacaios que você pode ter em 1\nAumenta os danos causados por lacaios em 10%
 ItemTooltip.TikiShirt=Aumenta o número máximo de lacaios que você pode ter em 1\nAumenta os danos causados por lacaios em 10%
 ItemTooltip.TikiPants=Aumenta o número máximo de lacaios que você pode ter em 1\nAumenta os danos causados por lacaios em 10%
+ItemTooltip.SquireAltHead=Aumenta o número máximo de sentinelas em 2 e aumenta os danos causados por lacaios e por ataques físicos em 10%
+ItemTooltip.SquireAltShirt=Aumenta o dano causado por lacaios em 30% e aumenta de forma significativa a regeneração de vida
+ItemTooltip.SquireAltPants=20% de aumento nos danos por lacaios, na velocidade dos movimentos e na chance de acerto crítico
 
 ArmorSetbonus.Cactus=Atacantes sofrem dano por espinhos de cactos
 ArmorSetbonus.ChlorophyteMelee=Invoca um poderoso cristal de folha para atirar em inimigos próximos\nReduz os danos sofridos em 5%

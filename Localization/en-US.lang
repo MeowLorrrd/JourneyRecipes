@@ -56,9 +56,17 @@ ItemTooltip.SpookyLeggings=Increases your max number of minions by 1\nIncreases 
 ItemTooltip.SquireGreatHelm=Increases your max number of sentries by 1 and increases your life regeneration
 ItemTooltip.SquirePlating=15% increased minion and melee damage
 ItemTooltip.SquireGreaves=15% increased minion damage, 15% increased melee critical strike chance and movement speed
+ItemTooltip.ShroomiteHeadgear=15% increased arrow damage\n5% increased ranged critical strike chance
+ItemTooltip.ShroomiteHelmet=15% increased rocket damage\n5% increased ranged critical strike chance
+ItemTooltip.ShroomiteMask=15% increased bullet damage\n5% increased ranged critical strike chance
+ItemTooltip.ShroomiteBreastplate=13% increased ranged damage & critical strike chance\n20% chance to not consume ammo
+ItemTooltip.ShroomiteLeggings=7% increased ranged critical strike chance\n12% increased movement speed
 ItemTooltip.TikiMask=Increases your max number of minions by 1\nIncreases minion damage by 10%
 ItemTooltip.TikiShirt=Increases your max number of minions by 1\nIncreases minion damage by 10%
 ItemTooltip.TikiPants=Increases your max number of minions by 1\nIncreases minion damage by 10%
+ItemTooltip.SquireAltHead=Increases your max number of sentries by 2 and increases minion and melee damage by 10%
+ItemTooltip.SquireAltShirt=30% increased minion damage and massively increased life regeneration
+ItemTooltip.SquireAltPants=20% increased minion damage and melee critical strike chance and movement speed
 
 ArmorSetbonus.Cactus=Attackers take damage from the cactus spines
 ArmorSetbonus.ChlorophyteMelee=Summons a powerful leaf crystal to shoot at nearby enemies\nReduces damage taken by 5%

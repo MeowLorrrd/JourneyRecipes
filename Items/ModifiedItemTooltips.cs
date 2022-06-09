@@ -90,10 +90,18 @@ namespace JourneyRecipes.Items
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SquireGreatHelm", ItemID.SquireGreatHelm);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SquirePlating", ItemID.SquirePlating);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SquireGreaves", ItemID.SquireGreaves);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ShroomiteHeadgear", ItemID.ShroomiteHeadgear);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ShroomiteHelmet", ItemID.ShroomiteHelmet);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ShroomiteMask", ItemID.ShroomiteMask);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ShroomiteBreastplate", ItemID.ShroomiteBreastplate);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.ShroomiteLeggings", ItemID.ShroomiteLeggings);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.TikiMask", ItemID.TikiMask);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.TikiShirt", ItemID.TikiShirt);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.TikiPants", ItemID.TikiPants);
-            }//continue at shroomite and valhalla knights
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SquireAltHead", ItemID.SquireAltHead);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SquireAltShirt", ItemID.SquireAltShirt);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SquireAltPants", ItemID.SquireAltPants);
+            }
             if (Config.Instance.allowThrowingToRanged)
             {
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.FossilHelm", ItemID.FossilHelm);

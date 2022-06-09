@@ -56,9 +56,17 @@ ItemTooltip.SpookyLeggings=仆从数量上限提高1个\n仆从伤害增加11%\n
 ItemTooltip.SquireGreatHelm=哨兵数量上限提高1个，提高生命再生速度
 ItemTooltip.SquirePlating=仆从和近战伤害各增加15%
 ItemTooltip.SquireGreaves=仆从伤害增加15%，近战暴击率和移动速度各提高15%
+ItemTooltip.ShroomiteHeadgear=箭的伤害增加15%\n远程暴击率增加5%
+ItemTooltip.ShroomiteHelmet=火箭伤害增加15%\n远程暴击率增加5%
+ItemTooltip.ShroomiteMask=子弹的伤害增加15%\n远程暴击率增加5%
+ItemTooltip.ShroomiteBreastplate=远程伤害和暴击率各增加13%\n20%的几率不消耗弹药
+ItemTooltip.ShroomiteLeggings=远程暴击率增加7%\n移动速度提高12%
 ItemTooltip.TikiMask=仆从数量上限提高1个\n仆从伤害增加10%
 ItemTooltip.TikiShirt=仆从数量上限提高1个\n仆从伤害增加10%
 ItemTooltip.TikiPants=仆从数量上限提高1个\n仆从伤害增加10%
+ItemTooltip.SquireAltHead=哨兵数量上限提高2个，仆从和近战伤害各增加10%
+ItemTooltip.SquireAltShirt=仆从伤害增加30%，生命再生速度大幅提高
+ItemTooltip.SquireAltPants=仆从伤害、近战暴击率和移动速度各增加20%
 
 ArmorSetbonus.Cactus=攻击者因为仙人掌尖刺受到伤害
 ArmorSetbonus.ChlorophyteMelee=召唤强大的叶状水晶来射击附近的敌人\n所受伤害减少5%
