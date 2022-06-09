@@ -190,7 +190,7 @@ namespace JourneyRecipes.NPCs
         }
         public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)
         {
-            if (Config.Instance.allowBuffStat && player.GetModPlayer<JourneyRecipesPlayer>().PlayerInvis)
+            if (Config.Instance.AllowBuffStat && player.GetModPlayer<JourneyRecipesPlayer>().PlayerInvis)
             {
                 spawnRate = (int)(spawnRate * 1.2f);
             }

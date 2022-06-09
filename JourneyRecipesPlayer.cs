@@ -65,7 +65,7 @@ namespace JourneyRecipes
                 PlayerAutouse = player.HeldItem.autoReuse;
                 player.HeldItem.autoReuse = true;
             }//code above from Fargo's Souls
-            if (Config.Instance.allowBuffStat && Sharpened && player.HeldItem.melee)
+            if (Config.Instance.AllowBuffStat && Sharpened && player.HeldItem.melee)
             {
                 player.armorPenetration += 8;//+4 vanilla armor pen
             }

@@ -6,9 +6,13 @@ namespace JourneyRecipes.Items
 {
     public class GlobalWings : GlobalItem
     {
+        public override bool Autoload(ref string name)
+        {
+            return ModContent.GetInstance<Config>().AllowWingStat;
+        }
         public override void UpdateAccessory(Item item, Player player, bool hideVisual)
         {
-            if (Config.Instance.allowWingStat)
+            if (Config.Instance.AllowWingStat)
             {
                 switch (item.type)
                 {
@@ -46,7 +50,7 @@ namespace JourneyRecipes.Items
         }
         public override void VerticalWingSpeeds(Item item, Player player, ref float ascentWhenFalling, ref float ascentWhenRising, ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)
         {
-            if (Config.Instance.allowWingStat)
+            if (Config.Instance.AllowWingStat)
             {
                 switch (item.type)
                 {
@@ -103,7 +107,7 @@ namespace JourneyRecipes.Items
         }
         public override void HorizontalWingSpeeds(Item item, Player player, ref float speed, ref float acceleration)
         {
-            if (Config.Instance.allowWingStat)//checks if wing config is enabled
+            if (Config.Instance.AllowWingStat)//checks if wing config is enabled
             {
                 if (!player.mount.Active && player.wingsLogic > 0 && player.velocity.Y != 0f)//checks if player is not on mount, if is vanilla wing and if player is moving up or down (Y could be small number, just not 0)
                 {

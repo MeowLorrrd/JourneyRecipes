@@ -120,7 +120,7 @@ namespace JourneyRecipes
         [DefaultValue(true)]
         [Label("[i:2221]   Change accessory stats?")]
         [Tooltip("If this setting is turned off, this mod will not change accessory stats, e.g. the 1.3 Celestial Cuffs won't grant +20 mana" +
-            "\nBy enabling this setting, certain accessories will use 1.4 stats" + 
+            "\nBy enabling this setting, certain accessories will use 1.4 stats" +
             "\nCurrently only affects Lava Waders, Celesial Cuffs, Charm of Myths, Fire Gauntlet and Flesh Knuckles" +
             "\n[c/ff0000:Highly recommended to disable while using Calamity or Fargo's Eternity Mode]")]
         [ReloadRequired]
@@ -132,7 +132,7 @@ namespace JourneyRecipes
             "\nBy enabling this setting, certain wings will use 1.4 stats" +
             "\nStill in testing phase, I haven't encountered any issues so far, but if you do, please report them in the Homepage!")]
         [ReloadRequired]
-        public bool allowWingStat;
+        public bool AllowWingStat { get; set; }
 
         [DefaultValue(true)]
         [Label("[i:293]   Change buff duration?")]
@@ -141,7 +141,7 @@ namespace JourneyRecipes
             "\nCurrently affects all potions" +
             "\nAlso makes buff stations give their buff for an unlimited time")]
         [ReloadRequired]
-        public bool allowBuffDuration;
+        public bool AllowBuffDuration { get; set; }
 
         [DefaultValue(true)]
         [Label("[i:297]   Change buff stats?")]
@@ -149,7 +149,7 @@ namespace JourneyRecipes
             "\nBy enabling this setting, certain buffs will have 1.4 stats" +
             "\nCurrently only affects Invisibility Potion and Sharpening Station")]
         [ReloadRequired]
-        public bool allowBuffStat;
+        public bool AllowBuffStat { get; set; }
 
         [DefaultValue(true)]
         [Label("[npc:289]   Change NPC stats?")]

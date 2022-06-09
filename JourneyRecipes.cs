@@ -2707,8 +2707,8 @@ namespace JourneyRecipes
                 Main.NPCLoaded[NPCID.SkeletonCommando] = false;
                 Main.NPCLoaded[NPCID.Everscream] = false;
             }
-            bool flag3 = Config.Instance.allowBuffDuration;
-            bool flag4 = Config.Instance.allowBuffStat;
+            bool flag3 = Config.Instance.AllowBuffDuration;
+            bool flag4 = Config.Instance.AllowBuffStat;
             if (flag3)
             {
                 Main.buffNoTimeDisplay[BuffID.Sharpened] = false;

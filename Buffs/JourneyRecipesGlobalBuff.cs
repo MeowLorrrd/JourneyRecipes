@@ -7,9 +7,13 @@ namespace JourneyRecipes.Buffs
 {
     public class JourneyRecipesGlobalBuffItem : GlobalItem
     {
+        public override bool Autoload(ref string name)
+        {
+            return ModContent.GetInstance<Config>().AllowBuffDuration || ModContent.GetInstance<Config>().AllowBuffStat;
+        }
         public override void SetDefaults(Item item)
         {
-            bool bt = Config.Instance.allowBuffDuration;
+            bool bt = Config.Instance.AllowBuffDuration;
             if (bt)//no {} needed as this will simply check in order to execute switch
             switch (item.type)
             {
@@ -168,7 +172,7 @@ namespace JourneyRecipes.Buffs
         }
         public override void Update(int type, Player player, ref int buffIndex)
         {
-            bool bs = Config.Instance.allowBuffStat;
+            bool bs = Config.Instance.AllowBuffStat;
             if (bs)
             {
                 if (type == BuffID.Thorns) player.thorns = 1f;
@@ -180,7 +184,7 @@ namespace JourneyRecipes.Buffs
     {
         public override void Update(int type, Player player, ref int buffIndex)
         {
-            bool bt = Config.Instance.allowBuffDuration;
+            bool bt = Config.Instance.AllowBuffDuration;
             if (bt)
             {
                 if (type == BuffID.Sharpened || type == BuffID.Clairvoyance || type == BuffID.Bewitched || type == BuffID.AmmoBox)
@@ -196,7 +200,7 @@ namespace JourneyRecipes.Buffs
     {
         public override void RightClick(int i, int j, int type)
         {
-            bool bt = Config.Instance.allowBuffDuration;
+            bool bt = Config.Instance.AllowBuffDuration;
             Player p = Main.LocalPlayer;
             if (bt)
             {
