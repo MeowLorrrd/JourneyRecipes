@@ -33,34 +33,6 @@ namespace JourneyRecipes.NPCs
                 ActiveNPC(npc, target);
             }
         }
-        public override void NPCLoot(NPC npc)
-        {
-            bool ns = ModContent.GetInstance<Config>().AllowNPCStat;
-            if (ns)
-            {
-                switch (npc.type)
-                {
-                    case 289:
-                        if (Main.rand.NextBool(100)) Item.NewItem(npc.Hitbox, ItemID.Nazar);
-                        break;
-                    case 381:
-                    case 382:
-                    case 383:
-                    case 385:
-                    case 389:
-                        if (Main.rand.NextBool(800)) Item.NewItem(npc.Hitbox, ItemID.AntiGravityHook);
-                        if (Main.rand.NextBool(800)) Item.NewItem(npc.Hitbox, ItemID.LaserDrill);
-                        if (Main.rand.NextBool(800)) Item.NewItem(npc.Hitbox, ItemID.ChargedBlasterCannon);
-                        break;
-                    case 509:
-                        if (Main.rand.NextBool(50)) Item.NewItem(npc.Hitbox, ItemID.AntlionClaw);
-                        break;
-                    case 513:
-                        if (Main.rand.NextBool(2)) Item.NewItem(npc.Hitbox, ItemID.FossilOre, Main.rand.Next(1, 2));
-                        break;
-                }
-            }
-        }
         public override bool PreNPCLoot(NPC npc)
         {
             bool ns = ModContent.GetInstance<Config>().AllowNPCStat;
@@ -79,6 +51,39 @@ namespace JourneyRecipes.NPCs
                 }
             }
             return base.PreNPCLoot(npc);
+        }
+        public override void NPCLoot(NPC npc)
+        {
+            bool ns = ModContent.GetInstance<Config>().AllowNPCStat;
+            if (ns)
+            {
+                switch (npc.type)
+                {
+                    case 289:
+                        if (!Main.expertMode)
+                            if (Main.rand.NextBool(100))
+                                Item.NewItem(npc.Hitbox, ItemID.Nazar);
+                            else
+                                if (Main.rand.NextBool(50))
+                                Item.NewItem(npc.Hitbox, ItemID.Nazar);
+                        break;
+                    case 381:
+                    case 382:
+                    case 383:
+                    case 385:
+                    case 389:
+                        if (Main.rand.NextBool(800)) Item.NewItem(npc.Hitbox, ItemID.AntiGravityHook);
+                        if (Main.rand.NextBool(800)) Item.NewItem(npc.Hitbox, ItemID.LaserDrill);
+                        if (Main.rand.NextBool(800)) Item.NewItem(npc.Hitbox, ItemID.ChargedBlasterCannon);
+                        break;
+                    case 509:
+                        if (Main.rand.NextBool(50)) Item.NewItem(npc.Hitbox, ItemID.AntlionClaw);
+                        break;
+                    case 513:
+                        if (Main.rand.NextBool(2)) Item.NewItem(npc.Hitbox, ItemID.FossilOre, Main.rand.Next(1, 2));
+                        break;
+                }
+            }
         }
         public override void ScaleExpertStats(NPC npc, int numPlayers, float bossLifeScale)
         {
