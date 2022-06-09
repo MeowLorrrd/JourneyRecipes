@@ -96,7 +96,8 @@ namespace JourneyRecipes
         [Label("[i:1295]   Change weapon stats?")]
         [Tooltip("If this setting is turned off, this mod will not change weapon stats, e.g. the 1.3 Heat Ray stats will be used" +
             "\nBy enabling this setting, certain weapons will use 1.4 stats" +
-            "\nThis setting also affects ammunition")]
+            "\nThis setting also affects ammunition" +
+            "\n[c/ff0000:Highly recommended to disable while using Calamity or Fargo's Eternity Mode]")]
         [ReloadRequired]
         public bool allowWeaponStat;
 
@@ -111,7 +112,8 @@ namespace JourneyRecipes
         [DefaultValue(true)]
         [Label("[i:1832]   Change armor stats?")]
         [Tooltip("If this setting is turned off, this mod will not change armor stats, e.g. the 1.3 Spooky armor giving +3 minion slots" +
-            "\nBy enabling this setting, certain armor sets will use 1.4 stats")]
+            "\nBy enabling this setting, certain armor sets will use 1.4 stats" +
+            "\n[c/ff0000:Highly recommended to disable while using Calamity or Fargo's Eternity Mode]")]
         [ReloadRequired]
         public bool allowArmorStat;
 
@@ -119,11 +121,12 @@ namespace JourneyRecipes
         [Label("[i:2221]   Change accessory stats?")]
         [Tooltip("If this setting is turned off, this mod will not change accessory stats, e.g. the 1.3 Celestial Cuffs won't grant +20 mana" +
             "\nBy enabling this setting, certain accessories will use 1.4 stats" + 
-            "\nCurrently only affects Lava Waders, Celesial Cuffs, Charm of Myths, Fire Gauntlet and Flesh Knuckles")]
+            "\nCurrently only affects Lava Waders, Celesial Cuffs, Charm of Myths, Fire Gauntlet and Flesh Knuckles" +
+            "\n[c/ff0000:Highly recommended to disable while using Calamity or Fargo's Eternity Mode]")]
         [ReloadRequired]
         public bool allowAccessoryStat;
 
-        [DefaultValue(false)]
+        [DefaultValue(true)]
         [Label("[i:493]   Change wing stats?")]
         [Tooltip("If this setting is turned off, this mod will not change wings stats, e.g. the 1.3 Fin Wings being doodoo" +
             "\nBy enabling this setting, certain wings will use 1.4 stats" +
@@ -184,7 +187,8 @@ namespace JourneyRecipes
             "\nThe True Excalibur requires 24 Chlorophyte bars," +
             "\nThe Terra Blade requires a Broken Hero Sword," +
             "\nMothron only spawns after Plantera" +
-            "\nThis setting is unaffected by all other configs")]
+            "\nThis setting is unaffected by all other configs" +
+            "\n[c/ff0000:Highly recommended to disable while using Calamity or Thorium]")]
         [ReloadRequired]
         public bool terraBladeStuff;
 
@@ -196,7 +200,7 @@ namespace JourneyRecipes
             "\nNinja and Fossil armor have 1.4 stats" +
             "\nSturdy Fossil recipes use 1.4 recipes" +
             "\nThis setting is unaffected by all other configs" +
-            "\n¡Highly recommended to turn this off when using Calamity or Thorium, as these mods use the Throwing class!")]
+            "\n[c/ff0000:¡Highly recommended to turn this off when using Calamity or Thorium, as these mods use the Throwing class!]")]
         [ReloadRequired]
         public bool allowThrowingToRanged;
 
