@@ -9,8 +9,8 @@ namespace JourneyRecipes.Projectiles
         public override void SetDefaults(Projectile projectile)//i dont think there's a reason to make it look like this, it just looks neater??
         {
             bool ws = Config.Instance.allowWeaponStat;
-            bool tb = Config.Instance.terraBladeStuff;
-            bool ns = Config.Instance.allowNPCStat;
+            bool tb = Config.Instance.TerraBladeStuff;
+            bool ns = Config.Instance.AllowNPCStat;
             if (ws)
             {
                 FriendlyProjectile(projectile);
@@ -26,7 +26,7 @@ namespace JourneyRecipes.Projectiles
         }
         public override void OnHitPlayer(Projectile projectile, Player target, int damage, bool crit)
         {
-            bool ns = Config.Instance.allowNPCStat;
+            bool ns = Config.Instance.AllowNPCStat;
             if (ns)
             {
                 ActiveEnemyProjectile(projectile, target);

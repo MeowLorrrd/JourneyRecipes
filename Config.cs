@@ -92,21 +92,34 @@ namespace JourneyRecipes
         public bool allowBuffRecipes;
 
         [Header("Misc settings")]
+        [BackgroundColor(154, 163, 255, 255)]
         [DefaultValue(true)]
         [Label("Change textures?")]
         [Tooltip("If this setting is turned on, this mod will update 1.3 textures, e.g. 1.4, dungeon enemies, projectiles\nCurrently disabled for items")]
         [ReloadRequired]
         public bool Resprite;
 
-        [Header("Stat Settings")]
+        [Header("Stat Settings [c/ff3333:(Read red configs!)]")]
         [DefaultValue(true)]
-        [Label("[i:1295]   Change weapon stats?")]
-        [Tooltip("If this setting is turned off, this mod will not change weapon stats, e.g. the 1.3 Heat Ray stats will be used" +
-            "\nBy enabling this setting, certain weapons will use 1.4 stats" +
-            "\nThis setting also affects ammunition" +
-            "\nHighly recommended to disable while using Calamity or Fargo's Eternity Mode")]
+        [Label("[i/s999:1198]   Change max stack for items?")]
+        [Tooltip("If this setting is turned on, this mod will change the maximum amount of items a stack can hold.\nE.g. the max stack for Titanium bars goes from 99 to 999")]
         [ReloadRequired]
-        public bool allowWeaponStat;
+        public bool allowMaxStack;
+
+        [DefaultValue(true)]
+        [Label("[i:73]   Change sell values?")]
+        [Tooltip("If this setting is turned on, this mod will change sell values of certain items." +
+            "\nE.g. all drops from Shadow orbs sell for 1,50 Gold" +
+            "\nThis also gives Luminite armor a sell value (31,50 Gold for set)")]
+        [ReloadRequired]
+        public bool allowSellChange;
+
+        [DefaultValue(true)]
+        [Label("[i:1147]   Change tiles?")]
+        [Tooltip("If this setting is turned on, this mod will change some tile properties." +
+            "\nE.g. Meteorite can't be blown up before hardmode")]
+        [ReloadRequired]
+        public bool allowTileChange;
 
         [DefaultValue(true)]
         [Label("[i:2341]    Change tool stats?")]
@@ -117,6 +130,17 @@ namespace JourneyRecipes
         public bool allowToolStat;
 
         [DefaultValue(true)]
+        [BackgroundColor(255, 20, 0, 1)]
+        [Label("[i:1295]   Change weapon stats?")]
+        [Tooltip("If this setting is turned off, this mod will not change weapon stats, e.g. the 1.3 Heat Ray stats will be used" +
+            "\nBy enabling this setting, certain weapons will use 1.4 stats" +
+            "\nThis setting also affects ammunition" +
+            "\nHighly recommended to disable while using Calamity or Fargo's Eternity Mode")]
+        [ReloadRequired]
+        public bool allowWeaponStat;
+
+        [BackgroundColor(255, 20, 0, 1)]
+        [DefaultValue(true)]
         [Label("[i:1832]   Change armor stats?")]
         [Tooltip("If this setting is turned off, this mod will not change armor stats, e.g. the 1.3 Spooky armor giving +3 minion slots" +
             "\nBy enabling this setting, certain armor sets will use 1.4 stats" +
@@ -124,6 +148,7 @@ namespace JourneyRecipes
         [ReloadRequired]
         public bool allowArmorStat;
 
+        [BackgroundColor(255, 20, 0, 1)]
         [DefaultValue(true)]
         [Label("[i:2221]   Change accessory stats?")]
         [Tooltip("If this setting is turned off, this mod will not change accessory stats, e.g. the 1.3 Celestial Cuffs won't grant +20 mana" +
@@ -133,12 +158,26 @@ namespace JourneyRecipes
         [ReloadRequired]
         public bool allowAccessoryStat;
 
-        //[BackgroundColor(255 ,255 , 0, 255)]
+        [BackgroundColor(255, 20, 0, 1)]
+        [DefaultValue(true)]
+        [Label("[i:757 ]    Change Terra Blade crafting process?")]
+        [Tooltip("If this setting is turned on, this mod will change the recipes for the Terra Blade and components to match 1.4" +
+            "\nBy enabling this config:" +
+            "\nThe True Night's Edge requires 20 of the Mech bosses' souls," +
+            "\nThe True Excalibur requires 24 Chlorophyte bars," +
+            "\nThe Terra Blade requires a Broken Hero Sword," +
+            "\nMothron only spawns after Plantera" +
+            "\nThis setting is unaffected by all other configs" +
+            "\nHighly recommended to disable while using Calamity or Thorium")]
+        [ReloadRequired]
+        public bool TerraBladeStuff { get; set; }
+        [BackgroundColor(255, 20, 0, 1)]
         [DefaultValue(true)]
         [Label("[i:493]   Change wing stats?")]
-        [Tooltip("If this setting is turned off, this mod will not change wings stats, e.g. the 1.3 Fin Wings being doodoo" +
+        [Tooltip("If this setting is turned off, this mod will not change wings stats, e.g. the 1.3 Fin Wings being bad" +
             "\nBy enabling this setting, certain wings will use 1.4 stats" +
-            "\nStill in testing phase, I haven't encountered any issues so far, but if you do, please report them in the Homepage!")]
+            "\nStill in testing phase, I haven't encountered any issues so far, but if you do, please report them in the Homepage!" +
+            "\nHighly recommended to disable while using Calamity")]
         [ReloadRequired]
         public bool AllowWingStat { get; set; }
 
@@ -164,7 +203,7 @@ namespace JourneyRecipes
         [Tooltip("If this setting is turned off, this mod will not change NPCs, e.g. Giant Cursed Skull having no chance to drop Nazar" +
             "\nBy enabling this config, certain NPCs will have 1.4 stats")]
         [ReloadRequired]
-        public bool allowNPCStat;
+        public bool AllowNPCStat { get; set; }
 
         [DefaultValue(true)]
         [Label("[npc:17]    Change NPC shops?")]
@@ -173,40 +212,7 @@ namespace JourneyRecipes
         [ReloadRequired]
         public bool AllowNPCShop { get; set; }
 
-        [DefaultValue(true)]
-        [Label("[i/s999:1198]   Change max stack for items?")]
-        [Tooltip("If this setting is turned on, this mod will change the maximun amount of items a stack can hold.\nE.g. the max stack for Titanium bars goes from 99 to 999")]
-        [ReloadRequired]
-        public bool allowMaxStack;
-
-        [DefaultValue(true)]
-        [Label("[i:73]   Change sell values?")]
-        [Tooltip("If this setting is turned on, this mod will change sell values of certain items." +
-            "\nE.g. all drops from Shadow orbs sell for 1,50 Gold" +
-            "\nThis also gives Luminite armor a sell value (31,50 Gold for set)")]
-        [ReloadRequired]
-        public bool allowSellChange;
-
-        [DefaultValue(true)]
-        [Label("[i:1147]   Change tiles?")]
-        [Tooltip("If this setting is turned on, this mod will change some tile properties." +
-            "\nE.g. Meteorite can't be blown up before hardmode")]
-        [ReloadRequired]
-        public bool allowTileChange;
-
-        [DefaultValue(true)]
-        [Label("[i:757 ]    Change Terra Blade crafting process?")]
-        [Tooltip("If this setting is turned on, this mod will change the recipes for the Terra Blade and components to match 1.4" +
-            "\nBy enabling this config:" +
-            "\nThe True Night's Edge requires 20 of the Mech bosses' souls," +
-            "\nThe True Excalibur requires 24 Chlorophyte bars," +
-            "\nThe Terra Blade requires a Broken Hero Sword," +
-            "\nMothron only spawns after Plantera" +
-            "\nThis setting is unaffected by all other configs" +
-            "\n[c/ff0000:Highly recommended to disable while using Calamity or Thorium]")]
-        [ReloadRequired]
-        public bool terraBladeStuff;
-
+        [BackgroundColor(255, 50, 0, 1)]
         [DefaultValue(false)]
         [Label("[i:3378]   Change throwing weapons to ranged?")]
         [Tooltip("If this setting is turned off, this mod will not change throwing weapons to the ranged damage type." +
@@ -215,7 +221,7 @@ namespace JourneyRecipes
             "\nNinja and Fossil armor have 1.4 stats" +
             "\nSturdy Fossil recipes use 1.4 recipes" +
             "\nThis setting is unaffected by all other configs" +
-            "\n[c/ff0000:¡Highly recommended to turn this off when using Calamity or Thorium, as these mods use the Throwing class!]")]
+            "\nHighly recommended to turn this off when using Calamity or Thorium, as these mods use the Throwing class!")]
         [ReloadRequired]
         public bool allowThrowingToRanged;
 

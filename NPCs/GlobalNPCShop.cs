@@ -12,7 +12,7 @@ namespace JourneyRecipes.NPCs
         }
         public override void SetupShop(int type, Chest shop, ref int nextSlot)
         {
-            if (Config.Instance.AllowNPCShop)
+            if (ModContent.GetInstance<Config>().AllowNPCShop)
             {
                 if (type == NPCID.Merchant && Main.hardMode)
                 {

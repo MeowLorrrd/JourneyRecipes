@@ -6,28 +6,28 @@ namespace JourneyRecipes.NPCs
 {
     public class JourneyRecipesGlobalNPC : GlobalNPC
     {
+        public override bool Autoload(ref string name)
+        {
+            return ModContent.GetInstance<Config>().AllowNPCStat || ModContent.GetInstance<Config>().TerraBladeStuff || ModContent.GetInstance<Config>().AllowBuffStat;
+        }
         public override bool InstancePerEntity => true;
         public override void SetDefaults(NPC npc)
         {
-            bool ns = Config.Instance.allowNPCStat;
-            bool flag1 = Config.Instance.terraBladeStuff && !NPC.downedPlantBoss;//checks for config and if plantera has been defeated
+            bool ns = ModContent.GetInstance<Config>().AllowNPCStat;
+            bool flag1 = ModContent.GetInstance<Config>().TerraBladeStuff && !NPC.downedPlantBoss;//checks for config and if plantera has been defeated
             if (ns)
             {
                 NPCValues(npc);
             }
             if (flag1)
             {
-                switch (npc.type)
-                {
-                    case 477:
-                        npc.lifeMax = 0;
-                        break;
-                }
+                if (npc.type == 477)
+                    npc.lifeMax = 0;
             }
         }
         public override void OnHitPlayer(NPC npc, Player target, int damage, bool crit)
         {
-            bool ns = Config.Instance.allowNPCStat;
+            bool ns = ModContent.GetInstance<Config>().AllowNPCStat;
             if (ns)
             {
                 ActiveNPC(npc, target);
@@ -35,15 +35,35 @@ namespace JourneyRecipes.NPCs
         }
         public override void NPCLoot(NPC npc)
         {
-            bool ns = Config.Instance.allowNPCStat;
+            bool ns = ModContent.GetInstance<Config>().AllowNPCStat;
             if (ns)
             {
-                NPCLootRules(npc);
+                switch (npc.type)
+                {
+                    case 289:
+                        if (Main.rand.NextBool(100)) Item.NewItem(npc.Hitbox, ItemID.Nazar);
+                        break;
+                    case 381:
+                    case 382:
+                    case 383:
+                    case 385:
+                    case 389:
+                        if (Main.rand.NextBool(800)) Item.NewItem(npc.Hitbox, ItemID.AntiGravityHook);
+                        if (Main.rand.NextBool(800)) Item.NewItem(npc.Hitbox, ItemID.LaserDrill);
+                        if (Main.rand.NextBool(800)) Item.NewItem(npc.Hitbox, ItemID.ChargedBlasterCannon);
+                        break;
+                    case 509:
+                        if (Main.rand.NextBool(50)) Item.NewItem(npc.Hitbox, ItemID.AntlionClaw);
+                        break;
+                    case 513:
+                        if (Main.rand.NextBool(2)) Item.NewItem(npc.Hitbox, ItemID.FossilOre, Main.rand.Next(1, 2));
+                        break;
+                }
             }
         }
         public override bool PreNPCLoot(NPC npc)
         {
-            bool ns = Config.Instance.allowNPCStat;
+            bool ns = ModContent.GetInstance<Config>().AllowNPCStat;
             if (ns)
             {
                 switch (npc.type)
@@ -62,21 +82,17 @@ namespace JourneyRecipes.NPCs
         }
         public override void ScaleExpertStats(NPC npc, int numPlayers, float bossLifeScale)
         {
-            bool ns = Config.Instance.allowNPCStat;
+            bool ns = ModContent.GetInstance<Config>().AllowNPCStat;
             if (ns)
             {
                 if (npc.type == NPCID.MeteorHead && Main.expertMode)
                 {
-                    if (Main.hardMode) npc.lifeMax = 52;
+                    if (!Main.hardMode) npc.lifeMax = 52;
                     else npc.lifeMax = 56;
                 }
             }
         }
-        public void BossLoot(NPC npc, ref int potionType)
-        {
-            if (npc.type == NPCID.MoonLordCore) potionType = ItemID.SuperHealingPotion;
-        }
-        public static void NPCValues(NPC npc)
+        private void NPCValues(NPC npc)
         {
             switch (npc.type)
             {
@@ -151,7 +167,7 @@ namespace JourneyRecipes.NPCs
                     break;
             }
         }
-        public void ActiveNPC(NPC npc, Player target)
+        private void ActiveNPC(NPC npc, Player target)
         {
             switch (npc.type)
             {
@@ -164,36 +180,10 @@ namespace JourneyRecipes.NPCs
                     break;
             }
         }
-        public void NPCLootRules(NPC npc)
-        {
-            switch (npc.type)
-            {
-                case 289:
-                    if (Main.rand.NextBool(100)) Item.NewItem(npc.Hitbox, ItemID.Nazar);
-                    break;
-                case 381:
-                case 382:
-                case 383:
-                case 385:
-                case 389:
-                    if (Main.rand.NextBool(800)) Item.NewItem(npc.Hitbox, ItemID.AntiGravityHook);
-                    if (Main.rand.NextBool(800)) Item.NewItem(npc.Hitbox, ItemID.LaserDrill);
-                    if (Main.rand.NextBool(800)) Item.NewItem(npc.Hitbox, ItemID.ChargedBlasterCannon);
-                    break;
-                case 509:
-                    if (Main.rand.NextBool(50)) Item.NewItem(npc.Hitbox, ItemID.AntlionMandible);
-                    break;
-                case 513:
-                    if (Main.rand.NextBool(2)) Item.NewItem(npc.Hitbox, ItemID.FossilOre, Main.rand.Next(1, 2));
-                    break;
-            }
-        }
         public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)
         {
-            if (Config.Instance.AllowBuffStat && player.GetModPlayer<JourneyRecipesPlayer>().PlayerInvis)
-            {
+            if (ModContent.GetInstance<Config>().AllowBuffStat && player.GetModPlayer<JourneyRecipesPlayer>().PlayerInvis)
                 spawnRate = (int)(spawnRate * 1.2f);
-            }
         }
     }
 }

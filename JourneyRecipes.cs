@@ -2311,7 +2311,7 @@ namespace JourneyRecipes
                 }
                 #endregion
                 #region Terra Blade Recipe
-                if (Config.Instance.terraBladeStuff)
+                if (Config.Instance.TerraBladeStuff)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder TerraBladeR = new RecipeFinder();
