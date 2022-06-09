@@ -2517,7 +2517,7 @@ namespace JourneyRecipes
         public override void Load()
         {
             instance = this;
-            if (!Main.dedServ)                                                              //sprites
+            if (!Main.dedServ && Config.Instance.Resprite)                                  //sprites
             {
                 Main.instance.LoadTiles(TileID.DyePlants);
                 Main.tileTexture[TileID.DyePlants] = GetTexture("Resprite/Tiles_227");
@@ -2640,74 +2640,75 @@ namespace JourneyRecipes
             base.Unload();
             ModifiedItemTooltips.ResetTooltips();
             instance = null;
-            Main.tileFrame[TileID.DyePlants] = 0;
-            Main.tileSetsLoaded[TileID.DyePlants] = false;                              //forces game to reload texture for this tile, as this declares that it is not loaded
+            if (!Main.dedServ && Config.Instance.Resprite)
+            {
+                Main.tileFrame[TileID.DyePlants] = 0;
+                Main.tileSetsLoaded[TileID.DyePlants] = false;                              //forces game to reload texture for this tile, as this declares that it is not loaded
 
-            Main.NPCLoaded[NPCID.AngryBones] = false;                                   //same as tileSetsLoaded, but for NPCs
-            Main.NPCLoaded[NPCID.Harpy] = false;
-            Main.npcFrameCount[NPCID.Harpy] = 4;                                        //use 1.3 animation framecount, which has a different framecount than 1.4 sprites
-            Main.NPCLoaded[NPCID.Vulture] = false;
-            Main.npcFrameCount[NPCID.Vulture] = 3;
-            Main.NPCLoaded[NPCID.Demon] = false;
-            Main.npcFrameCount[NPCID.Demon] = 2;
-            Main.NPCLoaded[NPCID.VoodooDemon] = false;
-            Main.npcFrameCount[NPCID.VoodooDemon] = 2;
-            Main.NPCLoaded[NPCID.Mummy] = false;
-            Main.npcFrameCount[NPCID.Mummy] = 15;
-            Main.NPCLoaded[NPCID.DarkMummy] = false;
-            Main.npcFrameCount[NPCID.DarkMummy] = 15;
-            Main.NPCLoaded[NPCID.LightMummy] = false;
-            Main.npcFrameCount[NPCID.LightMummy] = 15;
-            Main.NPCLoaded[NPCID.Wolf] = false;
-            Main.npcFrameCount[NPCID.Wolf] = 9;
-            Main.NPCLoaded[NPCID.QueenBee] = false;
-            Main.NPCLoaded[NPCID.JungleCreeper] = false;
-            Main.npcFrameCount[NPCID.JungleCreeper] = 3;
-            Main.NPCLoaded[NPCID.JungleCreeperWall] = false;
-            Main.npcFrameCount[NPCID.JungleCreeperWall] = 4;
-            Main.NPCLoaded[NPCID.BloodFeeder] = false;
-            Main.NPCLoaded[NPCID.IceGolem] = false;
-            Main.NPCLoaded[NPCID.Eyezor] = false;
-            Main.NPCLoaded[NPCID.ZombieMushroom] = false;
-            Main.NPCLoaded[NPCID.ZombieMushroomHat] = false;
-            Main.NPCLoaded[NPCID.FungoFish] = false;
-            Main.NPCLoaded[NPCID.MushiLadybug] = false;
-            Main.NPCLoaded[NPCID.FungiBulb] = false;
-            Main.NPCLoaded[NPCID.GiantFungiBulb] = false;
-            Main.NPCLoaded[NPCID.Plantera] = false;
-            Main.NPCLoaded[NPCID.PlanterasHook] = false;
-            Main.NPCLoaded[NPCID.PlanterasTentacle] = false;
-            Main.NPCLoaded[NPCID.Spore] = false;
-            Main.NPCLoaded[NPCID.Creeper] = false;
-            Main.NPCLoaded[NPCID.RustyArmoredBonesAxe] = false;
-            Main.NPCLoaded[NPCID.RustyArmoredBonesFlail] = false;
-            Main.NPCLoaded[NPCID.RustyArmoredBonesSword] = false;
-            Main.NPCLoaded[NPCID.RustyArmoredBonesSwordNoArmor] = false;
-            Main.NPCLoaded[NPCID.BlueArmoredBones] = false;
-            Main.NPCLoaded[NPCID.BlueArmoredBonesMace] = false;
-            Main.NPCLoaded[NPCID.BlueArmoredBonesNoPants] = false;
-            Main.npcFrameCount[NPCID.BlueArmoredBonesNoPants] = 15;
-            Main.NPCLoaded[NPCID.BlueArmoredBonesSword] = false;
-            Main.NPCLoaded[NPCID.HellArmoredBones] = false;
-            Main.NPCLoaded[NPCID.HellArmoredBonesSpikeShield] = false;
-            Main.NPCLoaded[NPCID.HellArmoredBonesMace] = false;
-            Main.NPCLoaded[NPCID.HellArmoredBonesSword] = false;
-            Main.NPCLoaded[NPCID.RaggedCaster] = false;
-            Main.NPCLoaded[NPCID.RaggedCasterOpenCoat] = false;
-            Main.NPCLoaded[NPCID.Necromancer] = false;
-            Main.NPCLoaded[NPCID.NecromancerArmored] = false;
-            Main.NPCLoaded[NPCID.DiabolistRed] = false;
-            Main.NPCLoaded[NPCID.DiabolistWhite] = false;
-            Main.NPCLoaded[NPCID.BoneLee] = false;
-            Main.NPCLoaded[NPCID.Paladin] = false;
-            Main.NPCLoaded[NPCID.SkeletonSniper] = false;//should use FrameCount, but fotoshopped works too oops
-            Main.NPCLoaded[NPCID.TacticalSkeleton] = false;
-            Main.NPCLoaded[NPCID.SkeletonCommando] = false;
-            Main.NPCLoaded[NPCID.Everscream] = false;
-
+                Main.NPCLoaded[NPCID.AngryBones] = false;                                   //same as tileSetsLoaded, but for NPCs
+                Main.NPCLoaded[NPCID.Harpy] = false;
+                Main.npcFrameCount[NPCID.Harpy] = 4;                                        //use 1.3 animation framecount, which has a different framecount than 1.4 sprites
+                Main.NPCLoaded[NPCID.Vulture] = false;
+                Main.npcFrameCount[NPCID.Vulture] = 3;
+                Main.NPCLoaded[NPCID.Demon] = false;
+                Main.npcFrameCount[NPCID.Demon] = 2;
+                Main.NPCLoaded[NPCID.VoodooDemon] = false;
+                Main.npcFrameCount[NPCID.VoodooDemon] = 2;
+                Main.NPCLoaded[NPCID.Mummy] = false;
+                Main.npcFrameCount[NPCID.Mummy] = 15;
+                Main.NPCLoaded[NPCID.DarkMummy] = false;
+                Main.npcFrameCount[NPCID.DarkMummy] = 15;
+                Main.NPCLoaded[NPCID.LightMummy] = false;
+                Main.npcFrameCount[NPCID.LightMummy] = 15;
+                Main.NPCLoaded[NPCID.Wolf] = false;
+                Main.npcFrameCount[NPCID.Wolf] = 9;
+                Main.NPCLoaded[NPCID.QueenBee] = false;
+                Main.NPCLoaded[NPCID.JungleCreeper] = false;
+                Main.npcFrameCount[NPCID.JungleCreeper] = 3;
+                Main.NPCLoaded[NPCID.JungleCreeperWall] = false;
+                Main.npcFrameCount[NPCID.JungleCreeperWall] = 4;
+                Main.NPCLoaded[NPCID.BloodFeeder] = false;
+                Main.NPCLoaded[NPCID.IceGolem] = false;
+                Main.NPCLoaded[NPCID.Eyezor] = false;
+                Main.NPCLoaded[NPCID.ZombieMushroom] = false;
+                Main.NPCLoaded[NPCID.ZombieMushroomHat] = false;
+                Main.NPCLoaded[NPCID.FungoFish] = false;
+                Main.NPCLoaded[NPCID.MushiLadybug] = false;
+                Main.NPCLoaded[NPCID.FungiBulb] = false;
+                Main.NPCLoaded[NPCID.GiantFungiBulb] = false;
+                Main.NPCLoaded[NPCID.Plantera] = false;
+                Main.NPCLoaded[NPCID.PlanterasHook] = false;
+                Main.NPCLoaded[NPCID.PlanterasTentacle] = false;
+                Main.NPCLoaded[NPCID.Spore] = false;
+                Main.NPCLoaded[NPCID.Creeper] = false;
+                Main.NPCLoaded[NPCID.RustyArmoredBonesAxe] = false;
+                Main.NPCLoaded[NPCID.RustyArmoredBonesFlail] = false;
+                Main.NPCLoaded[NPCID.RustyArmoredBonesSword] = false;
+                Main.NPCLoaded[NPCID.RustyArmoredBonesSwordNoArmor] = false;
+                Main.NPCLoaded[NPCID.BlueArmoredBones] = false;
+                Main.NPCLoaded[NPCID.BlueArmoredBonesMace] = false;
+                Main.NPCLoaded[NPCID.BlueArmoredBonesNoPants] = false;
+                Main.npcFrameCount[NPCID.BlueArmoredBonesNoPants] = 15;
+                Main.NPCLoaded[NPCID.BlueArmoredBonesSword] = false;
+                Main.NPCLoaded[NPCID.HellArmoredBones] = false;
+                Main.NPCLoaded[NPCID.HellArmoredBonesSpikeShield] = false;
+                Main.NPCLoaded[NPCID.HellArmoredBonesMace] = false;
+                Main.NPCLoaded[NPCID.HellArmoredBonesSword] = false;
+                Main.NPCLoaded[NPCID.RaggedCaster] = false;
+                Main.NPCLoaded[NPCID.RaggedCasterOpenCoat] = false;
+                Main.NPCLoaded[NPCID.Necromancer] = false;
+                Main.NPCLoaded[NPCID.NecromancerArmored] = false;
+                Main.NPCLoaded[NPCID.DiabolistRed] = false;
+                Main.NPCLoaded[NPCID.DiabolistWhite] = false;
+                Main.NPCLoaded[NPCID.BoneLee] = false;
+                Main.NPCLoaded[NPCID.Paladin] = false;
+                Main.NPCLoaded[NPCID.SkeletonSniper] = false;//should use FrameCount, but fotoshopped works too oops
+                Main.NPCLoaded[NPCID.TacticalSkeleton] = false;
+                Main.NPCLoaded[NPCID.SkeletonCommando] = false;
+                Main.NPCLoaded[NPCID.Everscream] = false;
+            }
             bool flag3 = Config.Instance.allowBuffDuration;
             bool flag4 = Config.Instance.allowBuffStat;
-            bool flag5 = Config.Instance.allowArmorStat;
             if (flag3)
             {
                 Main.buffNoTimeDisplay[BuffID.Sharpened] = false;
@@ -2723,10 +2724,6 @@ namespace JourneyRecipes
             {
                 Player p = Main.LocalPlayer;
                 p.armorPenetration -= 8;
-            }
-            if (flag5)
-            {
-
             }
             //UnloadSprites();
         }
