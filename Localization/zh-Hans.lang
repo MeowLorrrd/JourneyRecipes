@@ -1,5 +1,5 @@
 ﻿-- Chinese (Simplified) language localization file
--- Accessory, armor, armor set bonus
+-- Accessory, armor, item, armor set bonus
 
 ItemTooltip.CelestialCuffs=扩大魔力星的拾取范围\n受到伤害后恢复魔力\n最大魔力值增加20
 ItemTooltip.FeralClaws=近战速度提高12%\n为近战武器启用自动摆动
@@ -67,6 +67,10 @@ ItemTooltip.TikiPants=仆从数量上限提高1个\n仆从伤害增加10%
 ItemTooltip.SquireAltHead=哨兵数量上限提高2个，仆从和近战伤害各增加10%
 ItemTooltip.SquireAltShirt=仆从伤害增加30%，生命再生速度大幅提高
 ItemTooltip.SquireAltPants=仆从伤害、近战暴击率和移动速度各增加20%
+
+ItemTooltip.CrystalVileShard=召唤巨大的水晶尖刺\n忽略10点敌人防御
+ItemTooltip.NettleBurst=Игнорирует 10 очков защиты врага
+ItemTooltip.SDMG=66%的几率不消耗弹药\n“它来自太空边缘”
 
 ArmorSetbonus.Cactus=攻击者因为仙人掌尖刺受到伤害
 ArmorSetbonus.ChlorophyteMelee=召唤强大的叶状水晶来射击附近的敌人\n所受伤害减少5%

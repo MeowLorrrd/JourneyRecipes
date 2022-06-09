@@ -1,5 +1,5 @@
 -- German language localization file
--- Accessory, armor, armor set bonus
+-- Accessory, armor, item, armor set bonus
 
 ItemTooltip.CelestialCuffs=Erhöht Einsammelreichweite bei Manasternen\nStellt bei erlittenem Schaden Mana wieder her\nErhöht maximales Mana um 20
 ItemTooltip.FeralClaws=Um 12% erhöhtes Nahkampftempo\nAktiviert automatisches Schwingen für Nahkampfwaffen
@@ -67,6 +67,10 @@ ItemTooltip.TikiPants=Erhöht die maximale Anzahl deiner Günstlinge um 1\nErhöht 
 ItemTooltip.SquireAltHead=Erhöht deine maximale Anzahl an Wächtern um 2 und erhöht Günstling- und Nahkampfschaden um 10%
 ItemTooltip.SquireAltShirt=Um 30% erhöhter Günstlingschaden und massiv erhöhte Lebensregeneration
 ItemTooltip.SquireAltPants=Um 20% erhöhter Günstlingschaden, erhöhte kritische Nahkampf-Trefferchance und erhöhtes Bewegungstempo
+
+ItemTooltip.CrystalVileShard=Beschwört einen riesigen Kristallstachel\nIgnoriert 10 Punkte der gegnerischen Verteidigung
+ItemTooltip.NettleBurst=Ignoriert 10 Punkte der gegnerischen Verteidigung
+ItemTooltip.SDMG=66% Chance, keine Munition zu verbrauchen\n‚Es kam vom Rande des Universums‘
 
 ArmorSetbonus.Cactus=Angreifer erleiden Schaden durch Kaktusstacheln
 ArmorSetbonus.ChlorophyteMelee=Beschwört einen mächtigen Blattkristall mit dem du auf Gegner in der Nähe schießen kannst\nReduziert erlittenen Schaden um 5%

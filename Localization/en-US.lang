@@ -1,5 +1,5 @@
 -- English language localization file
--- Accessory, armor, armor set bonus
+-- Accessory, armor, item, armor set bonus
 
 ItemTooltip.CelestialCuffs=Increases pickup range for mana stars\nRestores mana when damaged\nIncreases maximum mana by 20
 ItemTooltip.FeralClaws=12% increased melee speed\nEnables auto swing for melee weapons
@@ -67,6 +67,10 @@ ItemTooltip.TikiPants=Increases your max number of minions by 1\nIncreases minio
 ItemTooltip.SquireAltHead=Increases your max number of sentries by 2 and increases minion and melee damage by 10%
 ItemTooltip.SquireAltShirt=30% increased minion damage and massively increased life regeneration
 ItemTooltip.SquireAltPants=20% increased minion damage and melee critical strike chance and movement speed
+
+ItemTooltip.CrystalVileShard=Summons a massive crystal spike\nIgnores 10 points of enemy Defense
+ItemTooltip.NettleBurst=Ignores 10 points of enemy Defense
+ItemTooltip.SDMG=66% chance to not consume ammo\n'It came from the edge of space'
 
 ArmorSetbonus.Cactus=Attackers take damage from the cactus spines
 ArmorSetbonus.ChlorophyteMelee=Summons a powerful leaf crystal to shoot at nearby enemies\nReduces damage taken by 5%

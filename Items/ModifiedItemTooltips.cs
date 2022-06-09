@@ -111,6 +111,12 @@ namespace JourneyRecipes.Items
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.NinjaShirt", ItemID.NinjaShirt);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.NinjaPants", ItemID.NinjaPants); 
             }
+            if (Config.Instance.allowWeaponStat)
+            {
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.CrystalVileShard", ItemID.CrystalVileShard);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.NettleBurst", ItemID.NettleBurst);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SDMG", ItemID.SDMG);
+            }
         }
         public static void ResetTooltips()
         {

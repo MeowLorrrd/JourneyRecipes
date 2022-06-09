@@ -1,5 +1,5 @@
 -- Portugese language localization file
--- Accessory, armor, armor set bonus
+-- Accessory, armor, item, armor set bonus
 
 ItemTooltip.CelestialCuffs=Aumenta o alcance de coleta das estrelas de mana\nRestaura mana quando sofrer dano\nAumenta a mana máxima em 20
 ItemTooltip.FeralClaws=12% de aumento na velocidade de ataque físico\nPermite o ataque automático com armas de ataque físico
@@ -67,6 +67,10 @@ ItemTooltip.TikiPants=Aumenta o número máximo de lacaios que você pode ter em 1\
 ItemTooltip.SquireAltHead=Aumenta o número máximo de sentinelas em 2 e aumenta os danos causados por lacaios e por ataques físicos em 10%
 ItemTooltip.SquireAltShirt=Aumenta o dano causado por lacaios em 30% e aumenta de forma significativa a regeneração de vida
 ItemTooltip.SquireAltPants=20% de aumento nos danos por lacaios, na velocidade dos movimentos e na chance de acerto crítico
+
+ItemTooltip.CrystalVileShard=Invoca um enorme espinho de cristal\nIgnora 10 pontos de Defesa do inimigo
+ItemTooltip.NettleBurst=Ignora 10 pontos de Defesa do inimigo
+ItemTooltip.SDMG=66% de chance de não consumir munição\n“Veio dos limites do espaço”
 
 ArmorSetbonus.Cactus=Atacantes sofrem dano por espinhos de cactos
 ArmorSetbonus.ChlorophyteMelee=Invoca um poderoso cristal de folha para atirar em inimigos próximos\nReduz os danos sofridos em 5%

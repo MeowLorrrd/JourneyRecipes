@@ -1,5 +1,5 @@
 -- Italian language localization file
--- Accessory, armor, armor set bonus
+-- Accessory, armor, item, armor set bonus
 
 ItemTooltip.CelestialCuffs=Aumenta la portata di raccolta delle stelle di mana\nRipristina il mana quando si ricevono danni\nAumenta il mana massimo di 20
 ItemTooltip.FeralClaws=Aumenta la velocità in mischia del 12%\nAttiva l'uso automatico delle armi da mischia
@@ -67,6 +67,10 @@ ItemTooltip.TikiPants=Aumenta il numero massimo dei tuoi seguaci di 1\nAumenta i
 ItemTooltip.SquireAltHead=Aumenta il numero massimo di sentinelle di 2 e aumenta il danno dei seguaci e in mischia del 10%
 ItemTooltip.SquireAltShirt=Danno dei seguaci aumentato del 30% e rigenerazione vita enormemente aumentata
 ItemTooltip.SquireAltPants=Danno dei seguaci, probabilità colpi critici in mischia e velocità di movimento aumentati del 20%
+
+ItemTooltip.CrystalVileShard=Evoca uno spuntone di cristallo enorme\nIgnora 10 punti della difesa nemica
+ItemTooltip.NettleBurst=Ignora 10 punti della difesa nemica
+ItemTooltip.SDMG=66% di probabilità di non consumare munizioni\nVeniva dai confini dello spazio
 
 ArmorSetbonus.Cactus=Gli aggressori ricevono danni dalle spine di cactus
 ArmorSetbonus.ChlorophyteMelee=Evoca una potente cristallo a foglia da sparare ai nemici vicini \nRiduce il danno subito del 5%

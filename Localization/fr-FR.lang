@@ -1,5 +1,5 @@
 -- French language localization file
--- Accessory, armor, armor set bonus
+-- Accessory, armor, item, armor set bonus
 
 ItemTooltip.CelestialCuffs=Augmente la portée de collecte des étoiles de mana\nRestaure du mana quand le porteur subit des dégâts +20 points de mana max
 ItemTooltip.FeralClaws=+12 % de vitesse au corps à corps\nActive l'utilisation automatique des armes de mêlée
@@ -67,6 +67,10 @@ ItemTooltip.TikiPants=Augmente le nombre de sbires max de 1\n+10 % de dégâts des
 ItemTooltip.SquireAltHead=Augmente votre nombre maximal de sentinelles de 2 et vous octroie +10 % de dégâts des sbires et au corps à corps
 ItemTooltip.SquireAltShirt=+30 % de dégâts des sbires et régénération énorme de santé
 ItemTooltip.SquireAltPants=+20 % de dégâts de sbires, de chances de coup critique au corps à corps et de vitesse de déplacement
+
+ItemTooltip.CrystalVileShard=Invoque une énorme pointe en cristal\nIgnore 10 points de la défense ennemie
+ItemTooltip.NettleBurst=Ignore 10 points de la défense ennemie
+ItemTooltip.SDMG=66 % de chances de ne pas utiliser de munitions\n« Il vient d'Edge of Space. »
 
 ArmorSetbonus.Cactus=Les agresseurs subissent des dégâts causés par les épines de cactus
 ArmorSetbonus.ChlorophyteMelee=Invoque une feuille de cristal puissante pour tirer sur les ennemis à proximité\nRéduit les dégâts subis de 5 %

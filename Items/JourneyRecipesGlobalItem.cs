@@ -17,6 +17,7 @@ namespace JourneyRecipes.Items
             bool tr = Config.Instance.allowThrowingToRanged;
             bool ts = Config.Instance.allowToolStat;
             bool ac = Config.Instance.allowAccessoryStat;
+            bool ar = Config.Instance.allowArmorStat;
             if (ms)
                 switch (item.type)
                 {
@@ -260,7 +261,7 @@ namespace JourneyRecipes.Items
                 }
             }
         }
-        public static void UpdateWeaponStat(Item item)
+        private void UpdateWeaponStat(Item item)
         {
             switch (item.type)
             {
@@ -641,7 +642,7 @@ namespace JourneyRecipes.Items
                     break;
             }
         }
-        public static void UpdateDamageClass(Item item)
+        private void UpdateDamageClass(Item item)
         {
             if (item.thrown)
             {
@@ -650,7 +651,7 @@ namespace JourneyRecipes.Items
                 item.ranged = true;
             }
         }
-        public static void UpdateToolStat(Item item)
+        private void UpdateToolStat(Item item)
         {
             switch (item.type)
             {
@@ -674,8 +675,8 @@ namespace JourneyRecipes.Items
             bool ws = Config.Instance.allowWeaponStat;
             if (ws)
             {
-                if (item.type == ItemID.FlowerofFrost) target.AddBuff(BuffID.Frostburn, 8);
-                if (item.type == ItemID.WandofSparking && Main.rand.NextBool(1)) target.AddBuff(BuffID.OnFire, Main.rand.Next(3));
+                if (item.type == ItemID.FlowerofFrost) target.AddBuff(BuffID.Frostburn, 8*60);//yes im too dumb to calculate this
+                if (item.type == ItemID.WandofSparking && Main.rand.NextBool(1)) target.AddBuff(BuffID.OnFire, Main.rand.Next(30, 180));
             }
         }
         public override int ChoosePrefix(Item item, UnifiedRandom rand)
@@ -695,114 +696,6 @@ namespace JourneyRecipes.Items
                 return Main.rand.NextBool(3);
             }
             return base.ConsumeAmmo(item, player);
-        }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            bool ws = Config.Instance.allowWeaponStat;
-            if (ws)
-            {
-                if (item.type == ItemID.SDMG)
-                {
-                    #region strings
-                    string GermanOld = "50% Chance, keine Munition zu verbrauchen";
-                    string GermanNew = "66% Chance, keine Munition zu verbrauchen";
-                    string EnglishOld = "50% chance to not consume ammo";
-                    string EnglishNew = "66% chance to not consume ammo";
-                    string SpanishOld = "Probabilidad del 50% de no gastar munición";
-                    string SpanishNew = "Probabilidad del 66% de no gastar munición";
-                    string FrenchOld = "50 % de chances de ne pas utiliser de munitions";
-                    string FrenchNew = "66 % de chances de ne pas utiliser de munitions";
-                    string ItalianOld = "50% di probabilità di non consumare munizioni";
-                    string ItalianNew = "66% di probabilità di non consumare munizioni";
-                    string PolishOld = "50% szans niezużycia amunicji";
-                    string PolishNew = "66% szans niezużycia amunicji";
-                    string PortugeseOld = "50% de chance de não consumir munição";
-                    string PortugeseNew = "66% de chance de não consumir munição";
-                    string RussianOld = "Шанс 50 % не потратить боеприпасы";
-                    string RussianNew = "Шанс 66 % не потратить боеприпасы";
-                    string ChineseOld = "50%的几率不消耗弹药";
-                    string ChineseNew = "66%的几率不消耗弹药";
-                    #endregion
-                    #region new tooltips
-                    foreach (TooltipLine line in tooltips)
-                    {
-                        if (line.text == GermanOld)
-                        {
-                            line.text = GermanNew;
-                        }
-                        if (line.text == EnglishOld)
-                        {
-                            line.text = EnglishNew;
-                        }
-                        if (line.text == SpanishOld)
-                        {
-                            line.text = SpanishNew;
-                        }
-                        if (line.text == FrenchOld)
-                        {
-                            line.text = FrenchNew;
-                        }
-                        if (line.text == ItalianOld)
-                        {
-                            line.text = ItalianNew;
-                        }
-                        if (line.text == PolishOld)
-                        {
-                            line.text = PolishNew;
-                        }
-                        if (line.text == PortugeseOld)
-                        {
-                            line.text = PortugeseNew;
-                        }
-                        if (line.text == RussianOld)
-                        {
-                            line.text = RussianNew;
-                        }
-                        if (line.text == ChineseOld)
-                        {
-                            line.text = ChineseNew;
-                        }
-                    }
-                    #endregion//cringe formatting
-                }
-                if (item.type == ItemID.NettleBurst)
-                {
-                    #region strings
-                    string GermanOld = "Beschwört einen Dornenspeer";
-                    string GermanNew = "Ignoriert 10 Punkte der gegnerischen Verteidigung";
-                    string EnglishOld = "Summons a thorn spear";
-                    string EnglishNew = "Ignores 10 points of enemy Defense";
-                    string SpanishOld = "Invoca una lanza de espinas";
-                    string SpanishNew = "Ignora 10 puntos de la defensa del enemigo";
-                    string FrenchOld = "Invoque une lance épineuse";
-                    string FrenchNew = "Ignore 10 points de la défense ennemie";
-                    string ItalianOld = "Evoca una lancia di spine";
-                    string ItalianNew = "Ignora 10 punti della difesa nemica";
-                    string PolishOld = "Przyzywa cierniową włócznię";
-                    string PolishNew = "Ignoruje 10 punktów obrony przeciwnika";
-                    string PortugeseOld = "Invoca uma lança de espinho";
-                    string PortugeseNew = "Ignora 10 pontos de Defesa do inimigo";
-                    string RussianOld = "Крапивный взрыв";
-                    string RussianNew = "Игнорирует 10 очков защиты врага";
-                    string ChineseOld = "召唤刺矛";
-                    string ChineseNew = "忽略10点敌人防御";
-                    #endregion
-                    #region new tooltips
-                    foreach (TooltipLine line in tooltips)
-                    {
-                        if (line.text == GermanOld) line.text = GermanNew;
-                        if (line.text == EnglishOld) line.text = EnglishNew;
-                        if (line.text == SpanishOld) line.text = SpanishNew;
-                        if (line.text == FrenchOld) line.text = FrenchNew;
-                        if (line.text == ItalianOld) line.text = ItalianNew;
-                        if (line.text == PolishOld) line.text = PolishNew;
-                        if (line.text == PortugeseOld) line.text = PortugeseNew;
-                        if (line.text == RussianOld) line.text = RussianNew;
-                        if (line.text == ChineseOld) line.text = ChineseNew;
-                    }
-                    #endregion//chad formatting
-                }
-            }
         }
         public override bool UseItem(Item item, Player player)
         {

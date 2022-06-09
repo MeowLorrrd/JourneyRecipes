@@ -1,5 +1,5 @@
 ﻿-- Polish language localization file
--- Accessory, armor, armor set bonus
+-- Accessory, armor, item,  armor set bonus
 
 ItemTooltip.CelestialCuffs=Zwiększa zasięg podnoszenia gwiazdek many\nPo otrzymaniu obrażeń odnawia manę\nZwiększa maksymalną liczbę punktów many o 20
 ItemTooltip.FeralClaws=12% zwiększona szybkość walki w zwarciu\nUmożliwia automatyczny atak broni do walki w zwarciu
@@ -67,6 +67,10 @@ ItemTooltip.TikiPants=Zwiększa maksymalną liczbę twoich sług o 1\nZwiększa 
 ItemTooltip.SquireAltHead=Zwiększa maksymalną liczbę wartowników o 2, a także zwiększa obrażenia sług oraz obrażenia w walce w zwarciu o 10%
 ItemTooltip.SquireAltShirt=30% zwiększone obrażenia sług oraz znacznie zwiększona regeneracja życia
 ItemTooltip.SquireAltPants=20% zwiększone obrażenia sług oraz szansa na trafienie krytyczne w walce w zwarciu, a także szybkość poruszania się
+
+ItemTooltip.CrystalVileShard=Przywołuje potężny, kryształowy kolec\nIgnoruje 10 punktów obrony przeciwnika
+ItemTooltip.NettleBurst=Ignoruje 10 punktów obrony przeciwnika
+ItemTooltip.SDMG=66% szans niezużycia amunicji\n„Przypłynął z kosmosu”
 
 ArmorSetbonus.Cactus=Atakujący otrzymują obrażenia od kolców kaktusa
 ArmorSetbonus.ChlorophyteMelee=Przywołuje potężnego liścia kryształowego, który rani pobliskich wrogów\nZmniejsza otrzymywane obrażenia o 5%
