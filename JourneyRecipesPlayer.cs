@@ -10,6 +10,30 @@ using Terraria.DataStructures;
 using Terraria.GameContent.Events;
 using Terraria.GameInput;
 using Terraria.ModLoader.IO;
+using System.IO;
+using System.Security.Cryptography;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
+using ReLogic.Utilities;
+using Terraria.Audio;
+using Terraria.Chat;
+using Terraria.Enums;
+using Terraria.GameContent;
+using Terraria.GameContent.Achievements;
+using Terraria.GameContent.Tile_Entities;
+using Terraria.GameContent.UI;
+using Terraria.Graphics;
+using Terraria.Graphics.Capture;
+using Terraria.Graphics.Effects;
+using Terraria.Graphics.Shaders;
+using Terraria.IO;
+using Terraria.Localization;
+using Terraria.ObjectData;
+using Terraria.Social;
+using Terraria.UI;
+using Terraria.UI.Chat;
+using Terraria.UI.Gamepad;
+using Terraria.Utilities;
 
 namespace JourneyRecipes
 {
@@ -43,20 +67,13 @@ namespace JourneyRecipes
             }//code above from Fargo's Souls
             if (Config.Instance.allowBuffStat && Sharpened && player.HeldItem.melee)
             {
-                player.armorPenetration += 8;
+                player.armorPenetration += 8;//+4 vanilla armor pen
             }
             if (Config.Instance.allowWeaponStat && (player.HeldItem.type == ItemID.NettleBurst || player.HeldItem.type == ItemID.WaspGun || player.HeldItem.type == ItemID.CrystalVileShard))
             {
                 player.armorPenetration += 10;
             }
-            return true;
-        }
-        public override void PostItemCheck()
-        {
-            if (Config.Instance.allowAccessoryStat && PlayerFeral && player.HeldItem.melee)
-            {
-                player.HeldItem.autoReuse = PlayerAutouse;
-            }
+            return base.PreItemCheck();
         }
         public override bool ConsumeAmmo(Item weapon, Item ammo)
         {
