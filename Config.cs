@@ -91,13 +91,13 @@ namespace JourneyRecipes
         [ReloadRequired]
         public bool allowBuffRecipes;
 
-        [Header("Misc settings")]
+        /*[Header("Misc settings")]
         [BackgroundColor(154, 163, 255, 255)]
         [DefaultValue(true)]
         [Label("Change textures?")]
         [Tooltip("If this setting is turned on, this mod will update 1.3 textures, e.g. 1.4, dungeon enemies, projectiles\nCurrently disabled for items")]
         [ReloadRequired]
-        public bool Resprite;
+        public bool Resprite { get; set; }*/
 
         [Header("Stat Settings [c/ff3333:(Read red configs!)]")]
         [DefaultValue(true)]

@@ -2517,7 +2517,7 @@ namespace JourneyRecipes
         public override void Load()
         {
             instance = this;
-            if (!Main.dedServ && Config.Instance.Resprite)                                  //sprites
+            if (!Main.dedServ)                                  //sprites
             {
                 Main.instance.LoadTiles(TileID.DyePlants);
                 Main.tileTexture[TileID.DyePlants] = GetTexture("Resprite/Tiles_227");
@@ -2640,7 +2640,7 @@ namespace JourneyRecipes
             base.Unload();
             ModifiedItemTooltips.ResetTooltips();
             instance = null;
-            if (!Main.dedServ && Config.Instance.Resprite)
+            if (!Main.dedServ)
             {
                 Main.tileFrame[TileID.DyePlants] = 0;
                 Main.tileSetsLoaded[TileID.DyePlants] = false;                              //forces game to reload texture for this tile, as this declares that it is not loaded
@@ -2731,8 +2731,8 @@ namespace JourneyRecipes
         private void LoadSprites()
 #pragma warning restore IDE0051 // Remove unused private members
         {
-            bool flag1 = Config.Instance.Resprite && !Main.dedServ;
-            if (!flag1)
+            //bool flag1 = Config.Instance.Resprite && !Main.dedServ;
+            //if (!flag1)
             {
                 Main.instance.LoadNPC(NPCID.AngryBones);
                 Main.npcTexture[NPCID.AngryBones] = GetTexture("Resprite/NPC_31");

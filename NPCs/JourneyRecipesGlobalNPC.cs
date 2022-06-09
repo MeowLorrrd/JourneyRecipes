@@ -6,10 +6,10 @@ namespace JourneyRecipes.NPCs
 {
     public class JourneyRecipesGlobalNPC : GlobalNPC
     {
-        public override bool Autoload(ref string name)
+        /*public override bool Autoload(ref string name)
         {
             return ModContent.GetInstance<Config>().AllowNPCStat || ModContent.GetInstance<Config>().TerraBladeStuff || ModContent.GetInstance<Config>().AllowBuffStat;
-        }
+        }*/
         public override bool InstancePerEntity => true;
         public override void SetDefaults(NPC npc)
         {
@@ -54,34 +54,53 @@ namespace JourneyRecipes.NPCs
         }
         public override void NPCLoot(NPC npc)
         {
-            bool ns = ModContent.GetInstance<Config>().AllowNPCStat;
-            if (ns)
+            if (ModContent.GetInstance<Config>().AllowNPCStat)
             {
-                switch (npc.type)
+                if (npc.type == 289)
                 {
-                    case 289:
-                        if (!Main.expertMode)
-                            if (Main.rand.Next(100) == 0)
-                                Item.NewItem(npc.Hitbox, ItemID.Nazar);
-                            else
-                                if (Main.rand.Next(50) == 0)
-                                Item.NewItem(npc.Hitbox, ItemID.Nazar);
-                        break;
-                    case 381:
-                    case 382:
-                    case 383:
-                    case 385:
-                    case 389:
-                        if (Main.rand.Next(800) == 0) Item.NewItem(npc.Hitbox, ItemID.AntiGravityHook);
-                        if (Main.rand.Next(800) == 0) Item.NewItem(npc.Hitbox, ItemID.LaserDrill);
-                        if (Main.rand.Next(800) == 0) Item.NewItem(npc.Hitbox, ItemID.ChargedBlasterCannon);
-                        break;
-                    case 509:
-                        if (Main.rand.Next(50) == 0) Item.NewItem(npc.Hitbox, ItemID.AntlionClaw);
-                        break;
-                    case 513:
-                        if (Main.rand.Next(2) == 0) Item.NewItem(npc.Hitbox, ItemID.FossilOre, Main.rand.Next(1, 2));
-                        break;
+                    if (!Main.expertMode)
+                    {
+                        if (Main.rand.NextBool(100))
+                        {
+                            Item.NewItem(npc.Hitbox, ItemID.Nazar);
+                        }
+                    }
+                    else
+                    {
+                        if (Main.rand.NextBool(50))
+                        {
+                            Item.NewItem(npc.Hitbox, ItemID.Nazar);
+                        }
+                    }
+                }
+                else if (npc.type == 381 || npc.type == 382 || npc.type == 383 || npc.type == 385 || npc.type == 389)
+                {
+                    if (Main.rand.NextBool(800))
+                    {
+                        Item.NewItem(npc.Hitbox, ItemID.AntiGravityHook);
+                    }
+                    if (Main.rand.NextBool(800))
+                    {
+                        Item.NewItem(npc.Hitbox, ItemID.ChargedBlasterCannon);
+                    }
+                    if (Main.rand.NextBool(800))
+                    {
+                        if (Main.rand.NextBool(800)) Item.NewItem(npc.Hitbox, ItemID.LaserDrill);
+                    }
+                }
+                else if (npc.type == 509)
+                {
+                    if (Main.rand.NextBool(50))
+                    {
+                        Item.NewItem(npc.Hitbox, ItemID.AntlionClaw);
+                    }
+                }
+                else if (npc.type == 513)
+                {
+                    if (Main.rand.NextBool(2))
+                    {
+                        if (Main.rand.NextBool(2)) Item.NewItem(npc.Hitbox, ItemID.FossilOre, Main.rand.Next(1, 2));
+                    }
                 }
             }
         }
@@ -177,11 +196,11 @@ namespace JourneyRecipes.NPCs
             switch (npc.type)
             {
                 case 289:
-                    if (Main.rand.Next(3) == 0) target.AddBuff(BuffID.Cursed, 120);
+                    if (Main.rand.NextBool(3)) target.AddBuff(BuffID.Cursed, 120);
                     break;
                 case 236:
                 case 237:
-                    if (Main.rand.Next(10) == 0) target.AddBuff(BuffID.Venom, 240);
+                    if (Main.rand.NextBool(10)) target.AddBuff(BuffID.Venom, 240);
                     break;
             }
         }
