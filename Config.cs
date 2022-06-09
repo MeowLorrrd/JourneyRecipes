@@ -91,13 +91,20 @@ namespace JourneyRecipes
         [ReloadRequired]
         public bool allowBuffRecipes;
 
+        [Header("Misc settings")]
+        [DefaultValue(true)]
+        [Label("Change textures?")]
+        [Tooltip("If this setting is turned on, this mod will update 1.3 textures, e.g. 1.4, dungeon enemies, projectiles\nCurrently disabled for items")]
+        [ReloadRequired]
+        public bool Resprite;
+
         [Header("Stat Settings")]
         [DefaultValue(true)]
         [Label("[i:1295]   Change weapon stats?")]
         [Tooltip("If this setting is turned off, this mod will not change weapon stats, e.g. the 1.3 Heat Ray stats will be used" +
             "\nBy enabling this setting, certain weapons will use 1.4 stats" +
             "\nThis setting also affects ammunition" +
-            "\n[c/ff0000:Highly recommended to disable while using Calamity or Fargo's Eternity Mode]")]
+            "\nHighly recommended to disable while using Calamity or Fargo's Eternity Mode")]
         [ReloadRequired]
         public bool allowWeaponStat;
 
@@ -113,7 +120,7 @@ namespace JourneyRecipes
         [Label("[i:1832]   Change armor stats?")]
         [Tooltip("If this setting is turned off, this mod will not change armor stats, e.g. the 1.3 Spooky armor giving +3 minion slots" +
             "\nBy enabling this setting, certain armor sets will use 1.4 stats" +
-            "\n[c/ff0000:Highly recommended to disable while using Calamity or Fargo's Eternity Mode]")]
+            "\nHighly recommended to disable while using Calamity or Fargo's Eternity Mode")]
         [ReloadRequired]
         public bool allowArmorStat;
 
@@ -122,10 +129,11 @@ namespace JourneyRecipes
         [Tooltip("If this setting is turned off, this mod will not change accessory stats, e.g. the 1.3 Celestial Cuffs won't grant +20 mana" +
             "\nBy enabling this setting, certain accessories will use 1.4 stats" +
             "\nCurrently only affects Lava Waders, Celesial Cuffs, Charm of Myths, Fire Gauntlet and Flesh Knuckles" +
-            "\n[c/ff0000:Highly recommended to disable while using Calamity or Fargo's Eternity Mode]")]
+            "\nHighly recommended to disable while using Calamity or Fargo's Eternity Mode")]
         [ReloadRequired]
         public bool allowAccessoryStat;
 
+        //[BackgroundColor(255 ,255 , 0, 255)]
         [DefaultValue(true)]
         [Label("[i:493]   Change wing stats?")]
         [Tooltip("If this setting is turned off, this mod will not change wings stats, e.g. the 1.3 Fin Wings being doodoo" +
@@ -157,6 +165,13 @@ namespace JourneyRecipes
             "\nBy enabling this config, certain NPCs will have 1.4 stats")]
         [ReloadRequired]
         public bool allowNPCStat;
+
+        [DefaultValue(true)]
+        [Label("[npc:17]    Change NPC shops?")]
+        [Tooltip("If this setting is turned off, this mod will not change NPC shops, e.g. Merchant selling Sharpening Station" +
+            "\nBy enabling this config, certain NPCs will have 1.4 shops with 1.3 items")]
+        [ReloadRequired]
+        public bool AllowNPCShop { get; set; }
 
         [DefaultValue(true)]
         [Label("[i/s999:1198]   Change max stack for items?")]
@@ -203,19 +218,6 @@ namespace JourneyRecipes
             "\n[c/ff0000:¡Highly recommended to turn this off when using Calamity or Thorium, as these mods use the Throwing class!]")]
         [ReloadRequired]
         public bool allowThrowingToRanged;
-
-        [DefaultValue(false)]
-        [Label("[i:1344]   Enable experimental features?")]
-        [Tooltip("If this config is turned on, all unstable features will be enabled alongside the working ones.\nSome items, like the Breaker Blade have known bugs and are listed as experimental.\nSome items, like Flamethrower are simply unfinished and are listed as experimental.\nFor a balanced playthrough, it is recommended to leave this setting off.")]
-        [ReloadRequired]
-        public bool allowExperimentalFeatures;
-
-        [Header("Misc settings")]
-        [DefaultValue(true)]
-        [Label("Change textures?")]
-        [Tooltip("If this setting is turned on, this mod will update 1.3 textures, e.g. 1.4, dungeon enemies, projectiles\nCurrently disabled for items")]
-        [ReloadRequired]
-        public bool Resprite;
 
         /*[DefaultValue(false)]
         [Label("Change item textures?")]

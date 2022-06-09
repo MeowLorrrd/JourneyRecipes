@@ -6,9 +6,13 @@ namespace JourneyRecipes.NPCs
 {
     public class GlobalNPCShop : GlobalNPC
     {
+        public override bool Autoload(ref string name)
+        {
+            return ModContent.GetInstance<Config>().AllowNPCShop;
+        }
         public override void SetupShop(int type, Chest shop, ref int nextSlot)
         {
-            if (Config.Instance.allowNPCStat)
+            if (Config.Instance.AllowNPCShop)
             {
                 if (type == NPCID.Merchant && Main.hardMode)
                 {
