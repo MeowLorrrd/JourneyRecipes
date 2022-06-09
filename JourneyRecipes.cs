@@ -2732,7 +2732,6 @@ namespace JourneyRecipes
 #pragma warning restore IDE0051 // Remove unused private members
         {
             bool flag1 = Config.Instance.Resprite && !Main.dedServ;
-            bool flag2 = Config.Instance.ItemResprite && !Main.dedServ;
             if (!flag1)
             {
                 Main.instance.LoadNPC(NPCID.AngryBones);
@@ -2902,7 +2901,6 @@ namespace JourneyRecipes
                 Main.tileTexture[TileID.DyePlants] = GetTexture("Resprite/Tiles_227");
                 //Main.buffTexture[BuffID.Wisp] = GetTexture("Resprite/Buff_57");
             }
-            if (!flag2)
             {
                 Main.itemTexture[ItemID.Flamarang] = GetTexture("Resprite/Item_119");
                 Main.itemTexture[ItemID.MoltenFury] = GetTexture("Resprite/Item_120");
