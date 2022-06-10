@@ -1,8 +1,6 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.Localization;
-using System.Collections.Generic;
 namespace JourneyRecipes.Buffs
 {
     public class JourneyRecipesGlobalBuffItem : GlobalItem
@@ -74,77 +72,10 @@ namespace JourneyRecipes.Buffs
                 }
             }
         }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (item.type == ItemID.FishingPotion)
-            {
-                #region strings
-                string GermanOld = "Verbessert Angelfähigkeit";
-                string GermanNew = "Erhöht Angelkraft";
-                string EnglishOld = "Increases fishing skill";
-                string EnglishNew = "Increases fishing power";
-                string SpanishOld = "Aumenta la habilidad de pesca";
-                string SpanishNew = "Aumenta la capacidad de pesca";
-                string FrenchOld = "Améliore les compétences de pêche";
-                string FrenchNew = "Augmente la puissance de pêche";
-                string ItalianOld = "Migliora le capacità di pesca";
-                string ItalianNew = "Migliora la potenza pesca";
-                string PolishOld = "Zwiększa umiejętności wędkarskie";
-                string PolishNew = "Zwiększa moc wędkarstwa";
-                string PortugeseOld = "Aumenta as habilidades de pescaria";
-                string PortugeseNew = "Aumenta o poder de pescaria";
-                string RussianOld = "Увеличивает навык рыбной ловли";
-                string RussianNew = "Увеличивает рыболовную силу";
-                string ChineseOld = "提高钓鱼技能";
-                string ChineseNew = "提高渔力";
-                #endregion
-                #region insert new tooltips
-                foreach (TooltipLine line in tooltips)
-                {
-                    if (line.text == GermanOld)
-                    {
-                        line.text = GermanNew;
-                    }
-                    if (line.text == EnglishOld)
-                    {
-                        line.text = EnglishNew;
-                    }
-                    if (line.text == SpanishOld)
-                    {
-                        line.text = SpanishNew;
-                    }
-                    if (line.text == FrenchOld)
-                    {
-                        line.text = FrenchNew;
-                    }
-                    if (line.text == ItalianOld)
-                    {
-                        line.text = ItalianNew;
-                    }
-                    if (line.text == PolishOld)
-                    {
-                        line.text = PolishNew;
-                    }
-                    if (line.text == PortugeseOld)
-                    {
-                        line.text = PortugeseNew;
-                    }
-                    if (line.text == RussianOld)
-                    {
-                        line.text = RussianNew;
-                    }
-                    if (line.text == ChineseOld)
-                    {
-                        line.text = ChineseNew;
-                    }
-                }
-                #endregion
-            }
-        }
     }
     public class JourneyRecipesGlobalBuff : GlobalBuff
     {
-        public override void ModifyBuffTip(int type, ref string tip, ref int rare)
+        /*public override void ModifyBuffTip(int type, ref string tip, ref int rare)
         {
             if (type == BuffID.ParryDamageBuff)//no config, because tooltip fix
             {
@@ -170,7 +101,7 @@ namespace JourneyRecipes.Buffs
                 if (GameCulture.Russian.IsActive) tip = "Рыболовная сила увеличена";
                 if (GameCulture.Chinese.IsActive) tip = "渔力提高";
             }
-        }
+        }*/
         public override void Update(int type, Player player, ref int buffIndex)
         {
             if (ModContent.GetInstance<Config>().AllowBuffStat)
