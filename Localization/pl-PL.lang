@@ -72,6 +72,8 @@ ItemTooltip.CrystalVileShard=Przywołuje potężny, kryształowy kolec\nIgnoruje
 ItemTooltip.NettleBurst=Ignoruje 10 punktów obrony przeciwnika
 ItemTooltip.SDMG=66% szans niezużycia amunicji\n„Przypłynął z kosmosu”
 
+ItemTooltip.FishingPotion=Zwiększa moc wędkarstwa
+
 ArmorSetbonus.Cactus=Atakujący otrzymują obrażenia od kolców kaktusa
 ArmorSetbonus.ChlorophyteMelee=Przywołuje potężnego liścia kryształowego, który rani pobliskich wrogów\nZmniejsza otrzymywane obrażenia o 5%
 ArmorSetbonus.Fossil=20% szans niezużycia amunicji
@@ -81,3 +83,6 @@ ArmorSetbonus.Necro=10% większa szansa na dystansowe trafienie krytyczne
 ArmorSetbonus.Ninja=20% zwiększona szybkość poruszania się
 ArmorSetbonus.Solar=Tarcze słoneczne ładują się wraz z upływem czasu, zapewniając ci ochronę i pozwalając wykonać zryw\nBy zadać obrażenia przeciwnikom, których dotkniesz, wykorzystujesz ładunek\nWykorzystane ładunki wybuchają i ranią wrogów
 ArmorSetbonus.Turtle=Atakujący także otrzymują podwójne obrażenia\nZmniejsza otrzymywane obrażenia o 15%
+
+BuffTip.Fishing=Zwiększanie mocy wędkarstwa
+BuffTip.ParryDamageBuff=400% zwiększone obrażenia następnego ataku w walce w zwarciu

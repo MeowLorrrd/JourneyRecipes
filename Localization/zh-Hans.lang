@@ -72,6 +72,8 @@ ItemTooltip.CrystalVileShard=召唤巨大的水晶尖刺\n忽略10点敌人防�
 ItemTooltip.NettleBurst=Игнорирует 10 очков защиты врага
 ItemTooltip.SDMG=66%的几率不消耗弹药\n“它来自太空边缘”
 
+ItemTooltip.FishingPotion=提高渔力
+
 ArmorSetbonus.Cactus=攻击者因为仙人掌尖刺受到伤害
 ArmorSetbonus.ChlorophyteMelee=召唤强大的叶状水晶来射击附近的敌人\n所受伤害减少5%
 ArmorSetbonus.Fossil=20%的几率不消耗弹药
@@ -81,3 +83,6 @@ ArmorSetbonus.Necro=远程暴击率增加10%
 ArmorSetbonus.Ninja=移动速度提高20%
 ArmorSetbonus.Solar=日耀护盾可以随着时间推移补充能量，保护你，让你能猛冲\n能量可以用来伤害你触碰到的敌人\n消耗的能量会爆炸并伤害敌人
 ArmorSetbonus.Turtle=攻击者也会承受双倍伤害\n所受伤害减少15%
+
+BuffTip.Fishing=渔力提高
+BuffTip.ParryDamageBuff=下次近战暴击伤害增加400%

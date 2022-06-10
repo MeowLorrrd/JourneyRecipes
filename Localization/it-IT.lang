@@ -72,6 +72,8 @@ ItemTooltip.CrystalVileShard=Evoca uno spuntone di cristallo enorme\nIgnora 10 p
 ItemTooltip.NettleBurst=Ignora 10 punti della difesa nemica
 ItemTooltip.SDMG=66% di probabilità di non consumare munizioni\nVeniva dai confini dello spazio
 
+ItemTooltip.FishingPotion=Migliora la potenza pesca
+
 ArmorSetbonus.Cactus=Gli aggressori ricevono danni dalle spine di cactus
 ArmorSetbonus.ChlorophyteMelee=Evoca una potente cristallo a foglia da sparare ai nemici vicini \nRiduce il danno subito del 5%
 ArmorSetbonus.Fossil=20% di probabilità di non consumare munizioni
@@ -81,3 +83,6 @@ ArmorSetbonus.Necro=Probabilità di colpo critico a distanza aumentata del 10%
 ArmorSetbonus.Ninja=Velocità di movimento aumentata del 20%
 ArmorSetbonus.Solar=Gli scudi solari si caricano nel tempo per proteggerti e ti consentono di scattare\nUna carica viene utilizzata per danneggiare i nemici che tocchi\nLe cariche consumate esplodono e infliggono danni ai nemici
 ArmorSetbonus.Turtle=Gli aggressori ricevono anche danni doppi\nRiduce i danni ricevuti del 15%
+
+BuffTip.Fishing=Potenza pesca aumentata
+BuffTip.ParryDamageBuff=Danni per il prossimo attacco in mischia aumentati del 400%

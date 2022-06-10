@@ -72,6 +72,8 @@ ItemTooltip.CrystalVileShard=Summons a massive crystal spike\nIgnores 10 points 
 ItemTooltip.NettleBurst=Ignores 10 points of enemy Defense
 ItemTooltip.SDMG=66% chance to not consume ammo\n'It came from the edge of space'
 
+ItemTooltip.FishingPotion=Increases fishing power
+
 ArmorSetbonus.Cactus=Attackers take damage from the cactus spines
 ArmorSetbonus.ChlorophyteMelee=Summons a powerful leaf crystal to shoot at nearby enemies\nReduces damage taken by 5%
 ArmorSetbonus.Fossil=20% chance to not consume ammo
@@ -81,3 +83,6 @@ ArmorSetbonus.Necro=10% increased ranged critical strike chance
 ArmorSetbonus.Ninja=20% increased movement speed
 ArmorSetbonus.Solar=Solar shields charge over time to protect you & let you dash\nA charge is used to damage enemies you touch\nConsumed charges explode & damage enemies
 ArmorSetbonus.Turtle=Attackers also take double damage\nReduces damage taken by 15%
+
+BuffTip.Fishing=Increased fishing power
+BuffTip.ParryDamageBuff=400% increased damage for next melee strike
