@@ -74,73 +74,6 @@ namespace JourneyRecipes.Buffs
                 }
             }
         }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            if (item.type == ItemID.FishingPotion)
-            {
-                #region strings
-                string GermanOld = "Verbessert Angelfähigkeit";
-                string GermanNew = "Erhöht Angelkraft";
-                string EnglishOld = "Increases fishing skill";
-                string EnglishNew = "Increases fishing power";
-                string SpanishOld = "Aumenta la habilidad de pesca";
-                string SpanishNew = "Aumenta la capacidad de pesca";
-                string FrenchOld = "Améliore les compétences de pêche";
-                string FrenchNew = "Augmente la puissance de pêche";
-                string ItalianOld = "Migliora le capacità di pesca";
-                string ItalianNew = "Migliora la potenza pesca";
-                string PolishOld = "Zwiększa umiejętności wędkarskie";
-                string PolishNew = "Zwiększa moc wędkarstwa";
-                string PortugeseOld = "Aumenta as habilidades de pescaria";
-                string PortugeseNew = "Aumenta o poder de pescaria";
-                string RussianOld = "Увеличивает навык рыбной ловли";
-                string RussianNew = "Увеличивает рыболовную силу";
-                string ChineseOld = "提高钓鱼技能";
-                string ChineseNew = "提高渔力";
-                #endregion
-                #region insert new tooltips
-                foreach (TooltipLine line in tooltips)
-                {
-                    if (line.text == GermanOld)
-                    {
-                        line.text = GermanNew;
-                    }
-                    if (line.text == EnglishOld)
-                    {
-                        line.text = EnglishNew;
-                    }
-                    if (line.text == SpanishOld)
-                    {
-                        line.text = SpanishNew;
-                    }
-                    if (line.text == FrenchOld)
-                    {
-                        line.text = FrenchNew;
-                    }
-                    if (line.text == ItalianOld)
-                    {
-                        line.text = ItalianNew;
-                    }
-                    if (line.text == PolishOld)
-                    {
-                        line.text = PolishNew;
-                    }
-                    if (line.text == PortugeseOld)
-                    {
-                        line.text = PortugeseNew;
-                    }
-                    if (line.text == RussianOld)
-                    {
-                        line.text = RussianNew;
-                    }
-                    if (line.text == ChineseOld)
-                    {
-                        line.text = ChineseNew;
-                    }
-                }
-                #endregion
-            }
-        }
     }
     public class JourneyRecipesGlobalBuff : GlobalBuff
     {
@@ -148,7 +81,7 @@ namespace JourneyRecipes.Buffs
         {
             if (type == BuffID.ParryDamageBuff)//no config, because tooltip fix
             {
-                if (GameCulture.German.IsActive) tip = "Um 400% erhöhter Schaden für den nächsten Nahkampfangriff";//no {} is needed as 1 line of code is required
+                if (GameCulture.German.IsActive) tip = "Um 400% erhöhter Schaden für den nächsten Nahkampfangriff";
                 if (GameCulture.English.IsActive) tip = "400% increased damage for next melee strike";
                 if (GameCulture.Spanish.IsActive) tip = "Un 400% más de daño en el próximo ataque cuerpo a cuerpo";
                 if (GameCulture.French.IsActive) tip = "+400 % de dégâts pour la prochaine attaque au corps à corps";
