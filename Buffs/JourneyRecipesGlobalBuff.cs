@@ -13,64 +13,65 @@ namespace JourneyRecipes.Buffs
         }
         public override void SetDefaults(Item item)
         {
-            bool bt = Config.Instance.AllowBuffDuration;
-            if (bt)//no {} needed as this will simply check in order to execute switch
-            switch (item.type)
+            if (ModContent.GetInstance<Config>().AllowBuffDuration)
             {
-                case ItemID.CratePotion:
-                case ItemID.GravitationPotion:
-                case ItemID.InvisibilityPotion:
-                    item.buffTime = 10800;
-                    break;
-                case ItemID.EndurancePotion:
-                case ItemID.GillsPotion:
-                case ItemID.InfernoPotion:
-                case ItemID.MagicPowerPotion:
-                case ItemID.RagePotion:
-                case ItemID.WrathPotion:
-                    item.buffTime = 14400;
-                    break;
-                case ItemID.SpelunkerPotion:
-                    item.buffTime = 18000;
-                    break;
-                case ItemID.ObsidianSkinPotion:
-                    item.buffTime = 21600;
-                    break;
-                case ItemID.BattlePotion:
-                    item.buffTime = 25200;
-                    break;
-                case ItemID.AmmoReservationPotion:
-                case ItemID.ArcheryPotion:
-                case ItemID.CalmingPotion:
-                case ItemID.FishingPotion:
-                case ItemID.FlipperPotion:
-                case ItemID.HeartreachPotion:
-                case ItemID.HunterPotion:
-                case ItemID.IronskinPotion:
-                case ItemID.LifeforcePotion:
-                case ItemID.ManaRegenerationPotion:
-                case ItemID.RegenerationPotion:
-                case ItemID.SonarPotion:
-                case ItemID.SummoningPotion:
-                case ItemID.SwiftnessPotion:
-                case ItemID.ThornsPotion:
-                case ItemID.TitanPotion:
-                    item.buffTime = 28800;
-                    break;
-                case ItemID.TrapsightPotion:
-                case ItemID.FeatherfallPotion:
-                case ItemID.MiningPotion:
-                case ItemID.NightOwlPotion:
-                case ItemID.ShinePotion:
-                case ItemID.WaterWalkingPotion:
-                    item.buffTime = 36000;
-                    break;
-                case ItemID.WarmthPotion:
-                    item.buffTime = 54000;
-                    break;
-                case ItemID.BuilderPotion:
-                    item.buffTime = 162000;
-                    break;
+                switch (item.type)
+                {
+                    case ItemID.CratePotion:
+                    case ItemID.GravitationPotion:
+                    case ItemID.InvisibilityPotion:
+                        item.buffTime = 10800;
+                        break;
+                    case ItemID.EndurancePotion:
+                    case ItemID.GillsPotion:
+                    case ItemID.InfernoPotion:
+                    case ItemID.MagicPowerPotion:
+                    case ItemID.RagePotion:
+                    case ItemID.WrathPotion:
+                        item.buffTime = 14400;
+                        break;
+                    case ItemID.SpelunkerPotion:
+                        item.buffTime = 18000;
+                        break;
+                    case ItemID.ObsidianSkinPotion:
+                        item.buffTime = 21600;
+                        break;
+                    case ItemID.BattlePotion:
+                        item.buffTime = 25200;
+                        break;
+                    case ItemID.AmmoReservationPotion:
+                    case ItemID.ArcheryPotion:
+                    case ItemID.CalmingPotion:
+                    case ItemID.FishingPotion:
+                    case ItemID.FlipperPotion:
+                    case ItemID.HeartreachPotion:
+                    case ItemID.HunterPotion:
+                    case ItemID.IronskinPotion:
+                    case ItemID.LifeforcePotion:
+                    case ItemID.ManaRegenerationPotion:
+                    case ItemID.RegenerationPotion:
+                    case ItemID.SonarPotion:
+                    case ItemID.SummoningPotion:
+                    case ItemID.SwiftnessPotion:
+                    case ItemID.ThornsPotion:
+                    case ItemID.TitanPotion:
+                        item.buffTime = 28800;
+                        break;
+                    case ItemID.TrapsightPotion:
+                    case ItemID.FeatherfallPotion:
+                    case ItemID.MiningPotion:
+                    case ItemID.NightOwlPotion:
+                    case ItemID.ShinePotion:
+                    case ItemID.WaterWalkingPotion:
+                        item.buffTime = 36000;
+                        break;
+                    case ItemID.WarmthPotion:
+                        item.buffTime = 54000;
+                        break;
+                    case ItemID.BuilderPotion:
+                        item.buffTime = 162000;
+                        break;
+                }
             }
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
@@ -172,11 +173,16 @@ namespace JourneyRecipes.Buffs
         }
         public override void Update(int type, Player player, ref int buffIndex)
         {
-            bool bs = Config.Instance.AllowBuffStat;
-            if (bs)
+            if (ModContent.GetInstance<Config>().AllowBuffStat)
             {
-                if (type == BuffID.Thorns) player.thorns = 1f;
-                if (type == BuffID.Sharpened) player.GetModPlayer<JourneyRecipesPlayer>().Sharpened = true;
+                if (type == BuffID.Thorns)
+                {
+                    player.thorns = 1f;
+                }
+                if (type == BuffID.Sharpened)
+                {
+                    player.GetModPlayer<JourneyRecipesPlayer>().Sharpened = true;
+                }
             }
         }
     }
@@ -184,8 +190,7 @@ namespace JourneyRecipes.Buffs
     {
         public override void Update(int type, Player player, ref int buffIndex)
         {
-            bool bt = Config.Instance.AllowBuffDuration;
-            if (bt)
+            if (ModContent.GetInstance<Config>().AllowBuffDuration)
             {
                 if (type == BuffID.Sharpened || type == BuffID.Clairvoyance || type == BuffID.Bewitched || type == BuffID.AmmoBox)
                 {
@@ -200,9 +205,8 @@ namespace JourneyRecipes.Buffs
     {
         public override void RightClick(int i, int j, int type)
         {
-            bool bt = Config.Instance.AllowBuffDuration;
             Player p = Main.LocalPlayer;
-            if (bt)
+            if (ModContent.GetInstance<Config>().AllowBuffDuration)
             {
                 if (type == TileID.SharpeningStation)
                 {
