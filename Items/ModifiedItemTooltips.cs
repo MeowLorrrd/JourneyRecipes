@@ -1,16 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 using System.Reflection;
 using Terraria.UI;
-using Terraria.Utilities;
-using Terraria.Localization;
-using Terraria.GameContent.UI;
-using System.Linq;
 
 namespace JourneyRecipes.Items
 {
-    public static class ModifiedItemTooltips//code nicely 'inspired' from Vanilla+
+    public static class ModifiedItemTooltips
     {
         class NewTooltipLine
         {
@@ -114,9 +117,6 @@ namespace JourneyRecipes.Items
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.NettleBurst", ItemID.NettleBurst);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SDMG", ItemID.SDMG);
             }
-            ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.FishingPotion", ItemID.FishingPotion);
-            //ReplaceTooltips(tooltips, "Mods.JourneyRecipes.BuffTip.Fishing", BuffID.Fishing);
-            //ReplaceTooltips(tooltips, "Mods.JourneyRecipes.BuffTip.ParryDamageBuff", BuffID.ParryDamageBuff);
         }
         public static void ResetTooltips()
         {
