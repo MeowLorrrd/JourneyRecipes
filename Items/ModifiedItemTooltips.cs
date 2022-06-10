@@ -3,10 +3,6 @@ using Terraria;
 using Terraria.ID;
 using System.Reflection;
 using Terraria.UI;
-using Terraria.Utilities;
-using Terraria.Localization;
-using Terraria.GameContent.UI;
-using System.Linq;
 
 namespace JourneyRecipes.Items
 {
