@@ -1,8 +1,6 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.Localization;
-using System.Collections.Generic;
 namespace JourneyRecipes.Buffs
 {
     public class JourneyRecipesGlobalBuffItem : GlobalItem
@@ -74,10 +72,9 @@ namespace JourneyRecipes.Buffs
                 }
             }
         }
-    }
     public class JourneyRecipesGlobalBuff : GlobalBuff
     {
-        public override void ModifyBuffTip(int type, ref string tip, ref int rare)
+        /*public override void ModifyBuffTip(int type, ref string tip, ref int rare)
         {
             if (type == BuffID.ParryDamageBuff)//no config, because tooltip fix
             {
@@ -103,7 +100,7 @@ namespace JourneyRecipes.Buffs
                 if (GameCulture.Russian.IsActive) tip = "Рыболовная сила увеличена";
                 if (GameCulture.Chinese.IsActive) tip = "渔力提高";
             }
-        }
+        }*/
         public override void Update(int type, Player player, ref int buffIndex)
         {
             if (ModContent.GetInstance<Config>().AllowBuffStat)
