@@ -19,14 +19,6 @@ namespace JourneyRecipes.Projectiles
                 TerraBladeProjectile(projectile);
             }
         }
-        public override void OnHitPlayer(Projectile projectile, Player target, int damage, bool crit)
-        {
-            bool ns = Config.Instance.AllowNPCStat;
-            if (ns)
-            {
-                ActiveEnemyProjectile(projectile, target);
-            }
-        }
         public static void FriendlyProjectile(Projectile projectile)
         {
             switch (projectile.type)
@@ -79,18 +71,6 @@ namespace JourneyRecipes.Projectiles
                 case 708:
                 case 709:
                     projectile.damage = 70;
-                    break;
-            }
-        }
-        private void ActiveEnemyProjectile(Projectile projectile, Player target)
-        {
-            switch (projectile.type)
-            {
-                case 128:
-                    if (Main.rand.NextBool(3)) target.AddBuff(BuffID.Frostburn, 360);
-                    break;
-                case 299:
-                    if (Main.rand.NextBool(3)) target.AddBuff(BuffID.Cursed, 120);
                     break;
             }
         }
