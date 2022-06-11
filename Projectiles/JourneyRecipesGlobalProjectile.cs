@@ -1,25 +1,15 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
-using Terraria.ID;
 
 namespace JourneyRecipes.Projectiles
 {
     public class JourneyRecipesGlobalProjectile : GlobalProjectile
     {
-        public override void SetDefaults(Projectile projectile)//i dont think there's a reason to make it look like this, it just looks neater??
+        public override bool Autoload(ref string name)
         {
-            bool ws = Config.Instance.allowWeaponStat;
-            bool tb = Config.Instance.TerraBladeStuff;
-            if (ws)
-            {
-                FriendlyProjectile(projectile);
-            }
-            if (tb)
-            {
-                TerraBladeProjectile(projectile);
-            }
+            return ModContent.GetInstance<Config>().allowWeaponStat;
         }
-        public static void FriendlyProjectile(Projectile projectile)
+        public override void SetDefaults(Projectile projectile)
         {
             switch (projectile.type)
             {
@@ -57,7 +47,10 @@ namespace JourneyRecipes.Projectiles
                     projectile.extraUpdates = 2;
                     break;
                 case 433:
-                    if (projectile.melee) projectile.damage = 70;
+                    if (projectile.melee)
+                    {
+                        projectile.damage = 70;
+                    }
                     break;
                 case 533:
                     projectile.netImportant = true;
@@ -71,21 +64,6 @@ namespace JourneyRecipes.Projectiles
                 case 708:
                 case 709:
                     projectile.damage = 70;
-                    break;
-            }
-        }
-        public static void TerraBladeProjectile(Projectile projectile)
-        {
-            switch (projectile.type)
-            {
-                case 132:
-                    projectile.damage = 173;
-                    break;
-                case 156:
-                    projectile.penetrate = 2;
-                    break;
-                case 157:
-                    projectile.damage = 158;
                     break;
             }
         }
