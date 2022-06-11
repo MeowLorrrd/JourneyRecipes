@@ -10,7 +10,6 @@ namespace JourneyRecipes.Projectiles
         {
             bool ws = Config.Instance.allowWeaponStat;
             bool tb = Config.Instance.TerraBladeStuff;
-            bool ns = Config.Instance.AllowNPCStat;
             if (ws)
             {
                 FriendlyProjectile(projectile);
@@ -18,10 +17,6 @@ namespace JourneyRecipes.Projectiles
             if (tb)
             {
                 TerraBladeProjectile(projectile);
-            }
-            if (ns)
-            {
-                EnemyProjectile(projectile);
             }
         }
         public override void OnHitPlayer(Projectile projectile, Player target, int damage, bool crit)
@@ -87,16 +82,7 @@ namespace JourneyRecipes.Projectiles
                     break;
             }
         }
-        public static void EnemyProjectile(Projectile projectile)
-        {
-            switch (projectile.type)
-            {
-                case 508:
-                    projectile.damage = 36;
-                    break;
-            }
-        }
-        public void ActiveEnemyProjectile(Projectile projectile, Player target)
+        private void ActiveEnemyProjectile(Projectile projectile, Player target)
         {
             switch (projectile.type)
             {
