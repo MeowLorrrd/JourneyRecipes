@@ -14,6 +14,7 @@ namespace JourneyRecipes.Items
             if (item.type == 674)
             {
                 item.damage = 70;
+                item.autoReuse = true;
             }
             else if (item.type == 675)
             {

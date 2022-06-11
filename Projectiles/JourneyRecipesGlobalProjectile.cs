@@ -13,8 +13,22 @@ namespace JourneyRecipes.Projectiles
         {
             if (projectile.type == 92)
             {
-                projectile.damage = 7;
-                projectile.penetrate = 1;
+                if (projectile.magic)
+                {
+                    if (!Main.expertMode)
+                    {
+                        projectile.damage = 75;
+                    }
+                    else
+                    {
+                        projectile.damage = 150;
+                    }
+                }
+                else
+                {
+                    projectile.damage = 7;
+                    projectile.penetrate = 1;
+                }
             }
             else if (projectile.type == 242)
             {
