@@ -4,6 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 using Terraria.Localization;
+using static Terraria.ModLoader.ModContent;
 
 namespace JourneyRecipes.Items
 {
@@ -21,14 +22,13 @@ namespace JourneyRecipes.Items
         const string Turtle = "turtleSet";
         public override void SetDefaults(Item item)
         {
-            bool ms = Config.Instance.allowMaxStack;
             bool sc = Config.Instance.allowSellChange;
             bool ws = Config.Instance.allowWeaponStat;
             bool tr = Config.Instance.allowThrowingToRanged;
             bool ts = Config.Instance.allowToolStat;
             bool ac = Config.Instance.allowAccessoryStat;
             bool ar = Config.Instance.allowArmorStat;
-            if (ms)
+            if (GetInstance<Config>().allowMaxStack)
                 switch (item.type)
                 {
                     case 8:
@@ -101,8 +101,11 @@ namespace JourneyRecipes.Items
                     case 3467:
                         item.maxStack = 999;
                         break;
+                    case 166:
                     case 167:
+                    case 235:
                     case 2896:
+                    case 3115:
                     case 3547:
                         item.maxStack = 99;
                         break;
