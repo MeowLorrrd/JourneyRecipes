@@ -12,10 +12,9 @@ namespace JourneyRecipes.Items
         public override void SetDefaults(Item item)
         {
             bool ws = Config.Instance.allowWeaponStat;
-            bool ac = Config.Instance.allowAccessoryStat;
             if (GetInstance<Config>().allowSellChange)
             {
-                switch (item.type)
+                switch (item.type)//Move to diff file
                 {
                     case 64:
                     case 96:
@@ -128,47 +127,6 @@ namespace JourneyRecipes.Items
             if (ws)
             {
                 UpdateWeaponStat(item);
-            }
-            if (ac)
-            {
-                switch (item.type)//small so no method needed
-                {
-                    case 49:
-                    case 860:
-                        item.lifeRegen = 2;
-                        break;
-                    case 3016:
-                        item.defense = 8;
-                        break;
-                }
-            }
-        }
-        public override void UpdateAccessory(Item item, Player player, bool hideVisual)
-        {
-            bool ac = Config.Instance.allowAccessoryStat;
-            if (ac)
-            {
-                switch (item.type)
-                {
-                    case 211:
-                    case 897:
-                        player.GetModPlayer<JourneyRecipesPlayer>().PlayerFeral = true;
-                        break;
-                    case 908:
-                        player.lavaRose = true;
-                        break;
-                    case 936:
-                        player.GetModPlayer<JourneyRecipesPlayer>().PlayerFeral = true;
-                        break;
-                    case 1343:
-                        player.meleeDamage += .02f;
-                        player.meleeSpeed += .02f;
-                        player.GetModPlayer<JourneyRecipesPlayer>().PlayerFeral = true;
-                        break;
-                    case 2221:
-                        player.statManaMax2 += 20;
-                        break;
-                }
             }
         }
         private void UpdateWeaponStat(Item item)
@@ -575,11 +533,20 @@ namespace JourneyRecipes.Items
         }
         public override int ChoosePrefix(Item item, UnifiedRandom rand)
         {
+            int[] prefix = new int[] { //prefix ids
+                81, 59, 4, 37, 60, 
+                20, 55, 46, 2, 44, 
+                38, 5, 54, 3, 1, 
+                61, 53, 6, 42, 51, 
+                12, 57, 36, 45, 15, 
+                14, 49, 9, 47, 40, 
+                10, 7, 56, 48, 13, 
+                41, 11, 50, 8, 39 };
             if (GetInstance<Config>().allowWeaponStat)
             {
                 if (item.type == 186 || item.type == 946)
                 {
-                    return rand.Next(new int[] { 81, 59, 4, 37, 60, 20, 55, 46, 2, 44, 38, 5, 54, 3, 1, 61, 53, 6, 42, 51, 12, 57, 36, 45, 15, 14, 49, 9, 47, 40, 10, 7, 56, 48, 13, 41, 11, 50, 8, 39 });
+                    return rand.Next(prefix);
                 }
             }
             return base.ChoosePrefix(item, rand);
@@ -599,7 +566,7 @@ namespace JourneyRecipes.Items
         {
             if (GetInstance<Config>().allowWeaponStat)
             {
-                if (item.type == 946)
+                if (item.type == 946)//FIX UMBRELLA NOT ROTATING CORRECTLY
                 {
                     if (player.direction == 1)
                     {
