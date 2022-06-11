@@ -14,15 +14,9 @@ namespace JourneyRecipes.NPCs
         public override void SetDefaults(NPC npc)
         {
             bool ns = ModContent.GetInstance<Config>().AllowNPCStat;
-            bool flag1 = ModContent.GetInstance<Config>().TerraBladeStuff && !NPC.downedPlantBoss;//checks for config and if plantera has been defeated
             if (ns)
             {
                 NPCValues(npc);
-            }
-            if (flag1)
-            {
-                if (npc.type == 477)
-                    npc.lifeMax = 0;
             }
         }
         public override void OnHitPlayer(NPC npc, Player target, int damage, bool crit)
@@ -203,11 +197,6 @@ namespace JourneyRecipes.NPCs
                     if (Main.rand.NextBool(10)) target.AddBuff(BuffID.Venom, 240);
                     break;
             }
-        }
-        public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)
-        {
-            if (ModContent.GetInstance<Config>().AllowBuffStat && player.GetModPlayer<JourneyRecipesPlayer>().PlayerInvis)
-                spawnRate = (int)(spawnRate * 1.2f);
         }
     }
 }
