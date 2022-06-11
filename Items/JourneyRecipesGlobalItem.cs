@@ -1,6 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 using static Terraria.ModLoader.ModContent;
@@ -9,7 +8,7 @@ namespace JourneyRecipes.Items
 {
     public class JourneyRecipesGlobalItem : GlobalItem
     {
-        
+
         public override void SetDefaults(Item item)
         {
             bool ws = Config.Instance.allowWeaponStat;
@@ -125,7 +124,7 @@ namespace JourneyRecipes.Items
                         break;
                 }
             }
-            if (item.type == ItemID.Acorn) item.autoReuse = true;
+            if (item.type == 27) item.autoReuse = true;
             if (ws)
             {
                 UpdateWeaponStat(item);
@@ -210,7 +209,7 @@ namespace JourneyRecipes.Items
                     item.knockBack = 4f;
                     item.useTime = 27;
                     item.useAnimation = 27;
-                    item.useStyle = ItemUseStyleID.SwingThrow;
+                    item.useStyle = 1;
                     item.melee = true;
                     break;
                 case 198:
@@ -314,7 +313,7 @@ namespace JourneyRecipes.Items
                     item.damage = 35;
                     break;
                 case 946:
-                    item.useStyle = ItemUseStyleID.Stabbing;
+                    item.useStyle = 3;
                     item.damage = 10;
                     item.melee = true;
                     item.useTime = 22;
@@ -322,7 +321,7 @@ namespace JourneyRecipes.Items
                     item.knockBack = 5f;
                     item.width = 44;
                     item.height = 44;
-                    item.rare = ItemRarityID.Blue;
+                    item.rare = 1;
                     break;
                 case 1130:
                     item.damage = 12;
@@ -556,30 +555,32 @@ namespace JourneyRecipes.Items
                     break;
             }
         }
-        
+
         public override void OnHitNPC(Item item, Player player, NPC target, int damage, float knockBack, bool crit)
         {
             if (GetInstance<Config>().allowWeaponStat)
             {
                 if (item.type == 1264)
                 {
-                    target.AddBuff(BuffID.Frostburn, 8 * 60);
+                    target.AddBuff(44, 8 * 60);
                 }
                 else if (item.type == 3069)
                 {
                     if (Main.rand.NextBool(1))
                     {
-                        target.AddBuff(BuffID.OnFire, Main.rand.Next(30, 180));
+                        target.AddBuff(24, Main.rand.Next(30, 180));
                     }
                 }
             }
         }
         public override int ChoosePrefix(Item item, UnifiedRandom rand)
         {
-            bool ws = Config.Instance.allowWeaponStat;
-            if ((item.type == ItemID.BreathingReed || item.type == ItemID.Umbrella) && ws)
+            if (GetInstance<Config>().allowWeaponStat)
             {
-                return rand.Next(new int[] { PrefixID.Legendary, PrefixID.Godly, PrefixID.Savage, PrefixID.Superior, PrefixID.Demonic, PrefixID.Deadly, PrefixID.Unpleasant, PrefixID.Murderous, PrefixID.Massive, PrefixID.Agile, PrefixID.Forceful, PrefixID.Sharp, PrefixID.Strong, PrefixID.Dangerous, PrefixID.Large, PrefixID.Zealous, PrefixID.Hurtful, PrefixID.Pointy, PrefixID.Quick, PrefixID.Nasty, PrefixID.Bulky, PrefixID.Ruthless, PrefixID.Keen, PrefixID.Nimble, PrefixID.Light, PrefixID.Heavy, PrefixID.Lazy, PrefixID.Small, PrefixID.Slow, PrefixID.Damaged, PrefixID.Dull, PrefixID.Tiny, PrefixID.Weak, PrefixID.Sluggish, PrefixID.Shameful, PrefixID.Shoddy, PrefixID.Unhappy, PrefixID.Annoying, PrefixID.Terrible, PrefixID.Broken });
+                if (item.type == 186 || item.type == 946)
+                {
+                    return rand.Next(new int[] { 81, 59, 4, 37, 60, 20, 55, 46, 2, 44, 38, 5, 54, 3, 1, 61, 53, 6, 42, 51, 12, 57, 36, 45, 15, 14, 49, 9, 47, 40, 10, 7, 56, 48, 13, 41, 11, 50, 8, 39 });
+                }
             }
             return base.ChoosePrefix(item, rand);
         }
