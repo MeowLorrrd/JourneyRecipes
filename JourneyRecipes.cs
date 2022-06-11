@@ -1,14 +1,14 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using System.Collections.Generic;
 using JourneyRecipes.Items;
+using static Terraria.ModLoader.ModContent;
 
 namespace JourneyRecipes
 {
     public class JourneyRecipes : Mod
     {
-        static internal JourneyRecipes instance;
+        internal JourneyRecipes instance;
         public override void AddRecipes()//the actual focus of this mod, just ctrl+c ctrl+v
         {
             base.AddRecipes();
@@ -16,7 +16,7 @@ namespace JourneyRecipes
             {
                 #region Tools, Weapons, Armor Recipe
                 #region Copper
-                if (Config.Instance.allowToolRecipes)
+                if (GetInstance<Config>().allowToolRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder CopperPickaxeR = new RecipeFinder();
@@ -78,7 +78,7 @@ namespace JourneyRecipes
                     CopperHammer.SetResult(ItemID.CopperHammer);
                     CopperHammer.AddRecipe();
                 }
-                if (Config.Instance.allowWeaponRecipe)
+                if (GetInstance<Config>().allowWeaponRecipe)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder CopperBroadswordR = new RecipeFinder();
@@ -150,7 +150,7 @@ namespace JourneyRecipes
                     AmethystStaff.SetResult(ItemID.AmethystStaff);
                     AmethystStaff.AddRecipe();
                 }
-                if (Config.Instance.allowArmorRecipes)
+                if (GetInstance<Config>().allowArmorRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder CopperHelmetR = new RecipeFinder();
@@ -205,7 +205,7 @@ namespace JourneyRecipes
                 }
                 #endregion
                 #region Tin
-                if (Config.Instance.allowToolRecipes)
+                if (GetInstance<Config>().allowToolRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder TinPickaxeR = new RecipeFinder();
@@ -264,7 +264,7 @@ namespace JourneyRecipes
                     TinHammer.SetResult(ItemID.TinHammer);
                     TinHammer.AddRecipe();
                 }
-                if (Config.Instance.allowWeaponRecipe)
+                if (GetInstance<Config>().allowWeaponRecipe)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder TinBroadswordR = new RecipeFinder();
@@ -336,7 +336,7 @@ namespace JourneyRecipes
                     TopazStaff.SetResult(ItemID.TopazStaff);
                     TopazStaff.AddRecipe();
                 }
-                if (Config.Instance.allowArmorRecipes)
+                if (GetInstance<Config>().allowArmorRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder TinHelmetR = new RecipeFinder();
@@ -391,7 +391,7 @@ namespace JourneyRecipes
                 }
                 #endregion
                 #region Iron
-                if (Config.Instance.allowToolRecipes)
+                if (GetInstance<Config>().allowToolRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder IronPickaxeR = new RecipeFinder();
@@ -450,7 +450,7 @@ namespace JourneyRecipes
                     IronHammer.SetResult(ItemID.IronHammer);
                     IronHammer.AddRecipe();
                 }
-                if (Config.Instance.allowWeaponRecipe)
+                if (GetInstance<Config>().allowWeaponRecipe)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder IronBroadswordR = new RecipeFinder();
@@ -503,7 +503,7 @@ namespace JourneyRecipes
                     IronBow.SetResult(ItemID.IronBow);
                     IronBow.AddRecipe();
                 }
-                if (Config.Instance.allowArmorRecipes)
+                if (GetInstance<Config>().allowArmorRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder IronHelmetR = new RecipeFinder();
@@ -558,7 +558,7 @@ namespace JourneyRecipes
                 }
                 #endregion
                 #region Lead
-                if (Config.Instance.allowToolRecipes)
+                if (GetInstance<Config>().allowToolRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder LeadPickaxeR = new RecipeFinder();
@@ -617,7 +617,7 @@ namespace JourneyRecipes
                     LeadHammer.SetResult(ItemID.LeadHammer);
                     LeadHammer.AddRecipe();
                 }
-                if (Config.Instance.allowWeaponRecipe)
+                if (GetInstance<Config>().allowWeaponRecipe)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder LeadBroadswordR = new RecipeFinder();
@@ -670,7 +670,7 @@ namespace JourneyRecipes
                     LeadBow.SetResult(ItemID.LeadBow);
                     LeadBow.AddRecipe();
                 }
-                if (Config.Instance.allowArmorRecipes)
+                if (GetInstance<Config>().allowArmorRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder LeadHelmetR = new RecipeFinder();
@@ -725,7 +725,7 @@ namespace JourneyRecipes
                 }
                 #endregion
                 #region Silver
-                if (Config.Instance.allowToolRecipes)
+                if (GetInstance<Config>().allowToolRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder SilverPickaxeR = new RecipeFinder();
@@ -784,7 +784,7 @@ namespace JourneyRecipes
                     SilverHammer.SetResult(ItemID.SilverHammer);
                     SilverHammer.AddRecipe();
                 }
-                if (Config.Instance.allowWeaponRecipe)
+                if (GetInstance<Config>().allowWeaponRecipe)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder SilverBroadswordR = new RecipeFinder();
@@ -856,7 +856,7 @@ namespace JourneyRecipes
                     SapphireStaff.SetResult(ItemID.SapphireStaff);
                     SapphireStaff.AddRecipe();
                 }
-                if (Config.Instance.allowArmorRecipes)
+                if (GetInstance<Config>().allowArmorRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder SilverHelmetR = new RecipeFinder();
@@ -911,7 +911,7 @@ namespace JourneyRecipes
                 }
                 #endregion
                 #region Tungsten
-                if (Config.Instance.allowToolRecipes)
+                if (GetInstance<Config>().allowToolRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder TungstenPickaxeR = new RecipeFinder();
@@ -970,7 +970,7 @@ namespace JourneyRecipes
                     TungstenHammer.SetResult(ItemID.TungstenHammer);
                     TungstenHammer.AddRecipe();
                 }
-                if (Config.Instance.allowWeaponRecipe)
+                if (GetInstance<Config>().allowWeaponRecipe)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder TungstenBroadswordR = new RecipeFinder();
@@ -1042,7 +1042,7 @@ namespace JourneyRecipes
                     EmeraldStaff.SetResult(ItemID.EmeraldStaff);
                     EmeraldStaff.AddRecipe();
                 }
-                if (Config.Instance.allowArmorRecipes)
+                if (GetInstance<Config>().allowArmorRecipes)
                 {
 
 
@@ -1099,7 +1099,7 @@ namespace JourneyRecipes
                 }
                 #endregion
                 #region Gold
-                if (Config.Instance.allowToolRecipes)
+                if (GetInstance<Config>().allowToolRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder GoldPickaxeR = new RecipeFinder();
@@ -1158,7 +1158,7 @@ namespace JourneyRecipes
                     GoldHammer.SetResult(ItemID.GoldHammer);
                     GoldHammer.AddRecipe();
                 }
-                if (Config.Instance.allowWeaponRecipe)
+                if (GetInstance<Config>().allowWeaponRecipe)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder GoldBroadswordR = new RecipeFinder();
@@ -1230,7 +1230,7 @@ namespace JourneyRecipes
                     RubyStaff.SetResult(ItemID.RubyStaff);
                     RubyStaff.AddRecipe();
                 }
-                if (Config.Instance.allowArmorRecipes)
+                if (GetInstance<Config>().allowArmorRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder GoldHelmetR = new RecipeFinder();
@@ -1285,7 +1285,7 @@ namespace JourneyRecipes
                 }
                 #endregion
                 #region Platinum
-                if (Config.Instance.allowToolRecipes)
+                if (GetInstance<Config>().allowToolRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder PlatinumPickaxeR = new RecipeFinder();
@@ -1344,7 +1344,7 @@ namespace JourneyRecipes
                     PlatinumHammer.SetResult(ItemID.PlatinumHammer);
                     PlatinumHammer.AddRecipe();
                 }
-                if (Config.Instance.allowWeaponRecipe)
+                if (GetInstance<Config>().allowWeaponRecipe)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder PlatinumBroadswordR = new RecipeFinder();
@@ -1416,7 +1416,7 @@ namespace JourneyRecipes
                     DiamondStaff.SetResult(ItemID.DiamondStaff);
                     DiamondStaff.AddRecipe();
                 }
-                if (Config.Instance.allowArmorRecipes)
+                if (GetInstance<Config>().allowArmorRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder PlatinumHelmetR = new RecipeFinder();
@@ -1472,7 +1472,7 @@ namespace JourneyRecipes
                 #endregion
                 #endregion
                 #region Weapon Recipe
-                if (Config.Instance.allowWeaponRecipe)
+                if (GetInstance<Config>().allowWeaponRecipe)
                 {
                     #region too long kinda wanted to hide this
                     ModRecipe TungstenBulletbutactuallyitssilverbulletbecauseisaidiwontaddnewitemsinthismodsoiwontaddnewitemsinthismodsosilverbulletswilldoinstead = new ModRecipe(this);
@@ -1513,7 +1513,7 @@ namespace JourneyRecipes
                 }
                 #endregion
                 #region Accessory Recipe
-                if (Config.Instance.allowAccessoryRecipe)
+                if (GetInstance<Config>().allowAccessoryRecipe)
                 {
                     ModRecipe BandOfStarpower = new ModRecipe(this);
                     BandOfStarpower.AddIngredient(ItemID.PanicNecklace);
@@ -1551,7 +1551,7 @@ namespace JourneyRecipes
                 }
                 #endregion
                 #region Bar Recipe
-                if (Config.Instance.allowBarRecipes)
+                if (GetInstance<Config>().allowBarRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder AdamantiteBarR = new RecipeFinder();
@@ -1606,7 +1606,7 @@ namespace JourneyRecipes
                 }
                 #endregion
                 #region Dye Recipe
-                if (Config.Instance.allowDyeRecipes)
+                if (GetInstance<Config>().allowDyeRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder RedDyeR = new RecipeFinder();
@@ -1831,7 +1831,7 @@ namespace JourneyRecipes
                 }
                 #endregion Recipe s
                 #region Platform Recipe
-                if (Config.Instance.allowPlatformRecipes)
+                if (GetInstance<Config>().allowPlatformRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder BonePFR = new RecipeFinder();
@@ -2093,7 +2093,7 @@ namespace JourneyRecipes
                 }
                 #endregion
                 #region Tile Recipe
-                if (Config.Instance.allowTileRecipes)
+                if (GetInstance<Config>().allowTileRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder BoulderR = new RecipeFinder();
@@ -2131,7 +2131,7 @@ namespace JourneyRecipes
                 }
                 #endregion
                 #region Torch Recipe
-                if (Config.Instance.allowTorchRecipes)
+                if (GetInstance<Config>().allowTorchRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder BlueTorchR = new RecipeFinder();
@@ -2279,7 +2279,7 @@ namespace JourneyRecipes
                 }
                 #endregion
                 #region Chest Recipe
-                if (Config.Instance.allowChestRecipes)
+                if (GetInstance<Config>().allowChestRecipes)
                 {
                     ModRecipe FrozenChest = new ModRecipe(this);
                     FrozenChest.AddIngredient(ItemID.IceBlock, 8);
@@ -2311,7 +2311,7 @@ namespace JourneyRecipes
                 }
                 #endregion
                 #region Terra Blade Recipe
-                if (Config.Instance.TerraBladeStuff)
+                if (GetInstance<Config>().TerraBladeStuff)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder TerraBladeR = new RecipeFinder();
@@ -2375,7 +2375,7 @@ namespace JourneyRecipes
                 }
                 #endregion
                 #region Throwing Stuff
-                if (Config.Instance.allowThrowingToRanged)
+                if (GetInstance<Config>().allowThrowingToRanged)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder FossilHeadR = new RecipeFinder();
@@ -2483,7 +2483,7 @@ namespace JourneyRecipes
                 }
                 #endregion
                 #region Potion Recipe
-                if (Config.Instance.allowBuffRecipes)
+                if (GetInstance<Config>().allowBuffRecipes)
                 {
                     _ = new RecipeFinder();
                     RecipeFinder CratePotionR = new RecipeFinder();
@@ -2707,8 +2707,8 @@ namespace JourneyRecipes
                 Main.NPCLoaded[NPCID.SkeletonCommando] = false;
                 Main.NPCLoaded[NPCID.Everscream] = false;
             }
-            bool flag3 = Config.Instance.AllowBuffDuration;
-            bool flag4 = Config.Instance.AllowBuffStat;
+            bool flag3 = GetInstance<Config>().AllowBuffDuration;
+            bool flag4 = GetInstance<Config>().AllowBuffStat;
             if (flag3)
             {
                 Main.buffNoTimeDisplay[BuffID.Sharpened] = false;
