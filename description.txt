@@ -67,6 +67,8 @@ Check the config to disable features you don't like!
 
 
 [i:549]Updates[i:549]:
+1.4.13 - Re-added stuff that got accidently removed (Terra Blade (and True Swords), invisibility potion spawn rates)
+
 1.4.12 - Updated all code
 Umbrella can be used as a weapon
 Fixed bugs and finished incomplete code to match 1.4 more
