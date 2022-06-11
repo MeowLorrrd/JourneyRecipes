@@ -103,7 +103,7 @@ namespace JourneyRecipes
         [DefaultValue(true)]
         [Label("[i/s999:1198]   Change max stack for items?")]
         [Tooltip("If this setting is turned on, this mod will change the maximum amount of items a stack can hold.\nE.g. the max stack for Titanium bars goes from 99 to 999")]
-        [ReloadRequired]
+        //[ReloadRequired]
         public bool allowMaxStack;
 
         [DefaultValue(true)]
