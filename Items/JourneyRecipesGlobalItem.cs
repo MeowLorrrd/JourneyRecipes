@@ -12,22 +12,19 @@ namespace JourneyRecipes.Items
     {
         const string Cactus = "cactusSet";
         const string ChlorophyteMelee = "chlorophyteMaskSet";
-        const string Fossil = "fossilSet";
         const string Gladiator = "gladiatorSet";
         const string Molten = "moltenSet";
         const string Necro = "necroSet";
-        const string Ninja = "ninjaSet";
         const string Solar = "solarFlareSet";
         const string Turtle = "turtleSet";
         public override void SetDefaults(Item item)
         {
-            bool sc = Config.Instance.allowSellChange;
             bool ws = Config.Instance.allowWeaponStat;
-            bool tr = Config.Instance.allowThrowingToRanged;
             bool ts = Config.Instance.allowToolStat;
             bool ac = Config.Instance.allowAccessoryStat;
             bool ar = Config.Instance.allowArmorStat;
-            if (sc)
+            if (GetInstance<Config>().allowSellChange)
+            {
                 switch (item.type)
                 {
                     case 64:
@@ -40,31 +37,31 @@ namespace JourneyRecipes.Items
                     case 1256:
                     case 1290:
                     case 3062:
-                        item.value = Item.sellPrice(gold: 1, silver: 50);//orb/heart loot
+                        item.value = Item.sellPrice(gold: 1, silver: 50);//shadow orb & crimson heart loot
                         break;
                     case 2757:
                     case 2760:
                     case 2763:
                     case 3381:
-                        item.value = Item.sellPrice(gold: 7);//+3 lunar arm
+                        item.value = Item.sellPrice(gold: 7);//+3 lunar helmets
                         break;
                     case 2758:
                     case 2761:
                     case 2764:
                     case 3382:
-                        item.value = Item.sellPrice(gold: 14);
+                        item.value = Item.sellPrice(gold: 14);//lunar breastplates
                         break;
                     case 2759:
                     case 2762:
                     case 2765:
                     case 3383:
-                        item.value = Item.sellPrice(gold: 10, silver: 50);
+                        item.value = Item.sellPrice(gold: 10, silver: 50);//lunar leggings
                         break;
                     case 3020:
                     case 3021:
                     case 3022:
                     case 3023:
-                        item.value = Item.sellPrice(gold: 6);//+3hook nights edge
+                        item.value = Item.sellPrice(gold: 6);//+3hook
                         break;
                     case 1829:
                     case 1916:
@@ -86,7 +83,7 @@ namespace JourneyRecipes.Items
                     case 3029:
                     case 3030:
                     case 3051:
-                        item.value = Item.sellPrice(gold: 8);//mimic drops
+                        item.value = Item.sellPrice(gold: 8);//biome mimic drops
                         break;
                     case 56:
                         item.value = Item.sellPrice(silver: 10);//demon ore
@@ -104,46 +101,43 @@ namespace JourneyRecipes.Items
                         item.value = Item.sellPrice(gold: 1, silver: 75);//dungeon loot
                         break;
                     case 391:
-                        item.value = Item.sellPrice(silver: 60);//adam bar
+                        item.value = Item.sellPrice(silver: 60);//adamantite bar
                         break;
                     case 880:
-                        item.value = Item.sellPrice(silver: 39);//crim bar
+                        item.value = Item.sellPrice(silver: 39);//crimtane bar
                         break;
                     case 1198:
-                        item.value = Item.sellPrice(silver: 68);//tit bar
+                        item.value = Item.sellPrice(silver: 68);//titanium bar
                         break;
                     case 1257:
-                        item.value = Item.sellPrice(silver: 13);//crim ore
+                        item.value = Item.sellPrice(silver: 13);//crimtane ore
                         break;
                     case 3094:
-                        item.value = Item.sellPrice(copper: 5);//jav
+                        item.value = Item.sellPrice(copper: 5);//javelin
                         break;
                     case 3187:
-                        item.value = Item.sellPrice(silver: 35);//+3 glad arm
+                        item.value = Item.sellPrice(silver: 35);//glaidator helmet
                         break;
                     case 3188:
-                        item.value = Item.sellPrice(silver: 28);
+                        item.value = Item.sellPrice(silver: 28);//gladiator breastplate
                         break;
                     case 3189:
-                        item.value = Item.sellPrice(silver: 21);
+                        item.value = Item.sellPrice(silver: 21);//gladiator leggings
                         break;
                     case 1121:
                     case 1123:
                     case 2888:
-                        item.value = Item.sellPrice(gold: 2);//qb drops
+                        item.value = Item.sellPrice(gold: 2);//Queen Bee drops
                         break;
                     case 1349:
-                        item.value = Item.sellPrice(copper: 2);//party bull
+                        item.value = Item.sellPrice(copper: 2);//party bullet
                         break;
                 }
+            }
             if (item.type == ItemID.Acorn) item.autoReuse = true;
             if (ws)
             {
                 UpdateWeaponStat(item);
-            }
-            if (tr)
-            {
-                UpdateDamageClass(item);
             }
             if (ts)
             {
@@ -624,27 +618,6 @@ namespace JourneyRecipes.Items
                     break;
             }
         }
-        private void UpdateDamageClass(Item item)
-        {
-            if (item.thrown)
-            {
-                item.melee = false;
-                item.thrown = false;
-                item.ranged = true;
-            }
-            switch (item.type)
-            {
-                case 3374:
-                    item.defense = 4;
-                    break;
-                case 3375:
-                    item.defense = 5;
-                    break;
-                case 3376:
-                    item.defense = 4;
-                    break;
-            }
-        }
         private void UpdateToolStat(Item item)
         {
             switch (item.type)
@@ -817,16 +790,23 @@ namespace JourneyRecipes.Items
                 case 3873:
                     item.defense = 24;
                     break;
-
             }
         }
         public override void OnHitNPC(Item item, Player player, NPC target, int damage, float knockBack, bool crit)
         {
-            bool ws = Config.Instance.allowWeaponStat;
-            if (ws)
+            if (GetInstance<Config>().allowWeaponStat)
             {
-                if (item.type == ItemID.FlowerofFrost) target.AddBuff(BuffID.Frostburn, 8 * 60);//yes im too dumb to calculate this
-                if (item.type == ItemID.WandofSparking && Main.rand.NextBool(1)) target.AddBuff(BuffID.OnFire, Main.rand.Next(30, 180));
+                if (item.type == 1264)
+                {
+                    target.AddBuff(BuffID.Frostburn, 8 * 60);
+                }
+                else if (item.type == 3069)
+                {
+                    if (Main.rand.NextBool(1))
+                    {
+                        target.AddBuff(BuffID.OnFire, Main.rand.Next(30, 180));
+                    }
+                }
             }
         }
         public override int ChoosePrefix(Item item, UnifiedRandom rand)
@@ -840,9 +820,9 @@ namespace JourneyRecipes.Items
         }
         public override bool ConsumeAmmo(Item item, Player player)
         {
-            if (ModContent.GetInstance<Config>().allowWeaponStat)
+            if (GetInstance<Config>().allowWeaponStat)
             {
-                if (item.type == ItemID.SDMG)
+                if (item.type == 1553)
                 {
                     return Main.rand.NextBool(3);
                 }
@@ -851,20 +831,22 @@ namespace JourneyRecipes.Items
         }
         public override bool UseItem(Item item, Player player)
         {
-            bool ws = Config.Instance.allowWeaponStat;
-            if (item.type == ItemID.Umbrella && ws)
+            if (GetInstance<Config>().allowWeaponStat)
             {
-                if (player.direction == 1)
+                if (item.type == 946)
                 {
-                    player.itemRotation = 1.575f;
-                    player.itemLocation -= new Vector2(5, 25);
+                    if (player.direction == 1)
+                    {
+                        player.itemRotation = 1.575f;
+                        player.itemLocation -= new Vector2(5, 25);
+                    }
+                    if (player.direction != 1)
+                    {
+                        player.itemRotation = -1.575f;
+                        player.itemLocation -= new Vector2(-5, 25);
+                    }
+                    return true;
                 }
-                if (player.direction != 1)
-                {
-                    player.itemRotation = -1.575f;
-                    player.itemLocation -= new Vector2(-5, 25);
-                }
-                return true;
             }
             return base.UseItem(item, player);
         }
@@ -872,11 +854,9 @@ namespace JourneyRecipes.Items
         {
             if (head.type == ItemID.CactusHelmet && body.type == ItemID.CactusBreastplate && legs.type == ItemID.CactusLeggings) return Cactus;
             if (head.type == ItemID.ChlorophyteMask && body.type == ItemID.ChlorophytePlateMail && legs.type == ItemID.ChlorophyteGreaves) return ChlorophyteMelee;
-            if (head.type == ItemID.FossilHelm && body.type == ItemID.FossilShirt && legs.type == ItemID.FossilPants) return Fossil;
             if (head.type == ItemID.GladiatorHelmet && body.type == ItemID.GladiatorBreastplate && legs.type == ItemID.GladiatorLeggings) return Gladiator;
             if (head.type == ItemID.MoltenHelmet && body.type == ItemID.MoltenBreastplate && legs.type == ItemID.MoltenGreaves) return Molten;
             if ((head.type == ItemID.NecroHelmet || head.type == ItemID.AncientNecroHelmet) && body.type == ItemID.NecroBreastplate && legs.type == ItemID.NecroGreaves) return Necro;
-            if (head.type == ItemID.NinjaHood && body.type == ItemID.NinjaShirt && legs.type == ItemID.NinjaPants) return Ninja;
             if (head.type == ItemID.SolarFlareHelmet && body.type == ItemID.SolarFlareBreastplate && legs.type == ItemID.SolarFlareLeggings) return Solar;
             if (head.type == ItemID.TurtleHelmet && body.type == ItemID.TurtleScaleMail && legs.type == ItemID.TurtleLeggings) return Turtle;
             return base.IsArmorSet(head, body, legs);
@@ -884,8 +864,7 @@ namespace JourneyRecipes.Items
         public override void UpdateArmorSet(Player player, string set)
         {
             bool ar = Config.Instance.allowArmorStat;
-            bool tr = Config.Instance.allowThrowingToRanged;
-            if (ar)
+            
             {
                 switch (set)
                 {
@@ -924,24 +903,6 @@ namespace JourneyRecipes.Items
                         player.turtleThorns = false;
                         player.turtleArmor = false;
                         player.thorns = 2f;
-                        break;
-                }
-            }
-            if (tr)
-            {
-                switch (set)
-                {
-                    case Fossil:
-                        player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Fossil");
-                        player.thrownCost33 = false;
-                        player.thrownCost50 = false;
-                        player.ammoCost80 = true;
-                        break;
-                    case Ninja:
-                        player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Ninja");
-                        player.thrownCost33 = false;
-                        player.thrownCost50 = false;
-                        player.moveSpeed += .2f;
                         break;
                 }
             }
