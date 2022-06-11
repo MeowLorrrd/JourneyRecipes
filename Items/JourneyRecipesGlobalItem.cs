@@ -3,7 +3,6 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Utilities;
-using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
 
 namespace JourneyRecipes.Items
@@ -14,9 +13,7 @@ namespace JourneyRecipes.Items
         public override void SetDefaults(Item item)
         {
             bool ws = Config.Instance.allowWeaponStat;
-            bool ts = Config.Instance.allowToolStat;
             bool ac = Config.Instance.allowAccessoryStat;
-            bool ar = Config.Instance.allowArmorStat;
             if (GetInstance<Config>().allowSellChange)
             {
                 switch (item.type)
@@ -132,10 +129,6 @@ namespace JourneyRecipes.Items
             if (ws)
             {
                 UpdateWeaponStat(item);
-            }
-            if (ts)
-            {
-                UpdateToolStat(item);
             }
             if (ac)
             {
@@ -560,25 +553,6 @@ namespace JourneyRecipes.Items
                     break;
                 case 3870:
                     item.damage = 100;
-                    break;
-            }
-        }
-        private void UpdateToolStat(Item item)
-        {
-            switch (item.type)
-            {
-                case 2341:
-                    item.pick = 59;
-                    item.useTime = 13;
-                    item.useAnimation = 22;
-                    item.useTurn = true;
-                    break;
-                case 2798:
-                    item.axe = 0;
-                    item.useAnimation = 25;
-                    item.useTime = 6;
-                    item.shootSpeed = 36f;
-                    item.tileBoost = 11;
                     break;
             }
         }
