@@ -1,4 +1,4 @@
-This mod changes some 1.4 recipes (and item stats) into the 1.3 Modloader! With this mod, it takes less materials to craft items, and you can craft previously unavailable items, such as the Band of Starpower in a Crimson world!
+This mod changes some 1.4 recipes (and item stats) into the 1.3 Modloader! With this mod, it takes less materials to craft items, and you can craft previously unavailable items, such as the Band of Starpower in a Crimson world! Visit the Homepage to view all changes!
 
 Check the config to disable features you don't like!
 
@@ -42,9 +42,9 @@ Check the config to disable features you don't like!
  (The Terra Blade, True Night's Edge & True Excalibur have 
  different recipes and stats!)
  (e.g. [i:675] + [i:674] + [i:1570] = [i:757])
- (e.g. True Excalibur [i:674] now pierces once!)
+ (e.g. True Excalibur [i:674] now pierces!)
 
--[i:1344]Config![I:1344]
+-[i:1344]Config![i:1344]
  (Enable/disable this mod's features!)
 
 -Most weapons have 1.4 stats!
@@ -66,10 +66,11 @@ Check the config to disable features you don't like!
 -(More) armor sets
 
 
-[i:549]Updates[i:549]:
+[i:520]Updates[i:52]:
 1.4.13 - Re-added stuff that got accidently removed (Terra Blade (and True Swords), invisibility potion spawn rates)
 Fixed items having their drop chance halved
 Fixed Umbrella not rotating correctly while swinging
+Fixed some buff tooltips not showing correctly
 All bombs stack to 99
 Temple traps can't be blown up or mined before Golem has been defeated (or if pickaxe power is less than 210%)
 
@@ -92,7 +93,7 @@ Added more localization and updated tooltips
 Fixed Valhalla Knight's Leggings and Solar Flare set bugs
 
 
-[i:549]Notes[i:549]:
+[i:521]Notes[i:521]:
 I won't add items added in 1.4, such as 'Stone Platform' or 'Ultrabright Helmet', since that is property of Re-Logic, and I don't want do deal with copyright stuff.
 
 You can freely use and decompile this mod for educational purposes, just don't re-upload it and take credit. Thank you.
