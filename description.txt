@@ -1,4 +1,5 @@
-This mod changes some 1.4 recipes (and item stats) into the 1.3 Modloader! With this mod, it takes less materials to craft items, and you can craft previously unavailable items, such as the Band of Starpower in a Crimson world! Visit the Homepage to view all changes!
+This mod changes some 1.4 recipes (and item stats) into the 1.3 Modloader! With this mod, it takes less materials to craft items, and you can craft previously unavailable items, such as the Band of Starpower in a Crimson world!
+Visit the Homepage to view all changes!
 
 Check the config to disable features you don't like!
 
@@ -66,7 +67,9 @@ Check the config to disable features you don't like!
 -(More) armor sets
 
 
-[i:520]Updates[i:52]:
+[i:520]Updates[i:520]:
+1.4.14 - Fixed mod description spelling errors
+
 1.4.13 - Re-added stuff that got accidently removed (Terra Blade (and True Swords), invisibility potion spawn rates)
 Fixed items having their drop chance halved
 Fixed Umbrella not rotating correctly while swinging
@@ -88,9 +91,6 @@ Terrarian can receive its own Legendary modifier
 Added new config for tile changes
 Removed Experimental config
 Added more localization and updated tooltips
-
-1.4.11 - Updated Reaver Shark code to be more matchy with 1.4
-Fixed Valhalla Knight's Leggings and Solar Flare set bugs
 
 
 [i:521]Notes[i:521]:
