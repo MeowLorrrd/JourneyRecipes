@@ -484,20 +484,18 @@ namespace JourneyRecipes.Items
         }
         public override void OnHitNPC(Item item, Player player, NPC target, int damage, float knockBack, bool crit)
         {
-            if (GetInstance<Config>().allowWeaponStat)
+            if (item.type == 1264)
             {
-                if (item.type == 1264)
+                target.AddBuff(44, 8 * 60);
+            }
+            else if (item.type == 3069)
+            {
+                if (Main.rand.NextBool(1))
                 {
-                    target.AddBuff(44, 8 * 60);
-                }
-                else if (item.type == 3069)
-                {
-                    if (Main.rand.NextBool(1))
-                    {
-                        target.AddBuff(24, Main.rand.Next(30, 180));
-                    }
+                    target.AddBuff(24, Main.rand.Next(30, 180));
                 }
             }
+
         }
         public override int ChoosePrefix(Item item, UnifiedRandom rand)
         {
@@ -510,44 +508,35 @@ namespace JourneyRecipes.Items
                 14, 49, 9, 47, 40,
                 10, 7, 56, 48, 13,
                 41, 11, 50, 8, 39 };
-            if (GetInstance<Config>().allowWeaponStat)
+            if (item.type == 186 || item.type == 946)
             {
-                if (item.type == 186 || item.type == 946)
-                {
-                    return rand.Next(prefix);
-                }
+                return rand.Next(prefix);
             }
             return base.ChoosePrefix(item, rand);
         }
         public override bool ConsumeAmmo(Item item, Player player)
         {
-            if (GetInstance<Config>().allowWeaponStat)
+            if (item.type == 1553)
             {
-                if (item.type == 1553)
-                {
-                    return Main.rand.NextBool(3);
-                }
+                return Main.rand.NextBool(3);
             }
             return base.ConsumeAmmo(item, player);
         }
         public override bool UseItem(Item item, Player player)
         {
-            if (GetInstance<Config>().allowWeaponStat)
+            if (item.type == 946)//FIX UMBRELLA NOT ROTATING CORRECTLY
             {
-                if (item.type == 946)//FIX UMBRELLA NOT ROTATING CORRECTLY
+                if (player.direction == 1)
                 {
-                    if (player.direction == 1)
-                    {
-                        player.itemRotation = 1.575f;
-                        player.itemLocation -= new Vector2(5, 25);
-                    }
-                    if (player.direction != 1)
-                    {
-                        player.itemRotation = -1.575f;
-                        player.itemLocation -= new Vector2(-5, 25);
-                    }
-                    return true;
+                    player.itemRotation = 1.575f;
+                    player.itemLocation -= new Vector2(5, 25);
                 }
+                if (player.direction != 1)
+                {
+                    player.itemRotation = -1.575f;
+                    player.itemLocation -= new Vector2(-5, 25);
+                }
+                return true;
             }
             return base.UseItem(item, player);
         }
