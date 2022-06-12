@@ -69,6 +69,7 @@ Check the config to disable features you don't like!
 [i:549]Updates[i:549]:
 1.4.13 - Re-added stuff that got accidently removed (Terra Blade (and True Swords), invisibility potion spawn rates)
 Fixed items having their drop chance halved
+Fixed Umbrella not rotating correctly while swinging
 All bombs stack to 99
 
 1.4.12 - Updated all code

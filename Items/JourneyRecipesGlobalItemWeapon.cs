@@ -522,9 +522,9 @@ namespace JourneyRecipes.Items
             }
             return base.ConsumeAmmo(item, player);
         }
-        public override bool UseItem(Item item, Player player)
+        public override void UseStyle(Item item, Player player)
         {
-            if (item.type == 946)//FIX UMBRELLA NOT ROTATING CORRECTLY
+            if (item.type == 946)
             {
                 if (player.direction == 1)
                 {
@@ -536,9 +536,7 @@ namespace JourneyRecipes.Items
                     player.itemRotation = -1.575f;
                     player.itemLocation -= new Vector2(-5, 25);
                 }
-                return true;
             }
-            return base.UseItem(item, player);
         }
     }
 }
