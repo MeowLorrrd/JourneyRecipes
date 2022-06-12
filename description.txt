@@ -71,6 +71,7 @@ Check the config to disable features you don't like!
 Fixed items having their drop chance halved
 Fixed Umbrella not rotating correctly while swinging
 All bombs stack to 99
+Temple traps can't be blown up or mined before Golem has been defeated (or if pickaxe power is less than 210%)
 
 1.4.12 - Updated all code
 Umbrella can be used as a weapon

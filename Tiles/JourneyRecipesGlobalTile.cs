@@ -1,29 +1,51 @@
 ﻿using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
-using System.Collections.Generic;
+using static Terraria.ModLoader.ModContent;
 
 namespace JourneyRecipes.Tiles
 {
     public class JourneyRecipesGlobalTile : GlobalTile
     {
-        public override void SetDefaults()
+        public override bool Autoload(ref string name)
         {
-            //rude
+            return GetInstance<Config>().allowTileChange;
         }
         public override bool CanExplode(int x, int y, int type)
         {
-            bool tc = Config.Instance.allowTileChange;
-            if (tc)
+            switch (Main.tile[x, y].type)
             {
-                switch (type)
-                {
-                    case 37:
-                        if (!Main.hardMode)
+                case 37:
+                    if (!Main.hardMode)
+                    {
+                        return false;
+                    }
+                    break;
+                case 137:
+                    if (!NPC.downedGolemBoss)
+                    {
+                        int num = Main.tile[x, y].frameY / 18;
+                        if ((uint)(num - 1) <= 3u)
+                        {
                             return false;
-                        break;
-                    case 137:
-                        //if (!NPC.downedGolemBoss)
+                        }
+                    }
+                    break;
+            }
+            return base.CanExplode(x, y, type);
+        }
+        public override bool CanKillTile(int x, int y, int type, ref bool blockDamaged)
+        {
+            Player player = Main.LocalPlayer;
+            switch (Main.tile[x, y].type)
+            {
+                case 137:
+                    if (!NPC.downedGolemBoss)
+                    {
+                        if (player.HeldItem.pick >= 210)
+                        {
+                            return true;
+                        }
+                        else
                         {
                             int num = Main.tile[x, y].frameY / 18;
                             if ((uint)(num - 1) <= 3u)
@@ -31,10 +53,10 @@ namespace JourneyRecipes.Tiles
                                 return false;
                             }
                         }
-                        break;
-                }
+                    }
+                    break;
             }
-            return base.CanExplode(x, y, type);
+            return base.CanKillTile(x, y, type, ref blockDamaged);
         }
     }
 }
