@@ -1,6 +1,6 @@
 displayName = 1.4 Crafting Recipes (Check Config!)
 author = MeowLorrrd
-version = 1.4.14
+version = 1.4.15
 includeSource = true
 hideCode = false
 hideResourcees = false
