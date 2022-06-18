@@ -5,11 +5,11 @@ namespace JourneyRecipes.NPCs
 {
     public class JourneyRecipesGlobalNPC : GlobalNPC
     {
-        public override bool InstancePerEntity => true;
         public override bool Autoload(ref string name)
         {
             return ModContent.GetInstance<Config>().AllowNPCStat;
         }
+        public override bool InstancePerEntity => true;
         public override void SetDefaults(NPC npc)
         {
             if (npc.type == 44)
