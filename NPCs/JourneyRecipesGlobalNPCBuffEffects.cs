@@ -5,6 +5,10 @@ namespace JourneyRecipes.NPCs
 {
     public class JourneyRecipesGlobalNPCBuffEffects : GlobalNPC
     {
+        public override bool Autoload(ref string name)
+        {
+            return ModContent.GetInstance<Config>().AllowBuffStat;
+        }
         public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)
         {
             if (player.HasBuff(10))

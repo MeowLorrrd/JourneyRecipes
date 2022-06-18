@@ -1,5 +1,6 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace JourneyRecipes.Projectiles
 {
@@ -7,7 +8,7 @@ namespace JourneyRecipes.Projectiles
     {
         public override bool Autoload(ref string name)
         {
-            return ModContent.GetInstance<Config>().allowWeaponStat;
+            return GetInstance<Config>().allowWeaponStat;
         }
         public override void SetDefaults(Projectile projectile)
         {

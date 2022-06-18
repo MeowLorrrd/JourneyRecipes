@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ID;
 using System.Reflection;
 using Terraria.UI;
+using static Terraria.ModLoader.ModContent;
 
 namespace JourneyRecipes.Items
 {
