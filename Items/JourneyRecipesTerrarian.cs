@@ -2,13 +2,16 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.ModLoader.IO;
 using Terraria.Utilities;
 
 namespace JourneyRecipes.Items
 {
     public class JourneyRecipesTerrarian : GlobalItem
     {
+        public override bool Autoload(ref string name)
+        {
+            return ModContent.GetInstance<Config>().allowWeaponStat;
+        }
         public byte legendary;
         public override bool InstancePerEntity => true;
         public override bool CloneNewInstances => true;
@@ -16,7 +19,7 @@ namespace JourneyRecipes.Items
         {
             int[] prefix = new int[] { PrefixID.Keen, PrefixID.Superior, PrefixID.Forceful, PrefixID.Broken, PrefixID.Damaged, PrefixID.Shoddy, PrefixID.Hurtful, PrefixID.Strong, PrefixID.Unpleasant, PrefixID.Weak, PrefixID.Ruthless, PrefixID.Godly, PrefixID.Demonic, PrefixID.Zealous };
             //vanilla prefix ids
-            if (item.type == ItemID.Terrarian && Config.Instance.allowWeaponStat)
+            if (item.type == ItemID.Terrarian)
             {
                 if (Main.rand.NextBool(15))//chance 1/15
                 {
@@ -31,7 +34,7 @@ namespace JourneyRecipes.Items
         }
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            if (item.type == ItemID.Terrarian && Config.Instance.allowWeaponStat)
+            if (item.type == ItemID.Terrarian)
             {
                 foreach (TooltipLine line in tooltips)
                 {
