@@ -199,14 +199,14 @@ namespace JourneyRecipes
         public bool AllowBuffStat { get; set; }
 
         [DefaultValue(true)]
-        [Label("[npc:289]   Change NPC stats?")]
+        [Label("[i:267]   Change NPC stats?")]
         [Tooltip("If this setting is turned off, this mod will not change NPCs, e.g. Giant Cursed Skull having no chance to drop Nazar" +
             "\nBy enabling this config, certain NPCs will have 1.4 stats")]
         [ReloadRequired]
         public bool AllowNPCStat { get; set; }
 
         [DefaultValue(true)]
-        [Label("[npc:17]    Change NPC shops?")]
+        [Label("[i:1307]    Change NPC shops?")]
         [Tooltip("If this setting is turned off, this mod will not change NPC shops, e.g. Merchant selling Sharpening Station" +
             "\nBy enabling this config, certain NPCs will have 1.4 shops with 1.3 items")]
         [ReloadRequired]
