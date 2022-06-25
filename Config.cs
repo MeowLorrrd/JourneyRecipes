@@ -100,11 +100,6 @@ namespace JourneyRecipes
         public bool Resprite { get; set; }*/
 
         [Header("Stat Settings [c/ff3333:(Read red configs!)]")]
-        [DefaultValue(true)]
-        [Label("[i/s999:1198]   Change max stack for items?")]
-        [Tooltip("If this setting is turned on, this mod will change the maximum amount of items a stack can hold.\nE.g. the max stack for Titanium bars goes from 99 to 999")]
-        //[ReloadRequired]
-        public bool allowMaxStack;
 
         [DefaultValue(true)]
         [Label("[i:73]   Change sell values?")]
@@ -128,6 +123,14 @@ namespace JourneyRecipes
             "\nCurrently only affects Reaver Shark and Laser Drill")]
         [ReloadRequired]
         public bool allowToolStat;
+
+        [BackgroundColor(255, 20, 0, 1)]
+        [DefaultValue(true)]
+        [Label("[i/s999:1198]   Change max stack for items?")]
+        [Tooltip("If this setting is turned on, this mod will change the maximum amount of items a stack can hold.\nE.g. the max stack for Titanium bars goes from 99 to 999" +
+        "\nRecommended to turn off if any other mod that changes max stacks for items (Calamity, Fargo's Mutant, Max Stack Plus)")]
+        //[ReloadRequired]
+        public bool allowMaxStack;
 
         [DefaultValue(true)]
         [BackgroundColor(255, 20, 0, 1)]
