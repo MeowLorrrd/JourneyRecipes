@@ -91,13 +91,13 @@ namespace JourneyRecipes.Items
                     item.value = Item.sellPrice(silver: 60);//adamantite bar
                     break;
                 case 880:
-                    item.value = Item.sellPrice(silver: 39);//crimtane bar
+                    item.value = Item.sellPrice(silver: 13);//crimtane ore
                     break;
                 case 1198:
                     item.value = Item.sellPrice(silver: 68);//titanium bar
                     break;
                 case 1257:
-                    item.value = Item.sellPrice(silver: 13);//crimtane ore
+                    item.value = Item.sellPrice(silver: 39);//crimtane bar
                     break;
                 case 3094:
                     item.value = Item.sellPrice(copper: 5);//javelin
