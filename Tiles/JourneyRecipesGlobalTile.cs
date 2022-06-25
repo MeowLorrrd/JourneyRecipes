@@ -39,19 +39,16 @@ namespace JourneyRecipes.Tiles
             switch (Main.tile[x, y].type)
             {
                 case 137:
-                    if (!NPC.downedGolemBoss)
+                    if (player.HeldItem.pick >= 210)
                     {
-                        if (player.HeldItem.pick >= 210)
+                        return true;
+                    }
+                    else
+                    {
+                        int num = Main.tile[x, y].frameY / 18;
+                        if ((uint)(num - 1) <= 3u)
                         {
-                            return true;
-                        }
-                        else
-                        {
-                            int num = Main.tile[x, y].frameY / 18;
-                            if ((uint)(num - 1) <= 3u)
-                            {
-                                return false;
-                            }
+                            return false;
                         }
                     }
                     break;
