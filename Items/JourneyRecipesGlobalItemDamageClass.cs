@@ -11,7 +11,7 @@ namespace JourneyRecipes.Items
         const string Ninja = "ninjaSet";
         public override bool Autoload(ref string name)
         {
-            return GetInstance<Config>().allowThrowingToRanged;
+            return GetInstance<JourneyRecipesServerConfig>().allowThrowingToRanged;
         }
         public override void SetDefaults(Item item)
         {

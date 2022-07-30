@@ -8,7 +8,7 @@ namespace JourneyRecipes.Items
     {
         public override bool Autoload(ref string name)
         {
-            return GetInstance<Config>().allowToolStat;
+            return GetInstance<JourneyRecipesServerConfig>().allowToolStat;
         }
         public override void SetDefaults(Item item)
         {

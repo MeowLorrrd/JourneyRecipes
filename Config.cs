@@ -91,14 +91,35 @@ namespace JourneyRecipes
         [ReloadRequired]
         public bool allowBuffRecipes;
 
-        /*[Header("Misc settings")]
-        [BackgroundColor(154, 163, 255, 255)]
         [DefaultValue(true)]
-        [Label("Change textures?")]
-        [Tooltip("If this setting is turned on, this mod will update 1.3 textures, e.g. 1.4, dungeon enemies, projectiles\nCurrently disabled for items")]
+        [Label("[i:757 ]    Change Terra Blade crafting process?")]
+        [Tooltip("If this setting is turned on, this mod will change the recipes for the Terra Blade and components to match 1.4" +
+            "\nBy enabling this config:" +
+            "\nThe True Night's Edge requires 20 of the Mech bosses' souls," +
+            "\nThe True Excalibur requires 24 Chlorophyte bars," +
+            "\nThe Terra Blade requires a Broken Hero Sword," +
+            "\nHighly recommended to enable alongside the Stats config" +
+            "\nThis setting is unaffected by all other unrelated configs" +
+            "\nHighly recommended to disable while using Calamity or Thorium")]
         [ReloadRequired]
-        public bool Resprite { get; set; }*/
+        public bool TerraBladeStuffRecipes { get; set; }
 
+        [DefaultValue(false)]
+        [Label("[i:3378]   Change throwing weapons to ranged?")]
+        [Tooltip("If this setting is turned off, this mod will not change throwing weapons to the ranged damage type." +
+            "\nBy enabling this config:" +
+            "\nSturdy Fossil recipes use 1.4 recipes" +
+            "\nHighly recommended to turn on alongside the Stats config" +
+            "\nThis setting is unaffected by all other unrelated configs" +
+            "\nHighly recommended to turn this off when using Calamity or Thorium, as these mods use the Throwing class!")]
+        [ReloadRequired]
+        public bool AllowThrowingToRangedRecipes { get; set; }
+
+    }
+    public class JourneyRecipesServerConfig : ModConfig
+    {
+        public static JourneyRecipesServerConfig instance;
+        public override ConfigScope Mode => ConfigScope.ServerSide;
         [Header("Stat Settings [c/ff3333:(Read red configs!)]")]
 
         [DefaultValue(true)]
@@ -129,7 +150,7 @@ namespace JourneyRecipes
         [Label("[i/s999:1198]   Change max stack for items?")]
         [Tooltip("If this setting is turned on, this mod will change the maximum amount of items a stack can hold.\nE.g. the max stack for Titanium bars goes from 99 to 999" +
         "\nRecommended to turn off if any other mod that changes max stacks for items (Calamity, Fargo's Mutant, Max Stack Plus)")]
-        //[ReloadRequired]
+        [ReloadRequired]
         public bool allowMaxStack;
 
         [DefaultValue(true)]
@@ -166,11 +187,10 @@ namespace JourneyRecipes
         [Label("[i:757 ]    Change Terra Blade crafting process?")]
         [Tooltip("If this setting is turned on, this mod will change the recipes for the Terra Blade and components to match 1.4" +
             "\nBy enabling this config:" +
-            "\nThe True Night's Edge requires 20 of the Mech bosses' souls," +
-            "\nThe True Excalibur requires 24 Chlorophyte bars," +
-            "\nThe Terra Blade requires a Broken Hero Sword," +
+            "\nThe Terra Blade, True Excalibur & True Night's Edge will have 1.4 stats," +
             "\nMothron only spawns after Plantera" +
-            "\nThis setting is unaffected by all other configs" +
+            "\nThis setting is unaffected by all other unrelated configs" +
+            "\nHighly recommended to enable alongside the Recipe config" +
             "\nHighly recommended to disable while using Calamity or Thorium")]
         [ReloadRequired]
         public bool TerraBladeStuff { get; set; }
@@ -223,7 +243,8 @@ namespace JourneyRecipes
             "\nAll Throwing weapons do Ranged damage," +
             "\nNinja and Fossil armor have 1.4 stats" +
             "\nSturdy Fossil recipes use 1.4 recipes" +
-            "\nThis setting is unaffected by all other configs" +
+            "\nHighly recommended to turn on alongside the Recipe config" +
+            "\nThis setting is unaffected by all other unrelated configs" +
             "\nHighly recommended to turn this off when using Calamity or Thorium, as these mods use the Throwing class!")]
         [ReloadRequired]
         public bool allowThrowingToRanged;

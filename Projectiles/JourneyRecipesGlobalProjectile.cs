@@ -9,7 +9,7 @@ namespace JourneyRecipes.Projectiles
 {
     public class JourneyRecipesGlobalProjectile : GlobalProjectile
     {
-        public override bool Autoload(ref string name) => GetInstance<Config>().allowWeaponStat;
+        public override bool Autoload(ref string name) => GetInstance<JourneyRecipesServerConfig>().allowWeaponStat;
 
         public override void SetDefaults(Projectile projectile)
         {

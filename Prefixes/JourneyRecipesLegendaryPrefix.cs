@@ -15,7 +15,7 @@ namespace JourneyRecipes.Prefixes
         private readonly byte _power;
         public override bool CanRoll(Item item)
         {
-            if (item.type == ItemID.Terrarian && Config.Instance.allowWeaponStat) return true;//check for config please yes thank you
+            if (item.type == ItemID.Terrarian && JourneyRecipesServerConfig.instance.allowWeaponStat) return true;//check for config please yes thank you
             else return false;
         }
         public override PrefixCategory Category => PrefixCategory.Melee;//only this yoyo, but yoyo is melee so eh

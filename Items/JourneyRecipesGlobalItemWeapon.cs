@@ -10,7 +10,7 @@ namespace JourneyRecipes.Items
     {
         public override bool Autoload(ref string name)
         {
-            return GetInstance<Config>().allowWeaponStat;
+            return GetInstance<JourneyRecipesServerConfig>().allowWeaponStat;
         }
         public override void SetDefaults(Item item)
         {

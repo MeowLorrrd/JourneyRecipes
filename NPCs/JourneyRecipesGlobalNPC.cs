@@ -7,7 +7,7 @@ namespace JourneyRecipes.NPCs
     {
         public override bool Autoload(ref string name)
         {
-            return ModContent.GetInstance<Config>().AllowNPCStat;
+            return ModContent.GetInstance<JourneyRecipesServerConfig>().AllowNPCStat;
         }
         public override bool InstancePerEntity => true;
         public override void SetDefaults(NPC npc)

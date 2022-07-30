@@ -7,11 +7,11 @@ namespace JourneyRecipes.Buffs
     {
         public override bool Autoload(ref string name)
         {
-            return ModContent.GetInstance<Config>().AllowBuffDuration || ModContent.GetInstance<Config>().AllowBuffStat;
+            return ModContent.GetInstance<JourneyRecipesServerConfig>().AllowBuffDuration || ModContent.GetInstance<JourneyRecipesServerConfig>().AllowBuffStat;
         }
         public override void SetDefaults(Item item)
         {
-            if (ModContent.GetInstance<Config>().AllowBuffDuration)
+            if (ModContent.GetInstance<JourneyRecipesServerConfig>().AllowBuffDuration)
             {
                 switch (item.type)
                 {
@@ -103,7 +103,7 @@ namespace JourneyRecipes.Buffs
             }*/
             public override void Update(int type, Player player, ref int buffIndex)
             {
-                if (ModContent.GetInstance<Config>().AllowBuffStat)
+                if (ModContent.GetInstance<JourneyRecipesServerConfig>().AllowBuffStat)
                 {
                     if (type == BuffID.Thorns)
                     {
@@ -120,7 +120,7 @@ namespace JourneyRecipes.Buffs
         {
             public override void Update(int type, Player player, ref int buffIndex)
             {
-                if (ModContent.GetInstance<Config>().AllowBuffDuration)
+                if (ModContent.GetInstance<JourneyRecipesServerConfig>().AllowBuffDuration)
                 {
                     if (type == BuffID.Sharpened || type == BuffID.Clairvoyance || type == BuffID.Bewitched || type == BuffID.AmmoBox)
                     {
@@ -136,7 +136,7 @@ namespace JourneyRecipes.Buffs
             public override void RightClick(int i, int j, int type)
             {
                 Player p = Main.LocalPlayer;
-                if (ModContent.GetInstance<Config>().AllowBuffDuration)
+                if (ModContent.GetInstance<JourneyRecipesServerConfig>().AllowBuffDuration)
                 {
                     if (type == TileID.SharpeningStation)
                     {

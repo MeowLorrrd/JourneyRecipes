@@ -16,7 +16,7 @@ namespace JourneyRecipes.Items
         const string Turtle = "turtleSet";
         public override bool Autoload(ref string name)
         {
-            return GetInstance<Config>().allowArmorStat;
+            return GetInstance<JourneyRecipesServerConfig>().allowArmorStat;
         }
         public override void SetDefaults(Item item)
         {

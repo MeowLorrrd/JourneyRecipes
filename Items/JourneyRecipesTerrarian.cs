@@ -8,10 +8,8 @@ namespace JourneyRecipes.Items
 {
     public class JourneyRecipesTerrarian : GlobalItem
     {
-        public override bool Autoload(ref string name)
-        {
-            return ModContent.GetInstance<Config>().allowWeaponStat;
-        }
+        public override bool Autoload(ref string name) => ModContent.GetInstance<JourneyRecipesServerConfig>().allowWeaponStat;
+        
         public byte legendary;
         public override bool InstancePerEntity => true;
         public override bool CloneNewInstances => true;

@@ -6,10 +6,8 @@ namespace JourneyRecipes.Tiles
 {
     public class JourneyRecipesGlobalTile : GlobalTile
     {
-        public override bool Autoload(ref string name)
-        {
-            return GetInstance<Config>().allowTileChange;
-        }
+        public override bool Autoload(ref string name) => GetInstance<JourneyRecipesServerConfig>().allowTileChange;
+
         public override bool CanExplode(int x, int y, int type)
         {
             switch (Main.tile[x, y].type)

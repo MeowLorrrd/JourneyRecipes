@@ -8,7 +8,7 @@ namespace JourneyRecipes.Items
     {
         public override void SetDefaults(Item item)
         {
-            if (GetInstance<Config>().allowMaxStack)
+            if (GetInstance<JourneyRecipesServerConfig>().allowMaxStack)
             {
                 switch (item.type)
                 {

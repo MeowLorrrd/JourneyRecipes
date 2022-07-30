@@ -37,16 +37,16 @@ namespace JourneyRecipes
         }
         public override bool PreItemCheck()
         {
-            if (Config.Instance.allowAccessoryStat && PlayerFeral && player.HeldItem.melee)
+            if (JourneyRecipesServerConfig.instance.allowAccessoryStat && PlayerFeral && player.HeldItem.melee)
             {
                 PlayerAutouse = player.HeldItem.autoReuse;
                 player.HeldItem.autoReuse = true;
             }//code above from Fargo's Souls
-            if (Config.Instance.AllowBuffStat && Sharpened && player.HeldItem.melee)
+            if (JourneyRecipesServerConfig.instance.AllowBuffStat && Sharpened && player.HeldItem.melee)
             {
                 player.armorPenetration += 8;//+4 vanilla armor pen
             }
-            if (Config.Instance.allowWeaponStat && (player.HeldItem.type == ItemID.NettleBurst || player.HeldItem.type == ItemID.WaspGun || player.HeldItem.type == ItemID.CrystalVileShard))
+            if (JourneyRecipesServerConfig.instance.allowWeaponStat && (player.HeldItem.type == ItemID.NettleBurst || player.HeldItem.type == ItemID.WaspGun || player.HeldItem.type == ItemID.CrystalVileShard))
             {
                 player.armorPenetration += 10;
             }
@@ -54,7 +54,7 @@ namespace JourneyRecipes
         }
         public override bool ConsumeAmmo(Item weapon, Item ammo)
         {
-            if (ModContent.GetInstance<Config>().allowArmorStat)
+            if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowArmorStat)
             {
                 if (Ammo10)
                 {

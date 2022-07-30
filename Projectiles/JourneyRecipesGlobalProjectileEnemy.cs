@@ -5,10 +5,8 @@ namespace JourneyRecipes.Projectiles
 {
     public class JourneyRecipesGlobalProjectileEnemy : GlobalProjectile
     {
-        public override bool Autoload(ref string name)
-        {
-            return ModContent.GetInstance<Config>().AllowNPCStat;
-        }
+        public override bool Autoload(ref string name) => ModContent.GetInstance<JourneyRecipesServerConfig>().AllowNPCStat;
+        
         public override void SetDefaults(Projectile projectile)
         {
             if (projectile.type == 508)

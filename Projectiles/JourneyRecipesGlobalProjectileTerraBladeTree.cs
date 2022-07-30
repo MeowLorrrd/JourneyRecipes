@@ -5,10 +5,8 @@ namespace JourneyRecipes.Projectiles
 {
     public class JourneyRecipesGlobalProjectileTerraBladeTree : GlobalProjectile
     {
-        public override bool Autoload(ref string name)
-        {
-            return ModContent.GetInstance<Config>().TerraBladeStuff;
-        }
+        public override bool Autoload(ref string name) => ModContent.GetInstance<JourneyRecipesServerConfig>().TerraBladeStuff;
+
         public override void SetDefaults(Projectile projectile)
         {
             if (projectile.type == 132)

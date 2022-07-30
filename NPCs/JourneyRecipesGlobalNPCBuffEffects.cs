@@ -7,7 +7,7 @@ namespace JourneyRecipes.NPCs
     {
         public override bool Autoload(ref string name)
         {
-            return ModContent.GetInstance<Config>().AllowBuffStat;
+            return ModContent.GetInstance<JourneyRecipesServerConfig>().AllowBuffStat;
         }
         public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)
         {

@@ -5,10 +5,8 @@ namespace JourneyRecipes.Projectiles
 {
     public class JourneyRecipesGlobalProjectileSpear : GlobalProjectile
     {
-        public override bool Autoload(ref string name)
-        {
-            return ModContent.GetInstance<Config>().allowAccessoryStat;
-        }
+        public override bool Autoload(ref string name) => ModContent.GetInstance<JourneyRecipesServerConfig>().allowAccessoryStat;
+
         public override void AI(Projectile projectile)
         {
             //code from omniswing source code

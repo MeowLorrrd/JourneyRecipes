@@ -7,7 +7,7 @@ namespace JourneyRecipes.Items
     {
         public override bool Autoload(ref string name)
         {
-            return ModContent.GetInstance<Config>().TerraBladeStuff;
+            return ModContent.GetInstance<JourneyRecipesServerConfig>().TerraBladeStuff;
         }
         public override void SetDefaults(Item item)
         {

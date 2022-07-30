@@ -8,7 +8,7 @@ namespace JourneyRecipes.NPCs
     {
         public override bool Autoload(ref string name)
         {
-            return ModContent.GetInstance<Config>().AllowNPCShop;
+            return ModContent.GetInstance<JourneyRecipesServerConfig>().AllowNPCShop;
         }
         public override void SetupShop(int type, Chest shop, ref int nextSlot)
         {

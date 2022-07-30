@@ -8,7 +8,7 @@ namespace JourneyRecipes.Items
     {
         public override bool Autoload(ref string name)
         {
-            return GetInstance<Config>().allowSellChange;
+            return GetInstance<JourneyRecipesServerConfig>().allowSellChange;
         }
         public override void SetDefaults(Item item)
         {
