@@ -7,10 +7,8 @@ namespace JourneyRecipes.Items
 {
     public class GlobalWings : GlobalItem
     {
-        public override bool Autoload(ref string name)
-        {
-            return GetInstance<Config>().AllowWingStat;
-        }
+        public override bool Autoload(ref string name) => GetInstance<Config>().AllowWingStat;
+        
         public override void UpdateAccessory(Item item, Player player, bool hideVisual)
         {
             switch (item.type)
