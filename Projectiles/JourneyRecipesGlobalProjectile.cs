@@ -3,6 +3,7 @@ using System;
 using Terraria;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
+using Terraria.Audio;
 
 namespace JourneyRecipes.Projectiles
 {
@@ -178,6 +179,11 @@ namespace JourneyRecipes.Projectiles
                 HolyArrowKill(projectile);
                 return false;
             }
+            else if (projectile.type == 306)
+            {
+                EatersBiteKill(projectile);
+                return false;
+            }
             return base.PreKill(projectile, timeLeft);
         }
         public void HolyArrowKill(Projectile projectile)//1.4 source code in Projectile.Kill()
@@ -217,6 +223,46 @@ namespace JourneyRecipes.Projectiles
                             Main.projectile[num5].penetrate = 0;
                         }
                     }
+                }
+            }
+        }
+        public void EatersBiteKill(Projectile projectile)
+        {
+            Main.PlaySound(3);
+            for (int num = 0; num < 20; num++)
+            {
+                int numDust1 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 184);
+                Dust dust1 = Main.dust[numDust1];
+                dust1.scale *= 1.1f;
+                Main.dust[numDust1].noGravity = true;
+            }
+            for (int num1 = 0; num1 < 30; num1++)
+            {
+                int numDust2 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 184);
+                Dust dust2 = Main.dust[numDust2];
+                dust2.velocity *= 2.5f;
+                dust2 = Main.dust[numDust2];
+                dust2.scale *= 0.8f;
+                Main.dust[numDust2].noGravity = true;
+            }
+            if (projectile.owner == Main.myPlayer)
+            {
+                int num = 2;
+                if (Main.rand.NextBool(3))
+                {
+                    num++;
+                }
+                if (Main.rand.NextBool(3))
+                {
+                    num++;
+                }
+                for (int i = 0; i < num; i++)
+                {
+                    float float1 = (float)Main.rand.Next(-35, 36) * 0.02f;
+                    float float2 = (float)Main.rand.Next(-35, 36) * 0.02f;
+                    float1 *= 10f;
+                    float2 *= 10f;
+                    Projectile.NewProjectile(projectile.position, new Vector2(float1, float2), 307, (int)((double)projectile.damage * 0.75), (int)((double)projectile.knockBack * 0.35), Main.myPlayer);
                 }
             }
         }

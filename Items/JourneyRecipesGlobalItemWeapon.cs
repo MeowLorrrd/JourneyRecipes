@@ -307,6 +307,10 @@ namespace JourneyRecipes.Items
             {
                 item.damage = 85;
             }
+            else if (item.type == 1571)
+            {
+                item.damage = 70;
+            }
             else if (item.type == 1784)
             {
                 item.useTime = 25;
