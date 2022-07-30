@@ -37,16 +37,16 @@ namespace JourneyRecipes
         }
         public override bool PreItemCheck()
         {
-            if (JourneyRecipesServerConfig.instance.allowAccessoryStat && PlayerFeral && player.HeldItem.melee)
+            if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowAccessoryStat && PlayerFeral && player.HeldItem.melee)
             {
                 PlayerAutouse = player.HeldItem.autoReuse;
                 player.HeldItem.autoReuse = true;
             }//code above from Fargo's Souls
-            if (JourneyRecipesServerConfig.instance.AllowBuffStat && Sharpened && player.HeldItem.melee)
+            if (ModContent.GetInstance<JourneyRecipesServerConfig>().AllowBuffStat && Sharpened && player.HeldItem.melee)
             {
                 player.armorPenetration += 8;//+4 vanilla armor pen
             }
-            if (JourneyRecipesServerConfig.instance.allowWeaponStat && (player.HeldItem.type == ItemID.NettleBurst || player.HeldItem.type == ItemID.WaspGun || player.HeldItem.type == ItemID.CrystalVileShard))
+            if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowWeaponStat && (player.HeldItem.type == ItemID.NettleBurst || player.HeldItem.type == ItemID.WaspGun || player.HeldItem.type == ItemID.CrystalVileShard))
             {
                 player.armorPenetration += 10;
             }
@@ -89,33 +89,36 @@ namespace JourneyRecipes
                     if (player.whoAmI == Main.myPlayer)
                     {
                         //if (starCloakItem != null && !starCloakItem.IsAir && (cooldownCounter == -1 || cooldownCounter == 1))
-                        if (StarCloak)
+                        if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowAccessoryStat)
                         {
-                            for (int num3 = 0; num3 < 3; num3++)
+                            if (StarCloak)
                             {
-                                float x = player.position.X + (float)Main.rand.Next(-400, 400);
-                                float y = player.position.Y - (float)Main.rand.Next(500, 800);
-                                Vector2 vector = new Vector2(x, y);
-                                float num4 = player.position.X + (float)(player.width / 2) - vector.X;
-                                float num5 = player.position.Y + (float)(player.height / 2) - vector.Y;
-                                num4 += (float)Main.rand.Next(-100, 101);
-                                float num6 = (float)Math.Sqrt(num4 * num4 + num5 * num5);
-                                num6 = 23f / num6;
-                                num4 *= num6;
-                                num5 *= num6;
-                                int type = 92;
-                                int num7 = 75;
-                                if (Main.expertMode)
+                                for (int num3 = 0; num3 < 3; num3++)
                                 {
-                                    num7 *= 2;
+                                    float x = player.position.X + (float)Main.rand.Next(-400, 400);
+                                    float y = player.position.Y - (float)Main.rand.Next(500, 800);
+                                    Vector2 vector = new Vector2(x, y);
+                                    float num4 = player.position.X + (float)(player.width / 2) - vector.X;
+                                    float num5 = player.position.Y + (float)(player.height / 2) - vector.Y;
+                                    num4 += (float)Main.rand.Next(-100, 101);
+                                    float num6 = (float)Math.Sqrt(num4 * num4 + num5 * num5);
+                                    num6 = 23f / num6;
+                                    num4 *= num6;
+                                    num5 *= num6;
+                                    int type = 92;
+                                    int num7 = 75;
+                                    if (Main.expertMode)
+                                    {
+                                        num7 *= 2;
+                                    }
+                                    int num8 = Projectile.NewProjectile(vector, new Vector2(num4, num5), type, num7, 5f, player.whoAmI);
+                                    Main.projectile[num8].ai[1] = player.position.Y;
                                 }
-                                int num8 = Projectile.NewProjectile(vector, new Vector2(num4, num5), type, num7, 5f, player.whoAmI);
-                                Main.projectile[num8].ai[1] = player.position.Y;
                             }
-                        }
-                        if (BeeBeeBee)
-                        {
-                            player.AddBuff(48, 300);
+                            if (BeeBeeBee)
+                            {
+                                player.AddBuff(48, 300);
+                            }
                         }
                     }
                 }

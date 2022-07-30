@@ -31,7 +31,7 @@ namespace JourneyRecipes.Items
             var bindFlags = BindingFlags.Static | BindingFlags.NonPublic;
             var tooltipsField = typeof(Lang).GetField("_itemTooltipCache", bindFlags);
             var tooltips = (ItemTooltip[])tooltipsField.GetValue(null);
-            if (JourneyRecipesServerConfig.instance.allowAccessoryStat)
+            if (GetInstance<JourneyRecipesServerConfig>().allowAccessoryStat)
             {
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.CelestialCuffs", ItemID.CelestialCuffs);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.FeralClaws", ItemID.FeralClaws);
@@ -40,7 +40,7 @@ namespace JourneyRecipes.Items
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.LavaWaders", ItemID.LavaWaders);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MagicQuiver", ItemID.MagicQuiver);
             }
-            if (JourneyRecipesServerConfig.instance.allowArmorStat)
+            if (GetInstance<JourneyRecipesServerConfig>().allowArmorStat)
             {
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.AncientBattleArmorHat", ItemID.AncientBattleArmorHat);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.AncientBattleArmorShirt", ItemID.AncientBattleArmorShirt);
@@ -96,7 +96,7 @@ namespace JourneyRecipes.Items
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SquireAltShirt", ItemID.SquireAltShirt);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SquireAltPants", ItemID.SquireAltPants);
             }
-            if (JourneyRecipesServerConfig.instance.allowThrowingToRanged)
+            if (GetInstance<JourneyRecipesServerConfig>().allowThrowingToRanged)
             {
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.FossilHelm", ItemID.FossilHelm);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.FossilShirt", ItemID.FossilShirt);
@@ -105,7 +105,7 @@ namespace JourneyRecipes.Items
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.NinjaShirt", ItemID.NinjaShirt);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.NinjaPants", ItemID.NinjaPants); 
             }
-            if (JourneyRecipesServerConfig.instance.allowWeaponStat)
+            if (GetInstance<JourneyRecipesServerConfig>().allowWeaponStat)
             {
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.CrystalVileShard", ItemID.CrystalVileShard);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.NettleBurst", ItemID.NettleBurst);

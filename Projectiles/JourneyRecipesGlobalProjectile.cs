@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Audio;
+using Terraria.ID;
 
 namespace JourneyRecipes.Projectiles
 {
@@ -192,6 +193,26 @@ namespace JourneyRecipes.Projectiles
             {
                 if (projectile.type == 91 || projectile.type == 92)
                 {
+                    Main.PlaySound(SoundID.Item10, projectile.position);
+                    for (int numDust = 0; numDust < 10; numDust++)
+                    {
+                        Dust.NewDust(projectile.position, projectile.width, projectile.height, 58, projectile.velocity.X * .1f, projectile.velocity.Y * .1f, 150, default, 1.2f);
+                    }
+                    for (int numGore = 0; numGore < 3; numGore++)
+                    {
+                        Gore.NewGore(projectile.position, new Vector2(projectile.velocity.X * .05f, projectile.velocity.Y * .05f), Main.rand.Next(16, 18));
+                    }
+                    if (projectile.type == 12 && projectile.damage < 500)
+                    {
+                        for (int num485 = 0; num485 < 10; num485++)
+                        {
+                            Dust.NewDust(projectile.position, projectile.width, projectile.height, 57, projectile.velocity.X * 0.1f, projectile.velocity.Y * 0.1f, 150, default, 1.2f);
+                        }
+                        for (int num486 = 0; num486 < 3; num486++)
+                        {
+                            Gore.NewGore(projectile.position, new Vector2(projectile.velocity.X * 0.05f, projectile.velocity.Y * 0.05f), Main.rand.Next(16, 18));
+                        }
+                    }
                     if ((projectile.type == 91 || (projectile.type == 92 && projectile.ai[0] > 0f)) && projectile.owner == Main.myPlayer)
                     {
                         float x = projectile.position.X + (float)Main.rand.Next(-400, 400);
@@ -228,7 +249,7 @@ namespace JourneyRecipes.Projectiles
         }
         public void EatersBiteKill(Projectile projectile)
         {
-            Main.PlaySound(3);
+            Main.PlaySound(3, new Vector2(projectile.position.X, projectile.position.Y));
             for (int num = 0; num < 20; num++)
             {
                 int numDust1 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 184);
