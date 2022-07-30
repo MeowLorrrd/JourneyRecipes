@@ -75,6 +75,8 @@ Holy Arrow projectiles have 1.4 stats
 Star Cloak (+ upgrades) have 1.4 damage stats
 Honey Comb (+ upgrades) have 1.4 buff stats
 Scourge of the Corruptor has 1.4 stats
+Configs related to recipes are now client-sided
+Gravity Globe has 1.4 stats
 
 1.4.16 - Fixed Crimtane bar & ore having incorrect sell prices
 Jungle Temple traps can be mined before Golem, if pickaxe power is more than 210%

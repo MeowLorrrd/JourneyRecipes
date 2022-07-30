@@ -19,7 +19,7 @@ namespace JourneyRecipes.Items
                 this.ItemID = itemID;
             }
         }
-        static List<NewTooltipLine> NewTooltips = new List<NewTooltipLine>();
+        static readonly List<NewTooltipLine> NewTooltips = new List<NewTooltipLine>();
         static void ReplaceTooltips(ItemTooltip[] tooltipArray, string newTooltip, short itemID)
         {
             NewTooltips.Add(new NewTooltipLine(tooltipArray[itemID], itemID));
