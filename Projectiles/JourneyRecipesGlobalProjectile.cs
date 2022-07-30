@@ -119,29 +119,33 @@ namespace JourneyRecipes.Projectiles
                     bool flag = false;
                     Rectangle myRect = new Rectangle((int)projectile.position.X, (int)projectile.position.Y, projectile.width, projectile.height);
                     flag = projectile.Colliding(myRect, Main.npc[i].getRect());
-                    if (flag)
+                    if (Main.LocalPlayer.name == "tester" && Main.LocalPlayer.HasItem(3466))
                     {
-                        if (projectile.type == 294)
+                        if (flag)
                         {
-                            projectile.damage = (int)((double)projectile.damage * 1.04);
-                        }
-                        else if (projectile.type == 114)
-                        {
-                            projectile.damage = (int)((double)projectile.damage * 0.9);
-                        }
-                        else if (projectile.type == 323)
-                        {
-                            projectile.damage = (int)((double)projectile.damage * 0.9);
-                        }
-                        else if (projectile.type == 5)
-                        {
-                            projectile.damage = (int)((double)projectile.damage * 0.9);
+                            if (projectile.type == 294)
+                            {
+                                projectile.damage = (int)((double)projectile.damage * 1.04);
+                            }
+                            else if (projectile.type == 114)
+                            {
+                                projectile.damage = (int)((double)projectile.damage * 0.9);
+                            }
+                            else if (projectile.type == 323)
+                            {
+                                projectile.damage = (int)((double)projectile.damage * 0.9);
+                            }
+                            else if (projectile.type == 5)
+                            {
+                                projectile.damage = (int)((double)projectile.damage * 0.9);
+                                if (projectile.damage < 2)
+                                {
+                                    projectile.damage = 2;
+                                }
+                                Main.NewText($"Projectile damage: [c/ff00ff:{projectile.damage}]");
+                            }
                         }
 
-                        if (Main.LocalPlayer.name == "tester" && Main.LocalPlayer.HasItem(3466))
-                        {
-                            Main.NewText($"Projectile damage: [c/ff00ff:{projectile.damage}]");
-                        }
                     }
                 }
             }
