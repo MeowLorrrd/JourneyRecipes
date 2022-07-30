@@ -69,6 +69,10 @@ Check the config to disable features you don't like!
 
 [i:520]Updates[i:520]:
 1.4.17 - Fixed Necro and Molten armor having set bonusses swapped
+Unholy Trident, Jester Arrow, Stake, Necromancer Staff have 1.4 piercing stats
+Holy Arrow projectiles have 1.4 stats
+Star Cloak (+ upgrades) have 1.4 stats
+Honey Comb (+ upgrades) have 1.4 stats
 
 1.4.16 - Fixed Crimtane bar & ore having incorrect sell prices
 Jungle Temple traps can be mined before Golem, if pickaxe power is more than 210%
@@ -77,8 +81,6 @@ Jungle Temple traps can be mined before Golem, if pickaxe power is more than 210
 Fixed bug relating to Invisibility Potion still affecting spawn rate while its config is disabled
 Added message to Max Stack config to warn players for other mods that chance item stacks
 Config for Max Stack is colored red
-
-1.4.14 - Fixed mod description spelling errors
 
 
 [i:521]Notes[i:521]:
