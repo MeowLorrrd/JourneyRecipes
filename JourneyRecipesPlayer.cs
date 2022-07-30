@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Audio;
 
 namespace JourneyRecipes
 {
@@ -19,6 +20,7 @@ namespace JourneyRecipes
         public bool Sharpened;
         public bool StarCloak;
         public bool BeeBeeBee;
+        public bool GravityGlobe;
         public override void ResetEffects()
         {
             PlayerInvis = false;
@@ -31,6 +33,7 @@ namespace JourneyRecipes
             Sharpened = false;
             StarCloak = false;
             BeeBeeBee = false;
+            GravityGlobe = false;
         }
         public override bool PreItemCheck()
         {
@@ -121,6 +124,10 @@ namespace JourneyRecipes
                 }
             }
             base.Hurt(pvp, quiet, damage, hitDirection, crit);
+        }
+        public override void PostUpdateEquips()
+        {
+            
         }
     }
 }

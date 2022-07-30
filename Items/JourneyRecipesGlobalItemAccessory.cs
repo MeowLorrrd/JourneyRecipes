@@ -58,6 +58,12 @@ namespace JourneyRecipes.Items
             {
                 player.GetModPlayer<JourneyRecipesPlayer>().BeeBeeBee = true;
             }
+            if (item.type == 1131)
+            {
+                player.GetModPlayer<JourneyRecipesPlayer>().GravityGlobe = true;
+                player.gravControl2 = false;
+                player.gravControl = true;
+            }
         }
     }
 }
