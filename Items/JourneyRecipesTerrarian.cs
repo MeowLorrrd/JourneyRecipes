@@ -23,7 +23,7 @@ namespace JourneyRecipes.Items
             {
                 if (Main.rand.NextBool(15))//chance 1/15
                 {
-                    return mod.PrefixType(rand.NextBool(1) ? "Legendary" : "");//select this prefix
+                    return mod.PrefixType("Legendary");//select this prefix
                 }
                 else//chance 14/15
                 {
@@ -40,7 +40,7 @@ namespace JourneyRecipes.Items
                 {
                     if (item.prefix != 0)
                     {
-                        if (line.mod == "Terraria" && line.text == "Terrarian")
+                        if (line.mod == "Terraria" && line.Name == "ItemName")
                         {
                             line.text = "Legendary Terrarian";//if mod prefix is active, chance tooltip to include prefix name
                         }
