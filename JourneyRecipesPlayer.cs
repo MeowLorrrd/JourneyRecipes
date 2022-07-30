@@ -18,6 +18,7 @@ namespace JourneyRecipes
         public bool Ammo20;
         public bool Sharpened;
         public bool StarCloak;
+        public bool BeeBeeBee;
         public override void ResetEffects()
         {
             PlayerInvis = false;
@@ -29,6 +30,7 @@ namespace JourneyRecipes
             Ammo20 = false;
             Sharpened = false;
             StarCloak = false;
+            BeeBeeBee = false;
         }
         public override bool PreItemCheck()
         {
@@ -44,6 +46,9 @@ namespace JourneyRecipes
             if (Config.Instance.allowWeaponStat && (player.HeldItem.type == ItemID.NettleBurst || player.HeldItem.type == ItemID.WaspGun || player.HeldItem.type == ItemID.CrystalVileShard))
             {
                 player.armorPenetration += 10;
+            }
+            if (Config.Instance.allowWeaponStat && player.HeldItem.type == 3029)
+            {
             }
             return base.PreItemCheck();
         }
@@ -107,6 +112,10 @@ namespace JourneyRecipes
                                 int num8 = Projectile.NewProjectile(vector, new Vector2(num4, num5), type, num7, 5f, player.whoAmI);
                                 Main.projectile[num8].ai[1] = player.position.Y;
                             }
+                        }
+                        if (BeeBeeBee)
+                        {
+                            player.AddBuff(48, 300);
                         }
                     }
                 }

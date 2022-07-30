@@ -54,6 +54,10 @@ namespace JourneyRecipes.Items
                 player.starCloak = false;
                 player.GetModPlayer<JourneyRecipesPlayer>().StarCloak = true;
             }
+            if (player.bee)
+            {
+                player.GetModPlayer<JourneyRecipesPlayer>().BeeBeeBee = true;
+            }
         }
     }
 }
