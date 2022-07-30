@@ -125,6 +125,23 @@ namespace JourneyRecipes.Projectiles
                         {
                             projectile.damage = (int)((double)projectile.damage * 1.04);
                         }
+                        else if (projectile.type == 114)
+                        {
+                            projectile.damage = (int)((double)projectile.damage * 0.9);
+                        }
+                        else if (projectile.type == 323)
+                        {
+                            projectile.damage = (int)((double)projectile.damage * 0.9);
+                        }
+                        else if (projectile.type == 5)
+                        {
+                            projectile.damage = (int)((double)projectile.damage * 0.9);
+                        }
+
+                        if (Main.LocalPlayer.name == "tester" && Main.LocalPlayer.HasItem(3466))
+                        {
+                            Main.NewText($"Projectile damage: [c/ff00ff:{projectile.damage}]");
+                        }
                     }
                 }
             }

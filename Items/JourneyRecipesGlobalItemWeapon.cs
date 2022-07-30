@@ -145,7 +145,7 @@ namespace JourneyRecipes.Items
             {
                 item.damage = 50;
             }
-            else if (item.type == 683)//Unholy Trident, apply 10% pierce damage penalty
+            else if (item.type == 683)
             {
                 item.damage = 88;
             }
@@ -282,7 +282,7 @@ namespace JourneyRecipes.Items
             {
                 item.damage = 15;
             }
-            else if (item.type == 1444)//Shadowbeam Staff, reduce pierce penalty to 10%
+            else if (item.type == 1444)
             {
                 item.damage = 60;
                 item.useTime = 15;
@@ -310,7 +310,7 @@ namespace JourneyRecipes.Items
             {
                 item.damage = 55;
             }
-            else if (item.type == 1835)//Stake Launcher, increase pierce penalty to 10%
+            else if (item.type == 1835)
             {
                 item.useTime = 12;
                 item.useAnimation = item.useTime;
