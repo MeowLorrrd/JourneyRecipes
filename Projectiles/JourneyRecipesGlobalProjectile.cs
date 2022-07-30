@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
@@ -108,6 +109,26 @@ namespace JourneyRecipes.Projectiles
                 projectile.scale = 0.6f;
                 //TODO
             }
+        }
+        public override bool CanDamage(Projectile projectile)
+        {
+            for (int i = 0; i < 200; i++)
+            {
+                if (projectile.CanHit(Main.npc[i]))
+                {
+                    bool flag = false;
+                    Rectangle myRect = new Rectangle((int)projectile.position.X, (int)projectile.position.Y, projectile.width, projectile.height);
+                    flag = projectile.Colliding(myRect, Main.npc[i].getRect());
+                    if (flag)
+                    {
+                        if (projectile.type == 294)
+                        {
+                            projectile.damage = (int)((double)projectile.damage * 1.04);
+                        }
+                    }
+                }
+            }
+            return base.CanDamage(projectile);
         }
     }
 }
