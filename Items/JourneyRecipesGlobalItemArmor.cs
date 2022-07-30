@@ -273,14 +273,14 @@ namespace JourneyRecipes.Items
                 player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Gladiator");
                 player.noKnockback = true;
             }
-            else if (set == Molten)
+            else if (set == Necro)
             {
                 player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Necro");
                 player.ammoCost80 = false;
                 player.ammoCost75 = false;
                 player.rangedCrit += 10;
             }
-            else if (set == Necro)
+            else if (set == Molten)
             {
                 player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Molten");
                 player.meleeDamage -= .07f;
