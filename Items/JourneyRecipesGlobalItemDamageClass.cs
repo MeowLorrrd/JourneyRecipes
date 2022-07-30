@@ -85,14 +85,14 @@ namespace JourneyRecipes.Items
         {
             if (set == Fossil)
             {
-                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Fossil");
+                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetBonus.Fossil");
                 player.thrownCost33 = false;
                 player.thrownCost50 = false;
                 player.ammoCost80 = true;
             }
             else if (set == Ninja)
             {
-                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Ninja");
+                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetBonus.Ninja");
                 player.thrownCost33 = false;
                 player.thrownCost50 = false;
                 player.moveSpeed += .2f;

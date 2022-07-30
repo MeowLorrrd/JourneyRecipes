@@ -259,42 +259,42 @@ namespace JourneyRecipes.Items
         {
             if (set == Cactus)
             {
-                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Cactus");
+                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetBonus.Cactus");
                 player.statDefense -= 1;
                 player.thorns = .5f;
             }
             else if (set == ChlorophyteMelee)
             {
-                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.ChlorophyteMelee");
+                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetBonus.ChlorophyteMelee");
                 player.endurance += .05f;
             }
             else if (set == Gladiator)
             {
-                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Gladiator");
+                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetBonus.Gladiator");
                 player.noKnockback = true;
             }
             else if (set == Necro)
             {
-                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Necro");
+                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetBonus.Necro");
                 player.ammoCost80 = false;
                 player.ammoCost75 = false;
                 player.rangedCrit += 10;
             }
             else if (set == Molten)
             {
-                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Molten");
+                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetBonus.Molten");
                 player.meleeDamage -= .07f;
                 player.buffImmune[24] = true;
             }
             else if (set == Solar)
             {
-                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Solar");
+                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetBonus.Solar");
                 player.endurance += .12f;
                 player.solarCounter++;
             }
             else if (set == Turtle)
             {
-                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetbonus.Turtle");
+                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetBonus.Turtle");
                 player.endurance += .15f;
                 player.turtleThorns = false;
                 player.turtleArmor = false;

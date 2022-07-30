@@ -74,15 +74,15 @@ ItemTooltip.SDMG=66% de chance de não consumir munição\n“Veio dos limites do esp
 
 ItemTooltip.FishingPotion=Aumenta o poder de pescaria
 
-ArmorSetbonus.Cactus=Atacantes sofrem dano por espinhos de cactos
-ArmorSetbonus.ChlorophyteMelee=Invoca um poderoso cristal de folha para atirar em inimigos próximos\nReduz os danos sofridos em 5%
-ArmorSetbonus.Fossil=20% de chance de não consumir munição
-ArmorSetbonus.Gladiator=Oferece imunidade a recuos
-ArmorSetbonus.Molten=Adicional de 10% de dano por ataques físicos,\nNão pode ser incendiado
-ArmorSetbonus.Necro=10% de aumento na chance de ataque à distância crítico
-ArmorSetbonus.Ninja=20% de aumento na velocidade dos movimentos
-ArmorSetbonus.Solar=Escudos solares carregam com o tempo para proteger você. Eles também permitem que você corra\nUma carga é gasta para causar dano nos inimigos que você tocar\nCargas gastas explodem e causam dano nos inimigos
-ArmorSetbonus.Turtle=Quem ataca também sofre dano em dobro\nReduz o dano sofrido em 15%
+ArmorSetBonus.Cactus=Atacantes sofrem dano por espinhos de cactos
+ArmorSetBonus.ChlorophyteMelee=Invoca um poderoso cristal de folha para atirar em inimigos próximos\nReduz os danos sofridos em 5%
+ArmorSetBonus.Fossil=20% de chance de não consumir munição
+ArmorSetBonus.Gladiator=Oferece imunidade a recuos
+ArmorSetBonus.Molten=Adicional de 10% de dano por ataques físicos,\nNão pode ser incendiado
+ArmorSetBonus.Necro=10% de aumento na chance de ataque à distância crítico
+ArmorSetBonus.Ninja=20% de aumento na velocidade dos movimentos
+ArmorSetBonus.Solar=Escudos solares carregam com o tempo para proteger você. Eles também permitem que você corra\nUma carga é gasta para causar dano nos inimigos que você tocar\nCargas gastas explodem e causam dano nos inimigos
+ArmorSetBonus.Turtle=Quem ataca também sofre dano em dobro\nReduz o dano sofrido em 15%
 
 BuffTip.Fishing=Maior poder de pescaria
 BuffTip.ParryDamageBuff=Aumento de 400% nos danos para o próximo ataque físico

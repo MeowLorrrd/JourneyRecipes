@@ -74,15 +74,15 @@ ItemTooltip.SDMG=66% szans niezużycia amunicji\n„Przypłynął z kosmosu”
 
 ItemTooltip.FishingPotion=Zwiększa moc wędkarstwa
 
-ArmorSetbonus.Cactus=Atakujący otrzymują obrażenia od kolców kaktusa
-ArmorSetbonus.ChlorophyteMelee=Przywołuje potężnego liścia kryształowego, który rani pobliskich wrogów\nZmniejsza otrzymywane obrażenia o 5%
-ArmorSetbonus.Fossil=20% szans niezużycia amunicji
-ArmorSetbonus.Gladiator=Daje odporność na odrzut
-ArmorSetbonus.Molten=10% dodatkowych obrażeń w walce w zwarciu\nNie można podpalić
-ArmorSetbonus.Necro=10% większa szansa na dystansowe trafienie krytyczne
-ArmorSetbonus.Ninja=20% zwiększona szybkość poruszania się
-ArmorSetbonus.Solar=Tarcze słoneczne ładują się wraz z upływem czasu, zapewniając ci ochronę i pozwalając wykonać zryw\nBy zadać obrażenia przeciwnikom, których dotkniesz, wykorzystujesz ładunek\nWykorzystane ładunki wybuchają i ranią wrogów
-ArmorSetbonus.Turtle=Atakujący także otrzymują podwójne obrażenia\nZmniejsza otrzymywane obrażenia o 15%
+ArmorSetBonus.Cactus=Atakujący otrzymują obrażenia od kolców kaktusa
+ArmorSetBonus.ChlorophyteMelee=Przywołuje potężnego liścia kryształowego, który rani pobliskich wrogów\nZmniejsza otrzymywane obrażenia o 5%
+ArmorSetBonus.Fossil=20% szans niezużycia amunicji
+ArmorSetBonus.Gladiator=Daje odporność na odrzut
+ArmorSetBonus.Molten=10% dodatkowych obrażeń w walce w zwarciu\nNie można podpalić
+ArmorSetBonus.Necro=10% większa szansa na dystansowe trafienie krytyczne
+ArmorSetBonus.Ninja=20% zwiększona szybkość poruszania się
+ArmorSetBonus.Solar=Tarcze słoneczne ładują się wraz z upływem czasu, zapewniając ci ochronę i pozwalając wykonać zryw\nBy zadać obrażenia przeciwnikom, których dotkniesz, wykorzystujesz ładunek\nWykorzystane ładunki wybuchają i ranią wrogów
+ArmorSetBonus.Turtle=Atakujący także otrzymują podwójne obrażenia\nZmniejsza otrzymywane obrażenia o 15%
 
 BuffTip.Fishing=Zwiększanie mocy wędkarstwa
 BuffTip.ParryDamageBuff=400% zwiększone obrażenia następnego ataku w walce w zwarciu

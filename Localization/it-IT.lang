@@ -74,15 +74,15 @@ ItemTooltip.SDMG=66% di probabilità di non consumare munizioni\nVeniva dai confi
 
 ItemTooltip.FishingPotion=Migliora la potenza pesca
 
-ArmorSetbonus.Cactus=Gli aggressori ricevono danni dalle spine di cactus
-ArmorSetbonus.ChlorophyteMelee=Evoca una potente cristallo a foglia da sparare ai nemici vicini \nRiduce il danno subito del 5%
-ArmorSetbonus.Fossil=20% di probabilità di non consumare munizioni
-ArmorSetbonus.Gladiator=Rende immuni dallo spintone
-ArmorSetbonus.Molten=10% di danni da mischia in più,\nnon può prendere fuoco
-ArmorSetbonus.Necro=Probabilità di colpo critico a distanza aumentata del 10%
-ArmorSetbonus.Ninja=Velocità di movimento aumentata del 20%
-ArmorSetbonus.Solar=Gli scudi solari si caricano nel tempo per proteggerti e ti consentono di scattare\nUna carica viene utilizzata per danneggiare i nemici che tocchi\nLe cariche consumate esplodono e infliggono danni ai nemici
-ArmorSetbonus.Turtle=Gli aggressori ricevono anche danni doppi\nRiduce i danni ricevuti del 15%
+ArmorSetBonus.Cactus=Gli aggressori ricevono danni dalle spine di cactus
+ArmorSetBonus.ChlorophyteMelee=Evoca una potente cristallo a foglia da sparare ai nemici vicini \nRiduce il danno subito del 5%
+ArmorSetBonus.Fossil=20% di probabilità di non consumare munizioni
+ArmorSetBonus.Gladiator=Rende immuni dallo spintone
+ArmorSetBonus.Molten=10% di danni da mischia in più,\nnon può prendere fuoco
+ArmorSetBonus.Necro=Probabilità di colpo critico a distanza aumentata del 10%
+ArmorSetBonus.Ninja=Velocità di movimento aumentata del 20%
+ArmorSetBonus.Solar=Gli scudi solari si caricano nel tempo per proteggerti e ti consentono di scattare\nUna carica viene utilizzata per danneggiare i nemici che tocchi\nLe cariche consumate esplodono e infliggono danni ai nemici
+ArmorSetBonus.Turtle=Gli aggressori ricevono anche danni doppi\nRiduce i danni ricevuti del 15%
 
 BuffTip.Fishing=Potenza pesca aumentata
 BuffTip.ParryDamageBuff=Danni per il prossimo attacco in mischia aumentati del 400%

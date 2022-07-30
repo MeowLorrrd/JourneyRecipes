@@ -74,15 +74,15 @@ ItemTooltip.SDMG=66% Chance, keine Munition zu verbrauchen\n‚Es kam vom Rande de
 
 ItemTooltip.FishingPotion=Erhöht Angelkraft
 
-ArmorSetbonus.Cactus=Angreifer erleiden Schaden durch Kaktusstacheln
-ArmorSetbonus.ChlorophyteMelee=Beschwört einen mächtigen Blattkristall mit dem du auf Gegner in der Nähe schießen kannst\nReduziert erlittenen Schaden um 5%
-ArmorSetbonus.Fossil=20% Chance, keine Munition zu verbrauchen
-ArmorSetbonus.Gladiator=Gewährt Immunität gegen Rückstoß
-ArmorSetbonus.Molten=10% zusätzlicher Nahkampfschaden,\nKann nicht in Brand gesetzt werden
-ArmorSetbonus.Necro=Um 10% erhöhte kritische Fernkampf-Trefferchance
-ArmorSetbonus.Ninja=Um 20% erhöhtes Bewegungstempo
-ArmorSetbonus.Solar=Sonnenschilde laden sich mit der Zeit auf, beschützen dich & lassen dich sprinten\nMit einer Ladung kannst du Feinden, die du berührst, Schaden zufügen\nVerbraucht Ladungen für Explosionen & um Feinden Schaden zuzufügen
-ArmorSetbonus.Turtle=Angreifer erleiden doppelten Schaden\nReduziert erlittenen Schaden um 15%
+ArmorSetBonus.Cactus=Angreifer erleiden Schaden durch Kaktusstacheln
+ArmorSetBonus.ChlorophyteMelee=Beschwört einen mächtigen Blattkristall mit dem du auf Gegner in der Nähe schießen kannst\nReduziert erlittenen Schaden um 5%
+ArmorSetBonus.Fossil=20% Chance, keine Munition zu verbrauchen
+ArmorSetBonus.Gladiator=Gewährt Immunität gegen Rückstoß
+ArmorSetBonus.Molten=10% zusätzlicher Nahkampfschaden,\nKann nicht in Brand gesetzt werden
+ArmorSetBonus.Necro=Um 10% erhöhte kritische Fernkampf-Trefferchance
+ArmorSetBonus.Ninja=Um 20% erhöhtes Bewegungstempo
+ArmorSetBonus.Solar=Sonnenschilde laden sich mit der Zeit auf, beschützen dich & lassen dich sprinten\nMit einer Ladung kannst du Feinden, die du berührst, Schaden zufügen\nVerbraucht Ladungen für Explosionen & um Feinden Schaden zuzufügen
+ArmorSetBonus.Turtle=Angreifer erleiden doppelten Schaden\nReduziert erlittenen Schaden um 15%
 
 BuffTip.Fishing=Erhöhte Angelkraft
 BuffTip.ParryDamageBuff=Um 400% erhöhter Schaden für den nächsten Nahkampfangriff
