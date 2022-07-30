@@ -1,4 +1,6 @@
-﻿using Terraria;
+﻿using Microsoft.Xna.Framework;
+using System;
+using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -15,6 +17,7 @@ namespace JourneyRecipes
         public bool Ammo10;
         public bool Ammo20;
         public bool Sharpened;
+        public bool StarCloak;
         public override void ResetEffects()
         {
             PlayerInvis = false;
@@ -25,6 +28,7 @@ namespace JourneyRecipes
             Ammo10 = false;
             Ammo20 = false;
             Sharpened = false;
+            StarCloak = false;
         }
         public override bool PreItemCheck()
         {
@@ -57,6 +61,57 @@ namespace JourneyRecipes
                 }
             }
             return base.ConsumeAmmo(weapon, ammo);
+        }
+        public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)//1.4 source code in Player.Hurt()
+        {
+            int cooldownCounter = -1;
+            bool flag = !player.immune;
+            switch (cooldownCounter)
+            {
+                case 0:
+                case 1:
+                case 3:
+                case 4:
+                    flag = player.hurtCooldowns[cooldownCounter] <= 0;
+                    break;
+            }
+            if (flag)
+            {
+                int num = (int)damage;
+                double num2 = Main.CalculatePlayerDamage(num, player.statDefense);
+                if (num2 >= 1.0)
+                {
+                    if (player.whoAmI == Main.myPlayer)
+                    {
+                        //if (starCloakItem != null && !starCloakItem.IsAir && (cooldownCounter == -1 || cooldownCounter == 1))
+                        if (StarCloak)
+                        {
+                            for (int num3 = 0; num3 < 3; num3++)
+                            {
+                                float x = player.position.X + (float)Main.rand.Next(-400, 400);
+                                float y = player.position.Y - (float)Main.rand.Next(500, 800);
+                                Vector2 vector = new Vector2(x, y);
+                                float num4 = player.position.X + (float)(player.width / 2) - vector.X;
+                                float num5 = player.position.Y + (float)(player.height / 2) - vector.Y;
+                                num4 += (float)Main.rand.Next(-100, 101);
+                                float num6 = (float)Math.Sqrt(num4 * num4 + num5 * num5);
+                                num6 = 23f / num6;
+                                num4 *= num6;
+                                num5 *= num6;
+                                int type = 92;
+                                int num7 = 75;
+                                if (Main.expertMode)
+                                {
+                                    num7 *= 2;
+                                }
+                                int num8 = Projectile.NewProjectile(vector, new Vector2(num4, num5), type, num7, 5f, player.whoAmI);
+                                Main.projectile[num8].ai[1] = player.position.Y;
+                            }
+                        }
+                    }
+                }
+            }
+            base.Hurt(pvp, quiet, damage, hitDirection, crit);
         }
     }
 }

@@ -49,6 +49,11 @@ namespace JourneyRecipes.Items
             {
                 player.statManaMax2 += 20;
             }
+            else if (item.type == 532 || item.type == 862 || item.type == 1247)
+            {
+                player.starCloak = false;
+                player.GetModPlayer<JourneyRecipesPlayer>().StarCloak = true;
+            }
         }
     }
 }
