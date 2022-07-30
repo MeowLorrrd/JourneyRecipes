@@ -70,6 +70,7 @@ Check the config to disable features you don't like!
 [i:520]Updates[i:520]:
 1.4.17 - Fixed Necro and Molten armor having set bonusses swapped
 Unholy Trident, Jester Arrow, Stake, Necromancer Staff have 1.4 piercing stats
+Flamethrower, Elf Melter, Magical Harp have 1.4 stats
 Holy Arrow projectiles have 1.4 stats
 Star Cloak (+ upgrades) have 1.4 damage stats
 Honey Comb (+ upgrades) have 1.4 buff stats
