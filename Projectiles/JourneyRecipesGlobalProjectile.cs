@@ -123,37 +123,42 @@ namespace JourneyRecipes.Projectiles
                                 bool flag5 = false;
                                 Rectangle myRect = new Rectangle((int)projectile.position.X, (int)projectile.position.Y, projectile.width, projectile.height);
                                 flag5 = projectile.Colliding(myRect, Main.npc[i].getRect());
-                                if (Main.LocalPlayer.name == "tester" && Main.LocalPlayer.HasItem(3466))
+
+                                if (flag5)
                                 {
-                                    if (flag5)
+                                    bool flag7 = !projectile.npcProj && !projectile.trap;
+                                    int num9 = (int)((float)projectile.damage * 1f);
+                                    int num20 = Main.DamageVar(num9);
+                                    if (projectile.type == 294)
                                     {
-                                        if (projectile.type == 294)
-                                        {
-                                            projectile.damage = (int)((double)projectile.damage * 1.04);
-                                        }
-                                        else if (projectile.type == 114)
-                                        {
-                                            projectile.damage = (int)((double)projectile.damage * 0.9);
-                                        }
-                                        else if (projectile.type == 323)
-                                        {
-                                            projectile.damage = (int)((double)projectile.damage * 0.9);
-                                        }
-                                        else if (projectile.type == 5)
-                                        {
-                                            projectile.damage = (int)((double)projectile.damage * 0.9);
-                                        }
-                                        else if (projectile.type == 85)
-                                        {
-                                            projectile.damage = (int)((double)projectile.damage * 0.85);
-                                        }
-                                        else if (projectile.type == 76 || projectile.type == 77 || projectile.type == 78)
-                                        {
-                                            projectile.damage = (int)((double)projectile.damage * 0.95);
-                                        }
+                                        projectile.damage = (int)((double)projectile.damage * 1.14);
                                     }
-                                    //Main.NewText($"Projectile damage: [c/ff00ff:{projectile.damage}]");
+                                    else if (projectile.type == 114)
+                                    {
+                                        projectile.damage = (int)((double)projectile.damage * 0.9);
+                                    }
+                                    else if (projectile.type == 323)
+                                    {
+                                        projectile.damage = (int)((double)projectile.damage * 0.9);
+                                    }
+                                    else if (projectile.type == 5)
+                                    {
+                                        projectile.damage = (int)((double)projectile.damage * 0.9);
+                                    }
+                                    else if (projectile.type == 85)
+                                    {
+                                        projectile.damage = (int)((double)projectile.damage * 0.85);
+                                    }
+                                    else if (projectile.type == 76 || projectile.type == 77 || projectile.type == 78)
+                                    {
+                                        projectile.damage = (int)((double)projectile.damage * 0.95);
+                                    }
+                                    else if (projectile.type == 684 && !Collision.CanHit(projectile.position, projectile.width, projectile.height, Main.player[projectile.owner].position, Main.player[projectile.owner].width, Main.player[projectile.owner].height))
+                                    {
+                                        projectile.damage = (int)((double)projectile.damage * 0);
+                                    }
                                 }
+                                Main.NewText($"Projectile damage: [c/ff00ff:{projectile.damage}]");
                             }
                         }
                     }
@@ -175,7 +180,7 @@ namespace JourneyRecipes.Projectiles
         }
         public override bool PreKill(Projectile projectile, int timeLeft)
         {
-            if (projectile.type == 91||projectile.type==92)
+            if (projectile.type == 91 || projectile.type == 92)
             {
                 HolyArrowKill(projectile);
                 return false;
@@ -285,6 +290,20 @@ namespace JourneyRecipes.Projectiles
                     Projectile.NewProjectile(projectile.position, new Vector2(float1, float2), 307, (int)((double)projectile.damage * 0.75), (int)((double)projectile.knockBack * 0.35), Main.myPlayer);
                 }
             }
+        }
+        public override bool? Colliding(Projectile projectile, Rectangle projHitbox, Rectangle targetHitbox)
+        {
+            if (projectile.type == 684)
+            {
+                float collisionPoint13 = 0f;
+                Vector2 vector9 = projectile.velocity.SafeNormalize(Vector2.UnitY).RotatedBy(-1.5707963705062866) * projectile.scale;
+                if (Collision.CheckAABBvLineCollision(targetHitbox.TopLeft(), targetHitbox.Size(), projectile.Center - vector9 * 40f, projectile.Center + vector9 * 40f, 16f * projectile.scale, ref collisionPoint13))
+                {
+                    return true;
+                }
+                return false;
+            }
+            return base.Colliding(projectile, projHitbox, targetHitbox);
         }
     }
 }
