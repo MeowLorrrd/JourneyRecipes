@@ -175,7 +175,7 @@ namespace JourneyRecipes.Projectiles
         }
         public override bool PreKill(Projectile projectile, int timeLeft)
         {
-            if (projectile.type == 91)
+            if (projectile.type == 91||projectile.type==92)
             {
                 HolyArrowKill(projectile);
                 return false;
@@ -236,12 +236,11 @@ namespace JourneyRecipes.Projectiles
                             Main.projectile[num5].ai[1] = projectile.position.Y;
                             Main.projectile[num5].ai[0] = 1f;
                             Main.projectile[num5].penetrate = 1;
-                            //todo, make 2nd proj penetrate once bc for some reason only 1 proj pierces??
                         }
                         else
                         {
                             Main.projectile[num5].ai[1] = projectile.position.Y;
-                            Main.projectile[num5].penetrate = 0;
+                            Main.projectile[num5].penetrate = 1;
                         }
                     }
                 }
