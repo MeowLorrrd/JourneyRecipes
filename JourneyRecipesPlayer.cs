@@ -50,9 +50,6 @@ namespace JourneyRecipes
             {
                 player.armorPenetration += 10;
             }
-            if (Config.Instance.allowWeaponStat && player.HeldItem.type == 3029)
-            {
-            }
             return base.PreItemCheck();
         }
         public override bool ConsumeAmmo(Item weapon, Item ammo)

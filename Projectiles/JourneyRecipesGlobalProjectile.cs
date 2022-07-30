@@ -140,10 +140,14 @@ namespace JourneyRecipes.Projectiles
                                         else if (projectile.type == 5)
                                         {
                                             projectile.damage = (int)((double)projectile.damage * 0.9);
-                                            if (projectile.damage < 2)
-                                            {
-                                                projectile.damage = 2;
-                                            }
+                                        }
+                                        else if (projectile.type == 85)
+                                        {
+                                            projectile.damage = (int)((double)projectile.damage * 0.85);
+                                        }
+                                        else if (projectile.type == 76 || projectile.type == 77 || projectile.type == 78)
+                                        {
+                                            projectile.damage = (int)((double)projectile.damage * 0.95);
                                         }
                                     }
                                     //Main.NewText($"Projectile damage: [c/ff00ff:{projectile.damage}]");

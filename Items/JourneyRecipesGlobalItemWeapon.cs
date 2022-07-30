@@ -119,10 +119,20 @@ namespace JourneyRecipes.Items
             {
                 item.damage = 49;
             }
+            else if (item.type == 494)
+            {
+                item.damage = 42;
+                item.knockBack = .25f;
+                item.mana = 5;
+            }
             else if (item.type == 518)
             {
                 item.damage = 32;
                 item.mana = 5;
+            }
+            else if (item.type == 506)
+            {
+                item.damage = 35;
             }
             else if (item.type == 519)
             {
@@ -314,6 +324,10 @@ namespace JourneyRecipes.Items
             {
                 item.useTime = 12;
                 item.useAnimation = item.useTime;
+            }
+            else if (item.type == 1910)
+            {
+                item.damage = 60;
             }
             else if (item.type == 2223)
             {
