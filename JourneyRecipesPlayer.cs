@@ -35,6 +35,73 @@ namespace JourneyRecipes
             BeeBeeBee = false;
             GravityGlobe = false;
         }
+        public void Update_NPCCollision()
+        {
+            Rectangle rectangle = new Rectangle((int)player.position.X, (int)player.position.Y, player.width, player.height);
+            for (int i = 0; i < 200; i++)
+            {
+                if (!Main.npc[i].active || Main.npc[i].friendly || Main.npc[i].damage <= 0)
+                {
+                    continue;
+                }
+                Rectangle npcRect = new Rectangle((int)Main.npc[i].position.X, (int)Main.npc[i].position.Y, Main.npc[i].width, Main.npc[i].height);
+                if (rectangle.Intersects(npcRect))
+                {
+                    bool flag3 = !player.immune;
+                    float knockback = 10f;
+                    int num3 = -1;
+                    if (Main.npc[i].position.X + (float)(Main.npc[i].width / 2) < player.position.X + (float)(player.width / 2))
+                    {
+                        num3 = 1;
+                    }
+                    if (player.whoAmI == Main.myPlayer && CactusThorns && flag3 && !Main.npc[i].dontTakeDamage)
+                    {
+                        int damage = 15;
+                        if (Main.expertMode)
+                        {
+                            damage = 30;
+                        }
+                        ApplyDamageToNPC(Main.npc[i], damage, knockback, -num3, crit: false);
+                    }
+                }
+            }
+        }
+        public void ApplyDamageToNPC(NPC npc, int damage, float knockback, int direction, bool crit)
+        {
+            int num = Item.NPCtoBanner(npc.BannerID());
+            if (num > 0 && player.NPCBannerBuff[num])
+            {
+                damage = ((!Main.expertMode) ? ((int)((float)damage * ItemID.Sets.BannerStrength[Item.BannerToItem(num)].NormalDamageDealt)) : ((int)((float)damage * ItemID.Sets.BannerStrength[Item.BannerToItem(num)].ExpertDamageDealt)));
+            }
+            OnHit(npc.Center.X, npc.Center.Y, npc);
+            if (player.armorPenetration > 0)
+            {
+                damage += npc.checkArmorPenetration(player.armorPenetration);
+            }
+            int dmg = (int)npc.StrikeNPC(damage, knockback, direction, crit);
+            if (Main.netMode != 0)
+            {
+                NetMessage.SendData(28, -1, -1, null, npc.whoAmI, damage, knockback, direction, crit.ToInt());
+            }
+            int num2 = Item.NPCtoBanner(npc.BannerID());
+            if (num2 >= 0)
+            {
+                player.lastCreatureHit = num2;
+            }
+        }
+        public void OnHit(float x, float y, Entity victim)
+        {
+            if (Main.myPlayer != player.whoAmI)
+            {
+                return;
+            }
+            bool flag = victim is NPC && ((NPC)victim).type == 488;
+            
+        }
+        public override void PreUpdate()
+        {
+            Update_NPCCollision();
+        }
         public override bool PreItemCheck()
         {
             if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowAccessoryStat && PlayerFeral && player.HeldItem.melee)
@@ -127,7 +194,7 @@ namespace JourneyRecipes
         }
         public override void PostUpdateEquips()
         {
-            
+
         }
     }
 }
