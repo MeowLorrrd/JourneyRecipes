@@ -43,7 +43,8 @@ namespace JourneyRecipes
                 if (!Main.npc[i].active || Main.npc[i].friendly || Main.npc[i].damage <= 0)
                 {
                     continue;
-                }
+                }//Todo:
+                 //Everything smh
                 Rectangle npcRect = new Rectangle((int)Main.npc[i].position.X, (int)Main.npc[i].position.Y, Main.npc[i].width, Main.npc[i].height);
                 int specialHitSetter = -1;
                 switch (Main.npc[i].type)
@@ -74,6 +75,11 @@ namespace JourneyRecipes
                     bool flag3 = !player.immune;
                     float knockback = 10f;
                     int num3 = -1;
+                    if (specialHitSetter >= 0)
+                    {
+                        flag3 = player.hurtCooldowns[specialHitSetter] == 0;
+                    }
+                    
                     if (Main.npc[i].position.X + (float)(Main.npc[i].width / 2) < player.position.X + (float)(player.width / 2))
                     {
                         num3 = 1;
@@ -82,13 +88,13 @@ namespace JourneyRecipes
                     int num5 = Item.NPCtoBanner(Main.npc[i].BannerID());
                     if (num5 > 0 && player.NPCBannerBuff[num5])
                     {
-                        //num4=((!Main.expertMode)?((int)((float)num4)))
+                        num4 = ((!Main.expertMode)?((int)((float)num4 * ItemID.Sets.BannerStrength[Item.BannerToItem(num5)].NormalDamageReceived)) : ((int)((float)num4 * ItemID.Sets.BannerStrength[Item.BannerToItem(num5)].ExpertDamageReceived)));
                     }
                     if (player.whoAmI == Main.myPlayer && CactusThorns && flag3 && !Main.npc[i].dontTakeDamage)
                     {
                         int damage = 15;
                         if (Main.expertMode)
-                        {
+                        { 
                             damage = 30;
                         }
                         ApplyDamageToNPC(Main.npc[i], damage, knockback, -num3, crit: false);
