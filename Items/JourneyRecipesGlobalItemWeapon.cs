@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 using static Terraria.ModLoader.ModContent;
@@ -203,6 +204,7 @@ namespace JourneyRecipes.Items
                 item.width = 44;
                 item.height = 44;
                 item.rare = 1;
+                item.UseSound = SoundID.Item1;
             }
             else if (item.type == 1130)
             {
