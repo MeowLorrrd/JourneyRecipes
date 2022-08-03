@@ -261,6 +261,7 @@ namespace JourneyRecipes.Items
             {
                 player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetBonus.Cactus");
                 player.statDefense -= 1;
+                player.GetModPlayer<JourneyRecipesPlayer>().CactusThorns = true;
             }
             else if (set == ChlorophyteMelee)
             {

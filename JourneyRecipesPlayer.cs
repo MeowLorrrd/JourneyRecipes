@@ -45,14 +45,44 @@ namespace JourneyRecipes
                     continue;
                 }
                 Rectangle npcRect = new Rectangle((int)Main.npc[i].position.X, (int)Main.npc[i].position.Y, Main.npc[i].width, Main.npc[i].height);
+                int specialHitSetter = -1;
+                switch (Main.npc[i].type)
+                {
+                    case 396:
+                    case 397:
+                    case 398:
+                    case 400:
+                    case 401:
+                        specialHitSetter = 1;
+                        break;
+                    case 636:
+                        specialHitSetter = 1;
+                        break;
+                }
+                if ((specialHitSetter == -1 && player.immune) || (player.dash == 2 && i == player.eocHit && player.eocDash > 0) || player.npcTypeNoAggro[Main.npc[i].type])
+                {
+                    continue;
+                }
+                float damageMultiplier = 1f;
+                NPC.GetMeleeCollisionData(rectangle, i, ref specialHitSetter, ref damageMultiplier, ref npcRect);
                 if (rectangle.Intersects(npcRect))
                 {
+                    if (player.npcTypeNoAggro[Main.npc[i].type])
+                    {
+                        continue;
+                    }
                     bool flag3 = !player.immune;
                     float knockback = 10f;
                     int num3 = -1;
                     if (Main.npc[i].position.X + (float)(Main.npc[i].width / 2) < player.position.X + (float)(player.width / 2))
                     {
                         num3 = 1;
+                    }
+                    int num4 = Main.DamageVar((float)Main.npc[i].damage * damageMultiplier);
+                    int num5 = Item.NPCtoBanner(Main.npc[i].BannerID());
+                    if (num5 > 0 && player.NPCBannerBuff[num5])
+                    {
+                        //num4=((!Main.expertMode)?((int)((float)num4)))
                     }
                     if (player.whoAmI == Main.myPlayer && CactusThorns && flag3 && !Main.npc[i].dontTakeDamage)
                     {
@@ -96,7 +126,7 @@ namespace JourneyRecipes
                 return;
             }
             bool flag = victim is NPC && ((NPC)victim).type == 488;
-            
+
         }
         public override void PreUpdate()
         {
