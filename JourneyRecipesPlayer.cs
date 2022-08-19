@@ -5,6 +5,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Audio;
+using static Terraria.Player;
 
 namespace JourneyRecipes
 {
@@ -21,6 +22,8 @@ namespace JourneyRecipes
         public bool StarCloak;
         public bool BeeBeeBee;
         public bool GravityGlobe;
+        public bool meleeScaleGlove;
+        public Item lastVisualizedSelectedItem;
         public override void ResetEffects()
         {
             PlayerInvis = false;
@@ -34,6 +37,7 @@ namespace JourneyRecipes
             StarCloak = false;
             BeeBeeBee = false;
             GravityGlobe = false;
+            meleeScaleGlove = false;
         }
         public void Update_NPCCollision()
         {
@@ -81,7 +85,7 @@ namespace JourneyRecipes
                         num2 *= 2f;
                     }
                     int num3 = -1;
-                    if (Main.npc[i].position.X + (float)(Main.npc[i].width/2)< player.position.X + (float)(player.width / 2))
+                    if (Main.npc[i].position.X + (float)(Main.npc[i].width / 2) < player.position.X + (float)(player.width / 2))
                     {
                         num3 = 1;
                     }
@@ -117,7 +121,7 @@ namespace JourneyRecipes
                 damage = ((!Main.expertMode) ? ((int)((float)damage * ItemID.Sets.BannerStrength[Item.BannerToItem(num)].NormalDamageDealt)) : ((int)((float)damage * ItemID.Sets.BannerStrength[Item.BannerToItem(num)].ExpertDamageDealt)));
             }
             OnHit(npc.Center.X, npc.Center.Y, npc);
-            
+
             if (player.armorPenetration > 0)
             {
                 damage += npc.checkArmorPenetration(player.armorPenetration);
@@ -143,7 +147,7 @@ namespace JourneyRecipes
             {
                 return;
             }
-            bool flag = victim is NPC && ((NPC)victim).type == 488;            
+            bool flag = victim is NPC && ((NPC)victim).type == 488;
             if (player.onHitDodge && player.shadowDodgeTimer == 0 && Main.rand.NextBool(4))
             {
                 if (!player.shadowDodge)
@@ -230,6 +234,9 @@ namespace JourneyRecipes
         }
         public override bool PreItemCheck()
         {
+            Item item = player.inventory[player.selectedItem];
+			Item item2 = ((player.itemAnimation > 0) ? lastVisualizedSelectedItem : item);
+            Rectangle drawHitbox = Item.GetDrawHitbox(item2.type, this);
             if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowAccessoryStat && PlayerFeral && player.HeldItem.melee)
             {
                 PlayerAutouse = player.HeldItem.autoReuse;
@@ -243,6 +250,11 @@ namespace JourneyRecipes
             {
                 player.armorPenetration += 10;
             }
+            if (((item.damage >= 0 && item.type > 0 && !item.noMelee) || item.type == 1450 || item.type == 1991 || item.type == 3183 || item.type == 4821 || item.type == 3542 || item.type == 3779) && player.itemAnimation > 0)
+            {
+                ItemCheck_GetMeleeHitbox(item, drawHitbox, out var dontAttack, out var itemRectangle);
+            }
+
             return base.PreItemCheck();
         }
         public override bool ConsumeAmmo(Item weapon, Item ammo)
@@ -318,9 +330,130 @@ namespace JourneyRecipes
             }
             base.Hurt(pvp, quiet, damage, hitDirection, crit);
         }
-        public override void PostUpdateEquips()
+        private void ItemCheck_GetMeleeHitbox(Item sItem, Rectangle heldItemFrame, out bool dontAttack, out Rectangle itemRectangle)
         {
-
+            dontAttack = false;
+            itemRectangle = new Rectangle((int)player.itemLocation.X, (int)player.itemLocation.Y, 32, 32);
+			float adjustedItemScale = GetAdjustedItemScale(sItem);
+            itemRectangle.Width = (int)((float)itemRectangle.Width * adjustedItemScale);
+            itemRectangle.Height = (int)((float)itemRectangle.Height * adjustedItemScale);
+            if (player.direction == -1)
+            {
+                itemRectangle.X -= itemRectangle.Width;
+            }
+            if (player.gravDir == 1f)
+            {
+                itemRectangle.Y -= itemRectangle.Height;
+            }
+            if (sItem.useStyle == 1)
+            {
+                if ((double)player.itemAnimation < (double)player.itemAnimationMax * 0.333)
+                {
+                    if (player.direction == -1)
+                    {
+                        itemRectangle.X -= (int)((double)itemRectangle.Width * 1.4 - (double)itemRectangle.Width);
+                    }
+                    itemRectangle.Width = (int)((double)itemRectangle.Width * 1.4);
+                    itemRectangle.Y += (int)((double)itemRectangle.Height * 0.5 * (double)player.gravDir);
+                    itemRectangle.Height = (int)((double)itemRectangle.Height * 1.1);
+                }
+                else if (!((double)player.itemAnimation < (double)player.itemAnimationMax * 0.666))
+                {
+                    if (player.direction == 1)
+                    {
+                        itemRectangle.X -= (int)((double)itemRectangle.Width * 1.2);
+                    }
+                    itemRectangle.Width *= 2;
+                    itemRectangle.Y -= (int)(((double)itemRectangle.Height * 1.4 - (double)itemRectangle.Height) * (double)player.gravDir);
+                    itemRectangle.Height = (int)((double)itemRectangle.Height * 1.4);
+                }
+            }
+            else if (sItem.useStyle == 3)
+            {
+                if ((double)player.itemAnimation > (double)player.itemAnimationMax * 0.666)
+                {
+                    dontAttack = true;
+                }
+                else
+                {
+                    if (player.direction == -1)
+                    {
+                        itemRectangle.X -= (int)((double)itemRectangle.Width * 1.4 - (double)itemRectangle.Width);
+                    }
+                    itemRectangle.Width = (int)((double)itemRectangle.Width * 1.4);
+                    itemRectangle.Y += (int)((double)itemRectangle.Height * 0.6);
+                    itemRectangle.Height = (int)((double)itemRectangle.Height * 0.6);
+                    if (sItem.type == 946 || sItem.type == 4707)
+                    {
+                        itemRectangle.Height += 14;
+                        itemRectangle.Width -= 10;
+                        if (player.direction == -1)
+                        {
+                            itemRectangle.X += 10;
+                        }
+                    }
+                }
+            }
+            if (sItem.type == 1450 && Main.rand.NextBool(3))
+            {
+                int num3 = -1;
+                float x = itemRectangle.X + Main.rand.Next(itemRectangle.Width);
+                float y = itemRectangle.Y + Main.rand.Next(itemRectangle.Height);
+                if (Main.rand.NextBool(500))
+                {
+                    num3 = Gore.NewGore(new Vector2(x, y), default(Vector2), 415, (float)Main.rand.Next(51, 101) * 0.01f);
+                }
+                else if (Main.rand.NextBool(250))
+                {
+                    num3 = Gore.NewGore(new Vector2(x, y), default(Vector2), 414, (float)Main.rand.Next(51, 101) * 0.01f);
+                }
+                else if (Main.rand.NextBool(80))
+                {
+                    num3 = Gore.NewGore(new Vector2(x, y), default(Vector2), 413, (float)Main.rand.Next(51, 101) * 0.01f);
+                }
+                else if (Main.rand.NextBool(10))
+                {
+                    num3 = Gore.NewGore(new Vector2(x, y), default(Vector2), 412, (float)Main.rand.Next(51, 101) * 0.01f);
+                }
+                else if (Main.rand.NextBool(3))
+                {
+                    num3 = Gore.NewGore(new Vector2(x, y), default(Vector2), 411, (float)Main.rand.Next(51, 101) * 0.01f);
+                }
+                if (num3 >= 0)
+                {
+                    Main.gore[num3].velocity.X += player.direction * 2;
+                    Main.gore[num3].velocity.Y *= 0.3f;
+                }
+            }
+            if (sItem.type == 3542)
+            {
+                dontAttack = true;
+            }
+            if (sItem.type == 3779)
+            {
+                dontAttack = true;
+                Vector2 vector = player.itemLocation + new Vector2(player.direction * 30, -8f);
+                Vector2 vector2 = vector - player.position;
+                for (float num4 = 0f; num4 < 1f; num4 += 0.2f)
+                {
+                    Vector2 vector3 = Vector2.Lerp(player.oldPosition + vector2 + new Vector2(0f, player.gfxOffY), vector, num4);
+                    Dust obj = Main.dust[Dust.NewDust(vector - Vector2.One * 8f, 16, 16, 27, 0f, -2f)];
+                    obj.noGravity = true;
+                    obj.position = vector3;
+                    obj.velocity = new Vector2(0f, (0f - player.gravDir) * 2f);
+                    obj.scale = 1.2f;
+                    obj.alpha = 200;
+                }
+            }
+        }
+        public float GetAdjustedItemScale(Item item)
+        {
+            float num = item.scale;
+            if (item.melee && meleeScaleGlove)
+            {
+                num *= 1.1f;
+            }
+            return num;
         }
     }
 }
