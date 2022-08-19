@@ -43,9 +43,7 @@ namespace JourneyRecipes
                 if (!Main.npc[i].active || Main.npc[i].friendly || Main.npc[i].damage <= 0)
                 {
                     continue;
-                }//Todo:
-                 //Everything smh
-                Rectangle npcRect = new Rectangle((int)Main.npc[i].position.X, (int)Main.npc[i].position.Y, Main.npc[i].width, Main.npc[i].height);
+                }
                 int specialHitSetter = -1;
                 switch (Main.npc[i].type)
                 {
@@ -65,6 +63,8 @@ namespace JourneyRecipes
                     continue;
                 }
                 float damageMultiplier = 1f;
+                //Main.npc[i].position += Main.npc[i].
+                Rectangle npcRect = new Rectangle((int)Main.npc[i].position.X, (int)Main.npc[i].position.Y, Main.npc[i].width, Main.npc[i].height);
                 NPC.GetMeleeCollisionData(rectangle, i, ref specialHitSetter, ref damageMultiplier, ref npcRect);
                 if (rectangle.Intersects(npcRect))
                 {
