@@ -1,17 +1,18 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace JourneyRecipes.NPCs
 {
     public class JourneyRecipesGlobalNPC : GlobalNPC
     {
-        public override bool Autoload(ref string name)
-        {
-            return ModContent.GetInstance<JourneyRecipesServerConfig>().AllowNPCStat;
-        }
         public override bool InstancePerEntity => true;
         public override void SetDefaults(NPC npc)
         {
+            if (!GetInstance<JourneyRecipesServerConfig>().AllowNPCStat)
+            {
+                return;
+            }
             if (npc.type == 44)
             {
                 npc.rarity = 1;
@@ -92,6 +93,10 @@ namespace JourneyRecipes.NPCs
         }
         public override void OnHitPlayer(NPC npc, Player target, int damage, bool crit)
         {
+            if (!GetInstance<JourneyRecipesServerConfig>().AllowNPCStat)
+            {
+                return;
+            }
             if (npc.type == 236 || npc.type == 237)
             {
                 if (Main.rand.NextBool(10))
@@ -109,16 +114,23 @@ namespace JourneyRecipes.NPCs
         }
         public override bool PreNPCLoot(NPC npc)
         {
-            if (npc.type == 392 || npc.type == 393 || npc.type == 394 || npc.type == 395)
+            if (GetInstance<JourneyRecipesServerConfig>().AllowNPCStat)
             {
-                NPCLoader.blockLoot.Add(2800);
-                NPCLoader.blockLoot.Add(2882);
-                NPCLoader.blockLoot.Add(2798);
+                if (npc.type == 392 || npc.type == 393 || npc.type == 394 || npc.type == 395)
+                {
+                    NPCLoader.blockLoot.Add(2800);
+                    NPCLoader.blockLoot.Add(2882);
+                    NPCLoader.blockLoot.Add(2798);
+                }
             }
             return base.PreNPCLoot(npc);
         }
         public override void NPCLoot(NPC npc)
         {
+            if (!GetInstance<JourneyRecipesServerConfig>().AllowNPCStat)
+            {
+                return;
+            }
             if (npc.type == 289)
             {
                 if (!Main.expertMode)
@@ -168,6 +180,10 @@ namespace JourneyRecipes.NPCs
         }
         public override void ScaleExpertStats(NPC npc, int numPlayers, float bossLifeScale)
         {
+            if (!GetInstance<JourneyRecipesServerConfig>().AllowNPCStat)
+            {
+                return;
+            }
             if (npc.type == 23)
             {
                 if (Main.expertMode)
