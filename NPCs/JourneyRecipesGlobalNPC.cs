@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
@@ -6,6 +7,7 @@ namespace JourneyRecipes.NPCs
 {
     public class JourneyRecipesGlobalNPC : GlobalNPC
     {
+        public Vector2 netOffset = Vector2.Zero;
         public override bool InstancePerEntity => true;
         public override void SetDefaults(NPC npc)
         {
@@ -13,6 +15,7 @@ namespace JourneyRecipes.NPCs
             {
                 return;
             }
+            netOffset *= 0f;
             if (npc.type == 44)
             {
                 npc.rarity = 1;
