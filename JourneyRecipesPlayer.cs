@@ -63,7 +63,7 @@ namespace JourneyRecipes
                     continue;
                 }
                 float damageMultiplier = 1f;
-                //Main.npc[i].position += Main.npc[i].
+                //Main.npc[i].position += Main.npc[i].netOffset;
                 Rectangle npcRect = new Rectangle((int)Main.npc[i].position.X, (int)Main.npc[i].position.Y, Main.npc[i].width, Main.npc[i].height);
                 NPC.GetMeleeCollisionData(rectangle, i, ref specialHitSetter, ref damageMultiplier, ref npcRect);
                 if (rectangle.Intersects(npcRect))
@@ -72,15 +72,16 @@ namespace JourneyRecipes
                     {
                         continue;
                     }
-                    bool flag3 = !player.immune;
+                    bool flag = true;
+                    bool flag2 = false;
+                    float num2 = player.thorns;
                     float knockback = 10f;
-                    int num3 = -1;
-                    if (specialHitSetter >= 0)
+                    if (player.turtleThorns)
                     {
-                        flag3 = player.hurtCooldowns[specialHitSetter] == 0;
+                        num2 *= 2f;
                     }
-                    
-                    if (Main.npc[i].position.X + (float)(Main.npc[i].width / 2) < player.position.X + (float)(player.width / 2))
+                    int num3 = -1;
+                    if (Main.npc[i].position.X + (float)(Main.npc[i].width/2)< player.position.X + (float)(player.width / 2))
                     {
                         num3 = 1;
                     }
@@ -88,13 +89,19 @@ namespace JourneyRecipes
                     int num5 = Item.NPCtoBanner(Main.npc[i].BannerID());
                     if (num5 > 0 && player.NPCBannerBuff[num5])
                     {
-                        num4 = ((!Main.expertMode)?((int)((float)num4 * ItemID.Sets.BannerStrength[Item.BannerToItem(num5)].NormalDamageReceived)) : ((int)((float)num4 * ItemID.Sets.BannerStrength[Item.BannerToItem(num5)].ExpertDamageReceived)));
+                        num4 = ((!Main.expertMode) ? ((int)((float)num4 * ItemID.Sets.BannerStrength[Item.BannerToItem(num5)].NormalDamageReceived)) : ((int)((float)num4 * ItemID.Sets.BannerStrength[Item.BannerToItem(num5)].ExpertDamageReceived)));
                     }
+                    bool flag3 = !player.immune;
+                    if (specialHitSetter >= 0)
+                    {
+                        flag3 = player.hurtCooldowns[specialHitSetter] == 0;
+                    }
+
                     if (player.whoAmI == Main.myPlayer && CactusThorns && flag3 && !Main.npc[i].dontTakeDamage)
                     {
                         int damage = 15;
                         if (Main.expertMode)
-                        { 
+                        {
                             damage = 30;
                         }
                         ApplyDamageToNPC(Main.npc[i], damage, knockback, -num3, crit: false);
@@ -110,11 +117,16 @@ namespace JourneyRecipes
                 damage = ((!Main.expertMode) ? ((int)((float)damage * ItemID.Sets.BannerStrength[Item.BannerToItem(num)].NormalDamageDealt)) : ((int)((float)damage * ItemID.Sets.BannerStrength[Item.BannerToItem(num)].ExpertDamageDealt)));
             }
             OnHit(npc.Center.X, npc.Center.Y, npc);
+            
             if (player.armorPenetration > 0)
             {
                 damage += npc.checkArmorPenetration(player.armorPenetration);
             }
             int dmg = (int)npc.StrikeNPC(damage, knockback, direction, crit);
+            if (player.accDreamCatcher)
+            {
+                player.addDPS(dmg);
+            }
             if (Main.netMode != 0)
             {
                 NetMessage.SendData(28, -1, -1, null, npc.whoAmI, damage, knockback, direction, crit.ToInt());
@@ -131,10 +143,88 @@ namespace JourneyRecipes
             {
                 return;
             }
-            bool flag = victim is NPC && ((NPC)victim).type == 488;
-
+            bool flag = victim is NPC && ((NPC)victim).type == 488;            
+            if (player.onHitDodge && player.shadowDodgeTimer == 0 && Main.rand.NextBool(4))
+            {
+                if (!player.shadowDodge)
+                {
+                    player.shadowDodgeTimer = 1800;
+                }
+                player.AddBuff(59, 1800);
+            }
+            if (player.onHitRegen)
+            {
+                player.AddBuff(58, 300);
+            }
+            if (player.stardustMinion && victim is NPC)
+            {
+                for (int i = 0; i < 1000; i++)
+                {
+                    Projectile projectile = Main.projectile[i];
+                    if (projectile.active && projectile.owner == player.whoAmI && projectile.type == 613 && !(projectile.localAI[1] > 0f) && Main.rand.NextBool(2))
+                    {
+                        Vector2 vector = new Vector2(x, y) - projectile.Center;
+                        if (vector.Length() > 0f)
+                        {
+                            vector.Normalize();
+                        }
+                        vector *= 20f;
+                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector.X, vector.Y, 614, projectile.damage / 3, 0f, projectile.owner, 0f, victim.whoAmI);
+                        projectile.localAI[1] = 30 + Main.rand.Next(4) * 10;
+                    }
+                }
+            }
+            if (player.onHitPetal && player.petalTimer == 0)
+            {
+                player.petalTimer = 20;
+                _ = player.position.X + (float)(player.width / 2);
+                int num = player.direction;
+                float num2 = Main.screenPosition.X;
+                if (num < 0)
+                {
+                    num2 += (float)Main.screenWidth;
+                }
+                float y2 = Main.screenPosition.Y;
+                y2 += (float)Main.rand.Next(Main.screenHeight);
+                Vector2 vector2 = new Vector2(num2, y2);
+                float num3 = x - vector2.X;
+                float num4 = y - vector2.Y;
+                num3 += (float)Main.rand.Next(-50, 51) * 0.1f;
+                num4 += (float)Main.rand.Next(-50, 51) * 0.1f;
+                float num5 = (float)Math.Sqrt(num3 * num3 + num4 * num4);
+                num5 = 24f / num5;
+                num3 *= num5;
+                num4 *= num5;
+                Projectile.NewProjectile(num2, y2, num3, num4, 221, 36, 0f, player.whoAmI);
+            }
+            if (!player.crystalLeaf || player.petalTimer != 0)
+            {
+                return;
+            }
+            _ = player.inventory[player.selectedItem].type;
+            for (int j = 0; j < 1000; j++)
+            {
+                if (Main.projectile[j].owner == player.whoAmI && Main.projectile[j].type == 226)
+                {
+                    player.petalTimer = 50;
+                    Vector2 vector3 = new Vector2(Main.projectile[j].position.X + (float)player.width * 0.5f, Main.projectile[j].position.Y + (float)player.height * 0.5f);
+                    float num6 = x - vector3.X;
+                    float num7 = y - vector3.Y;
+                    float num8 = (float)Math.Sqrt(num6 * num6 + num7 * num7);
+                    num8 = 12f / num8;
+                    num6 *= num8;
+                    num7 *= num8;
+                    Projectile.NewProjectile(Main.projectile[j].Center.X - 4f, Main.projectile[j].Center.Y, num6, num7, 227, 100, 10, player.whoAmI);
+                    break;
+                }
+            }
+            PlayerHooks.OnHitAnything(player, x, y, victim);
         }
         public override void PreUpdate()
+        {
+            //Update_NPCCollision();
+        }
+        public override void PostUpdateMiscEffects()
         {
             Update_NPCCollision();
         }
