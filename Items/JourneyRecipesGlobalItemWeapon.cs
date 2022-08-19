@@ -508,7 +508,7 @@ namespace JourneyRecipes.Items
             {
                 if (item.type == 1264)
                 {
-                    target.AddBuff(44, 8 * 60);
+                    target.AddBuff(44, 480);
                 }
                 else if (item.type == 3069)
                 {
