@@ -9,10 +9,6 @@ namespace JourneyRecipes.Items
 {
     public class JourneyRecipesGlobalItemWeapon : GlobalItem
     {
-        public override bool Autoload(ref string name)
-        {
-            return GetInstance<JourneyRecipesServerConfig>().allowWeaponStat;
-        }
         public bool Config = GetInstance<JourneyRecipesServerConfig>().allowWeaponStat;
         public override void SetDefaults(Item item)
         {
