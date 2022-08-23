@@ -8,7 +8,7 @@ namespace JourneyRecipes.Items
     public class GlobalWings : GlobalItem
     {
         public override bool Autoload(ref string name) => GetInstance<JourneyRecipesServerConfig>().AllowWingStat;
-        
+
         public override void UpdateAccessory(Item item, Player player, bool hideVisual)
         {
             switch (item.type)
@@ -195,6 +195,14 @@ namespace JourneyRecipes.Items
                 }
             }
             #endregion
+        }
+        public override void SetDefaults(Item item)
+        {
+            base.SetDefaults(item);
+            if (item.type == ItemID.LeafWings)
+            {
+                item.value = Item.buyPrice(0, 75);
+            }
         }
     }
 }
