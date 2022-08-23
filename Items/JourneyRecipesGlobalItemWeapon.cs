@@ -10,6 +10,8 @@ namespace JourneyRecipes.Items
     public class JourneyRecipesGlobalItemWeapon : GlobalItem
     {
         public bool Config = GetInstance<JourneyRecipesServerConfig>().allowWeaponStat;
+        public override bool InstancePerEntity => true;
+        public override bool CloneNewInstances => true;
         public override void SetDefaults(Item item)
         {
             if (Config)
