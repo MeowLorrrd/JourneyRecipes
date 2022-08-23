@@ -40,8 +40,29 @@ namespace JourneyRecipes.NPCs
                 nextSlot++;
             }
             if (type == NPCID.WitchDoctor)
-            {
-
+            {//TODO:
+             //Remove old shops for these items
+                /*
+                if (NPC.downedQueenBee)
+                {
+                    if (!Main.dayTime)
+                    {
+                        shop.item[nextSlot++].SetDefaults(ItemID.PygmyNecklace);
+                        //shop.item[nextSlot].shopCustomPrice = 200000;
+                    }
+                }
+                if (NPC.downedPlantBoss)
+                {
+                    shop.item[nextSlot++].SetDefaults(ItemID.TikiMask);
+                    shop.item[nextSlot++].SetDefaults(ItemID.TikiShirt);
+                    shop.item[nextSlot++].SetDefaults(ItemID.TikiPants);
+                    if (Main.player[Main.myPlayer].ZoneJungle)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.HerculesBeetle);
+                        nextSlot++;
+                    }
+                }
+                */
             }
         }
     }
