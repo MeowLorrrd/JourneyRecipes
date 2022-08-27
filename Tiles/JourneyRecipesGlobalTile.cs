@@ -1,5 +1,6 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
+using Terraria.ID;
 using static Terraria.ModLoader.ModContent;
 
 namespace JourneyRecipes.Tiles
@@ -8,6 +9,18 @@ namespace JourneyRecipes.Tiles
     {
         public override bool Autoload(ref string name) => GetInstance<JourneyRecipesServerConfig>().allowTileChange;
 
+        public override void SetDefaults()
+        {
+            base.SetDefaults();
+            int x;
+            int y;
+            Tile tile = new Tile();
+            if (tile.type == TileID.DesertFossil)
+            {
+                Main.tileSpelunker[tile.type] = true;
+                
+            }
+        }
         public override bool CanExplode(int x, int y, int type)
         {
             switch (Main.tile[x, y].type)
