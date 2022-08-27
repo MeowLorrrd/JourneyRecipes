@@ -119,7 +119,7 @@ namespace JourneyRecipes
     public class JourneyRecipesServerConfig : ModConfig
     {
         public static JourneyRecipesServerConfig instance;
-        public override ConfigScope Mode => ConfigScope.ServerSide;
+        public override ConfigScope Mode => ConfigScope.ClientSide;
         [Header("Stat Settings [c/ff3333:(Read red configs!)]")]
 
         [DefaultValue(true)]
