@@ -12,14 +12,6 @@ namespace JourneyRecipes.Tiles
         public override void SetDefaults()
         {
             base.SetDefaults();
-            int x;
-            int y;
-            Tile tile = new Tile();
-            if (tile.type == TileID.DesertFossil)
-            {
-                Main.tileSpelunker[tile.type] = true;
-                
-            }
         }
         public override bool CanExplode(int x, int y, int type)
         {
