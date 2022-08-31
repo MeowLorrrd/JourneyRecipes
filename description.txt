@@ -70,7 +70,7 @@ Check the config to disable features you don't like!
 [i:520]Updates[i:520]:
 1.4.19 - Leaf Wings sell for 75 gold, rather than 1 platinum
 All config settings are client-sided
-Bee's Knees, Seed (Ammo) have 1.4 stats
+Bee's Knees, Seed (Ammo), Meteor Shots have 1.4 stats
 
 1.4.18 - Fixed typo in description
 Cactus armor deals flat damage, rather than having a thorns effect
