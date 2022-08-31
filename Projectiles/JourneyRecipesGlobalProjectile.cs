@@ -14,6 +14,11 @@ namespace JourneyRecipes.Projectiles
 
         public override void SetDefaults(Projectile projectile)
         {
+            if (projectile.type == 36)
+            {
+                projectile.usesLocalNPCImmunity = true;
+                projectile.localNPCHitCooldown = 15;
+            }
             if (projectile.type == 242)
             {
                 projectile.penetrate = 3;
