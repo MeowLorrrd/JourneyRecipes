@@ -12,6 +12,14 @@ namespace JourneyRecipes.Items
         }
         public override void SetDefaults(Item item)
         {
+            if (item.type == 2292)
+            {
+                item.fishingPole = 30;
+            }
+            if (item.type == 2295)
+            {
+                item.fishingPole = 35;
+            }
             if (item.type == 2341)
             {
                 item.pick = 59;
