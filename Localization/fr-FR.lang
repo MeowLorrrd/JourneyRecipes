@@ -67,6 +67,7 @@ ItemTooltip.TikiPants=Augmente le nombre de sbires max de 1\n+10 % de dégâts des
 ItemTooltip.SquireAltHead=Augmente votre nombre maximal de sentinelles de 2 et vous octroie +10 % de dégâts des sbires et au corps à corps
 ItemTooltip.SquireAltShirt=+30 % de dégâts des sbires et régénération énorme de santé
 ItemTooltip.SquireAltPants=+20 % de dégâts de sbires, de chances de coup critique au corps à corps et de vitesse de déplacement
+ItemTooltip.WizardHat=+5 % de dégâts magiques
 
 ItemTooltip.CrystalVileShard=Invoque une énorme pointe en cristal\nIgnore 10 points de la défense ennemie
 ItemTooltip.NettleBurst=Ignore 10 points de la défense ennemie

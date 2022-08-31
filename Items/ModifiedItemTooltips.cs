@@ -95,6 +95,7 @@ namespace JourneyRecipes.Items
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SquireAltHead", ItemID.SquireAltHead);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SquireAltShirt", ItemID.SquireAltShirt);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.SquireAltPants", ItemID.SquireAltPants);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.WizardHat", ItemID.WizardHat);
             }
             if (GetInstance<JourneyRecipesServerConfig>().allowThrowingToRanged)
             {

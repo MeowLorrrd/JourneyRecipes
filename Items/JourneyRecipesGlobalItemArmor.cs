@@ -32,6 +32,10 @@ namespace JourneyRecipes.Items
             {
                 item.defense = 6;
             }
+            else if (item.type == 238)
+            {
+                item.defense = 4;
+            }
             else if (item.type == 895)
             {
                 item.defense = 1;
@@ -125,6 +129,10 @@ namespace JourneyRecipes.Items
             else if (item.type == 233)
             {
                 p.meleeSpeed += .07f;
+            }
+            else if (item.type == 238)
+            {
+                p.magicDamage -= .1f;
             }
             else if (item.type == 960)
             {

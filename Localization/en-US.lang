@@ -67,6 +67,7 @@ ItemTooltip.TikiPants=Increases your max number of minions by 1\nIncreases minio
 ItemTooltip.SquireAltHead=Increases your max number of sentries by 2 and increases minion and melee damage by 10%
 ItemTooltip.SquireAltShirt=30% increased minion damage and massively increased life regeneration
 ItemTooltip.SquireAltPants=20% increased minion damage and melee critical strike chance and movement speed
+ItemTooltip.WizardHat=5% increased magic damage
 
 ItemTooltip.CrystalVileShard=Summons a massive crystal spike\nIgnores 10 points of enemy Defense
 ItemTooltip.NettleBurst=Ignores 10 points of enemy Defense
