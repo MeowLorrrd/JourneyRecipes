@@ -365,6 +365,12 @@ namespace JourneyRecipes.Items
                     item.useTime = 40;
                     item.useAnimation = item.useTime;
                 }
+                else if (item.type == 2888)
+                {
+                    item.damage = 23;
+                    item.useTime = 24;
+                    item.useAnimation = item.useTime;
+                }
                 else if (item.type == 3003)
                 {
                     item.damage = 8;
