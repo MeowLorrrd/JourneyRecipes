@@ -307,6 +307,10 @@ namespace JourneyRecipes
                             {
                                 player.AddBuff(48, 300);
                             }
+                            if (player.panic)
+                            {
+                                player.AddBuff(63, 480);
+                            }
                         }
                     }
                 }
