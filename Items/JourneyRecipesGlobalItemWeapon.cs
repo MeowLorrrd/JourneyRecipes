@@ -70,6 +70,10 @@ namespace JourneyRecipes.Items
                 {
                     item.damage = 25;
                 }
+                else if (item.type == 234)
+                {
+                    item.damage = 8;
+                }
                 else if (item.type == 273)
                 {
                     item.autoReuse = true;
