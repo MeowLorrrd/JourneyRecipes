@@ -575,11 +575,7 @@ namespace JourneyRecipes.Items
             if (Config)
             {
                 if (item.type == 946)
-                {
-                    {
-                        hitbox = new Rectangle(hitbox.X, (int)player.MountedCenter.Y - 20, hitbox.Width, hitbox.Height + 10);
-                    }
-                }
+                    hitbox = new Rectangle(hitbox.X, (int)player.MountedCenter.Y - 20, hitbox.Width, hitbox.Height + 10);
             }
         }
     }
