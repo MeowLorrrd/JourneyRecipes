@@ -77,6 +77,17 @@ namespace JourneyRecipes.Projectiles
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 12;
             }
+            /*else if (projectile.type == 699)
+            {
+                projectile.usesIDStaticNPCImmunity = true;
+                projectile.idStaticNPCHitCooldown = 20;
+                projectile.ownerHitCheck = true;
+            }
+            else if (projectile.type == 700)
+            {
+                projectile.usesLocalNPCImmunity = true;
+                projectile.localNPCHitCooldown = -1;
+            }*///TODO: rewrite proj AI
             else if (projectile.type == 708)
             {
                 projectile.usesLocalNPCImmunity = true;
