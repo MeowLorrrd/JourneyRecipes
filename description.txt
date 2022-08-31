@@ -70,7 +70,7 @@ Check the config to disable features you don't like!
 [i:520]Updates[i:520]:
 1.4.19 - Leaf Wings sell for 75 gold, rather than 1 platinum
 All config settings are client-sided
-Bee's Knees, Seed (Ammo), Meteor Shots have 1.4 stats
+Bee's Knees, Seed (Ammo), Meteor Shots, Wizard Hat have 1.4 stats
 
 1.4.18 - Fixed typo in description
 Cactus armor deals flat damage, rather than having a thorns effect
@@ -85,9 +85,6 @@ Honey Comb (+ upgrades) have 1.4 buff stats
 Scourge of the Corruptor has 1.4 stats
 Configs related to recipes are now client-sided
 Gravity Globe has 1.4 stats
-
-1.4.16 - Fixed Crimtane bar & ore having incorrect sell prices
-Jungle Temple traps can be mined before Golem, if pickaxe power is more than 210%
 
 
 [i:521]Notes[i:521]:
