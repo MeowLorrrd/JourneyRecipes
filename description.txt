@@ -76,6 +76,7 @@ Witch Doctor sells Pygmy Necklace Pre-Hardmode and Tiki Armor & Herculus Beetle 
 Jellyfish Necklace (+ upgrades) have 1.4 lighting stats
 Ruler's functionality is now always active
 The Grand Design sells for 4 gold, rather than 3
+Bone Glove has 1.4 stats (is now an accessory, rather than a weapon)
 
 1.4.18 - Fixed typo in description
 Cactus armor deals flat damage, rather than having a thorns effect
