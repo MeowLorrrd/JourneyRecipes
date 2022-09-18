@@ -7,6 +7,7 @@ ItemTooltip.MagicQuiver=箭的伤害增加10%，箭的速度大大提高\n20%的
 ItemTooltip.MechanicalGlove=提高近战击退力\n近战伤害和速度各增加12%\n为近战武器启用自动摆动
 ItemTooltip.FireGauntlet=提高近战击退力，近战攻击造成燃火伤害\n近战伤害和速度各增加12%\n为近战武器启用自动摆动
 ItemTooltip.LavaWaders=可让人在水、蜂蜜和熔岩上行走\n对火块免疫并在7秒内对熔岩免疫\n减少因触碰熔岩而受到的伤害
+ItemTooltip.BoneGlove=你发动攻击时向敌人发射交叉骨
 
 ItemTooltip.AncientBattleArmorHat=魔法和仆从伤害各增加15%
 ItemTooltip.AncientBattleArmorShirt=最大魔力值增加40\n仆从伤害增加10%\n仆从数量上限提高1个

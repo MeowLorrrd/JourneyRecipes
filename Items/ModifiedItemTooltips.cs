@@ -39,6 +39,7 @@ namespace JourneyRecipes.Items
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.FireGauntlet", ItemID.FireGauntlet);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.LavaWaders", ItemID.LavaWaders);
                 ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.MagicQuiver", ItemID.MagicQuiver);
+                ReplaceTooltips(tooltips, "Mods.JourneyRecipes.ItemTooltip.BoneGlove", ItemID.BoneGlove);
             }
             if (GetInstance<JourneyRecipesServerConfig>().allowArmorStat)
             {

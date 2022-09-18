@@ -7,6 +7,7 @@ ItemTooltip.MagicQuiver=Increases arrow damage by 10% and greatly increases arro
 ItemTooltip.MechanicalGlove=Increases melee knockback\n12% increased melee damage and speed\nEnables auto swing for melee weapons
 ItemTooltip.FireGauntlet=Increases melee knockback and melee attacks inflict fire damage\n12% increased melee damage and speed\nEnables auto swing for melee weapons
 ItemTooltip.LavaWaders=Provides the ability to walk on water, honey & lava\nGrants immunity to fire blocks and 7 seconds of immunity to lava\nReduces damage from touching lava
+ItemTooltip.BoneGlove=Shoots crossbones at enemies while you are attacking
 
 ItemTooltip.AncientBattleArmorHat=15% increased magic and minion damage
 ItemTooltip.AncientBattleArmorShirt=Increases maximum mana by 40\n10% increased minion damage\nIncreases your max number of minions by 1

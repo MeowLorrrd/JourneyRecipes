@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using System.Collections.Generic;
+using Terraria;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
@@ -34,6 +35,10 @@ namespace JourneyRecipes.Items
             {
                 item.notAmmo = true;
             }
+        }
+        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+        {
+            
         }
         public override void UpdateAccessory(Item item, Player player, bool hideVisual)
         {

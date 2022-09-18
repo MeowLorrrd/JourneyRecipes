@@ -7,6 +7,7 @@ ItemTooltip.MagicQuiver=+10 % de dégâts de flèches et augmente considérablement 
 ItemTooltip.MechanicalGlove=Augmente le recul au corps à corps\n+12 % de dégâts et de vitesse au corps à corps\nActive l'utilisation automatique des armes de mêlée
 ItemTooltip.FireGauntlet=Augmente le recul au corps à corps et les attaques au corps à corps infligent des dégâts de feu\n+12 % de dégâts et de vitesse au corps à corps\nActive l'utilisation automatique des armes de mêlée
 ItemTooltip.LavaWaders=Permettent de marcher sur l'eau, le miel et la lave\nImmunisent contre les blocs de feu et pendant 7 secondes contre la lave\nRéduisent les dégâts au contact de la lave
+ItemTooltip.BoneGlove=Lance des os en croix sur les ennemis pendant que vous attaquez
 
 ItemTooltip.AncientBattleArmorHat=+15 % de dégâts magiques et de sbires
 ItemTooltip.AncientBattleArmorShirt=+40 points de mana max\n+10 % de dégâts de sbires\nAugmente votre nombre maximal de sbires de 1

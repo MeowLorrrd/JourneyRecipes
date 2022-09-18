@@ -7,6 +7,7 @@ ItemTooltip.MagicQuiver=Erhöht Pfeilschaden um 10% und deutlich erhöhte Pfeilges
 ItemTooltip.MechanicalGlove=Erhöht Rückstoß durch Nahkampf\nUm 12% erhöhter Nahkampfschaden & erhöhtes Nahkampftempo\nAktiviert automatisches Schwingen für Nahkampfwaffen
 ItemTooltip.FireGauntlet=Erhöht Rückstoß durch Nahkampf, und Nahkampfangriffe fügen Feuerschaden zu\nUm 12% erhöhter Nahkampfschaden & erhöhtes Nahkampftempo\nAktiviert automatisches Schwingen für Nahkampfwaffen
 ItemTooltip.LavaWaders=Ermöglicht das Gehen auf Wasser, Honig & Lava\nMacht immun gegen Feuer-Blöcke und verleiht 7 Sekunden Immunität gegen Lava\nReduziert den Schaden beim Berühren von Lava
+ItemTooltip.BoneGlove=Feuert Knochenkreuze auf Feinde ab, während du angreifst
 
 ItemTooltip.AncientBattleArmorHat=Um 15% erhöhter Magie- und Günstlingsschaden
 ItemTooltip.AncientBattleArmorShirt=Erhöht maximales Mana um 40\nUm 10% erhöhter Günstlingschaden\nErhöht die maximale Anzahl deiner Günstlinge um 1
