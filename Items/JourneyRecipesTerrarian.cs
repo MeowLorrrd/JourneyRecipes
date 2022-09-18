@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 
@@ -9,7 +10,7 @@ namespace JourneyRecipes.Items
     public class JourneyRecipesTerrarian : GlobalItem
     {
         public override bool Autoload(ref string name) => ModContent.GetInstance<JourneyRecipesServerConfig>().allowWeaponStat;
-        
+
         public byte legendary;
         public override bool InstancePerEntity => true;
         public override bool CloneNewInstances => true;
@@ -36,11 +37,46 @@ namespace JourneyRecipes.Items
             {
                 foreach (TooltipLine line in tooltips)
                 {
-                    if (item.prefix != 0)
+                    if (item.prefix == mod.PrefixType("Legendary"))
                     {
                         if (line.mod == "Terraria" && line.Name == "ItemName")
                         {
-                            line.text = "Legendary Terrarian";//if mod prefix is active, chance tooltip to include prefix name
+                            if (Language.ActiveCulture == GameCulture.German)
+                            {
+                                line.text = $"{item.Name} (Legendär)";
+                            }
+                            if (Language.ActiveCulture == GameCulture.English)
+                            {
+                                line.text = $"Legendary {item.Name}";
+                            }
+                            if (Language.ActiveCulture == GameCulture.Spanish)
+                            {
+                                line.text = $"{item.Name} (Legendario)";
+                            }
+                            if (Language.ActiveCulture == GameCulture.French)
+                            {
+                                line.text = $"{item.Name} (Légendaire)";
+                            }
+                            if (Language.ActiveCulture == GameCulture.Italian)
+                            {
+                                line.text = $"{item.Name} (Leggendario)";
+                            }
+                            if (Language.ActiveCulture == GameCulture.Polish)
+                            {
+                                line.text = $"{item.Name} (Legendarny)";
+                            }
+                            if (Language.ActiveCulture == GameCulture.Portuguese)
+                            {
+                                line.text = $"{item.Name} (Lendário)";
+                            }
+                            if (Language.ActiveCulture == GameCulture.Russian)
+                            {
+                                line.text = $"Легендарный {item.Name}";
+                            }
+                            if (Language.ActiveCulture == GameCulture.Chinese)
+                            {
+                                line.text = $"传奇 {item.Name}";
+                            }
                         }
                     }
                 }
