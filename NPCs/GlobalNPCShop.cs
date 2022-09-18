@@ -63,6 +63,27 @@ namespace JourneyRecipes.NPCs
                     }
                 }
                 */
+                if (NPC.downedQueenBee)
+                {
+                    if (!Main.LocalPlayer.HasItem(ItemID.PygmyStaff))
+                    {
+                        if (!Main.dayTime)
+                        shop.item[nextSlot++].SetDefaults(ItemID.PygmyNecklace);
+                    }
+                }
+                if (NPC.downedPlantBoss)
+                {
+                    if (!Main.LocalPlayer.HasItem(ItemID.PygmyStaff))
+                    {
+                        shop.item[nextSlot++].SetDefaults(ItemID.TikiMask);
+                        shop.item[nextSlot++].SetDefaults(ItemID.TikiShirt);
+                        shop.item[nextSlot++].SetDefaults(ItemID.TikiPants);
+                        if (Main.LocalPlayer.ZoneJungle)
+                        {
+                            shop.item[nextSlot++].SetDefaults(ItemID.HerculesBeetle);
+                        }
+                    }
+                }
             }
         }
     }
