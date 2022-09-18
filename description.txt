@@ -72,6 +72,7 @@ Check the config to disable features you don't like!
 All config settings are client-sided
 Bee's Knees, Seed (Ammo), Meteor Shots, Wizard Hat, Panic Necklace have 1.4 stats
 Fiberglass Fishing Pole and Mechanic's Rod have 1.4 fishing power (30 and 35 respectively)
+Witch Doctor sells Pygmy Necklace Pre-Hardmode and Tiki Armor & Herculus Beetle always after Plantera
 
 1.4.18 - Fixed typo in description
 Cactus armor deals flat damage, rather than having a thorns effect
