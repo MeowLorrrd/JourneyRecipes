@@ -27,32 +27,65 @@ namespace JourneyRecipes.Items
             {
                 player.GetModPlayer<JourneyRecipesPlayer>().PlayerFeral = true;
             }
-            else if (item.type == 897)
+            if (item.type == 897)
             {
                 player.GetModPlayer<JourneyRecipesPlayer>().PlayerFeral = true;
             }
-            else if (item.type == 908)
+            if (item.type == 908)
             {
                 player.lavaRose = true;
             }
-            else if (item.type == 936)
+            if (item.type == 936)
             {
                 player.GetModPlayer<JourneyRecipesPlayer>().PlayerFeral = true;
             }
-            else if (item.type == 1343)
+            if (item.type == 1343)
             {
                 player.meleeDamage += .02f;
                 player.meleeSpeed += .02f;
                 player.GetModPlayer<JourneyRecipesPlayer>().PlayerFeral = true;
             }
-            else if (item.type == 2221)
+            if (item.type == 2221)
             {
                 player.statManaMax2 += 20;
             }
-            else if (item.type == 532 || item.type == 862 || item.type == 1247)
+            if (item.type == 532 || item.type == 862 || item.type == 1247)
             {
                 player.starCloak = false;
                 player.GetModPlayer<JourneyRecipesPlayer>().StarCloak = true;
+            }
+            if (item.type == 1303)
+            {
+                if (!player.wet)
+                {
+                    Lighting.AddLight((int)player.Center.X / 16, (int)player.Center.Y / 16, 0.225f, 0.05f, 0.15f);
+                }
+                if (player.wet)
+                {
+                    Lighting.AddLight((int)player.Center.X / 16, (int)player.Center.Y / 16, 1.8f, 0.4f, 1.2f);
+                }
+            }
+            if (item.type == 1860)
+            {
+                if (!player.wet)
+                {
+                    Lighting.AddLight((int)player.Center.X / 16, (int)player.Center.Y / 16, 0.225f, 0.05f, 0.15f);
+                }
+                if (player.wet)
+                {
+                    Lighting.AddLight((int)player.Center.X / 16, (int)player.Center.Y / 16, 1.8f, 0.4f, 1.2f);
+                }
+            }
+            if (item.type == 1861)
+            {
+                if (!player.wet)
+                {
+                    Lighting.AddLight((int)player.Center.X / 16, (int)player.Center.Y / 16, 0.05f, 0.15f, 0.225f);
+                }
+                if (player.wet)
+                {
+                    Lighting.AddLight((int)player.Center.X / 16, (int)player.Center.Y / 16, 0.4f, 1.2f, 1.8f);
+                }
             }
             if (player.bee)
             {
