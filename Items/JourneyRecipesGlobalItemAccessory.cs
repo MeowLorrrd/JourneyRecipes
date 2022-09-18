@@ -20,6 +20,20 @@ namespace JourneyRecipes.Items
             {
                 item.defense = 8;
             }
+            if (item.type== 3245)
+            {
+                item.accessory = true;
+                item.damage = 0;
+                item.knockBack = 0;
+                item.crit = 0;
+                item.useTime = 0;
+                item.useAnimation = 0;
+                item.useStyle = 0;
+            }
+            if (item.type == 154)
+            {
+                item.notAmmo = true;
+            }
         }
         public override void UpdateAccessory(Item item, Player player, bool hideVisual)
         {
@@ -86,6 +100,10 @@ namespace JourneyRecipes.Items
                 {
                     Lighting.AddLight((int)player.Center.X / 16, (int)player.Center.Y / 16, 0.4f, 1.2f, 1.8f);
                 }
+            }
+            if (item.type == 3245)
+            {
+                player.GetModPlayer<JourneyRecipesPlayer>().BoneGloveItem = item;
             }
             if (player.bee)
             {

@@ -26,55 +26,67 @@ namespace JourneyRecipes.Projectiles
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 15;
             }
-            else if (projectile.type == 260)
+            if (projectile.type == 260)
             {
                 projectile.penetrate = 1;
             }
-            else if (projectile.type == 266)
+            if (projectile.type == 266)
             {
                 projectile.netImportant = true;
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 12;
             }
-            else if (projectile.type == 297)
+            if (projectile.type == 297)
             {
                 projectile.penetrate = 3;
             }
-            else if (projectile.type == 390 || projectile.type == 391 || projectile.type == 392)
+            if (projectile.type == 390 || projectile.type == 391 || projectile.type == 392)
             {
                 projectile.minionSlots = 1f;
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 15;
             }
-            else if (projectile.type == 387)
+            if (projectile.type == 387)
             {
                 projectile.netImportant = true;
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 16;
             }
-            else if (projectile.type == 388)
+            if (projectile.type == 388)
             {
                 projectile.netImportant = true;
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 12;
             }
-            else if (projectile.type == 389)
+            if (projectile.type == 389)
             {
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 12;
                 projectile.extraUpdates = 2;
             }
-            else if (projectile.type == 433)
+            if (projectile.type == 433)
             {
                 //TODO: MODIFY DAMAGE
             }
-            else if (projectile.type == 533)
+            if (projectile.type == 532)
+            {
+                projectile.width = 16;
+                projectile.height = 16;
+                projectile.aiStyle = 1;
+                projectile.scale = 1f;
+                projectile.friendly = true;
+                projectile.penetrate = 3;
+                projectile.extraUpdates = 1;
+                projectile.usesLocalNPCImmunity = true;
+                projectile.localNPCHitCooldown = 10;
+            }
+            if (projectile.type == 533)
             {
                 projectile.netImportant = true;
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 8;
             }
-            else if (projectile.type == 697)
+            if (projectile.type == 697)
             {
                 projectile.scale = 1.35f;
                 projectile.damage = 150;
@@ -82,25 +94,25 @@ namespace JourneyRecipes.Projectiles
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 12;
             }
-            /*else if (projectile.type == 699)
+            /* if (projectile.type == 699)
             {
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 20;
                 projectile.ownerHitCheck = true;
             }
-            else if (projectile.type == 700)
+             if (projectile.type == 700)
             {
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = -1;
             }*///TODO: rewrite proj AI
-            else if (projectile.type == 708)
+            if (projectile.type == 708)
             {
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 6;
                 projectile.ownerHitCheck = true;
                 //TODO
             }
-            else if (projectile.type == 709)
+            if (projectile.type == 709)
             {
                 projectile.extraUpdates = 1;
                 projectile.noEnchantments = true;
@@ -183,6 +195,13 @@ namespace JourneyRecipes.Projectiles
                 }
             }
             return base.CanDamage(projectile);
+        }
+        public override void AI(Projectile projectile)
+        {
+            if (projectile.type == 532)
+            {
+                projectile.ai[0] += 1f;
+            }
         }
         public override void Kill(Projectile projectile, int timeLeft)
         {

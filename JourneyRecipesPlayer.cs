@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using System;
 using Terraria;
 using Terraria.ID;
@@ -19,6 +20,8 @@ namespace JourneyRecipes
         public bool StarCloak;
         public bool BeeBeeBee;
         public bool GravityGlobe;
+        public Item BoneGloveItem;
+        public int boneGloveTimer;
         public override void ResetEffects()
         {
             PlayerInvis = false;
@@ -32,6 +35,28 @@ namespace JourneyRecipes
             StarCloak = false;
             BeeBeeBee = false;
             GravityGlobe = false;
+            BoneGloveItem = null;
+        }
+        public override void PostItemCheck()
+        {
+            if (BoneGloveItem != null && !BoneGloveItem.IsAir && boneGloveTimer == 0 && player.itemAnimation > 0 && player.inventory[player.selectedItem].damage > 0)
+            {
+                boneGloveTimer = 60;
+                Vector2 center = player.Center;
+                Vector2 vector = player.DirectionTo(ApplyRangeComposition(0.2f, center, Main.MouseWorld)) * 10f;
+                Projectile.NewProjectile(center.X, center.Y, vector.X, vector.Y, 532, 25, 5f, player.whoAmI);
+            }
+        }
+        public Vector2 ApplyRangeComposition(float rangeCompensation, Vector2 startPos, Vector2 targetPos)
+        {
+            Vector2 v = targetPos - startPos;
+            Vector2 vector = v.SafeNormalize(Vector2.Zero);
+            vector.Y -= 1f;
+            float num = v.Length();
+            num = (float)Math.Pow(num / 700f, 2.0) * 700f;
+            targetPos.Y += vector.Y * num * rangeCompensation * 1f;
+            targetPos.X += (0f - vector.X) * num * rangeCompensation * 1f;
+            return targetPos;
         }
         public void Update_NPCCollision()
         {
@@ -222,6 +247,10 @@ namespace JourneyRecipes
         {
             Update_NPCCollision();
             player.rulerLine = true;
+            if (boneGloveTimer > 0)
+            {
+                boneGloveTimer--;
+            }
         }
         public override bool PreItemCheck()
         {
