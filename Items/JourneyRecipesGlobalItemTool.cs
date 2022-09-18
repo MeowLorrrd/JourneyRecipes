@@ -27,13 +27,17 @@ namespace JourneyRecipes.Items
                 item.useAnimation = 22;
                 item.useTurn = true;
             }
-            else if (item.type == 2798)
+            if (item.type == 2798)
             {
                 item.axe = 0;
                 item.useAnimation = 25;
                 item.useTime = 6;
                 item.shootSpeed = 36f;
                 item.tileBoost = 11;
+            }
+            if (item.type == 3611)
+            {
+                item.value = Item.sellPrice(gold: 4);
             }
         }
     }
