@@ -101,6 +101,9 @@ namespace JourneyRecipes.Items
         }
         public override void UpdateEquip(Item item, Player p)
         {
+            if (p.accDivingHelm)
+            {
+            }
             if (item.type == 123 || item.type == 124 || item.type == 125)
             {
                 p.magicDamage += .02f;
