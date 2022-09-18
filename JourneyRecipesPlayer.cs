@@ -221,6 +221,7 @@ namespace JourneyRecipes
         public override void PostUpdateMiscEffects()
         {
             Update_NPCCollision();
+            player.rulerLine = true;
         }
         public override bool PreItemCheck()
         {
