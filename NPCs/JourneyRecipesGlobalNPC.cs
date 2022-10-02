@@ -15,6 +15,10 @@ namespace JourneyRecipes.NPCs
                 {
                     npc.rarity = 1;
                 }
+                else if (npc.type == 50)
+                {
+                    npc.npcSlots = 5f;
+                }
                 else if (npc.type == 85)
                 {
                     npc.rarity = 4;
@@ -47,7 +51,7 @@ namespace JourneyRecipes.NPCs
                 {
                     npc.lifeMax = 400;
                     npc.damage = 100;
-                    npc.defense = 40;
+                    npc.defense = 28;
                 }
                 else if (npc.type == 241)
                 {
@@ -59,6 +63,11 @@ namespace JourneyRecipes.NPCs
                 else if (npc.type == 243 || npc.type == 251)
                 {
                     npc.rarity = 2;
+                }
+                else if (npc.type == 266)
+                {
+                    npc.lifeMax = 1250;
+                    npc.knockBackResist = 0.45f;
                 }
                 else if (npc.type == 370)
                 {
@@ -114,6 +123,7 @@ namespace JourneyRecipes.NPCs
         {
             if (GetInstance<JourneyRecipesServerConfig>().AllowNPCStat)
             {
+                
                 if (npc.type == 392 || npc.type == 393 || npc.type == 394 || npc.type == 395)
                 {
                     NPCLoader.blockLoot.Add(2800);
