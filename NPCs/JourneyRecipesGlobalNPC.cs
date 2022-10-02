@@ -137,7 +137,14 @@ namespace JourneyRecipes.NPCs
         {
             if (GetInstance<JourneyRecipesServerConfig>().AllowNPCStat)
             {
-                if (npc.type == 289)
+                if (npc.type == -18 || npc.type == -19 || npc.type == -20 || npc.type == -21 || npc.type == 176)
+                {
+                    if (Main.rand.NextBool(6))
+                    {
+                        Item.NewItem(npc.Hitbox, 209);
+                    }
+                }
+                else if (npc.type == 289)
                 {
                     if (!Main.expertMode)
                     {
