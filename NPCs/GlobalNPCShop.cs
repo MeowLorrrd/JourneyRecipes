@@ -44,6 +44,39 @@ namespace JourneyRecipes.NPCs
                 shop.item[nextSlot].shopCustomPrice = 1500;
                 nextSlot++;
             }
+            if (type == NPCID.SkeletonMerchant)
+            {
+                switch (Main.moonPhase)
+                {
+                    default:
+                        shop.item[nextSlot++].SetDefaults(ItemID.WoodenBoomerang);
+                        break;
+                    case 1:
+                        shop.item[nextSlot++].SetDefaults(ItemID.Umbrella);
+                        break;
+                    case 2:
+                        shop.item[nextSlot++].SetDefaults(ItemID.WandofSparking);
+                        break;
+                    case 3:
+                        //shop.item[nextSlot++].SetDefaults(ItemID.StepStoollmao);
+                        break;
+                    case 4:
+                        shop.item[nextSlot++].SetDefaults(ItemID.Aglet);
+                        break;
+                    case 5:
+                        shop.item[nextSlot++].SetDefaults(ItemID.ClimbingClaws);
+                        break;
+                    case 6:
+                        shop.item[nextSlot++].SetDefaults(3068);
+                        break;
+                    case 7:
+                        shop.item[nextSlot++].SetDefaults(ItemID.Radar);
+                        break;
+                    case 8:
+                        shop.item[nextSlot++].SetDefaults(ItemID.Teleporter);
+                        break;
+                }
+            }
             if (type == NPCID.WitchDoctor)
             {//TODO:
              //Remove old shops for these items
@@ -73,7 +106,7 @@ namespace JourneyRecipes.NPCs
                     if (!Main.LocalPlayer.HasItem(ItemID.PygmyStaff))
                     {
                         if (!Main.dayTime)
-                        shop.item[nextSlot++].SetDefaults(ItemID.PygmyNecklace);
+                            shop.item[nextSlot++].SetDefaults(ItemID.PygmyNecklace);
                     }
                 }
                 if (NPC.downedPlantBoss)
