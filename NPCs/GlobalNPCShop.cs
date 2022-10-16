@@ -32,6 +32,11 @@ namespace JourneyRecipes.NPCs
                 shop.item[nextSlot].SetDefaults(ItemID.Timer5Second);
                 shop.item[nextSlot].shopCustomPrice = 10000;
                 nextSlot++;
+                shop.item[nextSlot++].SetDefaults(ItemID.Teleporter);
+            }
+            if (type == NPCID.Steampunker)//TODO: remove Teleporter from shop
+            {
+                //shop.item[nextSlot--].SetDefaults(ItemID.Teleporter);
             }
             if (type == NPCID.Wizard)
             {
