@@ -27,6 +27,10 @@ namespace JourneyRecipes.NPCs
                     shop.item[nextSlot++].SetDefaults(ItemID.Furnace);
                 }
             }
+            if (type == NPCID.ArmsDealer)
+            {
+                shop.item[nextSlot++].SetDefaults(ItemID.AmmoBox);
+            }
             if (type == NPCID.Mechanic)
             {
                 shop.item[nextSlot].SetDefaults(ItemID.Timer1Second);
