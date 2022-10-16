@@ -13,6 +13,7 @@ namespace JourneyRecipes.Items
         public bool Config = GetInstance<JourneyRecipesServerConfig>().allowWeaponStat;
         public override bool InstancePerEntity => true;
         public override bool CloneNewInstances => true;
+        public bool shootEveryUse;
         public override void SetDefaults(Item item)
         {
             if (Config)
@@ -689,11 +690,38 @@ namespace JourneyRecipes.Items
                 {
 
                 }
-                //if (item.type == )
+                if (item.type == ChainGuillotines)
                 {
 
                 }
+                if (item.type == Bananarang)
+                {
 
+                }
+                if (item.type == Gungnir)
+                {
+
+                }
+                if (item.type == LightDisc)
+                {
+
+                }
+                if (item.type == DeathSickle)
+                {
+                    
+                }
+                if (item.type == PaladinsHammer)
+                {
+
+                }
+                if (item.type == StarWrath)
+                {
+
+                }
+                if (item.type == Meowmere)
+                {
+
+                }
 
             }
         }
