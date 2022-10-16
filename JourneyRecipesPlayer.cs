@@ -1,5 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using JourneyRecipes.Items;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Mono.Cecil.Cil;
 using System;
 using Terraria;
 using Terraria.ID;
@@ -22,6 +24,7 @@ namespace JourneyRecipes
         public bool GravityGlobe;
         public Item BoneGloveItem;
         public int boneGloveTimer;
+        public bool ItemAnimationJustStarted => player.itemAnimation == player.itemAnimationMax - 1;
         public override void ResetEffects()
         {
             PlayerInvis = false;
@@ -346,6 +349,31 @@ namespace JourneyRecipes
                 }
             }
             base.Hurt(pvp, quiet, damage, hitDirection, crit);
+        }
+        private void ItemCheck_OwnerOnlyCode(ref ItemCheckContext context, Item sItem, int weaponDamage, Rectangle heldItemFrame)
+        {
+            bool flag = true;
+            int type = sItem.type;
+            if ((type == 65 || type == 676 || type == 723 || type == 724 || type == 757 || type == 674 || type == 675 || type == 989 || type == 1226 || type == 1227) && !ItemAnimationJustStarted)
+            {
+                flag = false;
+            }
+            if (type == 3852)
+            {
+                if (player.itemAnimation < player.itemAnimationMax - 12)
+                {
+                    flag = false;
+                }
+                if (player.altFunctionUse == 2 && !ItemAnimationJustStarted)
+                {
+                    flag = false;
+                }
+                //TODO: fix this i litteralrlldly do not want to do this hnnggg
+            }
+        }
+        public struct ItemCheckContext
+        {
+            public bool SkipItemConsumption;
         }
     }
 }
