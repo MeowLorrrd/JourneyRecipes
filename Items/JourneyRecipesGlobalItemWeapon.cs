@@ -4,6 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 using static Terraria.ModLoader.ModContent;
+using static Terraria.ID.ItemID;
 
 namespace JourneyRecipes.Items
 {
@@ -516,6 +517,184 @@ namespace JourneyRecipes.Items
                 {
                     item.damage = 100;
                 }
+                if (item.type == CopperBroadsword)
+                {
+
+                }
+                if (item.type == TinBroadsword)
+                {
+
+                }
+                if (item.type == IronBroadsword)
+                {
+
+                }
+                if (item.type == LeadBroadsword)
+                {
+
+                }
+                if (item.type == SilverBroadsword)
+                {
+
+                }
+                if (item.type == TungstenBroadsword)
+                {
+
+                }
+                if (item.type == GoldBroadsword)
+                {
+
+                }
+                if (item.type == PlatinumBroadsword)
+                {
+
+                }
+                if (item.type == CactusSword)
+                {
+
+                }
+                if (item.type == WoodenSword)
+                {
+
+                }
+                if (item.type == PalmWoodSword || item.type == RichMahoganySword)
+                {
+
+                }
+                if (item.type == EbonwoodSword || item.type == ShadewoodSword)
+                {
+
+                }
+                if (item.type == WoodenBoomerang)
+                {
+
+                }
+                if (item.type == EnchantedBoomerang)
+                {
+
+                }
+                if (item.type == ZombieArm)
+                {
+
+                }
+                if (item.type == BoneSword)
+                {
+
+                }
+                if (item.type == IceBoomerang)
+                {
+
+                }
+                if (item.type == PurpleClubberfish)
+                {
+
+                }
+                if (item.type == FalconBlade)
+                {
+
+                }
+                if (item.type == AntlionClaw)
+                {
+
+                }
+                if (item.type == Katana)
+                {
+
+                }
+                if (item.type == CandyCaneSword)
+                {
+
+                }
+                if (item.type == FruitcakeChakram)
+                {
+
+                }
+                if (item.type == BladedGlove)
+                {
+
+                }
+                if (item.type == BloodyMachete)
+                {
+
+                }
+                if (item.type == BeeKeeper)
+                {
+
+                }
+                if (item.type == Valor)
+                {
+
+                }
+                if (item.type == Flamarang)
+                {
+
+                }
+                if (item.type == CobaltSword)
+                {
+
+                }
+                if (item.type == PalladiumSword)
+                {
+
+                }
+                if (item.type == MythrilSword)
+                {
+
+                }
+                if (item.type == OrichalcumSword)
+                {
+
+                }
+                if (item.type == AdamantiteSword)
+                {
+
+                }
+                if (item.type == TitaniumSword)
+                {
+
+                }
+                if (item.type == PearlwoodSword)
+                {
+
+                }
+                if (item.type == CobaltNaginata)
+                {
+
+                }
+                if (item.type == PalladiumPike)
+                {
+
+                }
+                if (item.type == MythrilHalberd)
+                {
+
+                }
+                if (item.type == OrichalcumHalberd)
+                {
+
+                }
+                if (item.type == AdamantiteGlaive)
+                {
+
+                }
+                if (item.type == TitaniumTrident)
+                {
+
+                }
+                if (item.type == Cutlass)
+                {
+
+                }
+                if (item.type == SlapHand)
+                {
+
+                }
+                //if (item.type == )
+                {
+
+                }
+
+
             }
         }
         public override void OnHitNPC(Item item, Player player, NPC target, int damage, float knockBack, bool crit)
