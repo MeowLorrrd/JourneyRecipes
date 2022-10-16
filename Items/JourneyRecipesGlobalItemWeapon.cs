@@ -786,12 +786,12 @@ namespace JourneyRecipes.Items
         }
         public override void UseItemHitbox(Item item, Player player, ref Rectangle hitbox, ref bool noHitbox)
         {
-            base.UseItemHitbox(item, player, ref hitbox, ref noHitbox);
             if (Config)
             {
                 if (item.type == 946)
                     hitbox = new Rectangle(hitbox.X, (int)player.MountedCenter.Y - 20, hitbox.Width, hitbox.Height + 10);
             }
+            base.UseItemHitbox(item, player, ref hitbox, ref noHitbox);
         }
     }
 }
