@@ -71,7 +71,7 @@ Check the config to disable features you don't like!
 1.4.20 - Mechanic sells Teleporter and Pixel Box
 Skeleton Merchant sells Wooden Chest items, depending on Moon Phase
 Merchant sells Furnace (in Jungle) and Mana and Healing potions (in Hardmode)
-
+Arms Dealer sells Ammo Box
 
 1.4.19 - Leaf Wings sell for 75 gold, rather than 1 platinum
 All config settings are client-sided
