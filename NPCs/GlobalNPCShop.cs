@@ -19,6 +19,12 @@ namespace JourneyRecipes.NPCs
                     shop.item[nextSlot].SetDefaults(ItemID.SharpeningStation);
                     shop.item[nextSlot].shopCustomPrice = 100000;
                     nextSlot++;
+                    shop.item[nextSlot++].SetDefaults(ItemID.HealingPotion);
+                    shop.item[nextSlot++].SetDefaults(ItemID.ManaPotion);
+                }
+                if (Main.player[Main.myPlayer].ZoneJungle)
+                {
+                    shop.item[nextSlot++].SetDefaults(ItemID.Furnace);
                 }
             }
             if (type == NPCID.Mechanic)
@@ -33,6 +39,7 @@ namespace JourneyRecipes.NPCs
                 shop.item[nextSlot].shopCustomPrice = 10000;
                 nextSlot++;
                 shop.item[nextSlot++].SetDefaults(ItemID.Teleporter);
+                shop.item[nextSlot++].SetDefaults(ItemID.PixelBox);
             }
             if (type == NPCID.Steampunker)//TODO: remove Teleporter from shop
             {
