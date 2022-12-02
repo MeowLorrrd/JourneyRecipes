@@ -722,6 +722,106 @@ namespace JourneyRecipes.Items
                 {
 
                 }
+                if (item.type == FlintlockPistol)
+                {
+
+                }
+                if (item.type == Musket)
+                {
+
+                }
+                if (item.type == TheUndertaker)
+                {
+
+                }
+                if (item.type == SpikyBall)
+                {
+
+                }
+                if (item.type == StarCannon)
+                {
+
+                }
+                if (item.type == BeesKnees)
+                {
+
+                }
+                if (item.type == Handgun)
+                {
+
+                }
+                if (item.type == PhoenixBlaster)
+                {
+
+                }
+                if (item.type == CobaltRepeater)
+                {
+
+                }
+                if (item.type == PalladiumRepeater)
+                {
+
+                }
+                if (item.type == MythrilRepeater)
+                {
+
+                }
+                if (item.type == OrichalcumRepeater)
+                {
+
+                }
+                if (item.type == AdamantiteRepeater)
+                {
+
+                }
+                if (item.type == TitaniumRepeater)
+                {
+
+                }
+                if (item.type == Marrow)
+                {
+
+                }
+                if (item.type == IceBow)
+                {
+
+                }
+                if (item.type == HallowedRepeater)
+                {
+
+                }
+                if (item.type == VenusMagnum)
+                {
+
+                }
+                if (item.type == RocketLauncher)
+                {
+
+                }
+                if (item.type == CursedDart)
+                {
+
+                }
+                if (item.type == IchorDart)
+                {
+
+                }
+                if (item.type == FrostburnArrow)
+                {
+
+                }
+                if (item.type == )
+                {
+
+                }
+                if (item.type == )
+                {
+
+                }
+                if (item.type == )
+                {
+
+                }
 
             }
         }
