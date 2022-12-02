@@ -119,6 +119,28 @@ namespace JourneyRecipes.Items
                 case 1349:
                     item.value = Item.sellPrice(copper: 2);//party bullet
                     break;
+                case 2356:
+                    item.value = Item.sellPrice(silver: 54);//Imp Staff
+                    break;
+                case 2431:
+                case 1130:
+                    item.value = Item.sellPrice(silver: 5);//Bee Wax
+                    break;
+                case 2364:
+                    item.value = Item.sellPrice(silver: 70);
+                    break;
+                case 2361:
+                    item.value = Item.sellPrice(silver: 40);
+                    break;
+                case 2362:
+                    item.value = Item.sellPrice(silver: 60);
+                    break;
+                case 2363:
+                    item.value = Item.sellPrice(silver: 50);//Bee armor
+                    break;
+                case 2194:
+                    item.value = Item.sellPrice(silver: 54);
+                    break;
             }
         }
     }
