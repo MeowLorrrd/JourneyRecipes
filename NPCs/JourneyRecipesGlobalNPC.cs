@@ -97,6 +97,11 @@ namespace JourneyRecipes.NPCs
                 {
                     npc.value = 195f;
                 }
+                else if (npc.type == 422 || npc.type == 493 || npc.type == 507 || npc.type == 517)
+                {
+                    NPC.LunarShieldPowerNormal = (NPC.downedMoonlord ? 50 : 100);
+                    NPC.LunarShieldPowerExpert = (NPC.downedMoonlord ? 50 : 100);
+                }
             }
         }
         public override void OnHitPlayer(NPC npc, Player target, int damage, bool crit)
