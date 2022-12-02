@@ -14,6 +14,11 @@ namespace JourneyRecipes.Projectiles
 
         public override void SetDefaults(Projectile projectile)
         {
+            if (projectile.type == 23)
+            {
+                projectile.usesLocalNPCImmunity = true;
+                projectile.localNPCHitCooldown = 12;
+            }
             if (projectile.type == 36)
             {
                 projectile.usesLocalNPCImmunity = true;
@@ -68,6 +73,19 @@ namespace JourneyRecipes.Projectiles
             {
                 //TODO: MODIFY DAMAGE
             }
+            if (projectile.type == 502)
+            {
+                projectile.usesLocalNPCImmunity = true;
+                projectile.localNPCHitCooldown = 10;
+                projectile.damage = 250;
+            }
+            if (projectile.type == 503)
+            {
+                projectile.extraUpdates = 1;
+                projectile.usesLocalNPCImmunity = true;
+                projectile.localNPCHitCooldown = 30;
+                projectile.damage = 170;
+            }
             if (projectile.type == 532)
             {
                 projectile.width = 16;
@@ -85,6 +103,16 @@ namespace JourneyRecipes.Projectiles
                 projectile.netImportant = true;
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 8;
+            }
+            if (projectile.type == 603)
+            {
+                projectile.usesIDStaticNPCImmunity = true;
+                projectile.idStaticNPCHitCooldown = 10;
+            }
+            if (projectile.type == 604)
+            {
+                projectile.usesIDStaticNPCImmunity = true;
+                projectile.idStaticNPCHitCooldown = 10;
             }
             if (projectile.type == 697)
             {
@@ -262,7 +290,7 @@ namespace JourneyRecipes.Projectiles
                         int num4 = projectile.damage;
                         if (projectile.type == 91)
                         {
-                            num4 /= 2;
+                            num4 /= 3;
                         }
                         int num5 = Projectile.NewProjectile(vector, new Vector2(num, num1), 92, num4, projectile.knockBack, projectile.owner);
                         if (projectile.type == 91)

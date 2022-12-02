@@ -810,18 +810,7 @@ namespace JourneyRecipes.Items
                 {
 
                 }
-                if (item.type == )
-                {
-
-                }
-                if (item.type == )
-                {
-
-                }
-                if (item.type == )
-                {
-
-                }
+                
 
             }
         }
