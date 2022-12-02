@@ -73,6 +73,7 @@ Skeleton Merchant sells Wooden Chest items, depending on Moon Phase
 Merchant sells Furnace (in Jungle) and Mana and Healing potions (in Hardmode)
 Arms Dealer sells Ammo Box
 Bee Wax (and its recipes), Glass Kiln have sell value adjusted to 1.4.4
+Pillars don't have increased shield power in Expert+ and only 50 are required to lower shield Post-Moon Lord
 
 1.4.19 - Leaf Wings sell for 75 gold, rather than 1 platinum
 All config settings are client-sided
