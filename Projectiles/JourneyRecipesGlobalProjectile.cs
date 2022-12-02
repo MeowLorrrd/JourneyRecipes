@@ -191,7 +191,7 @@ namespace JourneyRecipes.Projectiles
             {
                 if (!projectile.ranged)
                 {
-                    projectile.damage = Main.expertMode ? 150 : 75;
+                    //projectile.damage = Main.expertMode ? 150 : 75;
                 }
             }
             return base.CanDamage(projectile);
