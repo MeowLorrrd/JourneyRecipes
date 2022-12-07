@@ -10,7 +10,7 @@ namespace JourneyRecipes.Items
 {
     public class JourneyRecipesGlobalItemWeapon : GlobalItem
     {
-        public bool Config = GetInstance<JourneyRecipesServerConfig>().allowWeaponStat;
+        private bool Config = GetInstance<JourneyRecipesServerConfig>().allowWeaponStat;
         public override bool InstancePerEntity => true;
         public override bool CloneNewInstances => true;
         public bool shootEveryUse;
@@ -708,7 +708,7 @@ namespace JourneyRecipes.Items
                 }
                 if (item.type == DeathSickle)
                 {
-                    
+
                 }
                 if (item.type == PaladinsHammer)
                 {
@@ -810,8 +810,110 @@ namespace JourneyRecipes.Items
                 {
 
                 }
-                
+                if (item.type == AmethystStaff)
+                {
 
+                }
+                if (item.type == TopazStaff)
+                {
+
+                }
+                if (item.type == SapphireStaff)
+                {
+
+                }
+                if (item.type == CrimsonRod)
+                {
+
+                }
+                if (item.type == BeeGun)
+                {
+
+                }
+                if (item.type == AquaScepter)
+                {
+
+                }
+                if (item.type == MagicDagger)
+                {
+
+                }
+                if (item.type == CursedFlames)
+                {
+
+                }
+                if (item.type == FlowerofFrost)
+                {
+
+                }
+                if (item.type == GoldenShower)
+                {
+
+                }
+                if (item.type == MeteorStaff)
+                {
+
+                }
+                if (item.type == FrostStaff)
+                {
+
+                }
+                if (item.type == ShadowFlameHexDoll)
+                {
+
+                }
+                if (item.type == NimbusRod)
+                {
+
+                }
+                if (item.type == MagicalHarp)
+                {
+
+                }
+                if (item.type == 3852)
+                {
+
+                }
+                if (item.type == WaspGun)
+                {
+
+                }
+                if (item.type == LeafBlower)
+                {
+
+                }
+                if (item.type == InfernoFork)
+                {
+
+                }
+                if (item.type == ShadowbeamStaff)
+                {
+
+                }
+                if (item.type == HeatRay)
+                {
+
+                }
+                if (item.type == BubbleGun)
+                {
+
+                }
+                if (item.type == RazorbladeTyphoon)
+                {
+
+                }
+                if (item.type == NebulaBlaze)
+                {
+
+                }
+                if (item.type == LunarFlareBook)
+                {
+
+                }
+                if (item.type == LastPrism)
+                {
+
+                }
             }
         }
         public override void OnHitNPC(Item item, Player player, NPC target, int damage, float knockBack, bool crit)
