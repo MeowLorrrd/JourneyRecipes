@@ -5,6 +5,7 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Audio;
 using Terraria.ID;
+using Microsoft.Xna.Framework.Graphics.PackedVector;
 
 namespace JourneyRecipes.Projectiles
 {
@@ -231,10 +232,82 @@ namespace JourneyRecipes.Projectiles
                 projectile.ai[0] += 1f;
             }
         }
-        public override void Kill(Projectile projectile, int timeLeft)
+        public override bool PreAI(Projectile projectile)
         {
-
+            if (projectile.aiStyle == 57 || projectile.type == 344)
+            {
+                NorthPoleSpearProj(projectile);
+                return false;
+            }
+            return base.PreAI(projectile);
         }
+
+        public void NorthPoleSpearProj(Projectile proj)
+        {            
+            if (proj.aiStyle == 57)
+            {
+                proj.ai[0] += 1f;
+                if (proj.ai[0] > 30f)
+                {
+                    proj.ai[0] = 30f;
+                    proj.velocity.Y += 0.25f;
+                    if (proj.velocity.Y > 16f)
+                    {
+                        proj.velocity.Y = 16f;
+                    }
+                    proj.velocity.X *= 0.995f;
+                }
+                proj.rotation = (float)Math.Atan2(proj.velocity.Y, proj.velocity.X) + 1.57f;
+                proj.alpha -= 50;
+                if (proj.alpha < 0)
+                {
+                    proj.alpha = 0;
+                }
+                if (proj.owner == Main.myPlayer)
+                {
+                    if (proj.localAI[1] == 0f)
+                    {
+                        proj.localAI[1] = Main.rand.Next(7);
+                    }
+                    proj.localAI[0]++;
+                    int num499 = 8;
+                    if (proj.localAI[1] > 0f)
+                    {
+                        num499 += (int)proj.localAI[1];
+                    }
+                    if (proj.localAI[0] >= (float)num499)
+                    {
+                        proj.localAI[0] = 0f;
+                        proj.localAI[1] = -1f;
+                        Projectile.NewProjectile(proj.Center.X, proj.Center.Y, 0f, 0f, 344, (int)((float)proj.damage * 0.7f), proj.knockBack * 0.55f, proj.owner, 0f, Main.rand.Next(3));
+                    }
+                }
+            }
+            if (proj.type == 344)
+            {
+                if (WorldGen.SolidTile((int)proj.position.X / 16, (int)(proj.position.Y + proj.velocity.Y) / 16 + 1) || WorldGen.SolidTile((int)(proj.position.X + (float)proj.width) / 16, (int)(proj.position.Y + proj.velocity.Y) / 16 + 1))
+                {
+                    proj.Kill();
+                    return;
+                }
+                proj.localAI[1] += 1f;
+                if (proj.localAI[1] > 5f)
+                {
+                    proj.alpha -= 50;
+                    if (proj.alpha < 0)
+                    {
+                        proj.alpha = 0;
+                    }
+                }
+                proj.frame = (int)proj.ai[1];
+                if (proj.localAI[1] > 20f)
+                {
+                    proj.localAI[1] = 20f;
+                    proj.velocity.Y += 0.15f;
+                }
+            }
+        }
+
         public override bool PreKill(Projectile projectile, int timeLeft)
         {
             if (projectile.type == 91 || projectile.type == 92)
@@ -329,22 +402,18 @@ namespace JourneyRecipes.Projectiles
             }
             if (projectile.owner == Main.myPlayer)
             {
-                int num = 2;
-                if (Main.rand.NextBool(3))
+                int num746 = Main.rand.Next(2, 5);
+                if (Main.rand.Next(1, 101) == 100)
                 {
-                    num++;
+                    num746 = 15;
                 }
-                if (Main.rand.NextBool(3))
+                for (int num747 = 0; num747 < num746; num747++)
                 {
-                    num++;
-                }
-                for (int i = 0; i < num; i++)
-                {
-                    float float1 = (float)Main.rand.Next(-35, 36) * 0.02f;
-                    float float2 = (float)Main.rand.Next(-35, 36) * 0.02f;
-                    float1 *= 10f;
-                    float2 *= 10f;
-                    Projectile.NewProjectile(projectile.position, new Vector2(float1, float2), 307, (int)((double)projectile.damage * 0.75), (int)((double)projectile.knockBack * 0.35), Main.myPlayer);
+                    float num748 = (float)Main.rand.Next(-35, 36) * 0.02f;
+                    float num749 = (float)Main.rand.Next(-35, 36) * 0.02f;
+                    num748 *= 10f;
+                    num749 *= 10f;
+                    Projectile.NewProjectile(projectile.position, new Vector2(num748, num749), 307, (int)((double)projectile.damage * 0.75), (int)((double)projectile.knockBack * 0.35), Main.myPlayer);
                 }
             }
         }
