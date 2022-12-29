@@ -823,6 +823,7 @@ namespace JourneyRecipes.Items
                 if (item.type == NorthPole)
                 {
                     item.useTime = item.useAnimation = 30;
+                    item.damage = 80;
                     //PROJECTILE CHANGES
                 }
                 if (item.type == InfluxWaver)

@@ -3,9 +3,7 @@ using System;
 using Terraria;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
-using Terraria.Audio;
 using Terraria.ID;
-using Microsoft.Xna.Framework.Graphics.PackedVector;
 
 namespace JourneyRecipes.Projectiles
 {
@@ -241,9 +239,8 @@ namespace JourneyRecipes.Projectiles
             }
             return base.PreAI(projectile);
         }
-
         public void NorthPoleSpearProj(Projectile proj)
-        {            
+        {
             if (proj.aiStyle == 57)
             {
                 proj.ai[0] += 1f;
@@ -308,6 +305,16 @@ namespace JourneyRecipes.Projectiles
             }
         }
 
+
+        public override Color? GetAlpha(Projectile projectile, Color lightColor)
+        {
+            if (projectile.type == 343 || projectile.type == 344)
+            {
+                float num5 = 1f - (float)projectile.alpha / 255f;
+                return new Color((int)(250f * num5), (int)(250f * num5), (int)(250f * num5), (int)(100f * num5));
+            }
+            return base.GetAlpha(projectile, lightColor);
+        }
         public override bool PreKill(Projectile projectile, int timeLeft)
         {
             if (projectile.type == 91 || projectile.type == 92)
