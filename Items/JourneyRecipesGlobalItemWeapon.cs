@@ -623,7 +623,6 @@ namespace JourneyRecipes.Items
                 {
                     item.damage = 21;
                     item.useTime = item.useAnimation = 20;
-                    //PROJECTILE CHANGES
                 }
                 if (item.type == PurpleClubberfish)
                 {
@@ -682,7 +681,6 @@ namespace JourneyRecipes.Items
                 {
                     item.damage = 49;
                     item.useTime = item.useAnimation = 20;
-                    //PROJECTILE CHANGES
                 }
                 if (item.type == BreakerBlade)
                 {
@@ -768,7 +766,6 @@ namespace JourneyRecipes.Items
                 {
                     item.damage = 50;
                     item.shootSpeed = 12f;
-                    //PROJECTILE CHANGES
                 }
                 if (item.type == SlapHand)
                 {
@@ -846,7 +843,6 @@ namespace JourneyRecipes.Items
                 if (item.type == Meowmere)
                 {
                     item.useTime = item.useAnimation = 14;
-                    //PROJECTILE CHANGES
                 }
                 if (item.type == FlintlockPistol)
                 {
@@ -1133,6 +1129,14 @@ namespace JourneyRecipes.Items
                 vel.Normalize();
                 vel *= item.shootSpeed + 6;
                 Projectile.NewProjectile(player.MountedCenter, vel, item.shoot, (int)(float)(item.damage * 0.5f), item.knockBack, player.whoAmI);
+                return false;
+            }
+            else if (item.type == Meowmere)
+            {
+                Vector2 vel = (player.MountedCenter - Main.MouseWorld) * -1;
+                vel.Normalize();
+                vel *= item.shootSpeed;
+                Projectile.NewProjectile(player.MountedCenter, vel, item.shoot, (int)((float)item.damage * 1.25f), item.knockBack, player.whoAmI);
                 return false;
             }
             return base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);

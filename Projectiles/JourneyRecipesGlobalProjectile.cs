@@ -83,7 +83,6 @@ namespace JourneyRecipes.Projectiles
             {
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 10;
-                projectile.damage = 250;
             }
             if (projectile.type == 503)
             {
@@ -159,6 +158,19 @@ namespace JourneyRecipes.Projectiles
                 projectile.noEnchantments = true;
                 projectile.scale = 0.6f;
                 //TODO
+            }
+        }
+        public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
+        {
+            if (projectile.type == 19)
+            {
+                if (Main.rand.NextBool(2))
+                    target.AddBuff(24, 180);
+            }
+            else if (projectile.type == 113)
+            {
+                if (Main.rand.NextBool(2))
+                    target.AddBuff(44, 180);
             }
         }
         public override bool CanDamage(Projectile projectile)
