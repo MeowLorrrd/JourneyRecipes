@@ -5,7 +5,6 @@ using Terraria.ModLoader;
 using Terraria.Utilities;
 using static Terraria.ModLoader.ModContent;
 using static Terraria.ID.ItemID;
-using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace JourneyRecipes.Items
 {
@@ -844,195 +843,258 @@ namespace JourneyRecipes.Items
                 }
                 if (item.type == FlintlockPistol)
                 {
-
+                    item.damage = 13;
+                    item.knockBack = 1f;
                 }
                 if (item.type == Musket)
                 {
-
+                    item.useTime = item.useAnimation = 32;
+                    item.autoReuse = false;
                 }
                 if (item.type == TheUndertaker)
                 {
-
+                    item.damage = 22;
+                    item.useTime = item.useAnimation = 20;
+                    item.knockBack = 2f;
                 }
                 if (item.type == SpikyBall)
                 {
-
+                    item.damage = 16;
                 }
                 if (item.type == StarCannon)
                 {
-
+                    item.knockBack = 3f;
                 }
                 if (item.type == BeesKnees)
                 {
-
+                    item.useTime = item.useAnimation = 23;
                 }
                 if (item.type == Handgun)
                 {
-
+                    item.damage = 26;
+                    item.useTime = item.useAnimation = 15;
                 }
                 if (item.type == PhoenixBlaster)
                 {
-
+                    item.damage = 33;
+                    item.useTime = item.useAnimation = 17;
                 }
                 if (item.type == CobaltRepeater)
                 {
-
+                    item.damage = 35;
+                    item.useTime = item.useAnimation = 23;
                 }
                 if (item.type == PalladiumRepeater)
                 {
-
+                    item.damage = 37;
+                    item.useTime = item.useAnimation = 22;
                 }
                 if (item.type == MythrilRepeater)
                 {
-
+                    item.damage = 39;
+                    item.useTime = item.useAnimation = 20;
                 }
                 if (item.type == OrichalcumRepeater)
                 {
-
+                    item.damage = 40;
+                    item.useTime = item.useAnimation = 19;
                 }
                 if (item.type == AdamantiteRepeater)
                 {
-
+                    item.damage = 42;
+                    item.useTime = item.useAnimation = 18;
                 }
                 if (item.type == TitaniumRepeater)
                 {
-
+                    item.damage = 43;
+                    item.useTime = item.useAnimation = 17;
                 }
                 if (item.type == Marrow)
                 {
-
+                    item.damage = 53;
+                    item.autoReuse = true;
                 }
                 if (item.type == IceBow)
                 {
-
+                    item.useTime = item.useAnimation = 14;
                 }
                 if (item.type == HallowedRepeater)
                 {
-
+                    item.damage = 50;
+                    item.useTime = item.useAnimation = 17;
                 }
                 if (item.type == VenusMagnum)
                 {
-
+                    item.useTime = item.useAnimation = 9;
+                    item.autoReuse = true;
                 }
                 if (item.type == RocketLauncher)
                 {
-
+                    item.damage = 55;
                 }
                 if (item.type == CursedDart)
                 {
-
+                    item.damage = 9;
                 }
                 if (item.type == IchorDart)
                 {
-
+                    item.damage = 10;
                 }
                 if (item.type == FrostburnArrow)
                 {
-
+                    item.damage = 7;
                 }
                 if (item.type == AmethystStaff)
                 {
-
+                    item.mana = 5;
+                    item.damage = 15;
+                    item.useTime = item.useAnimation = 37;
                 }
                 if (item.type == TopazStaff)
                 {
-
+                    item.mana = 5;
+                    item.damage = 16;
+                    item.useTime = item.useAnimation = 36;
                 }
                 if (item.type == SapphireStaff)
                 {
-
+                    item.mana = 6;
+                    item.damage = 18;
+                    item.autoReuse = true;
                 }
                 if (item.type == CrimsonRod)
                 {
-
+                    item.mana = 30;
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == BeeGun)
                 {
-
+                    item.knockBack = 0.25f;
+                }
+                if (item.type == MagicMissile)
+                {
+                    //item.damage = 35;
                 }
                 if (item.type == AquaScepter)
                 {
-
+                    item.damage = 27;
+                    item.knockBack = 7f;
+                    item.mana = 7;
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == MagicDagger)
                 {
-
+                    item.damage = 35;
+                    item.autoReuse = true;
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == CursedFlames)
                 {
-
+                    item.damage = 55;
                 }
                 if (item.type == FlowerofFrost)
                 {
-
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == GoldenShower)
                 {
-
+                    item.damage = 30;
                 }
                 if (item.type == MeteorStaff)
                 {
-
+                    item.mana = 9;
                 }
                 if (item.type == FrostStaff)
                 {
-
+                    item.useTime = item.useAnimation = 12;
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == ShadowFlameHexDoll)
                 {
-
+                    item.damage = 32;
+                    //PROJECTILE CHANGES
+                }
+                if (item.type == SpiritFlame)
+                {
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == NimbusRod)
                 {
-
+                    item.damage = 30;
+                    item.mana = 30;
+                    //PROJECTILE CHANGES
+                }
+                if (item.type == ClingerStaff)
+                {
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == MagicalHarp)
                 {
-
+                    item.knockBack = 2f;
                 }
                 if (item.type == 3852)
                 {
-
+                    item.damage = 36;
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == WaspGun)
                 {
-
+                    item.knockBack = 0.25f;
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == LeafBlower)
                 {
-
+                    item.mana = 5;
                 }
                 if (item.type == InfernoFork)
                 {
-
+                    item.damage = 70;
+                    item.knockBack = 5f;
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == ShadowbeamStaff)
                 {
-
+                    item.damage = 80;
+                }
+                if (item.type == SpectreStaff)
+                {
+                    //PROJECTILE CHANGES:
+                    //SPECTRE STAFF
+                    //MAGNET SPHERE
+                    //RAINBOW GUN
+                }
+                if (item.type == ToxicFlask)
+                {
+                    item.damage = 52;
+                    item.useTime = item.useAnimation = 45;
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == HeatRay)
                 {
-
+                    item.damage = 90;
                 }
                 if (item.type == BubbleGun)
                 {
-
+                    item.mana = 5;
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == RazorbladeTyphoon)
                 {
-
+                    item.damage = 85;
+                    item.mana = 20;
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == NebulaBlaze)
                 {
-
+                    item.knockBack = 3f;
                 }
                 if (item.type == LunarFlareBook)
                 {
-
+                    item.mana = 9;
                 }
                 if (item.type == LastPrism)
                 {
-
+                    item.knockBack = 0.25f;
                 }
             }
         }
@@ -1043,13 +1105,6 @@ namespace JourneyRecipes.Items
                 if (item.type == 1264)
                 {
                     target.AddBuff(44, 480);
-                }
-                else if (item.type == 3069)
-                {
-                    if (Main.rand.NextBool(1))
-                    {
-                        target.AddBuff(24, Main.rand.Next(30, 180));
-                    }
                 }
             }
         }
@@ -1121,10 +1176,6 @@ namespace JourneyRecipes.Items
         }
         public override bool Shoot(Item item, Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-            Vector2 pointPoisition = player.RotatedRelativePoint(player.MountedCenter, true);
-            float num2 = (float)Main.mouseX + Main.screenPosition.X - pointPoisition.X;
-            float num3 = (float)Main.mouseY + Main.screenPosition.Y - pointPoisition.Y;
-
             if (item.type == 1306)
             {
                 Vector2 vel = (player.MountedCenter - Main.MouseWorld) * -1;
@@ -1151,7 +1202,7 @@ namespace JourneyRecipes.Items
                 }
                 for (int num42 = 0; num42 < 3; num42++)
                 {
-                    pointPoisition = player.Center + new Vector2(-Main.rand.Next(0, 401) * player.direction, -600f);
+                    Vector2 pointPoisition = player.Center + new Vector2(-Main.rand.Next(0, 401) * player.direction, -600f);
                     pointPoisition.Y -= 100 * num42;
                     Vector2 vector18 = vector17 - pointPoisition;
                     if (vector18.Y < 0f)
@@ -1164,8 +1215,8 @@ namespace JourneyRecipes.Items
                     }
                     vector18.Normalize();
                     vector18 *= item.shootSpeed;
-                    num2 = vector18.X;
-                    num3 = vector18.Y;
+                    float num2 = vector18.X;
+                    float num3 = vector18.Y;
                     float speedX6 = num2;
                     float speedY8 = num3 + (float)Main.rand.Next(-40, 41) * 0.02f;
                     Projectile.NewProjectile(new Vector2(pointPoisition.X, pointPoisition.Y), new Vector2(speedX6, speedY8), item.shoot, (int)((float)item.damage * 1f), item.knockBack, player.whoAmI, 0f, num41);

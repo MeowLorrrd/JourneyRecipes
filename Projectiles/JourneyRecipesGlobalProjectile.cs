@@ -18,6 +18,10 @@ namespace JourneyRecipes.Projectiles
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 12;
             }
+            if (projectile.type == 24)
+            {
+                projectile.penetrate = 7;
+            }
             if (projectile.type == 36)
             {
                 projectile.usesLocalNPCImmunity = true;
@@ -170,6 +174,11 @@ namespace JourneyRecipes.Projectiles
             {
                 if (Main.rand.NextBool(2))
                     target.AddBuff(44, 180);
+            }
+            else if (projectile.type == 954)
+            {
+                if (Main.rand.NextBool(2))
+                    target.AddBuff(24, (Main.rand.Next(1, 5) * 60));
             }
         }
         public override bool CanDamage(Projectile projectile)
