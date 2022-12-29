@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using Terraria.ID;
+using Terraria;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
@@ -35,9 +36,9 @@ namespace JourneyRecipes.Items
                 item.shootSpeed = 36f;
                 item.tileBoost = 11;
             }
-            if (item.type == 3611)
+            if (item.type == ItemID.WireKite)
             {
-                item.value = Item.sellPrice(gold: 4);
+                item.value = Item.sellPrice(0, 4);
             }
         }
     }

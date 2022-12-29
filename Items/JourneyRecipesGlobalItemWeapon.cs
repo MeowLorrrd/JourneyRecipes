@@ -780,9 +780,9 @@ namespace JourneyRecipes.Items
                 }
                 if (item.type == Bananarang)
                 {
-                    item.maxStack = 1;
+                   /* item.maxStack = 1;
                     item.damage = 45;
-                    item.value = Item.sellPrice(0, 12);//in weapon changes bc balancing
+                    item.value = Item.sellPrice(0, 12);//in weapon changes bc balancing*/
                 }
                 if (item.type == BeamSword)
                 {
@@ -1071,17 +1071,14 @@ namespace JourneyRecipes.Items
                 14, 49, 9 , 47, 40,
                 10, 7 , 56, 48, 13,
                 41, 11, 50, 8 , 39 };
-                int[] prefix2 = new int[]
-                {
-                    59, 37, 60, 55, 54, 38, 61, 53, 36, 40, 56, 41, 39
-                };
+                int[] prefix2 = new int[] { 59, 37, 60, 55, 54, 38, 61, 53, 36, 40, 56, 41, 39 };
                 if (item.type == 186 || item.type == 946)
                 {
                     return rand.Next(prefix);
                 }
                 if (item.type == 561)
                 {
-                    return rand.Next(prefix2);
+                    //return rand.Next(prefix2);
                 }
             }
             return base.ChoosePrefix(item, rand);
@@ -1126,14 +1123,6 @@ namespace JourneyRecipes.Items
                 //? doesnt work lol
             }
             return base.CanUseItem(item, player);
-        }
-        public override bool AllowPrefix(Item item, int pre)
-        {
-            if (item.type == LightDisc)
-            {
-                return true;
-            }
-            return base.AllowPrefix(item, pre);
         }
     }
 }
