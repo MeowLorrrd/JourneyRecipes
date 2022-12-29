@@ -70,7 +70,8 @@ namespace JourneyRecipes.Items
                 }
                 else if (item.type == 198 || item.type == 199 || item.type == 200 || item.type == 201 || item.type == 202 || item.type == 203)
                 {
-                    item.damage = 25;
+                    item.damage = 26;
+                    item.useTime = item.useAnimation = 18;
                 }
                 else if (item.type == 234)
                 {
@@ -461,9 +462,9 @@ namespace JourneyRecipes.Items
                 }
                 else if (item.type == 3764 || item.type == 3765 || item.type == 3766 || item.type == 3767 || item.type == 3768 || item.type == 3769)
                 {
-                    item.damage = 42;
-                    item.useTime = 20;
-                    item.useAnimation = item.useTime;
+                    item.damage = 48;
+                    item.useTime = item.useAnimation = 16;
+                    //RECIPE CHANGES
                 }
                 else if (item.type == 3779)
                 {
@@ -520,207 +521,329 @@ namespace JourneyRecipes.Items
                 }
                 if (item.type == CopperBroadsword)
                 {
-
+                    item.damage = 9;
+                    item.useTime = item.useAnimation = 21;
+                    item.scale = 1.1f;
                 }
                 if (item.type == TinBroadsword)
                 {
-
+                    item.damage = 10;
+                    item.useTime = item.useAnimation = 20;
+                    item.scale = 1.1f;
                 }
                 if (item.type == IronBroadsword)
                 {
-
+                    item.damage = 12;
+                    item.useTime = item.useAnimation = 20;
+                    item.scale = 1.15f;
+                    item.knockBack = 5.5f;
                 }
                 if (item.type == LeadBroadsword)
                 {
-
+                    item.damage = 13;
+                    item.useTime = item.useAnimation = 20;
+                    item.scale = 1.15f;
+                    item.knockBack = 5.5f;
                 }
                 if (item.type == SilverBroadsword)
                 {
-
+                    item.damage = 14;
+                    item.useTime = item.useAnimation = 20;
+                    item.scale = 1.2f;
+                    item.knockBack = 6f;
                 }
                 if (item.type == TungstenBroadsword)
                 {
-
+                    item.damage = 14;
+                    item.useTime = item.useAnimation = 19;
+                    item.scale = 1.2f;
+                    item.knockBack = 6f;
                 }
                 if (item.type == GoldBroadsword)
                 {
-
+                    item.damage = 15;
+                    item.useTime = item.useAnimation = 18;
+                    item.scale = 1.25f;
+                    item.knockBack = 6.5f;
                 }
                 if (item.type == PlatinumBroadsword)
                 {
-
+                    item.damage = 16;
+                    item.useTime = item.useAnimation = 17;
+                    item.scale = 1.25f;
+                    item.knockBack = 6.5f;
                 }
                 if (item.type == CactusSword)
                 {
-
+                    item.damage = 10;
+                    item.useTime = item.useAnimation = 30;
                 }
                 if (item.type == WoodenSword)
                 {
-
+                    item.useTime = item.useAnimation = 20;
+                    item.scale = 1;
+                    item.knockBack = 5f;
                 }
                 if (item.type == PalmWoodSword || item.type == RichMahoganySword)
                 {
-
+                    item.useTime = item.useAnimation = 19;
+                    item.knockBack = 6f;
                 }
                 if (item.type == EbonwoodSword || item.type == ShadewoodSword)
                 {
-
+                    item.damage = 11;
+                    item.useTime = item.useAnimation = 19;
+                    item.knockBack = 6f;
                 }
                 if (item.type == WoodenBoomerang)
                 {
-
+                    item.damage = 10;
+                    item.useTime = item.useAnimation = 20;
                 }
                 if (item.type == EnchantedBoomerang)
                 {
-
+                    item.damage = 17;
+                    item.useTime = item.useAnimation = 20;
                 }
                 if (item.type == ZombieArm)
                 {
-
+                    item.damage = 15;
+                    item.useTime = item.useAnimation = 22;
+                    item.scale = 1.2f;
+                    item.knockBack = 5.5f;
                 }
                 if (item.type == BoneSword)
                 {
-
+                    item.damage = 19;
+                    item.scale = 1.2f;
+                    item.knockBack = 5.5f;
                 }
                 if (item.type == IceBoomerang)
                 {
-
+                    item.damage = 21;
+                    item.useTime = item.useAnimation = 20;
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == PurpleClubberfish)
                 {
-
+                    item.damage = 35;
+                    item.knockBack = 8f;
                 }
                 if (item.type == FalconBlade)
                 {
-
+                    item.scale = 1.175f;
                 }
                 if (item.type == AntlionClaw)
                 {
-
+                    item.damage = 16;
+                    item.scale = 1.1f;
                 }
                 if (item.type == Katana)
                 {
-
+                    item.damage = 18;
+                    item.useTime = item.useAnimation = 20;
+                    item.scale = 1.1f;
                 }
                 if (item.type == CandyCaneSword)
                 {
-
+                    item.damage = 19;
                 }
                 if (item.type == FruitcakeChakram)
                 {
-
+                    item.damage = 19;
                 }
                 if (item.type == BladedGlove)
                 {
-
+                    item.damage = 14;
                 }
                 if (item.type == BloodyMachete)
                 {
-
+                    item.damage = 20;
+                }
+                if (item.type == TheRottedFork)
+                {
+                    item.damage = 17;
                 }
                 if (item.type == BeeKeeper)
                 {
-
+                    item.damage = 30;
+                }
+                if (item.type == Muramasa)
+                {
+                    //item.damage = 24;
+                    //Projectile??
                 }
                 if (item.type == Valor)
                 {
-
+                    item.damage = 28;
                 }
                 if (item.type == Flamarang)
                 {
-
+                    item.damage = 49;
+                    item.useTime = item.useAnimation = 20;
+                    //PROJECTILE CHANGES
+                }
+                if (item.type == BreakerBlade)
+                {
+                    item.damage = 70;
+                    item.useTime = item.useAnimation = 35;
+                    item.scale = 1.15f;
+                    //ONHIT CHANGES
                 }
                 if (item.type == CobaltSword)
                 {
-
+                    item.damage = 40;
+                    item.useTime = item.useAnimation = 19;
+                    item.scale = 1.2f;
+                    item.knockBack = 5f;
                 }
                 if (item.type == PalladiumSword)
                 {
-
+                    item.damage = 49;
+                    item.useTime = item.useAnimation = 22;
+                    item.scale = 1.2f;
+                    item.knockBack = 5.5f;
                 }
                 if (item.type == MythrilSword)
                 {
-
+                    item.damage = 50;
+                    item.useTime = item.useAnimation = 20;
+                    item.scale = 1.2f;
                 }
                 if (item.type == OrichalcumSword)
                 {
-
+                    item.damage = 59;
+                    item.useTime = item.useAnimation = 22;
+                    item.scale = 1.22f;
                 }
                 if (item.type == AdamantiteSword)
                 {
-
+                    item.damage = 61;
+                    item.useTime = item.useAnimation = 21;
+                    item.scale = 1.25f;
                 }
                 if (item.type == TitaniumSword)
                 {
-
+                    item.damage = 61;
+                    item.useTime = item.useAnimation = 20;
+                    item.scale = 1.25f;
                 }
                 if (item.type == PearlwoodSword)
                 {
-
+                    item.damage = 30;
+                    item.useTime = item.useAnimation = 15;
+                    item.autoReuse = true;
                 }
                 if (item.type == CobaltNaginata)
                 {
-
+                    item.damage = 44;
                 }
                 if (item.type == PalladiumPike)
                 {
-
+                    item.damage = 44;
                 }
                 if (item.type == MythrilHalberd)
                 {
-
+                    item.damage = 45;
                 }
                 if (item.type == OrichalcumHalberd)
                 {
-
+                    item.damage = 46;
                 }
                 if (item.type == AdamantiteGlaive)
                 {
-
+                    item.damage = 49;
                 }
                 if (item.type == TitaniumTrident)
                 {
-
+                    item.damage = 48;
                 }
                 if (item.type == Cutlass)
                 {
-
+                    item.damage = 53;
+                    item.useTime = item.useAnimation = 16;
+                }
+                if (item.type == IceSickle)
+                {
+                    item.damage = 50;
+                    //PROJECTILE CHANGES (and Bladetongue)
                 }
                 if (item.type == SlapHand)
                 {
-
+                    item.damage = 55;
+                    item.useTime = item.useAnimation = 20;
                 }
                 if (item.type == ChainGuillotines)
                 {
-
+                    //?
                 }
                 if (item.type == Bananarang)
                 {
-
+                    item.maxStack = 1;
+                    item.damage = 45;
+                    item.value = Item.sellPrice(0, 12);//in weapon changes bc balancing
+                }
+                if (item.type == BeamSword)
+                {
+                    item.autoReuse = true;
+                    item.useTurn = false;
+                    //PROJECTILE && UseItem CHANGES
                 }
                 if (item.type == Gungnir)
                 {
-
+                    item.damage = 61;
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == LightDisc)
                 {
-
+                    item.maxStack = 1;
+                    item.damage = 60;
+                    item.useTime = item.useAmmo = 14;
+                    //SHOOT && PROJECTILE CHANGES
                 }
                 if (item.type == DeathSickle)
                 {
-
+                    item.knockBack = 5f;
                 }
                 if (item.type == PaladinsHammer)
                 {
-
+                    item.autoReuse = true;
+                }
+                if (item.type == Keybrand)
+                {
+                    item.damage = 105;
+                    item.crit = 13;
+                    //ONHIT CHANGES
+                }
+                if (item.type == TheHorsemansBlade)
+                {
+                    item.damage = 150;
+                    //ONHIT && PROJECTILE CHANGES
+                }
+                if (item.type == NorthPole)
+                {
+                    item.useTime = item.useAnimation = 30;
+                    //PROJECTILE CHANGES
+                }
+                if (item.type == InfluxWaver)
+                {
+                    item.damage = 100;
+                    //PROJECTILE CHANGES
+                }
+                if (item.type == 3827)
+                {
+                    item.useTime = item.useAnimation = 20;
+                    item.damage = 180;
                 }
                 if (item.type == StarWrath)
                 {
-
+                    item.damage = 170;
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == Meowmere)
                 {
-
+                    item.useTime = item.useAnimation = 14;
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == FlintlockPistol)
                 {
