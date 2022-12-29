@@ -272,7 +272,6 @@ namespace JourneyRecipes
             {
                 player.armorPenetration += 10;
             }
-
             return base.PreItemCheck();
         }
         public override bool ConsumeAmmo(Item weapon, Item ammo)
