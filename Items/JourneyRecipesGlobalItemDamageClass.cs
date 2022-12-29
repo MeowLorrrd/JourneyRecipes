@@ -2,6 +2,7 @@
 using Terraria.ModLoader;
 using Terraria.Localization;
 using static Terraria.ModLoader.ModContent;
+using Terraria.ID;
 
 namespace JourneyRecipes.Items
 {
@@ -29,6 +30,14 @@ namespace JourneyRecipes.Items
             {
                 item.defense = 5;
             }
+        }
+        public override bool ConsumeItem(Item item, Player player)
+        {
+            if (item.ranged && item.maxStack > 1 && item.notAmmo && item.useAmmo == 0 && item.type < ItemID.Count)
+            {
+                return true;
+            }
+            return base.ConsumeItem(item, player);
         }
         public override void UpdateEquip(Item item, Player p)
         {

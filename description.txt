@@ -86,6 +86,7 @@ Items:
 Bee Wax (and its recipes), Glass Kiln have sell value adjusted to 1.4.4
 Angler Armor set bonus reduces spawn rate
 Snow Armor set bonus grant Frozen and Chilled immunity
+Thrown items are always consumed
 
 Projectiles:
 Fixed an issue where a projectile is used to deal a fixed amount of damage
