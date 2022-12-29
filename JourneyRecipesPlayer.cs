@@ -179,12 +179,12 @@ namespace JourneyRecipes
         }
         public override bool PreItemCheck()
         {
-            if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowAccessoryStat && autoReuseGlove && player.HeldItem.melee)
+            if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowAccessoryStat && autoReuseGlove && player.inventory[player.selectedItem].melee)
             {
-                PlayerAutouse = player.HeldItem.autoReuse;
-                player.HeldItem.autoReuse = true;
+                PlayerAutouse = player.inventory[player.selectedItem].autoReuse;
+                player.inventory[player.selectedItem].autoReuse = true;
             }//code above from Fargo's Souls
-            if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowWeaponStat && (player.HeldItem.type == ItemID.NettleBurst || player.HeldItem.type == ItemID.WaspGun || player.HeldItem.type == ItemID.CrystalVileShard))
+            if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowWeaponStat && (player.inventory[player.selectedItem].type == ItemID.NettleBurst || player.inventory[player.selectedItem].type == ItemID.WaspGun || player.inventory[player.selectedItem].type == ItemID.CrystalVileShard))
             {
                 player.armorPenetration += 10;
             }

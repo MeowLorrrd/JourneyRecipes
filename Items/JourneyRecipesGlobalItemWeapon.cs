@@ -5,12 +5,13 @@ using Terraria.ModLoader;
 using Terraria.Utilities;
 using static Terraria.ModLoader.ModContent;
 using static Terraria.ID.ItemID;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace JourneyRecipes.Items
 {
     public class JourneyRecipesGlobalItemWeapon : GlobalItem
     {
-        private bool Config = GetInstance<JourneyRecipesServerConfig>().allowWeaponStat;
+        private readonly bool Config = GetInstance<JourneyRecipesServerConfig>().allowWeaponStat;
         public override bool InstancePerEntity => true;
         public override bool CloneNewInstances => true;
         public bool shootEveryUse;
@@ -796,9 +797,9 @@ namespace JourneyRecipes.Items
                 }
                 if (item.type == LightDisc)
                 {
-                    item.maxStack = 1;
+                    /*item.maxStack = 1;
                     item.damage = 60;
-                    item.useTime = item.useAmmo = 14;
+                    item.useTime = item.useAnimation = 14;*/
                     //SHOOT && PROJECTILE CHANGES
                 }
                 if (item.type == DeathSickle)
@@ -1062,17 +1063,25 @@ namespace JourneyRecipes.Items
             if (Config)
             {
                 int[] prefix = new int[] { //prefix ids
-                81, 59, 4, 37, 60,
-                20, 55, 46, 2, 44,
-                38, 5, 54, 3, 1,
-                61, 53, 6, 42, 51,
+                81, 59, 4 , 37, 60,
+                20, 55, 46, 2 , 44,
+                38, 5 , 54, 3 , 1 ,
+                61, 53, 6 , 42, 51,
                 12, 57, 36, 45, 15,
-                14, 49, 9, 47, 40,
-                10, 7, 56, 48, 13,
-                41, 11, 50, 8, 39 };
+                14, 49, 9 , 47, 40,
+                10, 7 , 56, 48, 13,
+                41, 11, 50, 8 , 39 };
+                int[] prefix2 = new int[]
+                {
+                    59, 37, 60, 55, 54, 38, 61, 53, 36, 40, 56, 41, 39
+                };
                 if (item.type == 186 || item.type == 946)
                 {
                     return rand.Next(prefix);
+                }
+                if (item.type == 561)
+                {
+                    return rand.Next(prefix2);
                 }
             }
             return base.ChoosePrefix(item, rand);
@@ -1107,6 +1116,24 @@ namespace JourneyRecipes.Items
                     hitbox = new Rectangle(hitbox.X, (int)player.MountedCenter.Y - 20, hitbox.Width, hitbox.Height + 10);
             }
             base.UseItemHitbox(item, player, ref hitbox, ref noHitbox);
+        }
+        public override bool CanUseItem(Item item, Player player)
+        {
+            if (Config)
+            {
+                if (item.type == LightDisc)
+                    return player.ownedProjectileCounts[item.shoot] < 6;
+                //? doesnt work lol
+            }
+            return base.CanUseItem(item, player);
+        }
+        public override bool AllowPrefix(Item item, int pre)
+        {
+            if (item.type == LightDisc)
+            {
+                return true;
+            }
+            return base.AllowPrefix(item, pre);
         }
     }
 }
