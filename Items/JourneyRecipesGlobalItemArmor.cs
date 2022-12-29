@@ -327,9 +327,8 @@ namespace JourneyRecipes.Items
             else if (set == Turtle)
             {
                 player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetBonus.Turtle");
-                player.endurance += .15f;
-                player.turtleThorns = false;
-                player.turtleArmor = false;
+                player.endurance += 0.15f;
+                player.turtleThorns = true;
                 player.thorns = 2f;
             }
             else if (set == Angler)

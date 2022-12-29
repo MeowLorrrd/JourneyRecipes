@@ -100,8 +100,6 @@ namespace JourneyRecipes
                     {
                         continue;
                     }
-                    bool flag = true;
-                    bool flag2 = false;
                     float num2 = player.thorns;
                     float knockback = 10f;
                     if (player.turtleThorns)
@@ -124,7 +122,15 @@ namespace JourneyRecipes
                     {
                         flag3 = player.hurtCooldowns[specialHitSetter] == 0;
                     }
-
+                    if (player.whoAmI == Main.myPlayer && num2 > 0f && flag3 && !Main.npc[i].dontTakeDamage)
+                    {
+                        int num6 = (int)((float)num4 * num2);
+                        if (num6 > 1000)
+                        {
+                            num6 = 1000;
+                        }
+                        //ApplyDamageToNPC(Main.npc[i], num6, knockback, -num3, crit: false);
+                    }
                     if (player.whoAmI == Main.myPlayer && CactusThorns && flag3 && !Main.npc[i].dontTakeDamage)
                     {
                         int damage = 15;
@@ -168,64 +174,6 @@ namespace JourneyRecipes
         public void OnHit(float x, float y, Entity victim)
         {
             if (Main.myPlayer != player.whoAmI)
-            {
-                return;
-            }
-            bool flag = victim is NPC && ((NPC)victim).type == 488;
-            if (player.onHitDodge && player.shadowDodgeTimer == 0 && Main.rand.NextBool(4))
-            {
-                if (!player.shadowDodge)
-                {
-                    player.shadowDodgeTimer = 1800;
-                }
-                player.AddBuff(59, 1800);
-            }
-            if (player.onHitRegen)
-            {
-                player.AddBuff(58, 300);
-            }
-            if (player.stardustMinion && victim is NPC)
-            {
-                for (int i = 0; i < 1000; i++)
-                {
-                    Projectile projectile = Main.projectile[i];
-                    if (projectile.active && projectile.owner == player.whoAmI && projectile.type == 613 && !(projectile.localAI[1] > 0f) && Main.rand.NextBool(2))
-                    {
-                        Vector2 vector = new Vector2(x, y) - projectile.Center;
-                        if (vector.Length() > 0f)
-                        {
-                            vector.Normalize();
-                        }
-                        vector *= 20f;
-                        Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector.X, vector.Y, 614, projectile.damage / 3, 0f, projectile.owner, 0f, victim.whoAmI);
-                        projectile.localAI[1] = 30 + Main.rand.Next(4) * 10;
-                    }
-                }
-            }
-            if (player.onHitPetal && player.petalTimer == 0)
-            {
-                player.petalTimer = 20;
-                _ = player.position.X + (float)(player.width / 2);
-                int num = player.direction;
-                float num2 = Main.screenPosition.X;
-                if (num < 0)
-                {
-                    num2 += (float)Main.screenWidth;
-                }
-                float y2 = Main.screenPosition.Y;
-                y2 += (float)Main.rand.Next(Main.screenHeight);
-                Vector2 vector2 = new Vector2(num2, y2);
-                float num3 = x - vector2.X;
-                float num4 = y - vector2.Y;
-                num3 += (float)Main.rand.Next(-50, 51) * 0.1f;
-                num4 += (float)Main.rand.Next(-50, 51) * 0.1f;
-                float num5 = (float)Math.Sqrt(num3 * num3 + num4 * num4);
-                num5 = 24f / num5;
-                num3 *= num5;
-                num4 *= num5;
-                Projectile.NewProjectile(num2, y2, num3, num4, 221, 36, 0f, player.whoAmI);
-            }
-            if (!player.crystalLeaf || player.petalTimer != 0)
             {
                 return;
             }
@@ -350,10 +298,6 @@ namespace JourneyRecipes
                 }
             }
             base.Hurt(pvp, quiet, damage, hitDirection, crit);
-        }
-        private void ItemCheck_MeleeHitNPCs(Item sItem, Rectangle itemRectangle, int originalDamage, float knockBack)
-        {
-
         }
     }
 }
