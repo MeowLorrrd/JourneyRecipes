@@ -10,7 +10,7 @@ namespace JourneyRecipes.Items
         {
             if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowMaxStack)
             {
-                if (item.type > 0 && item.type < ItemID.Count && item.maxStack > 2 && item.maxStack != 100 && item.type != ItemID.Bananarang || item.type != ItemID.LightDisc)
+                if ((item.type >= 1 && item.type < ItemID.Count) && item.maxStack > 10 && (item.maxStack != 100) && !(item.type >= ItemID.CopperCoin && item.type <= ItemID.GoldCoin))
                 {
                     item.maxStack = 9999;
                 }
