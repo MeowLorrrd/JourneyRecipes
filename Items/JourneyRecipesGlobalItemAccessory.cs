@@ -36,10 +36,6 @@ namespace JourneyRecipes.Items
                 item.notAmmo = true;
             }
         }
-        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
-        {
-            
-        }
         public override void UpdateAccessory(Item item, Player player, bool hideVisual)
         {
             if (item.type == 211)
@@ -116,8 +112,6 @@ namespace JourneyRecipes.Items
             }
             if (item.type == 1131)
             {
-                player.GetModPlayer<JourneyRecipesPlayer>().GravityGlobe = true;
-                player.gravControl2 = false;
                 player.gravControl = true;
             }
         }

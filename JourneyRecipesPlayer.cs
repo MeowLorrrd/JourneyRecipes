@@ -12,34 +12,24 @@ namespace JourneyRecipes
 {
     public class JourneyRecipesPlayer : ModPlayer
     {
-        public bool PlayerInvis;
         public bool autoReuseGlove;
         public bool PlayerAutouse;
-        public bool PlayerTitanGlove;
         public bool CactusThorns;
         public bool Ammo10;
-        public bool Ammo20;
-        public bool Sharpened;
         public bool StarCloak;
         public bool BeeBeeBee;
-        public bool GravityGlobe;
         public Item BoneGloveItem;
         public int boneGloveTimer;
         public bool anglerSetSpawnReduction;
         public bool ItemAnimationJustStarted => player.itemAnimation == player.itemAnimationMax - 1;
         public override void ResetEffects()
         {
-            PlayerInvis = false;
             autoReuseGlove = false;
-            PlayerTitanGlove = false;
             PlayerAutouse = false;
             CactusThorns = false;
             Ammo10 = false;
-            Ammo20 = false;
-            Sharpened = false;
             StarCloak = false;
             BeeBeeBee = false;
-            GravityGlobe = false;
             BoneGloveItem = null;
             anglerSetSpawnReduction = false;
         }
@@ -200,20 +190,16 @@ namespace JourneyRecipes
             }
             return base.PreItemCheck();
         }
-        public override bool ConsumeAmmo(Item weapon, Item ammo)
+        public override bool ConsumeAmmo(Item item, Item ammo)
         {
             if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowArmorStat)
             {
-                if (Ammo10)
+                if (Ammo10 && item.ranged)
                 {
                     return !Main.rand.NextBool(10);
                 }
-                else if (Ammo20)
-                {
-                    return !Main.rand.NextBool(5);
-                }
             }
-            return base.ConsumeAmmo(weapon, ammo);
+            return base.ConsumeAmmo(item, ammo);
         }
         public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)//1.4 source code in Player.Hurt()
         {

@@ -227,7 +227,7 @@ namespace JourneyRecipes.Items
             }
             else if (item.type == 3878)
             {
-                p.GetModPlayer<JourneyRecipesPlayer>().Ammo20 = true;
+                p.ammoCost80 = true;
             }
             else if (item.type == 3879)
             {
