@@ -308,14 +308,11 @@ namespace JourneyRecipes.Items
             else if (set == Necro)
             {
                 player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetBonus.Necro");
-                player.ammoCost80 = false;
-                player.ammoCost75 = false;
                 player.rangedCrit += 10;
             }
             else if (set == Molten)
             {
                 player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetBonus.Molten");
-                player.meleeDamage -= .07f;
                 player.buffImmune[24] = true;
             }
             else if (set == Solar)
