@@ -351,5 +351,9 @@ namespace JourneyRecipes
             }
             base.Hurt(pvp, quiet, damage, hitDirection, crit);
         }
+        private void ItemCheck_MeleeHitNPCs(Item sItem, Rectangle itemRectangle, int originalDamage, float knockBack)
+        {
+
+        }
     }
 }
