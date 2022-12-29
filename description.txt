@@ -75,12 +75,15 @@ Mechanic sells Teleporter and Pixel Box
 Skeleton Merchant sells Wooden Chest items, depending on Moon Phase
 Merchant sells Furnace (in Jungle) and Mana and Healing potions (in Hardmode)
 Arms Dealer sells Ammo Box
+
 Pillars don't have increased shield power in Expert+ and only 50 are required to lower shield Post-Moon Lord
-Lost Girl and Nymph have 1.4.4 coin value
+Lost Girl and Nymph drop 2 Gold
+Jungle Creeper have 28 defense
 
 Items:
 Bee Wax (and its recipes), Glass Kiln have sell value adjusted to 1.4.4
-Angler and Snow armor have 1.4.4 set bonuses
+Angler Armor set bonus reduces spawn rate
+Snow Armor set bonus grant Frozen and Chilled immunity
 
 Projectiles:
 Fixed an issue where a projectile is used to deal a fixed amount of damage
