@@ -64,6 +64,10 @@ namespace JourneyRecipes.NPCs
                 {
                     npc.rarity = 2;
                 }
+                else if (npc.type == 195 || npc.type == 196)
+                {
+                    npc.value = Item.buyPrice(0, 2);
+                }
                 else if (npc.type == 266)
                 {
                     npc.lifeMax = 1250;
@@ -128,7 +132,7 @@ namespace JourneyRecipes.NPCs
         {
             if (GetInstance<JourneyRecipesServerConfig>().AllowNPCStat)
             {
-                
+
                 if (npc.type == 392 || npc.type == 393 || npc.type == 394 || npc.type == 395)
                 {
                     NPCLoader.blockLoot.Add(2800);

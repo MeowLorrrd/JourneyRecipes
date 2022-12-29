@@ -68,29 +68,23 @@ Check the config to disable features you don't like!
 
 
 [i:520]Updates[i:520]:
-1.4.20 - Mechanic sells Teleporter and Pixel Box
+
+1.5 - NPCs:
+
+Mechanic sells Teleporter and Pixel Box
 Skeleton Merchant sells Wooden Chest items, depending on Moon Phase
 Merchant sells Furnace (in Jungle) and Mana and Healing potions (in Hardmode)
 Arms Dealer sells Ammo Box
-Bee Wax (and its recipes), Glass Kiln have sell value adjusted to 1.4.4
 Pillars don't have increased shield power in Expert+ and only 50 are required to lower shield Post-Moon Lord
-Fixed an issue where a projectile is used to deal a fixed amount of damage
+Lost Girl and Nymph have 1.4.4 coin value
+
+Items:
+Bee Wax (and its recipes), Glass Kiln have sell value adjusted to 1.4.4
 Angler and Snow armor have 1.4.4 set bonuses
 
-1.4.19 - Leaf Wings sell for 75 gold, rather than 1 platinum
-All config settings are client-sided
-Bee's Knees, Seed (Ammo), Meteor Shots, Wizard Hat, Panic Necklace have 1.4 stats
-Fiberglass Fishing Pole and Mechanic's Rod have 1.4 fishing power (30 and 35 respectively)
-Witch Doctor sells Pygmy Necklace Pre-Hardmode and Tiki Armor & Herculus Beetle always after Plantera
-Jellyfish Necklace (+ upgrades) have 1.4 lighting stats
-Ruler's functionality is now always active (even if not equipped)
-The Grand Design sells for 4 gold, rather than 3
-Bone Glove has 1.4 stats (is now an accessory, rather than a weapon)
-Fixed Terrarian's tooltip with Legendary modifier only appearing in English
+Projectiles:
+Fixed an issue where a projectile is used to deal a fixed amount of damage
 
-1.4.18 - Fixed typo in description
-Cactus armor deals flat damage, rather than having a thorns effect
-Fixed Umbrella's incorrect hitbox
 
 
 [i:521]Notes[i:521]:
