@@ -195,7 +195,7 @@ namespace JourneyRecipes
             }//code above from Fargo's Souls
             if (ModContent.GetInstance<JourneyRecipesServerConfig>().AllowBuffStat && Sharpened && player.HeldItem.melee)
             {
-                player.armorPenetration += 8;//+4 vanilla armor pen
+                //player.armorPenetration += 80;//+4 vanilla armor pen
             }
             if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowWeaponStat && (player.HeldItem.type == ItemID.NettleBurst || player.HeldItem.type == ItemID.WaspGun || player.HeldItem.type == ItemID.CrystalVileShard))
             {
@@ -279,6 +279,21 @@ namespace JourneyRecipes
                 }
             }
             base.Hurt(pvp, quiet, damage, hitDirection, crit);
+        }
+        public override void PostUpdateBuffs()
+        {
+            base.PostUpdateBuffs();
+            for (int j = 0; j < 22; j++)
+            {
+                if (player.buffType[j] <= 0 || player.buffTime[j] <= 0)
+                {
+                    continue;
+                }
+                if (player.buffType[j] == 159 && player.inventory[player.selectedItem].melee)
+                {
+                    player.armorPenetration = 12;
+                }
+            }
         }
     }
 }
