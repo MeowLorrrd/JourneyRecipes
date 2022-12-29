@@ -182,7 +182,6 @@ namespace JourneyRecipes
             {
                 if (trident && !player.lavaWet && !player.honeyWet && !player.merman)
                 {
-                    Main.NewText("ddd");
                     player.gravity = 0.25f;
                     player.maxFallSpeed = 6f;
                     Player.jumpHeight = 25;

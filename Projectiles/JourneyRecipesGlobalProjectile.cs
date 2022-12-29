@@ -34,6 +34,13 @@ namespace JourneyRecipes.Projectiles
             {
                 projectile.penetrate = 1;
             }
+            if (projectile.type == 263)
+            {
+                projectile.penetrate = 4;
+                projectile.usesIDStaticNPCImmunity = true;
+                projectile.idStaticNPCHitCooldown = 8;
+                projectile.timeLeft = 180;
+            }
             if (projectile.type == 266)
             {
                 projectile.netImportant = true;
@@ -84,6 +91,13 @@ namespace JourneyRecipes.Projectiles
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 30;
                 projectile.damage = 170;
+            }
+            if (projectile.type == 524)
+            {
+                projectile.penetrate = 5;
+                projectile.extraUpdates = 5;
+                projectile.usesIDStaticNPCImmunity = true;
+                projectile.idStaticNPCHitCooldown = 10;
             }
             if (projectile.type == 532)
             {

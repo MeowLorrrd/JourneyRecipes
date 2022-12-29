@@ -767,7 +767,8 @@ namespace JourneyRecipes.Items
                 if (item.type == IceSickle)
                 {
                     item.damage = 50;
-                    //PROJECTILE CHANGES (and Bladetongue)
+                    item.shootSpeed = 12f;
+                    //PROJECTILE CHANGES
                 }
                 if (item.type == SlapHand)
                 {
@@ -1071,7 +1072,7 @@ namespace JourneyRecipes.Items
                 14, 49, 9 , 47, 40,
                 10, 7 , 56, 48, 13,
                 41, 11, 50, 8 , 39 };
-                int[] prefix2 = new int[] { 59, 37, 60, 55, 54, 38, 61, 53, 36, 40, 56, 41, 39 };
+                //int[] prefix2 = new int[] { 59, 37, 60, 55, 54, 38, 61, 53, 36, 40, 56, 41, 39 };
                 if (item.type == 186 || item.type == 946)
                 {
                     return rand.Next(prefix);
@@ -1123,6 +1124,18 @@ namespace JourneyRecipes.Items
                 //? doesnt work lol
             }
             return base.CanUseItem(item, player);
+        }
+        public override bool Shoot(Item item, Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        {
+            if (item.type == 1306)
+            {
+                Vector2 vel = (player.MountedCenter - Main.MouseWorld) * -1;
+                vel.Normalize();
+                vel *= item.shootSpeed + 6;
+                Projectile.NewProjectile(player.MountedCenter, vel, item.shoot, (int)(float)(item.damage * 0.5f), item.knockBack, player.whoAmI);
+                return false;
+            }
+            return base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
         }
     }
 }
