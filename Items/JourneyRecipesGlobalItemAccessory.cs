@@ -44,11 +44,11 @@ namespace JourneyRecipes.Items
         {
             if (item.type == 211)
             {
-                player.GetModPlayer<JourneyRecipesPlayer>().PlayerFeral = true;
+                player.GetModPlayer<JourneyRecipesPlayer>().autoReuseGlove = true;
             }
             if (item.type == 897)
             {
-                player.GetModPlayer<JourneyRecipesPlayer>().PlayerFeral = true;
+                player.GetModPlayer<JourneyRecipesPlayer>().autoReuseGlove = true;
             }
             if (item.type == 908)
             {
@@ -56,13 +56,13 @@ namespace JourneyRecipes.Items
             }
             if (item.type == 936)
             {
-                player.GetModPlayer<JourneyRecipesPlayer>().PlayerFeral = true;
+                player.GetModPlayer<JourneyRecipesPlayer>().autoReuseGlove = true;
             }
             if (item.type == 1343)
             {
                 player.meleeDamage += .02f;
                 player.meleeSpeed += .02f;
-                player.GetModPlayer<JourneyRecipesPlayer>().PlayerFeral = true;
+                player.GetModPlayer<JourneyRecipesPlayer>().autoReuseGlove = true;
             }
             if (item.type == 2221)
             {

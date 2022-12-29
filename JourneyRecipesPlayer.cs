@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Mono.Cecil.Cil;
 using System;
+using System.Runtime.Remoting.Channels;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -12,7 +13,7 @@ namespace JourneyRecipes
     public class JourneyRecipesPlayer : ModPlayer
     {
         public bool PlayerInvis;
-        public bool PlayerFeral;
+        public bool autoReuseGlove;
         public bool PlayerAutouse;
         public bool PlayerTitanGlove;
         public bool CactusThorns;
@@ -29,7 +30,7 @@ namespace JourneyRecipes
         public override void ResetEffects()
         {
             PlayerInvis = false;
-            PlayerFeral = false;
+            autoReuseGlove = false;
             PlayerTitanGlove = false;
             PlayerAutouse = false;
             CactusThorns = false;
@@ -41,16 +42,6 @@ namespace JourneyRecipes
             GravityGlobe = false;
             BoneGloveItem = null;
             anglerSetSpawnReduction = false;
-        }
-        public override void PostItemCheck()
-        {
-            if (BoneGloveItem != null && !BoneGloveItem.IsAir && boneGloveTimer == 0 && player.itemAnimation > 0 && player.inventory[player.selectedItem].damage > 0)
-            {
-                boneGloveTimer = 60;
-                Vector2 center = player.Center;
-                Vector2 vector = player.DirectionTo(ApplyRangeComposition(0.2f, center, Main.MouseWorld)) * 10f;
-                Projectile.NewProjectile(center.X, center.Y, vector.X, vector.Y, 532, 25, 5f, player.whoAmI);
-            }
         }
         public Vector2 ApplyRangeComposition(float rangeCompensation, Vector2 startPos, Vector2 targetPos)
         {
@@ -177,6 +168,16 @@ namespace JourneyRecipes
             }
             PlayerHooks.OnHitAnything(player, x, y, victim);
         }
+        public override void PostItemCheck()
+        {
+            if (BoneGloveItem != null && !BoneGloveItem.IsAir && boneGloveTimer == 0 && player.itemAnimation > 0 && player.inventory[player.selectedItem].damage > 0)
+            {
+                boneGloveTimer = 60;
+                Vector2 center = player.Center;
+                Vector2 vector = player.DirectionTo(ApplyRangeComposition(0.2f, center, Main.MouseWorld)) * 10f;
+                Projectile.NewProjectile(center.X, center.Y, vector.X, vector.Y, 532, 25, 5f, player.whoAmI);
+            }
+        }
         public override void PostUpdateMiscEffects()
         {
             Update_NPCCollision();
@@ -188,15 +189,11 @@ namespace JourneyRecipes
         }
         public override bool PreItemCheck()
         {
-            if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowAccessoryStat && PlayerFeral && player.HeldItem.melee)
+            if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowAccessoryStat && autoReuseGlove && player.HeldItem.melee)
             {
                 PlayerAutouse = player.HeldItem.autoReuse;
                 player.HeldItem.autoReuse = true;
             }//code above from Fargo's Souls
-            if (ModContent.GetInstance<JourneyRecipesServerConfig>().AllowBuffStat && Sharpened && player.HeldItem.melee)
-            {
-                //player.armorPenetration += 80;//+4 vanilla armor pen
-            }
             if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowWeaponStat && (player.HeldItem.type == ItemID.NettleBurst || player.HeldItem.type == ItemID.WaspGun || player.HeldItem.type == ItemID.CrystalVileShard))
             {
                 player.armorPenetration += 10;
@@ -295,5 +292,6 @@ namespace JourneyRecipes
                 }
             }
         }
+        
     }
 }
