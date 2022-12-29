@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using System.Collections.Generic;
+using Terraria;
 using Terraria.ModLoader;
 
 namespace JourneyRecipes.NPCs
@@ -16,6 +17,17 @@ namespace JourneyRecipes.NPCs
                 if (!NPC.downedPlantBoss)
                 {
                     npc.lifeMax = 0;
+                }
+            }
+        }
+        public override void EditSpawnPool(IDictionary<int, float> pool, NPCSpawnInfo spawnInfo)
+        {
+            if (Main.eclipse)
+            {
+                if (!NPC.downedPlantBoss)
+                {
+                    //test?
+                    pool[477] = 0;
                 }
             }
         }
