@@ -79,6 +79,8 @@ Arms Dealer sells Ammo Box
 Pillars don't have increased shield power in Expert+ and only 50 are required to lower shield Post-Moon Lord
 Lost Girl and Nymph drop 2 Gold
 Jungle Creeper have 28 defense
+Moss Hornet can drop Stinger
+Crawltepides deal less damage
 
 Items:
 Bee Wax (and its recipes), Glass Kiln have sell value adjusted to 1.4.4

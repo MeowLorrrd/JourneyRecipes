@@ -85,6 +85,14 @@ namespace JourneyRecipes.NPCs
                 {
                     npc.value = 1000000f;
                 }
+                else if (npc.type == 412)
+                {
+                    npc.damage = 120;
+                }
+                else if (npc.type == 413)
+                {
+                    npc.damage = 80;
+                }
                 else if (npc.type == 471)
                 {
                     npc.rarity = 1;
@@ -138,6 +146,13 @@ namespace JourneyRecipes.NPCs
                     NPCLoader.blockLoot.Add(2800);
                     NPCLoader.blockLoot.Add(2882);
                     NPCLoader.blockLoot.Add(2798);
+                }
+                if (npc.type == -18 || npc.type == -19 || npc.type == -20 || npc.type == -21 || npc.type == 176)
+                {
+                    if (!NPC.downedMechBoss1 || !NPC.downedMechBoss2 || !NPC.downedMechBoss3)
+                    {
+                        //NPCLoader.blockLoot.Add(1521);
+                    }
                 }
             }
             return base.PreNPCLoot(npc);
