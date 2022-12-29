@@ -21,6 +21,7 @@ namespace JourneyRecipes
         public Item BoneGloveItem;
         public int boneGloveTimer;
         public bool anglerSetSpawnReduction;
+        public bool trident;
         public bool ItemAnimationJustStarted => player.itemAnimation == player.itemAnimationMax - 1;
         public override void ResetEffects()
         {
@@ -32,6 +33,7 @@ namespace JourneyRecipes
             BeeBeeBee = false;
             BoneGloveItem = null;
             anglerSetSpawnReduction = false;
+            trident = false;
         }
         public Vector2 ApplyRangeComposition(float rangeCompensation, Vector2 startPos, Vector2 targetPos)
         {
@@ -176,6 +178,22 @@ namespace JourneyRecipes
             {
                 boneGloveTimer--;
             }
+            if (player.wet)
+            {
+                if (trident && !player.lavaWet && !player.honeyWet && !player.merman)
+                {
+                    Main.NewText("ddd");
+                    player.gravity = 0.25f;
+                    player.maxFallSpeed = 6f;
+                    Player.jumpHeight = 25;
+                    Player.jumpSpeed = 5.51f;
+                    if (player.controlUp)
+                    {
+                        player.gravity = 0.1f;
+                        player.maxFallSpeed = 2f;
+                    }
+                }
+            }
         }
         public override bool PreItemCheck()
         {
@@ -184,10 +202,14 @@ namespace JourneyRecipes
                 PlayerAutouse = player.inventory[player.selectedItem].autoReuse;
                 player.inventory[player.selectedItem].autoReuse = true;
             }//code above from Fargo's Souls
-            if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowWeaponStat && (player.inventory[player.selectedItem].type == ItemID.NettleBurst || player.inventory[player.selectedItem].type == ItemID.WaspGun || player.inventory[player.selectedItem].type == ItemID.CrystalVileShard))
+            if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowWeaponStat)
             {
-                player.armorPenetration += 10;
+                if (player.inventory[player.selectedItem].type == ItemID.NettleBurst || player.inventory[player.selectedItem].type == ItemID.WaspGun || player.inventory[player.selectedItem].type == ItemID.CrystalVileShard)
+                {
+                    player.armorPenetration += 10;
+                }
             }
+
             return base.PreItemCheck();
         }
         public override bool ConsumeAmmo(Item item, Item ammo)
@@ -278,6 +300,12 @@ namespace JourneyRecipes
                 }
             }
         }
-        
+        public override void UpdateEquips(ref bool wallSpeedBuff, ref bool tileSpeedBuff, ref bool tileRangeBuff)
+        {
+            if (player.inventory[player.selectedItem].type == 277 && (!player.mount.Active || !player.mount.Cart))
+            {
+                trident = true;
+            }
+        }
     }
 }

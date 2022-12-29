@@ -229,6 +229,16 @@ namespace JourneyRecipes.Projectiles
             {
                 projectile.ai[0] += 1f;
             }
+            switch (projectile.type)
+            {
+                case 47:
+                    if (Main.player[projectile.owner].wet && Main.rand.NextBool(2))
+                    {
+                        int num10 = Dust.NewDust(Main.player[projectile.owner].position, Main.player[projectile.owner].width, Main.player[projectile.owner].height, 15, 0f, 0f, 100, default, 0.8f);
+                        Main.dust[num10].velocity *= 0.1f;
+                    }
+                    break;
+            }
         }
         public override bool PreAI(Projectile projectile)
         {
