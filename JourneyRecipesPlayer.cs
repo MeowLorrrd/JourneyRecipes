@@ -100,36 +100,17 @@ namespace JourneyRecipes
                     {
                         continue;
                     }
-                    float num2 = player.thorns;
                     float knockback = 10f;
-                    if (player.turtleThorns)
-                    {
-                        num2 *= 2f;
-                    }
+                    
                     int num3 = -1;
                     if (Main.npc[i].position.X + (float)(Main.npc[i].width / 2) < player.position.X + (float)(player.width / 2))
                     {
                         num3 = 1;
                     }
-                    int num4 = Main.DamageVar((float)Main.npc[i].damage * damageMultiplier);
-                    int num5 = Item.NPCtoBanner(Main.npc[i].BannerID());
-                    if (num5 > 0 && player.NPCBannerBuff[num5])
-                    {
-                        num4 = ((!Main.expertMode) ? ((int)((float)num4 * ItemID.Sets.BannerStrength[Item.BannerToItem(num5)].NormalDamageReceived)) : ((int)((float)num4 * ItemID.Sets.BannerStrength[Item.BannerToItem(num5)].ExpertDamageReceived)));
-                    }
                     bool flag3 = !player.immune;
                     if (specialHitSetter >= 0)
                     {
                         flag3 = player.hurtCooldowns[specialHitSetter] == 0;
-                    }
-                    if (player.whoAmI == Main.myPlayer && num2 > 0f && flag3 && !Main.npc[i].dontTakeDamage)
-                    {
-                        int num6 = (int)((float)num4 * num2);
-                        if (num6 > 1000)
-                        {
-                            num6 = 1000;
-                        }
-                        //ApplyDamageToNPC(Main.npc[i], num6, knockback, -num3, crit: false);
                     }
                     if (player.whoAmI == Main.myPlayer && CactusThorns && flag3 && !Main.npc[i].dontTakeDamage)
                     {
