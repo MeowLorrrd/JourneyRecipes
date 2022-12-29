@@ -778,9 +778,9 @@ namespace JourneyRecipes.Items
                 }
                 if (item.type == Bananarang)
                 {
-                   /* item.maxStack = 1;
-                    item.damage = 45;
-                    item.value = Item.sellPrice(0, 12);//in weapon changes bc balancing*/
+                    /* item.maxStack = 1;
+                     item.damage = 45;
+                     item.value = Item.sellPrice(0, 12);//in weapon changes bc balancing*/
                 }
                 if (item.type == BeamSword)
                 {
@@ -823,7 +823,6 @@ namespace JourneyRecipes.Items
                 {
                     item.useTime = item.useAnimation = 30;
                     item.damage = 80;
-                    //PROJECTILE CHANGES
                 }
                 if (item.type == InfluxWaver)
                 {
@@ -838,7 +837,6 @@ namespace JourneyRecipes.Items
                 if (item.type == StarWrath)
                 {
                     item.damage = 170;
-                    //PROJECTILE CHANGES
                 }
                 if (item.type == Meowmere)
                 {
@@ -1123,6 +1121,10 @@ namespace JourneyRecipes.Items
         }
         public override bool Shoot(Item item, Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+            Vector2 pointPoisition = player.RotatedRelativePoint(player.MountedCenter, true);
+            float num2 = (float)Main.mouseX + Main.screenPosition.X - pointPoisition.X;
+            float num3 = (float)Main.mouseY + Main.screenPosition.Y - pointPoisition.Y;
+
             if (item.type == 1306)
             {
                 Vector2 vel = (player.MountedCenter - Main.MouseWorld) * -1;
@@ -1137,6 +1139,37 @@ namespace JourneyRecipes.Items
                 vel.Normalize();
                 vel *= item.shootSpeed;
                 Projectile.NewProjectile(player.MountedCenter, vel, item.shoot, (int)((float)item.damage * 1.25f), item.knockBack, player.whoAmI);
+                return false;
+            }
+            else if (item.type == StarWrath)
+            {
+                Vector2 vector17 = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
+                float num41 = vector17.Y;
+                if (num41 > player.Center.Y - 200f)
+                {
+                    num41 = player.Center.Y - 200f;
+                }
+                for (int num42 = 0; num42 < 3; num42++)
+                {
+                    pointPoisition = player.Center + new Vector2(-Main.rand.Next(0, 401) * player.direction, -600f);
+                    pointPoisition.Y -= 100 * num42;
+                    Vector2 vector18 = vector17 - pointPoisition;
+                    if (vector18.Y < 0f)
+                    {
+                        vector18.Y *= -1f;
+                    }
+                    if (vector18.Y < 20f)
+                    {
+                        vector18.Y = 20f;
+                    }
+                    vector18.Normalize();
+                    vector18 *= item.shootSpeed;
+                    num2 = vector18.X;
+                    num3 = vector18.Y;
+                    float speedX6 = num2;
+                    float speedY8 = num3 + (float)Main.rand.Next(-40, 41) * 0.02f;
+                    Projectile.NewProjectile(new Vector2(pointPoisition.X, pointPoisition.Y), new Vector2(speedX6, speedY8), item.shoot, (int)((float)item.damage * 1f), item.knockBack, player.whoAmI, 0f, num41);
+                }
                 return false;
             }
             return base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);

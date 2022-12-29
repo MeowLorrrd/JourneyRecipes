@@ -89,7 +89,6 @@ namespace JourneyRecipes.Projectiles
                 projectile.extraUpdates = 1;
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 30;
-                projectile.damage = 170;
             }
             if (projectile.type == 524)
             {
