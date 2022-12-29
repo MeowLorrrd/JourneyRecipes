@@ -85,6 +85,8 @@ ArmorSetBonus.Necro=+10 % de chances de coup critique à distance
 ArmorSetBonus.Ninja=+20 % de vitesse de déplacement
 ArmorSetBonus.Solar=Les boucliers solaires se chargent avec le temps pour vous protéger et pour vous permettre de foncer\nUne charge est utilisée pour infliger des dégâts aux ennemis touchés\nLes charges consommées explosent et infligent des dégâts aux ennemis
 ArmorSetBonus.Turtle=Les agresseurs subissent également des dégâts\nRéduit les dégâts subis de 15 %
+ArmorSetBonus.Angler=Réduit le taux d'apparition d'ennemis
+ArmorSetBonus.Snow=Ne peut pas subir de congélation ou de refroidissement
 
 BuffTip.Fishing=Augmente la puissance de pêche
 BuffTip.ParryDamageBuff=+400 % de dégâts pour la prochaine attaque au corps à corps

@@ -85,6 +85,8 @@ ArmorSetBonus.Necro=远程暴击率增加10%
 ArmorSetBonus.Ninja=移动速度提高20%
 ArmorSetBonus.Solar=日耀护盾可以随着时间推移补充能量，保护你，让你能猛冲\n能量可以用来伤害你触碰到的敌人\n消耗的能量会爆炸并伤害敌人
 ArmorSetBonus.Turtle=攻击者也会承受双倍伤害\n所受伤害减少15%
+ArmorSetBonus.Angler=敌人生成速度降低
+ArmorSetBonus.Snow=不能冷冻或冷藏
 
 BuffTip.Fishing=渔力提高
 BuffTip.ParryDamageBuff=下次近战暴击伤害增加400%

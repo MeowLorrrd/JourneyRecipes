@@ -85,6 +85,8 @@ ArmorSetBonus.Necro=Um 10% erhöhte kritische Fernkampf-Trefferchance
 ArmorSetBonus.Ninja=Um 20% erhöhtes Bewegungstempo
 ArmorSetBonus.Solar=Sonnenschilde laden sich mit der Zeit auf, beschützen dich & lassen dich sprinten\nMit einer Ladung kannst du Feinden, die du berührst, Schaden zufügen\nVerbraucht Ladungen für Explosionen & um Feinden Schaden zuzufügen
 ArmorSetBonus.Turtle=Angreifer erleiden doppelten Schaden\nReduziert erlittenen Schaden um 15%
+ArmorSetBonus.Angler=Verringerte Feind-Spawnrate
+ArmorSetBonus.Snow=Kann weder eingefroren noch erkältet werden
 
 BuffTip.Fishing=Erhöhte Angelkraft
 BuffTip.ParryDamageBuff=Um 400% erhöhter Schaden für den nächsten Nahkampfangriff

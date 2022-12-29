@@ -85,6 +85,8 @@ ArmorSetBonus.Necro=10% increased ranged critical strike chance
 ArmorSetBonus.Ninja=20% increased movement speed
 ArmorSetBonus.Solar=Solar shields charge over time to protect you & let you dash\nA charge is used to damage enemies you touch\nConsumed charges explode & damage enemies
 ArmorSetBonus.Turtle=Attackers also take double damage\nReduces damage taken by 15%
+ArmorSetBonus.Angler=Decreased enemy spawn rate
+ArmorSetBonus.Snow=Cannot be frozen or chilled
 
 BuffTip.Fishing=Increased fishing power
 BuffTip.ParryDamageBuff=400% increased damage for next melee strike

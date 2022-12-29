@@ -14,12 +14,15 @@ namespace JourneyRecipes.Items
         const string Necro = "necroSet";
         const string Solar = "solarFlareSet";
         const string Turtle = "turtleSet";
-        public override bool Autoload(ref string name)
-        {
-            return GetInstance<JourneyRecipesServerConfig>().allowArmorStat;
-        }
+        const string Angler = "anglerSet";
+        const string Snow = "snowSet";
         public override void SetDefaults(Item item)
         {
+            if (!GetInstance<JourneyRecipesServerConfig>().allowArmorStat)
+            {
+                return;
+            }
+
             if (item.type == 151)
             {
                 item.defense = 6;
@@ -101,6 +104,11 @@ namespace JourneyRecipes.Items
         }
         public override void UpdateEquip(Item item, Player p)
         {
+            if (!GetInstance<JourneyRecipesServerConfig>().allowArmorStat)
+            {
+                return;
+            }
+
             if (p.accDivingHelm)
             {
             }
@@ -236,6 +244,11 @@ namespace JourneyRecipes.Items
         }
         public override string IsArmorSet(Item head, Item body, Item legs)
         {
+            if (!GetInstance<JourneyRecipesServerConfig>().allowArmorStat)
+            {
+                return base.IsArmorSet(head, body, legs);
+            }
+
             if (head.type == 894 && body.type == 895 && legs.type == 896)
             {
                 return Cactus;
@@ -263,6 +276,14 @@ namespace JourneyRecipes.Items
             if (head.type == 1316 && body.type == 1317 && legs.type == 1318)
             {
                 return Turtle;
+            }
+            if (head.type == 2367 || body.type == 2368 || legs.type == 2369)
+            {
+                return Angler;
+            }
+            if ((head.type == 803 || head.type == 978) && (body.type == 804 || body.type == 979) && (legs.type == 805 || legs.type == 980))
+            {
+                return Snow;
             }
             return base.IsArmorSet(head, body, legs);
         }
@@ -310,6 +331,17 @@ namespace JourneyRecipes.Items
                 player.turtleThorns = false;
                 player.turtleArmor = false;
                 player.thorns = 2f;
+            }
+            else if (set == Angler)
+            {
+                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetBonus.Angler");
+                player.GetModPlayer<JourneyRecipesPlayer>().anglerSetSpawnReduction = true;
+            }
+            else if (set == Snow)
+            {
+                player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetBonus.Snow");
+                player.buffImmune[46] = true;
+                player.buffImmune[47] = true;
             }
         }
     }

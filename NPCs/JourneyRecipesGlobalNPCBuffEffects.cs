@@ -5,15 +5,21 @@ namespace JourneyRecipes.NPCs
 {
     public class JourneyRecipesGlobalNPCBuffEffects : GlobalNPC
     {
-        public override bool Autoload(ref string name)
-        {
-            return ModContent.GetInstance<JourneyRecipesServerConfig>().AllowBuffStat;
-        }
         public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)
         {
-            if (player.HasBuff(10))
+            if (ModContent.GetInstance<JourneyRecipesServerConfig>().AllowBuffStat)
             {
-                spawnRate = (int)(spawnRate * 1.2f);
+                if (player.HasBuff(10))
+                {
+                    spawnRate = (int)(spawnRate * 1.2f);
+                }
+            }
+
+
+            if (player.GetModPlayer<JourneyRecipesPlayer>().anglerSetSpawnReduction)
+            {
+                spawnRate = (int)((float)spawnRate * 1.3f);
+                maxSpawns = (int)((float)maxSpawns * 2f);
             }
         }
     }

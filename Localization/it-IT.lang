@@ -85,6 +85,8 @@ ArmorSetBonus.Necro=Probabilità di colpo critico a distanza aumentata del 10%
 ArmorSetBonus.Ninja=Velocità di movimento aumentata del 20%
 ArmorSetBonus.Solar=Gli scudi solari si caricano nel tempo per proteggerti e ti consentono di scattare\nUna carica viene utilizzata per danneggiare i nemici che tocchi\nLe cariche consumate esplodono e infliggono danni ai nemici
 ArmorSetBonus.Turtle=Gli aggressori ricevono anche danni doppi\nRiduce i danni ricevuti del 15%
+ArmorSetBonus.Angler=Ritmo generazione nemici ridotto
+ArmorSetBonus.Snow=Non può essere congelata o refrigerata
 
 BuffTip.Fishing=Potenza pesca aumentata
 BuffTip.ParryDamageBuff=Danni per il prossimo attacco in mischia aumentati del 400%

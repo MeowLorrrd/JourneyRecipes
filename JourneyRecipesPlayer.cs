@@ -24,6 +24,7 @@ namespace JourneyRecipes
         public bool GravityGlobe;
         public Item BoneGloveItem;
         public int boneGloveTimer;
+        public bool anglerSetSpawnReduction;
         public bool ItemAnimationJustStarted => player.itemAnimation == player.itemAnimationMax - 1;
         public override void ResetEffects()
         {
@@ -39,6 +40,7 @@ namespace JourneyRecipes
             BeeBeeBee = false;
             GravityGlobe = false;
             BoneGloveItem = null;
+            anglerSetSpawnReduction = false;
         }
         public override void PostItemCheck()
         {

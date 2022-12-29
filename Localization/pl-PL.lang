@@ -85,6 +85,8 @@ ArmorSetBonus.Necro=10% większa szansa na dystansowe trafienie krytyczne
 ArmorSetBonus.Ninja=20% zwiększona szybkość poruszania się
 ArmorSetBonus.Solar=Tarcze słoneczne ładują się wraz z upływem czasu, zapewniając ci ochronę i pozwalając wykonać zryw\nBy zadać obrażenia przeciwnikom, których dotkniesz, wykorzystujesz ładunek\nWykorzystane ładunki wybuchają i ranią wrogów
 ArmorSetBonus.Turtle=Atakujący także otrzymują podwójne obrażenia\nZmniejsza otrzymywane obrażenia o 15%
+ArmorSetBonus.Angler=Zmniejszone tempo rodzenia się przeciwników
+ArmorSetBonus.Snow=Nie można zamrozić ani schłodzić
 
 BuffTip.Fishing=Zwiększanie mocy wędkarstwa
 BuffTip.ParryDamageBuff=400% zwiększone obrażenia następnego ataku w walce w zwarciu

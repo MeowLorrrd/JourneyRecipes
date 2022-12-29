@@ -85,6 +85,8 @@ ArmorSetBonus.Necro=10% de aumento na chance de ataque à distância crítico
 ArmorSetBonus.Ninja=20% de aumento na velocidade dos movimentos
 ArmorSetBonus.Solar=Escudos solares carregam com o tempo para proteger você. Eles também permitem que você corra\nUma carga é gasta para causar dano nos inimigos que você tocar\nCargas gastas explodem e causam dano nos inimigos
 ArmorSetBonus.Turtle=Quem ataca também sofre dano em dobro\nReduz o dano sofrido em 15%
+ArmorSetBonus.Angler=Diminui a taxa de criação de inimigos
+ArmorSetBonus.Snow=Imune a congelamento ou resfriamento
 
 BuffTip.Fishing=Maior poder de pescaria
 BuffTip.ParryDamageBuff=Aumento de 400% nos danos para o próximo ataque físico
