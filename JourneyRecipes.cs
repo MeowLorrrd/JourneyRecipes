@@ -2519,9 +2519,17 @@ namespace JourneyRecipes
             instance = this;
             if (!Main.dedServ)                                  //sprites
             {
+                Main.instance.LoadProjectile(ProjectileID.ToxicCloud);
+                Main.instance.LoadProjectile(ProjectileID.ToxicCloud2);
+                Main.instance.LoadProjectile(ProjectileID.ToxicCloud3);
+                Main.projectileTexture[ProjectileID.ToxicCloud] = GetTexture("Resprite/Projectile_511");
+                Main.projectileTexture[ProjectileID.ToxicCloud2] = GetTexture("Resprite/Projectile_512");
+                Main.projectileTexture[ProjectileID.ToxicCloud3] = GetTexture("Resprite/Projectile_513");
+
                 Main.instance.LoadTiles(TileID.DyePlants);
                 Main.tileTexture[TileID.DyePlants] = GetTexture("Resprite/Tiles_227");
 
+                #region npcs
                 Main.instance.LoadNPC(NPCID.AngryBones);                                    //load all called NPCs first
                 Main.instance.LoadNPC(NPCID.Harpy);
                 Main.instance.LoadNPC(NPCID.Vulture);
@@ -2633,6 +2641,7 @@ namespace JourneyRecipes
                 Main.npcTexture[NPCID.TacticalSkeleton] = GetTexture("Resprite/NPC_292");
                 Main.npcTexture[NPCID.SkeletonCommando] = GetTexture("Resprite/NPC_293");
                 Main.npcTexture[NPCID.Everscream] = GetTexture("Resprite/NPC_344");
+                #endregion
             }
         }
         public override void Unload()
@@ -2642,6 +2651,10 @@ namespace JourneyRecipes
             instance = null;
             if (!Main.dedServ)
             {
+                Main.projectileLoaded[ProjectileID.ToxicCloud] = false;
+                Main.projectileLoaded[ProjectileID.ToxicCloud2] = false;
+                Main.projectileLoaded[ProjectileID.ToxicCloud3] = false;
+
                 Main.tileFrame[TileID.DyePlants] = 0;
                 Main.tileSetsLoaded[TileID.DyePlants] = false;                              //forces game to reload texture for this tile, as this declares that it is not loaded
 
@@ -2708,7 +2721,6 @@ namespace JourneyRecipes
                 Main.NPCLoaded[NPCID.Everscream] = false;
             }
             bool flag3 = GetInstance<JourneyRecipesServerConfig>().AllowBuffDuration;
-            bool flag4 = GetInstance<JourneyRecipesServerConfig>().AllowBuffStat;
             if (flag3)
             {
                 Main.buffNoTimeDisplay[BuffID.Sharpened] = false;
@@ -2719,11 +2731,6 @@ namespace JourneyRecipes
                 Main.buffNoSave[BuffID.Clairvoyance] = false;
                 Main.buffNoSave[BuffID.Bewitched] = false;
                 Main.buffNoSave[BuffID.AmmoBox] = false;
-            }
-            if (flag4)//don't know if this actually does anything, but just to be safe and to avoid any potentional bugs
-            {
-                Player p = Main.LocalPlayer;
-                p.armorPenetration -= 8;
             }
         }
     }

@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.ID;
+using Microsoft.Xna.Framework.Graphics.PackedVector;
 
 namespace JourneyRecipes.Projectiles
 {
@@ -13,6 +14,10 @@ namespace JourneyRecipes.Projectiles
 
         public override void SetDefaults(Projectile projectile)
         {
+            if (projectile.type == 22)
+            {
+                projectile.penetrate = 5;
+            }
             if (projectile.type == 23)
             {
                 projectile.usesLocalNPCImmunity = true;
@@ -27,12 +32,42 @@ namespace JourneyRecipes.Projectiles
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 15;
             }
+            if (projectile.type == 93)
+            {
+                projectile.usesLocalNPCImmunity = true;
+                projectile.localNPCHitCooldown = 20;
+            }
+            if (projectile.type == 238)
+            {
+                projectile.timeLeft = 18000;
+            }
+            if (projectile.type == 239)
+            {
+                projectile.penetrate = 5;
+                projectile.usesIDStaticNPCImmunity = true;
+                projectile.idStaticNPCHitCooldown = 10;
+            }
             if (projectile.type == 242)
             {
                 projectile.penetrate = 3;
                 projectile.extraUpdates = 7;
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 15;
+            }
+            if (projectile.type == 250)
+            {
+                projectile.usesIDStaticNPCImmunity = true;
+                projectile.idStaticNPCHitCooldown = 10;
+            }
+            if (projectile.type == 251)
+            {
+                projectile.usesIDStaticNPCImmunity = true;
+                projectile.idStaticNPCHitCooldown = 10;
+            }
+            if (projectile.type == 254)
+            {
+                projectile.timeLeft = 900;
+                projectile.tileCollide = false;
             }
             if (projectile.type == 260)
             {
@@ -54,6 +89,8 @@ namespace JourneyRecipes.Projectiles
             if (projectile.type == 297)
             {
                 projectile.penetrate = 3;
+                projectile.usesIDStaticNPCImmunity = true;
+                projectile.idStaticNPCHitCooldown = 10;
             }
             if (projectile.type == 390 || projectile.type == 391 || projectile.type == 392)
             {
@@ -83,6 +120,10 @@ namespace JourneyRecipes.Projectiles
             {
                 projectile.timeLeft = 300;
             }
+            if (projectile.type == 410)
+            {
+                projectile.timeLeft = 100;
+            }
             if (projectile.type == 433)
             {
                 //TODO: MODIFY DAMAGE
@@ -97,6 +138,11 @@ namespace JourneyRecipes.Projectiles
                 projectile.extraUpdates = 1;
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 30;
+                projectile.damage = 170;
+            }
+            if (projectile.type == 511 || projectile.type == 512 || projectile.type == 513)
+            {
+                projectile.penetrate = -1;
             }
             if (projectile.type == 524)
             {
@@ -122,6 +168,10 @@ namespace JourneyRecipes.Projectiles
                 projectile.netImportant = true;
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 8;
+            }
+            if (projectile.type == 569)
+            {
+                projectile.timeLeft = 240;
             }
             if (projectile.type == 603)
             {
@@ -290,6 +340,119 @@ namespace JourneyRecipes.Projectiles
                 MagicMissilesProj(projectile);
                 return false;
             }*///needs work im lazy
+            if (projectile.aiStyle == 92)
+            {
+                if (projectile.type >= 511 && projectile.type <= 513)
+                {
+                    ToxicFlaskProj(projectile);
+                    return false;
+                }
+            }
+            if (projectile.type == 254)
+            {
+                //MagnetSphereProj(projectile);//sigh...
+                return true;
+            }
+            if (projectile.aiStyle == 46)
+            {
+                RainbowGun(projectile);
+                return false;
+            }
+            if (projectile.aiStyle == 50)
+            {
+                if (projectile.type != 296)
+                {
+                    return true;
+                }
+                if (projectile.localAI[0] == 0f)
+                {
+                    Main.PlaySound(SoundID.Item74, projectile.position);
+                    projectile.localAI[0] += 1f;
+                }
+                projectile.ai[0] += 1f;
+                if (projectile.type == 296)
+                {
+                    projectile.ai[0] += 3f;
+                }
+                float num387 = 25f;
+                if (projectile.ai[0] > 540f)
+                {
+                    num387 -= (projectile.ai[0] - 180f) / 2f;
+                }
+                if (num387 <= 0f)
+                {
+                    num387 = 0f;
+                    projectile.Kill();
+                }
+                if (projectile.type == 296)
+                {
+                    num387 *= 0.7f;
+                }
+                for (int num388 = 0; (float)num388 < num387; num388++)
+                {
+                    float num389 = Main.rand.Next(-10, 11);
+                    float num390 = Main.rand.Next(-10, 11);
+                    float num391 = Main.rand.Next(3, 9);
+                    float num392 = (float)Math.Sqrt(num389 * num389 + num390 * num390);
+                    num392 = num391 / num392;
+                    num389 *= num392;
+                    num390 *= num392;
+                    int num393 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 174, 0f, 0f, 100, default, 1.5f);
+                    Main.dust[num393].noGravity = true;
+                    Main.dust[num393].position.X = projectile.Center.X;
+                    Main.dust[num393].position.Y = projectile.Center.Y;
+                    Main.dust[num393].position.X += Main.rand.Next(-10, 11);
+                    Main.dust[num393].position.Y += Main.rand.Next(-10, 11);
+                    Main.dust[num393].velocity.X = num389;
+                    Main.dust[num393].velocity.Y = num390;
+                }
+                return false;
+            }
+            if (projectile.aiStyle == 12 && projectile.type == 22)
+            {
+                float num129 = 0.01f;
+                float num130 = 0.15f;
+                projectile.scale -= num129;
+                if (projectile.scale <= 0f)
+                {
+                    projectile.Kill();
+                }
+                if (projectile.ai[0] > 3f)
+                {
+                    projectile.velocity.Y += num130;
+                    for (int num131 = 0; num131 < 1; num131++)
+                    {
+                        for (int num132 = 0; num132 < 3; num132++)
+                        {
+                            float num133 = projectile.velocity.X / 3f * (float)num132;
+                            float num134 = projectile.velocity.Y / 3f * (float)num132;
+                            int num135 = 6;
+                            int num136 = Dust.NewDust(new Vector2(projectile.position.X + (float)num135, projectile.position.Y + (float)num135), projectile.width - num135 * 2, projectile.height - num135 * 2, 172, 0f, 0f, 100, default, 1.2f);
+                            Main.dust[num136].noGravity = true;
+                            Dust dust2 = Main.dust[num136];
+                            dust2.velocity *= 0.3f;
+                            dust2 = Main.dust[num136];
+                            dust2.velocity += projectile.velocity * 0.5f;
+                            Main.dust[num136].position.X -= num133;
+                            Main.dust[num136].position.Y -= num134;
+                        }
+                        if (Main.rand.NextBool(8))
+                        {
+                            int num137 = 6;
+                            int num138 = Dust.NewDust(new Vector2(projectile.position.X + (float)num137, projectile.position.Y + (float)num137), projectile.width - num137 * 2, projectile.height - num137 * 2, 172, 0f, 0f, 100, default, 0.75f);
+                            Dust dust2 = Main.dust[num138];
+                            dust2.velocity *= 0.5f;
+                            dust2 = Main.dust[num138];
+                            dust2.velocity += projectile.velocity * 0.5f;
+                        }
+                    }
+                }
+                else
+                {
+                    projectile.ai[0] += 1f;
+                }
+                return false;
+            }
             return base.PreAI(projectile);
         }
         private void NorthPoleSpearProj(Projectile proj)
@@ -358,238 +521,516 @@ namespace JourneyRecipes.Projectiles
             }
         }
 
-        private void MagicMissilesProj(Projectile proj)
+        /* private void MagicMissilesProj(Projectile proj)
+         {
+             if (proj.type == 491)
+             {
+                 //MagicMissilesProjOld(proj);
+                 return;
+             }
+             int num = 32;
+             Player player = Main.player[proj.owner];
+             int num2 = Main.maxTilesY * 16;
+             int num3 = 0;
+             if (proj.ai[0] >= 0f)
+             {
+                 num3 = (int)(proj.ai[1] / (float)num2);
+             }
+             bool flag = proj.ai[0] == -1f || proj.ai[0] == -2f;
+             if (proj.type == 34)
+             {
+                 if (proj.frameCounter++ >= 4)
+                 {
+                     proj.frameCounter = 0;
+                     if (++proj.frame >= Main.projFrames[proj.type])
+                     {
+                         proj.frame = 0;
+                     }
+                 }
+                 if (proj.penetrate == 1 && proj.ai[0] >= 0f && num3 == 0)
+                 {
+                     proj.ai[1] += num2;
+                     num3 = 1;
+                     proj.netUpdate = true;
+                 }
+                 if (proj.penetrate == 1 && proj.ai[0] == -1f)
+                 {
+                     proj.ai[0] = -2f;
+                     proj.netUpdate = true;
+                 }
+                 if (num3 > 0 || proj.ai[0] == -2f)
+                 {
+                     proj.localAI[0] += 1f;
+                 }
+             }
+             if (proj.owner == Main.myPlayer)
+             {
+                 if (proj.ai[0] >= 0f)
+                 {
+                     if (player.channel && player.HeldItem.shoot == proj.type)
+                     {
+                         Vector2 pointPoisition = Main.MouseWorld;
+                         //player.LimitPointToPlayerReachableArea(ref pointPoisition);
+                         if (proj.ai[0] != pointPoisition.X || proj.ai[1] != pointPoisition.Y)
+                         {
+                             proj.netUpdate = true;
+                             proj.ai[0] = pointPoisition.X;
+                             proj.ai[1] = pointPoisition.Y + (float)(num2 * num3);
+                         }
+                     }
+                     else
+                     {
+                         proj.netUpdate = true;
+                         proj.ai[0] = -1f;
+                         proj.ai[1] = -1f;
+                         int num4 = FindTargetWithLineOfSight();
+                         if (num4 != -1)
+                         {
+                             proj.ai[1] = num4;
+                         }
+                         else if (proj.velocity.Length() < 2f)
+                         {
+                             proj.velocity = proj.DirectionFrom(player.Center) * num;
+                         }
+                         else
+                         {
+                             proj.velocity = proj.velocity.SafeNormalize(Vector2.Zero) * num;
+                         }
+                     }
+                 }
+                 if (flag && proj.ai[1] == -1f)
+                 {
+                     int num5 = FindTargetWithLineOfSight();
+                     if (num5 != -1)
+                     {
+                         proj.ai[1] = num5;
+                         proj.netUpdate = true;
+                     }
+                 }
+             }
+             Vector2? vector = null;
+             float amount = 1f;
+             if (proj.ai[0] > 0f && proj.ai[1] > 0f)
+             {
+                 vector = new Vector2(proj.ai[0], proj.ai[1] % (float)num2);
+             }
+             if (flag && proj.ai[1] >= 0f)
+             {
+                 int num6 = (int)proj.ai[1];
+                 if (Main.npc.IndexInRange(num6))
+                 {
+                     NPC nPC = Main.npc[num6];
+                     if (nPC.CanBeChasedBy(this))
+                     {
+                         vector = nPC.Center;
+                         float t = proj.Distance(vector.Value);
+                         float num7 = JRUtils.GetLerpValue(0f, 100f, t, clamped: true) * JRUtils.GetLerpValue(600f, 400f, t, clamped: true);
+                         amount = MathHelper.Lerp(0f, 0.2f, JRUtils.GetLerpValue(200f, 20f, 1f - num7, clamped: true));
+                     }
+                     else
+                     {
+                         proj.ai[1] = -1f;
+                         proj.netUpdate = true;
+                     }
+                 }
+             }
+             bool flag2 = false;
+             if (flag)
+             {
+                 flag2 = true;
+             }
+             if (vector.HasValue)
+             {
+                 Vector2 value = vector.Value;
+                 if (proj.Distance(value) >= 64f)
+                 {
+                     flag2 = true;
+                     Vector2 v = value - proj.Center;
+                     Vector2 vector2 = v.SafeNormalize(Vector2.Zero);
+                     float num8 = Math.Min(num, v.Length());
+                     Vector2 value2 = vector2 * num8;
+                     if (proj.velocity.Length() < 4f)
+                     {
+                         proj.velocity += proj.velocity.SafeNormalize(Vector2.Zero).RotatedBy(0.78539818525314331).SafeNormalize(Vector2.Zero) * 4f;
+                     }
+                     if (proj.velocity.HasNaNs())
+                     {
+                         proj.Kill();
+                     }
+                     proj.velocity = Vector2.Lerp(proj.velocity, value2, amount);
+                 }
+                 else
+                 {
+                     proj.velocity *= 0.3f;
+                     proj.velocity += (value - proj.Center) * 0.3f;
+                     flag2 = proj.velocity.Length() >= 2f;
+                 }
+                 if (proj.timeLeft < 60)
+                 {
+                     proj.timeLeft = 60;
+                 }
+             }
+             if (flag && proj.ai[1] < 0f)
+             {
+                 if (proj.velocity.Length() != (float)num)
+                 {
+                     proj.velocity = JRUtils.MoveTowards(proj.position, proj.velocity.SafeNormalize(Vector2.UnitY) * num, 4f);
+                 }
+                 if (proj.timeLeft > 300)
+                 {
+                     proj.timeLeft = 300;
+                 }
+             }
+             if (flag2 && proj.velocity != Vector2.Zero)
+             {
+                 proj.rotation = proj.rotation.AngleTowards(proj.velocity.ToRotation(), (float)Math.PI / 4f);
+             }
+             else
+             {
+                 proj.rotation = proj.rotation.AngleLerp(0f, 0.2f);
+             }
+             bool flag3 = proj.velocity.Length() > 0.1f && Vector2.Dot(proj.oldVelocity.SafeNormalize(Vector2.Zero), proj.velocity.SafeNormalize(Vector2.Zero)) < 0.2f;
+             if (proj.type == 16)
+             {
+                 if (proj.soundDelay == 0 && Math.Abs(proj.velocity.X) + Math.Abs(proj.velocity.Y) > 2f)
+                 {
+                     proj.soundDelay = 10;
+                     Main.PlaySound(SoundID.Item9, proj.position);
+                 }
+                 if (Main.rand.NextBool(9))
+                 {
+                     int num9 = Dust.NewDust(proj.position, proj.width, proj.height, 15, 0f, 0f, 100, default, 2f);
+                     Main.dust[num9].velocity *= 0.3f;
+                     Main.dust[num9].position.X = proj.position.X + (float)(proj.width / 2) + 4f + (float)Main.rand.Next(-4, 5);
+                     Main.dust[num9].position.Y = proj.position.Y + (float)(proj.height / 2) + (float)Main.rand.Next(-4, 5);
+                     Main.dust[num9].noGravity = true;
+                     Main.dust[num9].velocity += Main.rand.NextVector2Circular(2f, 2f);
+                 }
+                 if (flag3)
+                 {
+                     int num10 = Main.rand.Next(2, 5);
+                     for (int i = 0; i < num10; i++)
+                     {
+                         Dust dust = Dust.NewDustDirect(proj.position, proj.width, proj.height, 15, 0f, 0f, 100, default, 1.5f);
+                         dust.velocity *= 0.3f;
+                         dust.position = proj.Center;
+                         dust.noGravity = true;
+                         dust.velocity += Main.rand.NextVector2Circular(0.5f, 0.5f);
+                         dust.fadeIn = 2.2f;
+                     }
+                 }
+             }
+             if (proj.type != 34)
+             {
+                 return;
+             }
+             float lerpValue = JRUtils.GetLerpValue(0f, 10f, proj.localAI[0], clamped: true);
+             Color newColor = Color.Lerp(Color.Transparent, Color.Crimson, lerpValue);
+             if (Main.rand.NextBool(6))
+             {
+                 Dust dust2 = Dust.NewDustDirect(proj.Center, 0, 0, 6, proj.velocity.X * 0.2f, proj.velocity.Y * 0.2f, 100, newColor, 3.5f);
+                 dust2.noGravity = true;
+                 dust2.velocity *= 1.4f;
+                 dust2.velocity += Main.rand.NextVector2Circular(1f, 1f);
+                 dust2.velocity += proj.velocity * 0.15f;
+             }
+             if (Main.rand.NextBool(12))
+             {
+                 Dust dust3 = Dust.NewDustDirect(proj.Center, 0, 0, 6, proj.velocity.X * 0.2f, proj.velocity.Y * 0.2f, 100, newColor, 1.5f);
+                 dust3.velocity += Main.rand.NextVector2Circular(1f, 1f);
+                 dust3.velocity += proj.velocity * 0.15f;
+             }
+             if (flag3)
+             {
+                 int num11 = Main.rand.Next(2, 5 + (int)(lerpValue * 4f));
+                 for (int j = 0; j < num11; j++)
+                 {
+                     Dust dust4 = Dust.NewDustDirect(proj.position, proj.width, proj.height, 6, 0f, 0f, 100, newColor, 1.5f);
+                     dust4.velocity *= 0.3f;
+                     dust4.position = proj.Center;
+                     dust4.noGravity = true;
+                     dust4.velocity += Main.rand.NextVector2Circular(0.5f, 0.5f);
+                     dust4.fadeIn = 2.2f;
+                     dust4.position += (dust4.position - proj.Center) * lerpValue * 10f;
+                 }
+             }
+         }*/
+
+        private void ToxicFlaskProj(Projectile proj)
         {
-            if (proj.type == 491)
+            if (proj.aiStyle == 92)
             {
-                //MagicMissilesProjOld(proj);
-                return;
-            }
-            int num = 32;
-            Player player = Main.player[proj.owner];
-            int num2 = Main.maxTilesY * 16;
-            int num3 = 0;
-            if (proj.ai[0] >= 0f)
-            {
-                num3 = (int)(proj.ai[1] / (float)num2);
-            }
-            bool flag = proj.ai[0] == -1f || proj.ai[0] == -2f;
-            if (proj.type == 34)
-            {
-                if (proj.frameCounter++ >= 4)
+                bool flag39 = proj.type >= 511 && proj.type <= 513;
+                proj.tileCollide = false;
+                proj.ai[0] += 1f;
+                if (proj.ai[1] >= 1f)
                 {
-                    proj.frameCounter = 0;
-                    if (++proj.frame >= Main.projFrames[proj.type])
+                    proj.ai[0] += 2f;
+                }
+                float num811 = 260f;
+                if (proj.ai[0] > num811)
+                {
+                    proj.Kill();
+                    proj.ai[0] = num811;
+                    return;
+                }
+                float fromValue = proj.ai[0] / num811;
+                if (flag39)
+                {
+                    proj.Opacity = JRUtils.Remap(fromValue, 0f, 0.3f, 0f, 1f) * JRUtils.Remap(fromValue, 0.3f, 1f, 1f, 0f) * 0.7f;
+                }
+                proj.localAI[0] += proj.direction;
+                proj.rotation = (float)proj.whoAmI * 0.4002029f + proj.localAI[0] * ((float)Math.PI * 2f) / 480f;
+                if (flag39)
+                {
+                    proj.velocity *= 0.96f;
+                }
+                if (flag39)
+                {
+                    Rectangle rectangle5 = new Rectangle((int)proj.position.X, (int)proj.position.Y, proj.width, proj.height);
+                    for (int num812 = 0; num812 < 1000; num812++)
                     {
-                        proj.frame = 0;
-                    }
-                }
-                if (proj.penetrate == 1 && proj.ai[0] >= 0f && num3 == 0)
-                {
-                    proj.ai[1] += num2;
-                    num3 = 1;
-                    proj.netUpdate = true;
-                }
-                if (proj.penetrate == 1 && proj.ai[0] == -1f)
-                {
-                    proj.ai[0] = -2f;
-                    proj.netUpdate = true;
-                }
-                if (num3 > 0 || proj.ai[0] == -2f)
-                {
-                    proj.localAI[0] += 1f;
-                }
-            }
-            if (proj.owner == Main.myPlayer)
-            {
-                if (proj.ai[0] >= 0f)
-                {
-                    if (player.channel && player.HeldItem.shoot == proj.type)
-                    {
-                        Vector2 pointPoisition = Main.MouseWorld;
-                        //player.LimitPointToPlayerReachableArea(ref pointPoisition);
-                        if (proj.ai[0] != pointPoisition.X || proj.ai[1] != pointPoisition.Y)
+                        if (num812 == proj.whoAmI)
                         {
-                            proj.netUpdate = true;
-                            proj.ai[0] = pointPoisition.X;
-                            proj.ai[1] = pointPoisition.Y + (float)(num2 * num3);
+                            continue;
                         }
-                    }
-                    else
-                    {
-                        proj.netUpdate = true;
-                        proj.ai[0] = -1f;
-                        proj.ai[1] = -1f;
-                        int num4 = FindTargetWithLineOfSight();
-                        if (num4 != -1)
+                        Projectile projectile3 = Main.projectile[num812];
+                        if (!projectile3.active || projectile3.type < 511 || projectile3.type > 513)
                         {
-                            proj.ai[1] = num4;
+                            continue;
                         }
-                        else if (proj.velocity.Length() < 2f)
+                        Rectangle value11 = new Rectangle((int)projectile3.position.X, (int)projectile3.position.Y, projectile3.width, projectile3.height);
+                        if (!rectangle5.Intersects(value11))
                         {
-                            proj.velocity = proj.DirectionFrom(player.Center) * num;
+                            continue;
                         }
-                        else
+                        Vector2 vector100 = projectile3.Center - proj.Center;
+                        if (vector100 == Vector2.Zero)
                         {
-                            proj.velocity = proj.velocity.SafeNormalize(Vector2.Zero) * num;
+                            if (num812 < proj.whoAmI)
+                            {
+                                vector100.X = -1f;
+                                vector100.Y = 1f;
+                            }
+                            else
+                            {
+                                vector100.X = 1f;
+                                vector100.Y = -1f;
+                            }
                         }
+                        Vector2 vector101 = vector100.SafeNormalize(Vector2.UnitX) * 0.005f;
+                        proj.velocity = Vector2.Lerp(proj.velocity, proj.velocity - vector101, 0.6f);
+                        projectile3.velocity = Vector2.Lerp(projectile3.velocity, projectile3.velocity + vector101, 0.6f);
                     }
                 }
-                if (flag && proj.ai[1] == -1f)
+                Vector2 vector102 = proj.velocity.SafeNormalize(Vector2.Zero);
+                Vector2 pos = proj.Center + vector102 * 16f;
+                if (flag39 && JRUtils.IsWorldPointSolid(pos))
                 {
-                    int num5 = FindTargetWithLineOfSight();
-                    if (num5 != -1)
-                    {
-                        proj.ai[1] = num5;
-                        proj.netUpdate = true;
-                    }
+                    proj.velocity = Vector2.Lerp(proj.velocity, proj.velocity - vector102 * 1f, 0.5f);
                 }
             }
-            Vector2? vector = null;
-            float amount = 1f;
-            if (proj.ai[0] > 0f && proj.ai[1] > 0f)
+        }
+
+        /*private void MagnetSphereProj(Projectile proj)
+        {
+            bool flag = false;
+            if (proj.tileCollide)
             {
-                vector = new Vector2(proj.ai[0], proj.ai[1] % (float)num2);
-            }
-            if (flag && proj.ai[1] >= 0f)
-            {
-                int num6 = (int)proj.ai[1];
-                if (Main.npc.IndexInRange(num6))
+                Vector2 lastVelocity = proj.velocity;
+                bool flag6 = true;
+                Vector2? vector = null;
+
+                if (proj.velocity.X != lastVelocity.X)
                 {
-                    NPC nPC = Main.npc[num6];
-                    if (nPC.CanBeChasedBy(this))
-                    {
-                        vector = nPC.Center;
-                        float t = proj.Distance(vector.Value);
-                        float num7 = JRUtils.GetLerpValue(0f, 100f, t, clamped: true) * JRUtils.GetLerpValue(600f, 400f, t, clamped: true);
-                        amount = MathHelper.Lerp(0f, 0.2f, JRUtils.GetLerpValue(200f, 20f, 1f - num7, clamped: true));
-                    }
-                    else
-                    {
-                        proj.ai[1] = -1f;
-                        proj.netUpdate = true;
-                    }
+                    proj.velocity.X = lastVelocity.X * -1f;
+                }
+                if (proj.velocity.Y != lastVelocity.Y)
+                {
+                    proj.velocity.Y = lastVelocity.Y * -1f;
                 }
             }
-            bool flag2 = false;
-            if (flag)
+            if (proj.ai[0] == 0f)
             {
-                flag2 = true;
+                proj.ai[0] = proj.velocity.X;
+                proj.ai[1] = proj.velocity.Y;
             }
-            if (vector.HasValue)
+            if (proj.velocity.X > 0f)
             {
-                Vector2 value = vector.Value;
-                if (proj.Distance(value) >= 64f)
-                {
-                    flag2 = true;
-                    Vector2 v = value - proj.Center;
-                    Vector2 vector2 = v.SafeNormalize(Vector2.Zero);
-                    float num8 = Math.Min(num, v.Length());
-                    Vector2 value2 = vector2 * num8;
-                    if (proj.velocity.Length() < 4f)
-                    {
-                        proj.velocity += proj.velocity.SafeNormalize(Vector2.Zero).RotatedBy(0.78539818525314331).SafeNormalize(Vector2.Zero) * 4f;
-                    }
-                    if (proj.velocity.HasNaNs())
-                    {
-                        proj.Kill();
-                    }
-                    proj.velocity = Vector2.Lerp(proj.velocity, value2, amount);
-                }
-                else
-                {
-                    proj.velocity *= 0.3f;
-                    proj.velocity += (value - proj.Center) * 0.3f;
-                    flag2 = proj.velocity.Length() >= 2f;
-                }
-                if (proj.timeLeft < 60)
-                {
-                    proj.timeLeft = 60;
-                }
-            }
-            if (flag && proj.ai[1] < 0f)
-            {
-                if (proj.velocity.Length() != (float)num)
-                {
-                    proj.velocity = JRUtils.MoveTowards(proj.position, proj.velocity.SafeNormalize(Vector2.UnitY) * num, 4f);
-                }
-                if (proj.timeLeft > 300)
-                {
-                    proj.timeLeft = 300;
-                }
-            }
-            if (flag2 && proj.velocity != Vector2.Zero)
-            {
-                proj.rotation = proj.rotation.AngleTowards(proj.velocity.ToRotation(), (float)Math.PI / 4f);
+                proj.rotation += (Math.Abs(proj.velocity.Y) + Math.Abs(proj.velocity.X)) * 0.001f;
             }
             else
             {
-                proj.rotation = proj.rotation.AngleLerp(0f, 0.2f);
+                proj.rotation -= (Math.Abs(proj.velocity.Y) + Math.Abs(proj.velocity.X)) * 0.001f;
             }
-            bool flag3 = proj.velocity.Length() > 0.1f && Vector2.Dot(proj.oldVelocity.SafeNormalize(Vector2.Zero), proj.velocity.SafeNormalize(Vector2.Zero)) < 0.2f;
-            if (proj.type == 16)
+            proj.frameCounter++;
+            if (proj.frameCounter > 6)
             {
-                if (proj.soundDelay == 0 && Math.Abs(proj.velocity.X) + Math.Abs(proj.velocity.Y) > 2f)
+                proj.frameCounter = 0;
+                proj.frame++;
+                if (proj.frame > 4)
                 {
-                    proj.soundDelay = 10;
-                    Main.PlaySound(SoundID.Item9, proj.position);
+                    proj.frame = 0;
                 }
-                if (Main.rand.NextBool(9))
+            }
+            if (proj.velocity.Length() > 2f)
+            {
+                proj.velocity *= 0.98f;
+            }
+            for (int i = 0; i < 1000; i++)
+            {
+                if (i != proj.whoAmI)
                 {
-                    int num9 = Dust.NewDust(proj.position, proj.width, proj.height, 15, 0f, 0f, 100, default, 2f);
-                    Main.dust[num9].velocity *= 0.3f;
-                    Main.dust[num9].position.X = proj.position.X + (float)(proj.width / 2) + 4f + (float)Main.rand.Next(-4, 5);
-                    Main.dust[num9].position.Y = proj.position.Y + (float)(proj.height / 2) + (float)Main.rand.Next(-4, 5);
-                    Main.dust[num9].noGravity = true;
-                    Main.dust[num9].velocity += Main.rand.NextVector2Circular(2f, 2f);
-                }
-                if (flag3)
-                {
-                    int num10 = Main.rand.Next(2, 5);
-                    for (int i = 0; i < num10; i++)
+                    Projectile projectile = Main.projectile[i];
+                    if (projectile.active && projectile.owner == proj.owner && projectile.type == proj.type && proj.timeLeft > Main.projectile[i].timeLeft && Main.projectile[i].timeLeft > 30)
                     {
-                        Dust dust = Dust.NewDustDirect(proj.position, proj.width, proj.height, 15, 0f, 0f, 100, default, 1.5f);
-                        dust.velocity *= 0.3f;
-                        dust.position = proj.Center;
-                        dust.noGravity = true;
-                        dust.velocity += Main.rand.NextVector2Circular(0.5f, 0.5f);
-                        dust.fadeIn = 2.2f;
+                        Main.projectile[i].timeLeft = 30;
                     }
                 }
             }
-            if (proj.type != 34)
+            AI_047_MagnetSphere_TryAttacking(proj);
+        }
+        private void AI_047_MagnetSphere_TryAttacking(Projectile proj)//literal ctrl c + v
+        {
+            int[] array = new int[20];
+            int num = 0;
+            float num2 = 300f;
+            bool flag = false;
+            float num3 = 0f;
+            float num4 = 0f;
+            for (int i = 0; i < 200; i++)
             {
+                if (!Main.npc[i].CanBeChasedBy(this))
+                {
+                    continue;
+                }
+                float num5 = Main.npc[i].position.X + (float)(Main.npc[i].width / 2);
+                float num6 = Main.npc[i].position.Y + (float)(Main.npc[i].height / 2);
+                if (Math.Abs(proj.position.X + (float)(proj.width / 2) - num5) + Math.Abs(proj.position.Y + (float)(proj.height / 2) - num6) < num2 && Collision.CanHit(proj.Center, 1, 1, Main.npc[i].Center, 1, 1))
+                {
+                    if (num < 20)
+                    {
+                        array[num] = i;
+                        num++;
+                        num3 = num5;
+                        num4 = num6;
+                    }
+                    flag = true;
+                }
+            }
+            if (proj.timeLeft < 30)
+            {
+                flag = false;
+            }
+            if (flag)
+            {
+                int num7 = Main.rand.Next(num);
+                num7 = array[num7];
+                num3 = Main.npc[num7].position.X + (float)(Main.npc[num7].width / 2);
+                num4 = Main.npc[num7].position.Y + (float)(Main.npc[num7].height / 2);
+                proj.localAI[0] += 1f;
+                if (proj.localAI[0] > 8f)
+                {
+                    proj.localAI[0] = 0f;
+                    Vector2 vector = new Vector2(proj.position.X + (float)proj.width * 0.5f, proj.position.Y + (float)proj.height * 0.5f);
+                    vector += proj.velocity * 4f;
+                    float num8 = num3 - vector.X;
+                    float num9 = num4 - vector.Y;
+                    float num10 = (float)Math.Sqrt(num8 * num8 + num9 * num9);
+                    num10 = 6f / num10;
+                    num8 *= num10;
+                    num9 *= num10;
+                    Projectile.NewProjectile(vector.X, vector.Y, num8, num9, 255, proj.damage, proj.knockBack, proj.owner);
+                }
+            }
+        }*/
+
+        private void RainbowGun(Projectile proj)
+        {
+            int num363 = 2400;
+            if (proj.type == 250)
+            {
+                Point point2 = proj.Center.ToTileCoordinates();
+                if (!WorldGen.InWorld(point2.X, point2.Y, 2) || Main.tile[point2.X, point2.Y] == null)
+                {
+                    proj.Kill();
+                    return;
+                }
+                if (proj.owner == Main.myPlayer)
+                {
+                    proj.localAI[0] += 1f;
+                    if (proj.localAI[0] > 4f)
+                    {
+                        proj.localAI[0] = 3f;
+                        Projectile.NewProjectile(proj.Center.X, proj.Center.Y, proj.velocity.X * 0.001f, proj.velocity.Y * 0.001f, 251, proj.damage, proj.knockBack, proj.owner);
+                    }
+                    if (proj.timeLeft > num363)
+                    {
+                        proj.timeLeft = num363;
+                    }
+                }
+                float num364 = 1f;
+                if (proj.velocity.Y < 0f)
+                {
+                    num364 -= proj.velocity.Y / 3f;
+                }
+                proj.ai[0] += num364;
+                if (proj.ai[0] > 30f)
+                {
+                    proj.velocity.Y += 0.5f;
+                    if (proj.velocity.Y > 0f)
+                    {
+                        proj.velocity.X *= 0.95f;
+                    }
+                    else
+                    {
+                        proj.velocity.X *= 1.05f;
+                    }
+                }
+                float x3 = proj.velocity.X;
+                float y3 = proj.velocity.Y;
+                float num365 = (float)Math.Sqrt(x3 * x3 + y3 * y3);
+                num365 = 15.95f * proj.scale / num365;
+                x3 *= num365;
+                y3 *= num365;
+                proj.velocity.X = x3;
+                proj.velocity.Y = y3;
+                proj.rotation = (float)Math.Atan2(proj.velocity.Y, proj.velocity.X) - 1.57f;
                 return;
             }
-            float lerpValue = JRUtils.GetLerpValue(0f, 10f, proj.localAI[0], clamped: true);
-            Color newColor = Color.Lerp(Color.Transparent, Color.Crimson, lerpValue);
-            if (Main.rand.NextBool(6))
+            if (proj.localAI[0] == 0f)
             {
-                Dust dust2 = Dust.NewDustDirect(proj.Center, 0, 0, 6, proj.velocity.X * 0.2f, proj.velocity.Y * 0.2f, 100, newColor, 3.5f);
-                dust2.noGravity = true;
-                dust2.velocity *= 1.4f;
-                dust2.velocity += Main.rand.NextVector2Circular(1f, 1f);
-                dust2.velocity += proj.velocity * 0.15f;
-            }
-            if (Main.rand.NextBool(12))
-            {
-                Dust dust3 = Dust.NewDustDirect(proj.Center, 0, 0, 6, proj.velocity.X * 0.2f, proj.velocity.Y * 0.2f, 100, newColor, 1.5f);
-                dust3.velocity += Main.rand.NextVector2Circular(1f, 1f);
-                dust3.velocity += proj.velocity * 0.15f;
-            }
-            if (flag3)
-            {
-                int num11 = Main.rand.Next(2, 5 + (int)(lerpValue * 4f));
-                for (int j = 0; j < num11; j++)
+                if (proj.velocity.X > 0f)
                 {
-                    Dust dust4 = Dust.NewDustDirect(proj.position, proj.width, proj.height, 6, 0f, 0f, 100, newColor, 1.5f);
-                    dust4.velocity *= 0.3f;
-                    dust4.position = proj.Center;
-                    dust4.noGravity = true;
-                    dust4.velocity += Main.rand.NextVector2Circular(0.5f, 0.5f);
-                    dust4.fadeIn = 2.2f;
-                    dust4.position += (dust4.position - proj.Center) * lerpValue * 10f;
+                    proj.spriteDirection = -1;
+                    proj.rotation = (float)Math.Atan2(proj.velocity.Y, proj.velocity.X) - 1.57f;
                 }
+                else
+                {
+                    proj.spriteDirection = 1;
+                    proj.rotation = (float)Math.Atan2(proj.velocity.Y, proj.velocity.X) - 1.57f;
+                }
+                proj.localAI[0] = 1f;
+                proj.timeLeft = num363;
+            }
+            proj.velocity.X *= 0.98f;
+            proj.velocity.Y *= 0.98f;
+            if (proj.rotation == 0f)
+            {
+                proj.alpha = 255;
+            }
+            else if (proj.timeLeft < 10)
+            {
+                proj.alpha = 255 - (int)(255f * (float)proj.timeLeft / 10f);
+            }
+            else if (proj.timeLeft > num363 - 10)
+            {
+                int num366 = num363 - proj.timeLeft;
+                proj.alpha = 255 - (int)(255f * (float)num366 / 10f);
+            }
+            else
+            {
+                proj.alpha = 0;
             }
         }
 
@@ -610,9 +1051,26 @@ namespace JourneyRecipes.Projectiles
                 HolyArrowKill(projectile);
                 return false;
             }
+            else if (projectile.type == 295)
+            {
+                if (projectile.owner == Main.myPlayer)
+                {
+                    Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, 296, (int)((double)projectile.damage * 0.75), projectile.knockBack, projectile.owner);
+                }
+            }
             else if (projectile.type == 306)
             {
                 EatersBiteKill(projectile);
+                return false;
+            }
+            else if (projectile.type == 510)
+            {
+                ToxicFlaskKill(projectile);
+                return false;
+            }
+            else if (projectile.type == 569)
+            {
+                SpiritFlameKill(projectile);
                 return false;
             }
             return base.PreKill(projectile, timeLeft);
@@ -712,8 +1170,65 @@ namespace JourneyRecipes.Projectiles
                 }
             }
         }
-
-
+        public void ToxicFlaskKill(Projectile projectile)
+        {
+            Main.PlaySound(SoundID.Item107, projectile.position);
+            Gore.NewGore(projectile.Center, -projectile.oldVelocity * 0.2f, 704);
+            Gore.NewGore(projectile.Center, -projectile.oldVelocity * 0.2f, 705);
+            if (projectile.owner == Main.myPlayer)
+            {
+                int num404 = Main.rand.Next(20, 31);
+                for (int num405 = 0; num405 < num404; num405++)
+                {
+                    Vector2 vector45 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
+                    vector45.Normalize();
+                    vector45 *= (float)Main.rand.Next(10, 201) * 0.01f;
+                    Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, vector45.X, vector45.Y, 511 + Main.rand.Next(3), projectile.damage, 1f, projectile.owner);
+                }
+            }
+        }
+        public void SpiritFlameKill(Projectile projectile)
+        {
+            if (projectile.ai[0] >= 0f)
+            {
+                int num201 = 80;
+                projectile.position = projectile.Center;
+                projectile.width = (projectile.height = num201);
+                projectile.Center = projectile.position;
+                projectile.Damage();
+                Main.PlaySound(SoundID.Item14, projectile.position);
+                int num202 = 15;
+                int num203 = num202 + 15;
+                for (int num204 = 0; num204 < num203; num204++)
+                {
+                    int num205 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 27, 0f, 0f, 0, default, 2f + Main.rand.NextFloat() * 0.5f);
+                    Main.dust[num205].noGravity = true;
+                    if (num204 < num202)
+                    {
+                        float num206 = (float)(num204 + 1) / (float)num202 * ((float)Math.PI * 2f);
+                        Main.dust[num205].fadeIn = 1.5f + Main.rand.NextFloat() * 0.5f;
+                        Main.dust[num205].position = projectile.Center;
+                        Main.dust[num205].velocity = Vector2.UnitY.RotatedBy(num206) * (5f + Main.rand.NextFloat() * 1.5f);
+                    }
+                    else
+                    {
+                        Main.dust[num205].position = projectile.Center + Vector2.UnitY.RotatedByRandom(3.1415927410125732) * Main.rand.NextFloat() * projectile.width / 3f;
+                        Main.dust[num205].fadeIn = 0.5f + Main.rand.NextFloat() * 0.5f;
+                        Dust dust2 = Main.dust[num205];
+                        dust2.velocity *= 2f;
+                    }
+                }
+                for (int num207 = 0; num207 < 10; num207++)
+                {
+                    int num208 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 31, 0f, 0f, 0, default, 1.5f);
+                    Main.dust[num208].position = projectile.Center + Vector2.UnitX.RotatedByRandom(3.1415927410125732).RotatedBy(projectile.velocity.ToRotation()) * projectile.width / 3f;
+                    Main.dust[num208].fadeIn = 0.5f + Main.rand.NextFloat() * 0.5f;
+                    Main.dust[num208].noGravity = true;
+                    Dust dust2 = Main.dust[num208];
+                    dust2.velocity *= 1.5f;
+                }
+            }
+        }
 
         #region 1.4.4 stufferinos
         public int FindTargetWithLineOfSight(float maxRange = 800f)

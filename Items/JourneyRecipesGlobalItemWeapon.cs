@@ -5,6 +5,7 @@ using Terraria.ModLoader;
 using Terraria.Utilities;
 using static Terraria.ModLoader.ModContent;
 using static Terraria.ID.ItemID;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace JourneyRecipes.Items
 {
@@ -980,13 +981,14 @@ namespace JourneyRecipes.Items
                     item.damage = 27;
                     item.knockBack = 7f;
                     item.mana = 7;
+                    item.shootSpeed = 12.5f;
                     //PROJECTILE CHANGES
                 }
                 if (item.type == MagicDagger)
                 {
                     item.damage = 35;
                     item.autoReuse = true;
-                    //PROJECTILE CHANGES
+                    item.shootSpeed = 12f;
                 }
                 if (item.type == CursedFlames)
                 {
@@ -1014,15 +1016,10 @@ namespace JourneyRecipes.Items
                     item.damage = 32;
                     //PROJECTILE CHANGES
                 }
-                if (item.type == SpiritFlame)
-                {
-                    //PROJECTILE CHANGES
-                }
                 if (item.type == NimbusRod)
                 {
                     item.damage = 30;
                     item.mana = 30;
-                    //PROJECTILE CHANGES
                 }
                 if (item.type == ClingerStaff)
                 {
@@ -1050,24 +1047,18 @@ namespace JourneyRecipes.Items
                 {
                     item.damage = 70;
                     item.knockBack = 5f;
-                    //PROJECTILE CHANGES
                 }
                 if (item.type == ShadowbeamStaff)
                 {
                     item.damage = 80;
                 }
-                if (item.type == SpectreStaff)
-                {
                     //PROJECTILE CHANGES:
-                    //SPECTRE STAFF
                     //MAGNET SPHERE
-                    //RAINBOW GUN
-                }
                 if (item.type == ToxicFlask)
                 {
                     item.damage = 52;
                     item.useTime = item.useAnimation = 45;
-                    //PROJECTILE CHANGES
+                    item.shootSpeed = 14f;
                 }
                 if (item.type == HeatRay)
                 {
@@ -1076,13 +1067,12 @@ namespace JourneyRecipes.Items
                 if (item.type == BubbleGun)
                 {
                     item.mana = 5;
-                    //PROJECTILE CHANGES
+                    item.shootSpeed = 15;
                 }
                 if (item.type == RazorbladeTyphoon)
                 {
                     item.damage = 85;
                     item.mana = 20;
-                    //PROJECTILE CHANGES
                 }
                 if (item.type == NebulaBlaze)
                 {
@@ -1223,6 +1213,20 @@ namespace JourneyRecipes.Items
                 }
                 return false;
             }
+           /* else if (item.type == 3852)
+            {
+                float num2 = (float)Main.mouseX + Main.screenPosition.X - player.Center.X;
+                float num3 = (float)Main.mouseY + Main.screenPosition.Y - player.Center.Y;
+                if (player.altFunctionUse == 2)
+                {
+                    Projectile.NewProjectile(player.Center.X, player.Bottom.Y - 100f, (float)player.direction * item.shootSpeed, 0f, 704, (int)((float)item.damage * 1.75f), item.knockBack, player.whoAmI);
+                }
+                else
+                {
+                    Projectile.NewProjectile(player.Center.X, player.Center.Y, num2, num3, item.shoot, item.damage, item.knockBack, player.whoAmI);
+                }
+                return false;
+            }*/
             return base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
         }
     }
