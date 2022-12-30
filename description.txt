@@ -88,6 +88,7 @@ Angler Armor set bonus reduces spawn rate
 Snow Armor set bonus grant Frozen and Chilled immunity
 Thrown items are always consumed
 Max stack for almost all vanilla items is 9999
+MOST weapons are updated to 1.4.4 (excluding Terra Blade-like weapons)
 
 Projectiles:
 Fixed an issue where a projectile is used to deal a fixed amount of damage
