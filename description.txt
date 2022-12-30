@@ -69,7 +69,7 @@ Check the config to disable features you don't like!
 
 [i:520]Updates[i:520]:
 
-1.5 - NPCs:
+1.5.0 - NPCs:
 
 Mechanic sells Teleporter and Pixel Box
 Skeleton Merchant sells Wooden Chest items, depending on Moon Phase
