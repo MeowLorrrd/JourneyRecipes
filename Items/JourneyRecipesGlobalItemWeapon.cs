@@ -2,10 +2,8 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.Utilities;
 using static Terraria.ModLoader.ModContent;
 using static Terraria.ID.ItemID;
-using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace JourneyRecipes.Items
 {
@@ -14,7 +12,6 @@ namespace JourneyRecipes.Items
         private readonly bool Config = GetInstance<JourneyRecipesServerConfig>().allowWeaponStat;
         public override bool InstancePerEntity => true;
         public override bool CloneNewInstances => true;
-        public bool shootEveryUse;
         public override void SetDefaults(Item item)
         {
             if (Config)
@@ -966,7 +963,6 @@ namespace JourneyRecipes.Items
                 if (item.type == CrimsonRod)
                 {
                     item.mana = 30;
-                    //PROJECTILE CHANGES
                 }
                 if (item.type == BeeGun)
                 {
@@ -982,7 +978,6 @@ namespace JourneyRecipes.Items
                     item.knockBack = 7f;
                     item.mana = 7;
                     item.shootSpeed = 12.5f;
-                    //PROJECTILE CHANGES
                 }
                 if (item.type == MagicDagger)
                 {
@@ -1098,7 +1093,7 @@ namespace JourneyRecipes.Items
                 }
             }
         }
-        public override int ChoosePrefix(Item item, UnifiedRandom rand)
+        public override int ChoosePrefix(Item item, Terraria.Utilities.UnifiedRandom rand)
         {
             if (Config)
             {

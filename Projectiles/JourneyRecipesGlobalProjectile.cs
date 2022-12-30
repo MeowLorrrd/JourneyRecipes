@@ -4,7 +4,6 @@ using Terraria;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.ID;
-using Microsoft.Xna.Framework.Graphics.PackedVector;
 
 namespace JourneyRecipes.Projectiles
 {
@@ -18,140 +17,150 @@ namespace JourneyRecipes.Projectiles
             {
                 projectile.penetrate = 5;
             }
-            if (projectile.type == 23)
+            else if (projectile.type == 23)
             {
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 12;
             }
-            if (projectile.type == 24)
+            else if (projectile.type == 24)
             {
                 projectile.penetrate = 7;
             }
-            if (projectile.type == 36)
+            else if (projectile.type == 36)
             {
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 15;
             }
-            if (projectile.type == 93)
+            else if (projectile.type == 93)
             {
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 20;
             }
-            if (projectile.type == 238)
+            else if (projectile.type == 238)
             {
                 projectile.timeLeft = 18000;
             }
-            if (projectile.type == 239)
+            else if (projectile.type == 239)
             {
                 projectile.penetrate = 5;
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 10;
             }
-            if (projectile.type == 242)
+            else if (projectile.type == 242)
             {
                 projectile.penetrate = 3;
                 projectile.extraUpdates = 7;
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 15;
             }
-            if (projectile.type == 250)
+            else if (projectile.type == 244)
+            {
+                projectile.timeLeft = 18000;
+            }
+            else if (projectile.type == 245)
+            {
+                projectile.penetrate = 2;
+                projectile.usesIDStaticNPCImmunity = true;
+                projectile.idStaticNPCHitCooldown = 10;
+            }
+            else if (projectile.type == 250)
             {
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 10;
             }
-            if (projectile.type == 251)
+            else if (projectile.type == 251)
             {
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 10;
             }
-            if (projectile.type == 254)
+            else if (projectile.type == 254)
             {
                 projectile.timeLeft = 900;
                 projectile.tileCollide = false;
             }
-            if (projectile.type == 260)
+            else if (projectile.type == 260)
             {
                 projectile.penetrate = 1;
             }
-            if (projectile.type == 263)
+            else if (projectile.type == 263)
             {
                 projectile.penetrate = 4;
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 8;
                 projectile.timeLeft = 180;
             }
-            if (projectile.type == 266)
+            else if (projectile.type == 266)
             {
                 projectile.netImportant = true;
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 12;
             }
-            if (projectile.type == 297)
+            else if (projectile.type == 297)
             {
                 projectile.penetrate = 3;
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 10;
             }
-            if (projectile.type == 390 || projectile.type == 391 || projectile.type == 392)
+            else if (projectile.type == 390 || projectile.type == 391 || projectile.type == 392)
             {
                 projectile.minionSlots = 1f;
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 15;
             }
-            if (projectile.type == 387)
+            else if (projectile.type == 387)
             {
                 projectile.netImportant = true;
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 16;
             }
-            if (projectile.type == 388)
+            else if (projectile.type == 388)
             {
                 projectile.netImportant = true;
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 12;
             }
-            if (projectile.type == 389)
+            else if (projectile.type == 389)
             {
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 12;
                 projectile.extraUpdates = 2;
             }
-            if (projectile.type == 409)
+            else if (projectile.type == 409)
             {
                 projectile.timeLeft = 300;
             }
-            if (projectile.type == 410)
+            else if (projectile.type == 410)
             {
                 projectile.timeLeft = 100;
             }
-            if (projectile.type == 433)
+            else if (projectile.type == 433)
             {
-                //TODO: MODIFY DAMAGE
+                //TODO: MODelse ifY DAMAGE
             }
-            if (projectile.type == 502)
+            else if (projectile.type == 502)
             {
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 10;
             }
-            if (projectile.type == 503)
+            else if (projectile.type == 503)
             {
                 projectile.extraUpdates = 1;
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 30;
                 projectile.damage = 170;
             }
-            if (projectile.type == 511 || projectile.type == 512 || projectile.type == 513)
+            else if (projectile.type == 511 || projectile.type == 512 || projectile.type == 513)
             {
                 projectile.penetrate = -1;
             }
-            if (projectile.type == 524)
+            else if (projectile.type == 524)
             {
                 projectile.penetrate = 5;
                 projectile.extraUpdates = 5;
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 10;
             }
-            if (projectile.type == 532)
+            else if (projectile.type == 532)
             {
                 projectile.width = 16;
                 projectile.height = 16;
@@ -163,27 +172,27 @@ namespace JourneyRecipes.Projectiles
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 10;
             }
-            if (projectile.type == 533)
+            else if (projectile.type == 533)
             {
                 projectile.netImportant = true;
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 8;
             }
-            if (projectile.type == 569)
+            else if (projectile.type == 569)
             {
                 projectile.timeLeft = 240;
             }
-            if (projectile.type == 603)
+            else if (projectile.type == 603)
             {
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 10;
             }
-            if (projectile.type == 604)
+            else if (projectile.type == 604)
             {
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 10;
             }
-            if (projectile.type == 697)
+            else if (projectile.type == 697)
             {
                 projectile.scale = 1.35f;
                 projectile.damage = 150;
@@ -191,25 +200,25 @@ namespace JourneyRecipes.Projectiles
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 12;
             }
-            /* if (projectile.type == 699)
+            /* else if (projectile.type == 699)
             {
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 20;
                 projectile.ownerHitCheck = true;
             }
-             if (projectile.type == 700)
+             else if (projectile.type == 700)
             {
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = -1;
             }*///TODO: rewrite proj AI
-            if (projectile.type == 708)
+            else if (projectile.type == 708)
             {
                 projectile.usesLocalNPCImmunity = true;
                 projectile.localNPCHitCooldown = 6;
                 projectile.ownerHitCheck = true;
                 //TODO
             }
-            if (projectile.type == 709)
+            else if (projectile.type == 709)
             {
                 projectile.extraUpdates = 1;
                 projectile.noEnchantments = true;
