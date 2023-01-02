@@ -357,11 +357,6 @@ namespace JourneyRecipes.Projectiles
                     return false;
                 }
             }
-            if (projectile.type == 254)
-            {
-                MagnetSphereProj(projectile);//sigh...
-                return false;
-            }
             if (projectile.aiStyle == 46)
             {
                 RainbowGun(projectile);
@@ -837,101 +832,6 @@ namespace JourneyRecipes.Projectiles
                 if (flag39 && JRUtils.IsWorldPointSolid(pos))
                 {
                     proj.velocity = Vector2.Lerp(proj.velocity, proj.velocity - vector102 * 1f, 0.5f);
-                }
-            }
-        }
-
-        private void MagnetSphereProj(Projectile proj)
-        {
-            if (proj.ai[0] == 0f)
-            {
-                proj.ai[0] = proj.velocity.X;
-                proj.ai[1] = proj.velocity.Y;
-            }
-            if (proj.velocity.X > 0f)
-            {
-                proj.rotation += (Math.Abs(proj.velocity.Y) + Math.Abs(proj.velocity.X)) * 0.001f;
-            }
-            else
-            {
-                proj.rotation -= (Math.Abs(proj.velocity.Y) + Math.Abs(proj.velocity.X)) * 0.001f;
-            }
-            proj.frameCounter++;
-            if (proj.frameCounter > 6)
-            {
-                proj.frameCounter = 0;
-                proj.frame++;
-                if (proj.frame > 4)
-                {
-                    proj.frame = 0;
-                }
-            }
-            if (proj.velocity.Length() > 2f)
-            {
-                proj.velocity *= 0.98f;
-            }
-            for (int i = 0; i < 1000; i++)
-            {
-                if (i != proj.whoAmI)
-                {
-                    Projectile projectile = Main.projectile[i];
-                    if (projectile.active && projectile.owner == proj.owner && projectile.type == proj.type && proj.timeLeft > Main.projectile[i].timeLeft && Main.projectile[i].timeLeft > 30)
-                    {
-                        Main.projectile[i].timeLeft = 30;
-                    }
-                }
-            }
-            AI_047_MagnetSphere_TryAttacking(proj);
-        }
-        private void AI_047_MagnetSphere_TryAttacking(Projectile proj)//literal ctrl c + v
-        {
-            int[] array = new int[20];
-            int num = 0;
-            float num2 = 300f;
-            bool flag = false;
-            float num3;
-            float num4;
-            for (int i = 0; i < 200; i++)
-            {
-                if (!Main.npc[i].CanBeChasedBy(this))
-                {
-                    continue;
-                }
-                float num5 = Main.npc[i].position.X + (float)(Main.npc[i].width / 2);
-                float num6 = Main.npc[i].position.Y + (float)(Main.npc[i].height / 2);
-                if (Math.Abs(proj.position.X + (float)(proj.width / 2) - num5) + Math.Abs(proj.position.Y + (float)(proj.height / 2) - num6) < num2 && Collision.CanHit(proj.Center, 1, 1, Main.npc[i].Center, 1, 1))
-                {
-                    if (num < 20)
-                    {
-                        array[num] = i;
-                        num++;
-                    }
-                    flag = true;
-                }
-            }
-            if (proj.timeLeft < 30)
-            {
-                flag = false;
-            }
-            if (flag)
-            {
-                int num7 = Main.rand.Next(num);
-                num7 = array[num7];
-                num3 = Main.npc[num7].position.X + (float)(Main.npc[num7].width / 2);
-                num4 = Main.npc[num7].position.Y + (float)(Main.npc[num7].height / 2);
-                proj.localAI[0] += 1f;
-                if (proj.localAI[0] > 8f)
-                {
-                    proj.localAI[0] = 0f;
-                    Vector2 vector = new Vector2(proj.position.X + (float)proj.width * 0.5f, proj.position.Y + (float)proj.height * 0.5f);
-                    vector += proj.velocity * 4f;
-                    float num8 = num3 - vector.X;
-                    float num9 = num4 - vector.Y;
-                    float num10 = (float)Math.Sqrt(num8 * num8 + num9 * num9);
-                    num10 = 6f / num10;
-                    num8 *= num10;
-                    num9 *= num10;
-                    Projectile.NewProjectile(vector.X, vector.Y, num8, num9, 255, proj.damage, proj.knockBack, proj.owner);
                 }
             }
         }
