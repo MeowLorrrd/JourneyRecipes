@@ -9,6 +9,7 @@ namespace JourneyRecipes
     public class JourneyRecipes : Mod
     {
         internal JourneyRecipes instance;
+        public override uint ExtraPlayerBuffSlots => (uint)(GetInstance<JourneyRecipesServerConfig>().AllowBuffStat ? 44 : 22);
         public override void AddRecipes()//the actual focus of this mod, just ctrl+c ctrl+v
         {
             base.AddRecipes();

@@ -262,7 +262,7 @@ namespace JourneyRecipes
         public override void PostUpdateBuffs()
         {
             base.PostUpdateBuffs();
-            for (int j = 0; j < 22; j++)
+            for (int j = 0; j < (ModContent.GetInstance<JourneyRecipesServerConfig>().AllowBuffStat ? 44 : 22); j++)
             {
                 if (player.buffType[j] <= 0 || player.buffTime[j] <= 0)
                 {
