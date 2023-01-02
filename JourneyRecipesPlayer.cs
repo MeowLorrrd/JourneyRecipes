@@ -84,7 +84,7 @@ namespace JourneyRecipes
                         continue;
                     }
                     float knockback = 10f;
-                    
+
                     int num3 = -1;
                     if (Main.npc[i].position.X + (float)(Main.npc[i].width / 2) < player.position.X + (float)(player.width / 2))
                     {
@@ -114,7 +114,7 @@ namespace JourneyRecipes
             {
                 damage = ((!Main.expertMode) ? ((int)((float)damage * ItemID.Sets.BannerStrength[Item.BannerToItem(num)].NormalDamageDealt)) : ((int)((float)damage * ItemID.Sets.BannerStrength[Item.BannerToItem(num)].ExpertDamageDealt)));
             }
-            OnHit(npc.Center.X, npc.Center.Y, npc);
+            OnHitAnything(npc.Center.X, npc.Center.Y, npc);
 
             if (player.armorPenetration > 0)
             {
@@ -134,31 +134,6 @@ namespace JourneyRecipes
             {
                 player.lastCreatureHit = num2;
             }
-        }
-        public void OnHit(float x, float y, Entity victim)
-        {
-            if (Main.myPlayer != player.whoAmI)
-            {
-                return;
-            }
-            _ = player.inventory[player.selectedItem].type;
-            for (int j = 0; j < 1000; j++)
-            {
-                if (Main.projectile[j].owner == player.whoAmI && Main.projectile[j].type == 226)
-                {
-                    player.petalTimer = 50;
-                    Vector2 vector3 = new Vector2(Main.projectile[j].position.X + (float)player.width * 0.5f, Main.projectile[j].position.Y + (float)player.height * 0.5f);
-                    float num6 = x - vector3.X;
-                    float num7 = y - vector3.Y;
-                    float num8 = (float)Math.Sqrt(num6 * num6 + num7 * num7);
-                    num8 = 12f / num8;
-                    num6 *= num8;
-                    num7 *= num8;
-                    Projectile.NewProjectile(Main.projectile[j].Center.X - 4f, Main.projectile[j].Center.Y, num6, num7, 227, 100, 10, player.whoAmI);
-                    break;
-                }
-            }
-            PlayerHooks.OnHitAnything(player, x, y, victim);
         }
         public override void PostItemCheck()
         {
@@ -196,19 +171,19 @@ namespace JourneyRecipes
         }
         public override bool PreItemCheck()
         {
-            if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowAccessoryStat && autoReuseGlove && player.inventory[player.selectedItem].melee)
+            Item sItem = player.inventory[player.selectedItem];
+            if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowAccessoryStat && autoReuseGlove && sItem.melee)
             {
-                PlayerAutouse = player.inventory[player.selectedItem].autoReuse;
-                player.inventory[player.selectedItem].autoReuse = true;
+                PlayerAutouse = sItem.autoReuse;
+                sItem.autoReuse = true;
             }//code above from Fargo's Souls
             if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowWeaponStat)
             {
-                if (player.inventory[player.selectedItem].type == ItemID.NettleBurst || player.inventory[player.selectedItem].type == ItemID.WaspGun || player.inventory[player.selectedItem].type == ItemID.CrystalVileShard)
+                if (sItem.type == ItemID.NettleBurst || sItem.type == ItemID.WaspGun || sItem.type == ItemID.CrystalVileShard)
                 {
                     player.armorPenetration += 10;
                 }
             }
-
             return base.PreItemCheck();
         }
         public override bool ConsumeAmmo(Item item, Item ammo)
@@ -301,9 +276,23 @@ namespace JourneyRecipes
         }
         public override void UpdateEquips(ref bool wallSpeedBuff, ref bool tileSpeedBuff, ref bool tileRangeBuff)
         {
-            if (player.inventory[player.selectedItem].type == 277 && (!player.mount.Active || !player.mount.Cart))
+            if (ModContent.GetInstance<JourneyRecipesServerConfig>().allowWeaponStat)
+                if (player.inventory[player.selectedItem].type == 277 && (!player.mount.Active || !player.mount.Cart))
+                    trident = true;
+        }
+        public override void OnHitNPC(Item item, NPC npc, int damage, float knockback, bool crit)
+        {
+            if (item.type == 426 && (float)npc.life >= (float)npc.lifeMax * 0.9f)
             {
-                trident = true;
+                //ApplyDamageToNPC(npc, (int)((float)damage * 2.5f), knockback, default, crit);
+            }
+        }
+        public override void ModifyHitNPC(Item item, NPC npc, ref int damage, ref float knockback, ref bool crit)
+        {
+            if (item.type == 426 && (float)npc.life >= (float)npc.lifeMax * 0.9f)
+            {
+                //ApplyDamageToNPC(npc, (int)((float)damage * 2.5f), knockback, default, crit);
+                damage = (int)((float)damage * 2.5f);
             }
         }
     }

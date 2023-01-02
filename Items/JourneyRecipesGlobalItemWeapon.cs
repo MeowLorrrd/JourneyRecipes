@@ -684,7 +684,6 @@ namespace JourneyRecipes.Items
                     item.damage = 70;
                     item.useTime = item.useAnimation = 35;
                     item.scale = 1.15f;
-                    //ONHIT CHANGES
                 }
                 if (item.type == CobaltSword)
                 {
@@ -991,7 +990,7 @@ namespace JourneyRecipes.Items
                 }
                 if (item.type == FlowerofFrost)
                 {
-                    //PROJECTILE CHANGES
+                    item.shootSpeed = 9f;
                 }
                 if (item.type == GoldenShower)
                 {
@@ -1004,7 +1003,6 @@ namespace JourneyRecipes.Items
                 if (item.type == FrostStaff)
                 {
                     item.useTime = item.useAnimation = 12;
-                    //PROJECTILE CHANGES
                 }
                 if (item.type == ShadowFlameHexDoll)
                 {
@@ -1032,6 +1030,7 @@ namespace JourneyRecipes.Items
                 if (item.type == WaspGun)
                 {
                     item.knockBack = 0.25f;
+                    item.shootSpeed = 9f;
                     //PROJECTILE CHANGES
                 }
                 if (item.type == LeafBlower)
