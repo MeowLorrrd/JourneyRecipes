@@ -1,4 +1,5 @@
 ﻿using JourneyRecipes.Items;
+using JourneyRecipes.Particle;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Mono.Cecil.Cil;
@@ -280,18 +281,23 @@ namespace JourneyRecipes
                 if (player.inventory[player.selectedItem].type == 277 && (!player.mount.Active || !player.mount.Cart))
                     trident = true;
         }
-        public override void OnHitNPC(Item item, NPC npc, int damage, float knockback, bool crit)
+        public override void OnHitNPC(Item item, NPC nPC, int damage, float knockback, bool crit)
         {
-            if (item.type == 426 && (float)npc.life >= (float)npc.lifeMax * 0.9f)
+            Rectangle itemRectangle = new Rectangle((int)player.itemLocation.X, (int)player.itemLocation.Y, 32, 32); ;
+            if (item.type == 368)
             {
-                //ApplyDamageToNPC(npc, (int)((float)damage * 2.5f), knockback, default, crit);
+                Vector2 point = itemRectangle.Center.ToVector2();
+                Vector2 positionInWorld = nPC.Hitbox.ClosestPointInRect(point);
+                ParticleOrchestrator.RequestParticleSpawn(clientOnly: false, ParticleOrchestraType.Excalibur, new ParticleOrchestraSettings
+                {
+                    PositionInWorld = positionInWorld
+                }, player.whoAmI);
             }
         }
         public override void ModifyHitNPC(Item item, NPC npc, ref int damage, ref float knockback, ref bool crit)
         {
             if (item.type == 426 && (float)npc.life >= (float)npc.lifeMax * 0.9f)
             {
-                //ApplyDamageToNPC(npc, (int)((float)damage * 2.5f), knockback, default, crit);
                 damage = (int)((float)damage * 2.5f);
             }
         }

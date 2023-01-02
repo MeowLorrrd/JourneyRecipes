@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Utilities;
 
 namespace JourneyRecipes
 {
@@ -106,6 +107,35 @@ namespace JourneyRecipes
                     }
             }
             return false;
+        }
+        public static Vector2 Size(this Rectangle r)
+        {
+            return new Vector2(r.Width, r.Height);
+        }
+        public static Vector2 ClosestPointInRect(this Rectangle r, Vector2 point)
+        {
+            Vector2 result = point;
+            if (result.X < (float)r.Left)
+            {
+                result.X = r.Left;
+            }
+            if (result.X > (float)r.Right)
+            {
+                result.X = r.Right;
+            }
+            if (result.Y < (float)r.Top)
+            {
+                result.Y = r.Top;
+            }
+            if (result.Y > (float)r.Bottom)
+            {
+                result.Y = r.Bottom;
+            }
+            return result;
+        }
+        public static Vector2 NextVector2FromRectangle(this UnifiedRandom r, Rectangle rect)
+        {
+            return new Vector2((float)rect.X + r.NextFloat() * (float)rect.Width, (float)rect.Y + r.NextFloat() * (float)rect.Height);
         }
     }
 }

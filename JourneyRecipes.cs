@@ -2,6 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using JourneyRecipes.Items;
+using JourneyRecipes.Particle;
 using static Terraria.ModLoader.ModContent;
 
 namespace JourneyRecipes
@@ -10,6 +11,9 @@ namespace JourneyRecipes
     {
         internal JourneyRecipes instance;
         public override uint ExtraPlayerBuffSlots => (uint)(GetInstance<JourneyRecipesServerConfig>().AllowBuffStat ? 44 : 22);
+        public static ParticleRenderer ParticleSystem_World_OverPlayers = new ParticleRenderer();
+        public static ParticleRenderer ParticleSystem_World_BehindPlayers = new ParticleRenderer();
+        public static INetDiagnosticsUI _activeNetDiagnosticsUI;
         public override void AddRecipes()//the actual focus of this mod, just ctrl+c ctrl+v
         {
             base.AddRecipes();
@@ -2732,6 +2736,28 @@ namespace JourneyRecipes
                 Main.buffNoSave[BuffID.Clairvoyance] = false;
                 Main.buffNoSave[BuffID.Bewitched] = false;
                 Main.buffNoSave[BuffID.AmmoBox] = false;
+            }
+        }
+        public static INetDiagnosticsUI ActiveNetDiagnosticsUI
+        {
+            get
+            {
+                if (_activeNetDiagnosticsUI == null)
+                {
+                    INetDiagnosticsUI activeNetDiagnosticsUI;
+                    if (!Main.dedServ)
+                    {
+                        INetDiagnosticsUI netDiagnosticsUI = new NetDiagnosticsUI();
+                        activeNetDiagnosticsUI = netDiagnosticsUI;
+                    }
+                    else
+                    {
+                        INetDiagnosticsUI netDiagnosticsUI = new EmptyDiagnosticsUI();
+                        activeNetDiagnosticsUI = netDiagnosticsUI;
+                    }
+                    _activeNetDiagnosticsUI = activeNetDiagnosticsUI;
+                }
+                return _activeNetDiagnosticsUI;
             }
         }
     }
