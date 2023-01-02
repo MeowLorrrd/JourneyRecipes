@@ -1047,8 +1047,6 @@ namespace JourneyRecipes.Items
                 {
                     item.damage = 80;
                 }
-                    //PROJECTILE CHANGES:
-                    //MAGNET SPHERE
                 if (item.type == ToxicFlask)
                 {
                     item.damage = 52;

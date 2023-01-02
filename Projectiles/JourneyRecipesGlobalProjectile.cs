@@ -76,7 +76,7 @@ namespace JourneyRecipes.Projectiles
             else if (projectile.type == 254)
             {
                 projectile.timeLeft = 900;
-                projectile.tileCollide = false;
+                projectile.tileCollide = true;
             }
             else if (projectile.type == 260)
             {
@@ -359,8 +359,8 @@ namespace JourneyRecipes.Projectiles
             }
             if (projectile.type == 254)
             {
-                //MagnetSphereProj(projectile);//sigh...
-                return true;
+                MagnetSphereProj(projectile);//sigh...
+                return false;
             }
             if (projectile.aiStyle == 46)
             {
@@ -841,24 +841,8 @@ namespace JourneyRecipes.Projectiles
             }
         }
 
-        /*private void MagnetSphereProj(Projectile proj)
+        private void MagnetSphereProj(Projectile proj)
         {
-            bool flag = false;
-            if (proj.tileCollide)
-            {
-                Vector2 lastVelocity = proj.velocity;
-                bool flag6 = true;
-                Vector2? vector = null;
-
-                if (proj.velocity.X != lastVelocity.X)
-                {
-                    proj.velocity.X = lastVelocity.X * -1f;
-                }
-                if (proj.velocity.Y != lastVelocity.Y)
-                {
-                    proj.velocity.Y = lastVelocity.Y * -1f;
-                }
-            }
             if (proj.ai[0] == 0f)
             {
                 proj.ai[0] = proj.velocity.X;
@@ -905,8 +889,8 @@ namespace JourneyRecipes.Projectiles
             int num = 0;
             float num2 = 300f;
             bool flag = false;
-            float num3 = 0f;
-            float num4 = 0f;
+            float num3;
+            float num4;
             for (int i = 0; i < 200; i++)
             {
                 if (!Main.npc[i].CanBeChasedBy(this))
@@ -921,8 +905,6 @@ namespace JourneyRecipes.Projectiles
                     {
                         array[num] = i;
                         num++;
-                        num3 = num5;
-                        num4 = num6;
                     }
                     flag = true;
                 }
@@ -952,7 +934,7 @@ namespace JourneyRecipes.Projectiles
                     Projectile.NewProjectile(vector.X, vector.Y, num8, num9, 255, proj.damage, proj.knockBack, proj.owner);
                 }
             }
-        }*/
+        }
 
         private void RainbowGun(Projectile proj)
         {
@@ -1052,6 +1034,26 @@ namespace JourneyRecipes.Projectiles
                 return new Color((int)(250f * num5), (int)(250f * num5), (int)(250f * num5), (int)(100f * num5));
             }
             return base.GetAlpha(projectile, lightColor);
+        }
+
+        public override bool OnTileCollide(Projectile projectile, Vector2 oldVelocity)
+        {
+            if (projectile.type == ProjectileID.MagnetSphereBall)
+            {
+                if (projectile.tileCollide)
+                {
+                    if (projectile.velocity.X != oldVelocity.X)
+                    {
+                        projectile.velocity.X = oldVelocity.X * -1f;
+                    }
+                    if (projectile.velocity.Y != oldVelocity.Y)
+                    {
+                        projectile.velocity.Y = oldVelocity.Y * -1f;
+                    }
+                }
+                return false;
+            }
+            return base.OnTileCollide(projectile, oldVelocity);
         }
         public override bool PreKill(Projectile projectile, int timeLeft)
         {
