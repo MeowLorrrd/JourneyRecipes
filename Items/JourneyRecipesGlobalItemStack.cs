@@ -15,6 +15,8 @@ namespace JourneyRecipes.Items
                     item.maxStack = 9999;
                 }
             }
+            if (item.type == 27)
+                item.autoReuse = true;
         }
     }
 }
