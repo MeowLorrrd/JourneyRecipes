@@ -93,6 +93,9 @@ MOST weapons are updated to 1.4.4 (excluding Terra Blade-like weapons)
 Projectiles:
 Fixed an issue where a projectile is used to deal a fixed amount of damage
 
+Buffs:
+Max buffs is set to 44
+
 Misc:
 Fixed issues with Turtle armor
 Fixed issues with Necro armor
