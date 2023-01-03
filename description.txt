@@ -101,6 +101,7 @@ Fixed issues with Turtle armor
 Fixed issues with Necro armor
 Fixed issues related with melee weapons and Sharpened buff
 Fixed issues related with the Gravity Globe
+Fixed issues related to ammo conservation and non-ranged weapons
 Overhauled recipes, should now be organized
 
 [i:521]Notes[i:521]:
