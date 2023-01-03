@@ -4,6 +4,8 @@ using Terraria;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.ID;
+using Microsoft.Xna.Framework.Graphics.PackedVector;
+using static MonoMod.Cil.RuntimeILReferenceBag.FastDelegateInvokers;
 
 namespace JourneyRecipes.Projectiles
 {
@@ -40,6 +42,11 @@ namespace JourneyRecipes.Projectiles
             {
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 10;
+            }
+            else if (projectile.type == 190)
+            {
+                projectile.usesLocalNPCImmunity = true;
+                projectile.localNPCHitCooldown = 14;
             }
             else if (projectile.type == 238)
             {
@@ -322,20 +329,10 @@ namespace JourneyRecipes.Projectiles
                                     {
                                         projectile.damage = (int)((double)projectile.damage * 0.95);
                                     }
-
                                 }
-                                //Main.NewText($"Projectile damage: [c/ff00ff:{projectile.damage}]");
                             }
                         }
                     }
-                }
-            }
-
-            if (projectile.type == 92)
-            {
-                if (!projectile.ranged)
-                {
-                    //projectile.damage = Main.expertMode ? 150 : 75;
                 }
             }
             return base.CanDamage(projectile);

@@ -816,7 +816,19 @@ namespace JourneyRecipes.Items
         }
         public override bool Shoot(Item item, Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-            if (item.type == 1306)
+            if (item.type == 1156)
+            {
+                for (int num130 = 0; num130 < 3; num130++)
+                {
+                    Vector2 vel = (player.MountedCenter - Main.MouseWorld) * -1;
+                    vel.Normalize();
+                    vel *= item.shootSpeed;
+                    vel += new Vector2((float)Main.rand.Next(-40, 41) * 0.05f, (float)Main.rand.Next(-40, 41) * 0.05f);
+                    Projectile.NewProjectile(player.Center.X, player.Center.Y, vel.X, vel.Y, item.shoot, item.damage, item.knockBack, player.whoAmI);
+                }
+                return false;
+            }
+            else if (item.type == 1306)
             {
                 Vector2 vel = (player.MountedCenter - Main.MouseWorld) * -1;
                 vel.Normalize();
