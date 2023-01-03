@@ -90,6 +90,8 @@ Thrown items are always consumed
 Max stack for almost all vanilla items is 9999
 MOST weapons are updated to 1.4.4 (excluding Terra Blade-like weapons)
 All Phasesabers use 25 Crystal Shards in their recipe
+Sandstorm / Blizzard in a Bottle are craftable
+Reduced material costs for early hardmode swords and Fairy, Demon, Angel Wings
 
 Projectiles:
 Fixed an issue where a projectile is used to deal a fixed amount of damage

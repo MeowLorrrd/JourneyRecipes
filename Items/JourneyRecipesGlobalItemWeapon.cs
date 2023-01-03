@@ -696,7 +696,6 @@ namespace JourneyRecipes.Items
                     case 3769:
                         item.damage = 48;
                         item.useTime = item.useAnimation = 16;
-                        //RECIPE CHANGES
                         break;
                     case 3570:
                         item.mana = 9;

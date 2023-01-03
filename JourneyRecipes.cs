@@ -89,7 +89,7 @@ namespace JourneyRecipes
                                     editor.SetIngredientStack(ItemID.PlatinumBar, 10);
                                     break;
                                 case ItemID.PlatinumAxe:
-                                    case ItemID.PlatinumHammer:
+                                case ItemID.PlatinumHammer:
                                     editor.SetIngredientStack(ItemID.PlatinumBar, 8);
                                     break;
                             }
@@ -228,11 +228,11 @@ namespace JourneyRecipes
                     r.AddTile(TileID.Anvils);
                     r.SetResult(ItemID.SilverBullet, 70);
                     r.AddRecipe();
-                    ModRecipe EnchantedBoomerang = new ModRecipe(this);
-                    EnchantedBoomerang.AddIngredient(ItemID.FallenStar);
-                    EnchantedBoomerang.AddIngredient(ItemID.WoodenBoomerang);
-                    EnchantedBoomerang.SetResult(ItemID.EnchantedBoomerang);
-                    EnchantedBoomerang.AddRecipe();
+                    r = new ModRecipe(this);
+                    r.AddIngredient(ItemID.WoodenBoomerang);
+                    r.AddIngredient(ItemID.FallenStar);
+                    r.SetResult(ItemID.EnchantedBoomerang);
+                    r.AddRecipe();
                     foreach (var recipe in Main.recipe)
                     {
                         if (recipe != null && recipe.createItem != null)
@@ -252,6 +252,18 @@ namespace JourneyRecipes
                                 case ItemID.YellowPhasesaber:
                                     editor.SetIngredientStack(ItemID.CrystalShard, 25);
                                     break;
+                                case ItemID.CobaltSword:
+                                    editor.SetIngredientStack(ItemID.CobaltBar, 8);
+                                    break;
+                                case ItemID.PalladiumSword:
+                                    editor.SetIngredientStack(ItemID.PalladiumBar, 10);
+                                    break;
+                                case ItemID.MythrilSword:
+                                    editor.SetIngredientStack(ItemID.MythrilBar, 8);
+                                    break;
+                                case ItemID.OrichalcumSword:
+                                    editor.SetIngredientStack(ItemID.OrichalcumBar, 10);
+                                    break;
                             }
                         }
                     }
@@ -260,18 +272,30 @@ namespace JourneyRecipes
                 #region Accessory Recipe
                 if (GetInstance<Config>().allowAccessoryRecipe)
                 {
-                    ModRecipe BandOfStarpower = new ModRecipe(this);
-                    BandOfStarpower.AddIngredient(ItemID.PanicNecklace);
-                    BandOfStarpower.AddIngredient(ItemID.ManaCrystal);
-                    BandOfStarpower.AddTile(TileID.TinkerersWorkbench);
-                    BandOfStarpower.SetResult(ItemID.BandofStarpower);
-                    BandOfStarpower.AddRecipe();
-                    ModRecipe PanicNecklace = new ModRecipe(this);
-                    PanicNecklace.AddIngredient(ItemID.BandofStarpower);
-                    PanicNecklace.AddIngredient(ItemID.LifeCrystal);
-                    PanicNecklace.AddTile(TileID.TinkerersWorkbench);
-                    PanicNecklace.SetResult(ItemID.PanicNecklace);
-                    PanicNecklace.AddRecipe();
+                    ModRecipe r = new ModRecipe(this);
+                    r.AddIngredient(ItemID.PanicNecklace);
+                    r.AddIngredient(ItemID.ManaCrystal);
+                    r.AddTile(TileID.TinkerersWorkbench);
+                    r.SetResult(ItemID.BandofStarpower);
+                    r.AddRecipe();
+                     r = new ModRecipe(this);
+                    r.AddIngredient(ItemID.BandofStarpower);
+                    r.AddIngredient(ItemID.LifeCrystal);
+                    r.AddTile(TileID.TinkerersWorkbench);
+                    r.SetResult(ItemID.PanicNecklace);
+                    r.AddRecipe();
+                    r = new ModRecipe(this);
+                    r.AddIngredient(ItemID.CloudinaBottle);
+                    r.AddIngredient(3783);
+                    r.AddTile(TileID.CrystalBall);
+                    r.SetResult(ItemID.SandstorminaBottle);
+                    r.AddRecipe();
+                    r = new ModRecipe(this);
+                    r.AddIngredient(ItemID.CloudinaBottle);
+                    r.AddIngredient(2161);
+                    r.AddTile(TileID.CrystalBall);
+                    r.SetResult(ItemID.BlizzardinaBottle);
+                    r.AddRecipe();
                     foreach (var recipe in Main.recipe)
                     {
                         if (recipe != null && recipe.createItem != null)
@@ -281,6 +305,15 @@ namespace JourneyRecipes
                             {
                                 case ItemID.LavaWaders:
                                     editor.AddIngredient(ItemID.ObsidianRose);
+                                    break;
+                                case ItemID.FairyWings:
+                                    editor.SetIngredientStack(ItemID.PixieDust, 99);
+                                    break;
+                                case ItemID.DemonWings:
+                                    editor.SetIngredientStack(ItemID.SoulofNight, 15);
+                                    break;
+                                case ItemID.AngelWings:
+                                    editor.SetIngredientStack(ItemID.SoulofLight, 15);
                                     break;
                             }
                         }
