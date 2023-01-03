@@ -789,11 +789,6 @@ namespace JourneyRecipes.Projectiles
                     {
                         proj.direction = 1;
                     }
-                    /*ParticleOrchestrator.BroadcastParticleSpawn(ParticleOrchestraType.GasTrap, new ParticleOrchestraSettings
-                    {
-                        PositionInWorld = proj.Center,
-                        MovementVector = Vector2.Zero
-                    });*/
                 }
 
                 proj.ai[0] += 1f;
