@@ -29,7 +29,10 @@ namespace JourneyRecipes.NPCs
             }
             if (type == NPCID.ArmsDealer)
             {
-                shop.item[nextSlot++].SetDefaults(ItemID.AmmoBox);
+                if (Main.hardMode)
+                {
+                    shop.item[nextSlot++].SetDefaults(ItemID.AmmoBox);
+                }
             }
             if (type == NPCID.Mechanic)
             {
@@ -47,7 +50,6 @@ namespace JourneyRecipes.NPCs
             }
             if (type == NPCID.Steampunker)//TODO: remove Teleporter from shop
             {
-                //shop.item[nextSlot--].SetDefaults(ItemID.Teleporter);
             }
             if (type == NPCID.Wizard)
             {

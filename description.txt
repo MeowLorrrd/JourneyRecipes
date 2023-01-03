@@ -74,7 +74,7 @@ Check the config to disable features you don't like!
 Mechanic sells Teleporter and Pixel Box
 Skeleton Merchant sells Wooden Chest items, depending on Moon Phase
 Merchant sells Furnace (in Jungle) and Mana and Healing potions (in Hardmode)
-Arms Dealer sells Ammo Box
+Arms Dealer sells Ammo Box in Hardmode
 
 Pillars don't have increased shield power in Expert+ and only 50 are required to lower shield Post-Moon Lord
 Lost Girl and Nymph drop 2 Gold
