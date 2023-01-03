@@ -1,6 +1,7 @@
 ﻿using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
+using System.Collections.Generic;
 
 namespace JourneyRecipes.Items
 {
@@ -16,7 +17,9 @@ namespace JourneyRecipes.Items
                 }
             }
             if (item.type == 27)
+            {
                 item.autoReuse = true;
+            }
         }
     }
 }
