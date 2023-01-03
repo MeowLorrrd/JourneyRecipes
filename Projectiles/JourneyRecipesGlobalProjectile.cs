@@ -106,6 +106,11 @@ namespace JourneyRecipes.Projectiles
                 projectile.usesIDStaticNPCImmunity = true;
                 projectile.idStaticNPCHitCooldown = 10;
             }
+            else if (projectile.type == 376)
+            {
+                projectile.usesIDStaticNPCImmunity = true;
+                projectile.idStaticNPCHitCooldown = 6;
+            }
             else if (projectile.type == 390 || projectile.type == 391 || projectile.type == 392)
             {
                 projectile.minionSlots = 1f;

@@ -119,7 +119,7 @@ namespace JourneyRecipes.Items
                 case 1349:
                     item.value = Item.sellPrice(copper: 2);//party bullet
                     break;
-                case 2356:
+                case 2365:
                     item.value = Item.sellPrice(silver: 54);//Imp Staff
                     break;
                 case 2431:
