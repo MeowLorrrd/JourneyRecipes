@@ -89,6 +89,7 @@ Snow Armor set bonus grant Frozen and Chilled immunity
 Thrown items are always consumed
 Max stack for almost all vanilla items is 9999
 MOST weapons are updated to 1.4.4 (excluding Terra Blade-like weapons)
+All Phasesabers use 25 Crystal Shards in their recipe
 
 Projectiles:
 Fixed an issue where a projectile is used to deal a fixed amount of damage
@@ -102,7 +103,9 @@ Fixed issues with Necro armor
 Fixed issues related with melee weapons and Sharpened buff
 Fixed issues related with the Gravity Globe
 Fixed issues related to ammo conservation and non-ranged weapons
-Overhauled recipes, should now be organized
+Fixed an issue related to the sell value of Imp Staff
+Fixed an issue where acorns autoswing was locked behind the Weapons config setting
+Overhauled recipes, should now be organized in-game
 
 [i:521]Notes[i:521]:
 I won't add items added in 1.4, such as 'Stone Platform' or 'Ultrabright Helmet', since that is property of Re-Logic, and I don't want do deal with copyright stuff.

@@ -244,6 +244,14 @@ namespace JourneyRecipes
                                     editor.SetIngredientStack(ItemID.Stinger, 12);
                                     editor.SetIngredientStack(ItemID.JungleSpores, 9);
                                     break;
+                                case ItemID.BluePhasesaber:
+                                case ItemID.GreenPhasesaber:
+                                case ItemID.PurplePhasesaber:
+                                case ItemID.RedPhasesaber:
+                                case ItemID.WhitePhasesaber:
+                                case ItemID.YellowPhasesaber:
+                                    editor.SetIngredientStack(ItemID.CrystalShard, 25);
+                                    break;
                             }
                         }
                     }
