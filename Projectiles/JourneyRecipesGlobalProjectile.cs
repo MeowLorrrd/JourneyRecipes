@@ -790,7 +790,6 @@ namespace JourneyRecipes.Projectiles
                         proj.direction = 1;
                     }
                 }
-
                 proj.ai[0] += 1f;
                 if (proj.ai[1] >= 1f)
                 {
@@ -1158,33 +1157,5 @@ namespace JourneyRecipes.Projectiles
                 }
             }
         }
-
-        #region 1.4.4 stufferinos
-        public int FindTargetWithLineOfSight(float maxRange = 800f)
-        {
-            Projectile proj = new Projectile();
-            float num = maxRange;
-            int result = -1;
-            for (int i = 0; i < 200; i++)
-            {
-                NPC nPC = Main.npc[i];
-                bool flag = nPC.CanBeChasedBy(this);
-                if (proj.localNPCImmunity[i] != 0)
-                {
-                    flag = false;
-                }
-                if (flag)
-                {
-                    float num2 = proj.Distance(Main.npc[i].Center);
-                    if (num2 < num && Collision.CanHit(proj.position, proj.width, proj.height, nPC.position, nPC.width, nPC.height))
-                    {
-                        num = num2;
-                        result = i;
-                    }
-                }
-            }
-            return result;
-        }
-        #endregion
     }
 }
