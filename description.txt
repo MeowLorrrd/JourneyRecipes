@@ -101,6 +101,7 @@ Fixed issues with Turtle armor
 Fixed issues with Necro armor
 Fixed issues related with melee weapons and Sharpened buff
 Fixed issues related with the Gravity Globe
+Overhauled recipes, should now be organized
 
 [i:521]Notes[i:521]:
 I won't add items added in 1.4, such as 'Stone Platform' or 'Ultrabright Helmet', since that is property of Re-Logic, and I don't want do deal with copyright stuff.
