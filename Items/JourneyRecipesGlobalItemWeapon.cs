@@ -237,7 +237,7 @@ namespace JourneyRecipes.Items
                         break;
                     case 671:
                         item.damage = 105;
-                        item.crit = 13;
+                        item.crit = 16;
                         //ONHIT CHANGES
                         break;
                     case 672:

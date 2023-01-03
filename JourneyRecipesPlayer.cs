@@ -286,6 +286,13 @@ namespace JourneyRecipes
             {
                 damage = (int)((float)damage * 2.5f);
             }
+            if (item.type == 671)
+            {
+                float t = (float)npc.life / (float)npc.lifeMax;
+                float lerpValue = JRUtils.GetLerpValue(1f, 0.1f, t, clamped: true);
+                float num5 = 1f * lerpValue;
+                damage = (int)((float)damage * (1f + num5));
+            }
         }
     }
 }
