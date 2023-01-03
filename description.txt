@@ -105,7 +105,7 @@ Fixed issues with Necro armor
 Fixed issues related with melee weapons and Sharpened buff
 Fixed issues related with the Gravity Globe
 Fixed issues related to ammo conservation and non-ranged weapons
-Fixed an issue related to the sell value of Imp Staff
+Fixed an issue related to sell values
 Fixed an issue where acorns autoswing was locked behind the Weapons config setting
 Overhauled recipes, should now be organized in-game
 
