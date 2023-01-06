@@ -3,9 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using JourneyRecipes.Items;
 using static Terraria.ModLoader.ModContent;
-using System.Collections.Generic;
 using Terraria.Localization;
-using System.Linq;
 
 namespace JourneyRecipes
 {
@@ -563,6 +561,22 @@ namespace JourneyRecipes
                                 case ItemID.TinPlating:
                                     editor.SetIngredientStack(ItemID.StoneBlock, 5);
                                     editor.SetResult(ItemID.TinPlating, 5);
+                                    break;
+                                case ItemID.SpookyBed:
+                                case ItemID.SpookyPiano:
+                                case ItemID.PumpkinBed:
+                                case ItemID.PumpkinPiano:
+                                case ItemID.PumpkinBookcase:
+                                case ItemID.CactusBed:
+                                case ItemID.CactusPiano:
+                                case ItemID.CactusBookcase:
+                                    editor.DeleteTile(TileID.WorkBenches);
+                                    editor.AddTile(TileID.Sawmill);
+                                    break;
+                                case ItemID.CactusChandelier:
+                                case ItemID.SpookyChandelier:
+                                    editor.DeleteTile(TileID.WorkBenches);
+                                    editor.AddTile(TileID.Anvils);
                                     break;
                             }
                         }
