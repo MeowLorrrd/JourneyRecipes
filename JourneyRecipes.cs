@@ -23,7 +23,6 @@ namespace JourneyRecipes
                     ItemID.IceBlock, ItemID.PinkIceBlock, ItemID.PurpleIceBlock, ItemID.RedIceBlock
                 });
                 RecipeGroup.RegisterGroup("JourneyRecipes:IceBlockRecipeGroup", IceBlockRecipeGroup);
-                #region Tools, Weapons, Armor Recipe
                 if (GetInstance<Config>().allowToolRecipes)
                 {
                     foreach (var recipe in Main.recipe)
@@ -98,6 +97,17 @@ namespace JourneyRecipes
                 }
                 if (GetInstance<Config>().allowWeaponRecipe)
                 {
+                    ModRecipe r = new ModRecipe(this);
+                    r.AddIngredient(ItemID.MusketBall, 70);
+                    r.AddIngredient(ItemID.TungstenBar);
+                    r.AddTile(TileID.Anvils);
+                    r.SetResult(ItemID.SilverBullet, 70);
+                    r.AddRecipe();
+                    r = new ModRecipe(this);
+                    r.AddIngredient(ItemID.WoodenBoomerang);
+                    r.AddIngredient(ItemID.FallenStar);
+                    r.SetResult(ItemID.EnchantedBoomerang);
+                    r.AddRecipe();
                     foreach (var recipe in Main.recipe)
                     {
                         if (recipe != null && recipe.createItem != null)
@@ -128,6 +138,30 @@ namespace JourneyRecipes
                                     break;
                                 case ItemID.PlatinumShortsword:
                                     editor.SetIngredientStack(ItemID.PlatinumBar, 6);
+                                    break;
+                                case ItemID.JungleYoyo:
+                                    editor.SetIngredientStack(ItemID.Stinger, 12);
+                                    editor.SetIngredientStack(ItemID.JungleSpores, 9);
+                                    break;
+                                case ItemID.BluePhasesaber:
+                                case ItemID.GreenPhasesaber:
+                                case ItemID.PurplePhasesaber:
+                                case ItemID.RedPhasesaber:
+                                case ItemID.WhitePhasesaber:
+                                case ItemID.YellowPhasesaber:
+                                    editor.SetIngredientStack(ItemID.CrystalShard, 25);
+                                    break;
+                                case ItemID.CobaltSword:
+                                    editor.SetIngredientStack(ItemID.CobaltBar, 8);
+                                    break;
+                                case ItemID.PalladiumSword:
+                                    editor.SetIngredientStack(ItemID.PalladiumBar, 10);
+                                    break;
+                                case ItemID.MythrilSword:
+                                    editor.SetIngredientStack(ItemID.MythrilBar, 8);
+                                    break;
+                                case ItemID.OrichalcumSword:
+                                    editor.SetIngredientStack(ItemID.OrichalcumBar, 10);
                                     break;
                             }
                         }
@@ -218,57 +252,6 @@ namespace JourneyRecipes
                         }
                     }
                 }
-                #endregion
-                #region Weapon Recipe
-                if (GetInstance<Config>().allowWeaponRecipe)
-                {
-                    ModRecipe r = new ModRecipe(this);
-                    r.AddIngredient(ItemID.MusketBall, 70);
-                    r.AddIngredient(ItemID.TungstenBar);
-                    r.AddTile(TileID.Anvils);
-                    r.SetResult(ItemID.SilverBullet, 70);
-                    r.AddRecipe();
-                    r = new ModRecipe(this);
-                    r.AddIngredient(ItemID.WoodenBoomerang);
-                    r.AddIngredient(ItemID.FallenStar);
-                    r.SetResult(ItemID.EnchantedBoomerang);
-                    r.AddRecipe();
-                    foreach (var recipe in Main.recipe)
-                    {
-                        if (recipe != null && recipe.createItem != null)
-                        {
-                            var editor = new RecipeEditor(recipe);
-                            switch (recipe.createItem.type)
-                            {
-                                case ItemID.JungleYoyo:
-                                    editor.SetIngredientStack(ItemID.Stinger, 12);
-                                    editor.SetIngredientStack(ItemID.JungleSpores, 9);
-                                    break;
-                                case ItemID.BluePhasesaber:
-                                case ItemID.GreenPhasesaber:
-                                case ItemID.PurplePhasesaber:
-                                case ItemID.RedPhasesaber:
-                                case ItemID.WhitePhasesaber:
-                                case ItemID.YellowPhasesaber:
-                                    editor.SetIngredientStack(ItemID.CrystalShard, 25);
-                                    break;
-                                case ItemID.CobaltSword:
-                                    editor.SetIngredientStack(ItemID.CobaltBar, 8);
-                                    break;
-                                case ItemID.PalladiumSword:
-                                    editor.SetIngredientStack(ItemID.PalladiumBar, 10);
-                                    break;
-                                case ItemID.MythrilSword:
-                                    editor.SetIngredientStack(ItemID.MythrilBar, 8);
-                                    break;
-                                case ItemID.OrichalcumSword:
-                                    editor.SetIngredientStack(ItemID.OrichalcumBar, 10);
-                                    break;
-                            }
-                        }
-                    }
-                }
-                #endregion
                 #region Accessory Recipe
                 if (GetInstance<Config>().allowAccessoryRecipe)
                 {
