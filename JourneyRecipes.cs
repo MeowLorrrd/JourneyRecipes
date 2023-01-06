@@ -491,6 +491,18 @@ namespace JourneyRecipes
                 #region Tile Recipe
                 if (GetInstance<Config>().allowTileRecipes)
                 {
+                    ModRecipe r = new ModRecipe(this);
+                    r.AddIngredient(ItemID.SandBlock);
+                    r.AddIngredient(ItemID.StoneBlock);
+                    r.AddTile(TileID.Solidifier);
+                    r.SetResult(ItemID.Sandstone);
+                    r.AddRecipe();
+                    r = new ModRecipe(this);
+                    r.AddIngredient(ItemID.SandBlock);
+                    r.AddIngredient(ItemID.DirtBlock);
+                    r.AddTile(TileID.Solidifier);
+                    r.SetResult(ItemID.HardenedSand);
+                    r.AddRecipe();
                     foreach (var recipe in Main.recipe)
                     {
                         if (recipe != null && recipe.createItem != null)
@@ -560,6 +572,14 @@ namespace JourneyRecipes
                                 case ItemID.MeteoriteBrick:
                                     editor.SetIngredientStack(ItemID.StoneBlock, 5);
                                     editor.SetResult(ItemID.MeteoriteBrick, 5);
+                                    break;
+                                case ItemID.CopperPlating:
+                                    editor.SetIngredientStack(ItemID.StoneBlock, 5);
+                                    editor.SetResult(ItemID.CopperPlating, 5);
+                                    break;
+                                case ItemID.TinPlating:
+                                    editor.SetIngredientStack(ItemID.StoneBlock, 5);
+                                    editor.SetResult(ItemID.TinPlating, 5);
                                     break;
                             }
                         }
