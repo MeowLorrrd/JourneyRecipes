@@ -278,7 +278,7 @@ namespace JourneyRecipes
                     r.AddTile(TileID.TinkerersWorkbench);
                     r.SetResult(ItemID.BandofStarpower);
                     r.AddRecipe();
-                     r = new ModRecipe(this);
+                    r = new ModRecipe(this);
                     r.AddIngredient(ItemID.BandofStarpower);
                     r.AddIngredient(ItemID.LifeCrystal);
                     r.AddTile(TileID.TinkerersWorkbench);
@@ -597,21 +597,28 @@ namespace JourneyRecipes
                         if (recipe != null && recipe.createItem != null)
                         {
                             var editor = new RecipeEditor(recipe);
-                            switch (recipe.createItem.type)
+                            for (int num = 0; num < Recipe.maxRequirements; num++)
                             {
-                                case ItemID.TrueExcalibur:
-                                    editor.DeleteIngredient(ItemID.BrokenHeroSword);
-                                    editor.AddIngredient(ItemID.ChlorophyteBar, 24);
-                                    break;
-                                case ItemID.TrueNightsEdge:
-                                    editor.DeleteIngredient(ItemID.BrokenHeroSword);
-                                    editor.AddIngredient(ItemID.SoulofFright, 20);
-                                    editor.AddIngredient(ItemID.SoulofMight, 20);
-                                    editor.AddIngredient(ItemID.SoulofSight, 20);
-                                    break;
-                                case ItemID.TerraBlade:
-                                    editor.AddIngredient(ItemID.BrokenHeroSword);
-                                    break;
+                                switch (recipe.createItem.type)
+                                {
+
+                                    case ItemID.TrueExcalibur:
+                                        editor.DeleteIngredient(ItemID.BrokenHeroSword);
+                                        editor.AddIngredient(ItemID.ChlorophyteBar, 24);
+                                        break;
+                                    case ItemID.TrueNightsEdge:
+                                        editor.DeleteIngredient(ItemID.BrokenHeroSword);
+                                        editor.AddIngredient(ItemID.SoulofFright, 20);
+                                        editor.AddIngredient(ItemID.SoulofMight, 20);
+                                        editor.AddIngredient(ItemID.SoulofSight, 20);
+                                        break;
+                                    case ItemID.TerraBlade:
+                                        if (recipe.requiredItem[num].type == ItemID.TrueExcalibur && recipe.requiredItem[num].type == ItemID.TrueNightsEdge)
+                                        {
+                                            editor.AddIngredient(ItemID.BrokenHeroSword);
+                                        }
+                                        break;
+                                }
                             }
                         }
                     }
