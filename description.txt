@@ -3,120 +3,72 @@ Visit the Homepage to view all changes!
 
 Check the config to disable features you don't like!
 
-[c/ff0000:NOTE]: 1.4 tModLoader is coming closer to full release, so I won't be updating this mod anymore (or not as much). I will probably make a 1.4 QoL mod, but we'll see :)
+[c/ff0000:NOTE]: 1.4 tModLoader is released, so I won't be updating this mod anymore (or not as much). I will probably make a 1.4 QoL mod, but we'll see :)
 
 [i:549]Current changes[i:549]:
--[c/FF0000:D][c/FFFE00:y][c/00FF00:e][c/0000FF:s]
- (gives TWO dyes per ingredient, instead of ONE)
- (e.g. [i/s1:1118] > [i/s2:1016])
+ [i:716] *Recipes* [i:36]
+  -Basic Dye materials give 2 Dye [i/s1:1118] > [i/s2:1016]
+  -Hardmode Bars are cheaper
+    [i/s4:366] > [i:391] // [i/s5:947] > [i:1006]
+  -Pre-Hardmode Bar recipes are cheaper [i/s15:21] > [i:91]
+  -Platforms don't require Crafting Stations
+  -Added serveral uncraftable items, such as:
+     [i:1290] + [i:109] > [i:111] // [i/s70:97] + [i:21] > [i/s70:278]
+     [i:284] + [i:75] > [i:55] // [i/s8:824] + [i/s2:704] > [i:838]
 
--[c/ae1e32:Adamantite Bar] & [c/5b5a78:Titanium Bar]  
- (now takes 4 ore instead of 5)
- (e.g. [i/s4:366] > [i:391] // [i/s4:1106] > [i:1198])
--[c/1f8a00:Chlorophyte Bar]
- (uses 5 ore, instead of 6)
- (e.g. [i/s5:947] > [i:1006])
+ [i/p81:3823] *Weapons* [i/p2:1255]
+  -Almost ALL weapons have their stats equivelant to 1.4.4
+  -Trident gives off light when used underwater
+ 
+ [i:1001] *Armor* [i:3874]
+  -Almost ALL Armor pieces and sets have their stats equivelant 
+    to 1.4.4, for example:
+    [i:2367][i:2368][i:2369] reduces spawn rates
+    [i:894][i:895][i:896] has a thorns effect
 
--[c/b85712:Copper] & [c/827e5d:Tin]
--[c/94857b:Iron] & [c/313c4d:Lead]
--[c/d2d9da:Silver] & [c/8cb08d:Tungsten]
--[c/ccb447:Gold] & [c/bfdfdf:Platinum]
- (takes less bars to create tools and armor)
- (e.g. [i/s75:706] > [i:696][i:697][i:698])
+ [i:2325] *Buffs* [i:3198]
+  -All Potion buffs have their duration increased
+  -All station buffs have their timer removed
+  -Max player buffs is increased to 44
+  -Buff effects are updated
+   [i:301] reflects 100% damage, [i:297] reduces spawn rates
 
--[c/2a288f:Band of Starpower] & [c/c40e18:Panic necklace]
- (e.g. [i:1290] + [i:109] > [i:111] // [i:111] + [i:29] > [i:1290])
+ [i:908] *Accessories* [i:211]
+  -ALL Wings [i:823] are updated to 1.4.4
+  -Most accessories are updated to 1.4.4, for example:
+   [i:211] grants melee users autoswing
+   [i:908] reduces lava damage
+   [i:1131] can always be used
+   [i:3245] shoots a X-Bone when equipped
+ 
+ [i:2019] *NPCs* [i:2019]
+  -Most NPCs have their stats updated to 1.4.4
+  -Most NPC shops have their stats updated to 1.4.4, 
+    for example:
+     Mechanic sells Teleporters (in Pre-Hardmode!)
 
--[c/805c43:Platforms]
- (all are craftable by hand)
- (e.g. [i:1344] > [i/s2:2627])
+ [i:42] *Throwing Class* [i:42]
+  -All weapons are Ranged
+  -All Throwing armor sets are updated
 
--[c/a59479:Enchanted Boomerang]
- (e.g. [i:284] + [i:75] > [i:55])
-
--[c/9F6C22:Chests]
- (Frozen Chest, Skyware Chest, Lihzahrd Chest and Living 
- Wood Chest are now craftable!)
- (e.g. [i/s8:824] + [i/s2:704] > [i:838])
-
--[c/0c7977:Terra Blade] (and components)
- (The Terra Blade, True Night's Edge & True Excalibur have 
- different recipes and stats!)
- (e.g. [i:675] + [i:674] + [i:1570] = [i:757])
- (e.g. True Excalibur [i:674] now pierces!)
-
--[i:1344]Config![i:1344]
- (Enable/disable this mod's features!)
-
--Most weapons have 1.4 stats!
- (e.g. Brand of the Inferno[i:3823] is bigger, deals more damage 
- and swings faster! (also fixed Striking Moment buff tooltip))
-
--Most armor sets have 1.4 stats!
- (e.g. Spooky Breastplate[i:1833] gives one extra minion slot, all 
- Spooky pieces gives +3 defense and Leggings[i:1834] gives 
- +20% movement speed!)
-
--Throwing is changed to ranged!
- (Weapons do Ranged damage instead of Throwing and Armor 
- has new bonuses)
-
-
-[i:549]Planned[i:549]:
--Accessories and their effects (e.g. Titan Glove)
--(More) armor sets
+ [i:1344]Config![i:1344]
+  -See any feature you don't like? Disable them in the mod's 
+    config!
+  -There are 2 pages, one for recipes and the other one for item
+    stats
 
 
 [i:520]Updates[i:520]:
+1.5.1 
+- Thorns Potion no longer requires Stinger and Worm Tooth
+- Fixed cross-mod Terra Blade recipe
+- Metal Bricks are crafted with a 1:5 Ore to Stone ratio
+- Hardened Sand and Sandstone blocks are craftable
+- Serveral furniture items are crafted at a Sawmill or Anvil
+- Merchant stops selling Lesser Potions in Hardmode
+- Molotov Cocktail is crafted with Gel
+- The Grand Design uses Mechanical Ruler
 
-1.5.1 - Thorns Potion no longer requires Stinger and Worm Tooth
-Fixed cross-mod Terra Blade recipe
-Metal Bricks are crafted with a 1:5 Ore:Stone ratio
-Hardened Sand and Sandstone blocks are craftable
-Serveral furniture items are crafted at a Sawmill or Anvil, rather than a Workbench
-Merchant stops selling Lesser Potions in Hardmode
-Molotov Cocktail is crafted with Gel
-The Grand Design uses Mechanical Ruler
-
-1.5.0 - NPCs:
-
-Mechanic sells Teleporter and Pixel Box
-Skeleton Merchant sells Wooden Chest items, depending on Moon Phase
-Merchant sells Furnace (in Jungle) and Mana and Healing potions (in Hardmode)
-Arms Dealer sells Ammo Box in Hardmode
-
-Pillars don't have increased shield power in Expert+ and only 50 are required to lower shield Post-Moon Lord
-Lost Girl and Nymph drop 2 Gold
-Jungle Creeper have 28 defense
-Moss Hornet can drop Stinger
-Crawltepides deal less damage
-
-Items:
-Bee Wax (and its recipes), Glass Kiln have sell value adjusted to 1.4.4
-Angler Armor set bonus reduces spawn rate
-Snow Armor set bonus grant Frozen and Chilled immunity
-Thrown items are always consumed
-Max stack for almost all vanilla items is 9999
-MOST weapons are updated to 1.4.4 (excluding Terra Blade-like weapons)
-All Phasesabers use 25 Crystal Shards in their recipe
-Sandstorm / Blizzard in a Bottle are craftable
-Reduced material costs for early hardmode swords and Fairy, Demon, Angel Wings
-
-Projectiles:
-Fixed an issue where a projectile is used to deal a fixed amount of damage
-
-Buffs:
-Max buffs is set to 44
-
-Misc:
-Fixed issues with Turtle armor
-Fixed issues with Necro armor
-Fixed issues related with melee weapons and Sharpened buff
-Fixed issues related with the Gravity Globe
-Fixed issues related to ammo conservation and non-ranged weapons
-Fixed an issue related to sell values
-Fixed an issue where acorns autoswing was locked behind the Weapons config setting
-Overhauled recipes, should now be organized in-game
 
 [i:521]Notes[i:521]:
 I won't add items added in 1.4, such as 'Stone Platform' or 'Ultrabright Helmet', since that is property of Re-Logic, and I don't want do deal with copyright stuff.
