@@ -161,6 +161,10 @@ namespace JourneyRecipes
                                 case ItemID.OrichalcumSword:
                                     editor.SetIngredientStack(ItemID.OrichalcumBar, 10);
                                     break;
+                                case ItemID.MolotovCocktail:
+                                    editor.DeleteIngredient(ItemID.PinkGel);
+                                    editor.AddIngredient(ItemID.Gel);
+                                    break;
                             }
                         }
                     }
