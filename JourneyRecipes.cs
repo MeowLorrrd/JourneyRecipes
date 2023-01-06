@@ -89,6 +89,10 @@ namespace JourneyRecipes
                                 case ItemID.PlatinumHammer:
                                     editor.SetIngredientStack(ItemID.PlatinumBar, 8);
                                     break;
+                                case 3611:
+                                    editor.DeleteIngredient(ItemID.Ruler);
+                                    editor.AddIngredient(2799);
+                                    break;
                             }
                         }
                     }

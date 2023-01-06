@@ -149,6 +149,10 @@ namespace JourneyRecipes
         {
             Update_NPCCollision();
             player.rulerLine = true;
+            if (player.HasItem(3611))
+            {
+                player.rulerGrid = true;
+            }
             if (boneGloveTimer > 0)
             {
                 boneGloveTimer--;
