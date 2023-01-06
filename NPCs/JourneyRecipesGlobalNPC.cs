@@ -140,7 +140,6 @@ namespace JourneyRecipes.NPCs
         {
             if (GetInstance<JourneyRecipesServerConfig>().AllowNPCStat)
             {
-
                 if (npc.type == 392 || npc.type == 393 || npc.type == 394 || npc.type == 395)
                 {
                     NPCLoader.blockLoot.Add(2800);
@@ -224,14 +223,7 @@ namespace JourneyRecipes.NPCs
                 {
                     if (Main.expertMode)
                     {
-                        if (!Main.hardMode)
-                        {
-                            npc.lifeMax = 52;
-                        }
-                        else
-                        {
-                            npc.lifeMax = 56;
-                        }
+                        npc.lifeMax = Main.hardMode ? 56 : 52;
                     }
                 }
             }
