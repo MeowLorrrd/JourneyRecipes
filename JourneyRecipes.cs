@@ -505,6 +505,62 @@ namespace JourneyRecipes
                                 case ItemID.ClayPot:
                                     editor.SetIngredientStack(ItemID.ClayBlock, 5);
                                     break;
+                                case ItemID.CobaltBrick:
+                                    editor.SetIngredientStack(ItemID.StoneBlock, 5);
+                                    editor.SetResult(ItemID.CobaltBrick, 5);
+                                    break;
+                                case ItemID.PalladiumColumn:
+                                    editor.SetIngredientStack(ItemID.StoneBlock, 5);
+                                    editor.SetResult(ItemID.PalladiumColumn, 5);
+                                    break;
+                                case ItemID.MythrilBrick:
+                                    editor.SetIngredientStack(ItemID.StoneBlock, 5);
+                                    editor.SetResult(ItemID.MythrilBrick, 5);
+                                    break;
+                                case ItemID.BubblegumBlock:
+                                    editor.SetIngredientStack(ItemID.StoneBlock, 5);
+                                    editor.SetResult(ItemID.BubblegumBlock, 5);
+                                    break;
+                                case ItemID.AdamantiteBeam:
+                                    editor.SetIngredientStack(ItemID.StoneBlock, 5);
+                                    editor.SetResult(ItemID.AdamantiteBeam, 5);
+                                    break;
+                                case ItemID.TitanstoneBlock:
+                                    editor.SetIngredientStack(ItemID.StoneBlock, 5);
+                                    editor.SetResult(ItemID.TitanstoneBlock, 5);
+                                    break;
+                                case ItemID.ChlorophyteBrick:
+                                    editor.SetIngredientStack(ItemID.StoneBlock, 5);
+                                    editor.SetResult(ItemID.ChlorophyteBrick, 5);
+                                    break;
+                                case ItemID.CopperBrick:
+                                    editor.SetIngredientStack(ItemID.StoneBlock, 5);
+                                    editor.SetResult(ItemID.CopperBrick, 5);
+                                    break;
+                                case ItemID.TinBrick:
+                                    editor.SetIngredientStack(ItemID.StoneBlock, 5);
+                                    editor.SetResult(ItemID.TinBrick, 5);
+                                    break;
+                                case ItemID.TungstenBrick:
+                                    editor.SetIngredientStack(ItemID.StoneBlock, 5);
+                                    editor.SetResult(ItemID.TungstenBrick, 5);
+                                    break;
+                                case ItemID.SilverBrick:
+                                    editor.SetIngredientStack(ItemID.StoneBlock, 5);
+                                    editor.SetResult(ItemID.SilverBrick, 5);
+                                    break;
+                                case ItemID.GoldBrick:
+                                    editor.SetIngredientStack(ItemID.StoneBlock, 5);
+                                    editor.SetResult(ItemID.GoldBrick, 5);
+                                    break;
+                                case ItemID.PlatinumBrick:
+                                    editor.SetIngredientStack(ItemID.StoneBlock, 5);
+                                    editor.SetResult(ItemID.PlatinumBrick, 5);
+                                    break;
+                                case ItemID.MeteoriteBrick:
+                                    editor.SetIngredientStack(ItemID.StoneBlock, 5);
+                                    editor.SetResult(ItemID.MeteoriteBrick, 5);
+                                    break;
                             }
                         }
                     }

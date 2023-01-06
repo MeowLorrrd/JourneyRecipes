@@ -71,6 +71,7 @@ Check the config to disable features you don't like!
 
 1.5.1 - Thorns Potion no longer requires Stinger and Worm Tooth
 Fixed cross-mod Terra Blade recipe
+Metal Bricks are crafted with a 1:5 Ore:Stone ratio
 
 1.5.0 - NPCs:
 
