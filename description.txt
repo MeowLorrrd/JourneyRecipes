@@ -68,6 +68,7 @@ Check the config to disable features you don't like!
 - Merchant stops selling Lesser Potions in Hardmode
 - Molotov Cocktail is crafted with Gel
 - The Grand Design uses Mechanical Ruler
+- Updated config description
 
 
 [i:521]Notes[i:521]:
