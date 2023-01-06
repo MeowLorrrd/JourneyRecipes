@@ -59,6 +59,9 @@ Check the config to disable features you don't like!
 
 
 [i:520]Updates[i:520]:
+1.5.2
+- 
+
 1.5.1 
 - Thorns Potion no longer requires Stinger and Worm Tooth
 - Fixed cross-mod Terra Blade recipe

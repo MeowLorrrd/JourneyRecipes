@@ -169,19 +169,9 @@ namespace JourneyRecipes.NPCs
                 }
                 else if (npc.type == 289)
                 {
-                    if (!Main.expertMode)
+                    if (Main.rand.NextBool(Main.expertMode ? 50 : 100))
                     {
-                        if (Main.rand.NextBool(100))
-                        {
-                            Item.NewItem(npc.Hitbox, 891);
-                        }
-                    }
-                    else
-                    {
-                        if (Main.rand.NextBool(50))
-                        {
-                            Item.NewItem(npc.Hitbox, 891);
-                        }
+                        Item.NewItem(npc.Hitbox, 891);
                     }
                 }
                 else if (npc.type == 381 || npc.type == 382 || npc.type == 383 || npc.type == 385 || npc.type == 389)
