@@ -662,6 +662,10 @@ namespace JourneyRecipes
                                     editor.AddIngredient(ItemID.Shiverthorn);
                                     editor.AddIngredient(ItemID.Waterleaf);
                                     break;
+                                case ItemID.ThornsPotion:
+                                    editor.DeleteIngredient(ItemID.WormTooth);
+                                    editor.DeleteIngredient(ItemID.Stinger);
+                                    break;
                             }
                         }
                     }

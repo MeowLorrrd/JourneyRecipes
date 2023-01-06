@@ -1,8 +1,8 @@
 displayName = 1.4 Crafting Recipes (Check Config!)
 author = MeowLorrrd
-version = 1.5.0
+version = 1.5.1
 includeSource = true
 hideCode = false
 hideResourcees = false
-buildIgnore = *.editorconfig, *.gitattributes, *.gitignore, *.md, .vs\*, bin\*, git\*, xcf\*, Resprite\Unused\*
+buildIgnore = *.editorconfig, *.gitattributes, *.gitignore, *.md, .vs\*, bin\*, .git\*, xcf\*, Resprite\Unused\*, obj\*, Properties\*
 homepage = https://docs.google.com/document/d/1tQXbsJhvmmDwGU16Jp2rnQxJZkGTD47651UVnY-h19U/edit?usp=sharing
