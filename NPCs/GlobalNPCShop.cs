@@ -16,11 +16,22 @@ namespace JourneyRecipes.NPCs
             {
                 if (Main.hardMode)
                 {
+                    for (int i = 0; i < 40; i++)
+                    {
+                        if (shop.item[i].type == ItemID.LesserHealingPotion)
+                        {
+                            shop.item[i].type = ItemID.HealingPotion;
+                            shop.item[i].shopCustomPrice = 1000;
+                        }
+                        else if (shop.item[i].type == ItemID.LesserManaPotion)
+                        {
+                            shop.item[i].type = ItemID.ManaPotion;
+                            shop.item[i].shopCustomPrice = 250;
+                        }
+                    }
                     shop.item[nextSlot].SetDefaults(ItemID.SharpeningStation);
                     shop.item[nextSlot].shopCustomPrice = 100000;
                     nextSlot++;
-                    shop.item[nextSlot++].SetDefaults(ItemID.HealingPotion);
-                    shop.item[nextSlot++].SetDefaults(ItemID.ManaPotion);
                 }
                 if (Main.player[Main.myPlayer].ZoneJungle)
                 {
@@ -50,6 +61,13 @@ namespace JourneyRecipes.NPCs
             }
             if (type == NPCID.Steampunker)//TODO: remove Teleporter from shop
             {
+                for (int i = 0; i < 40; i++)
+                {
+                    if (shop.item[i].type == ItemID.Teleporter)
+                    {
+                        //shop.item[i].TurnToAir();
+                    }
+                }
             }
             if (type == NPCID.Wizard)
             {

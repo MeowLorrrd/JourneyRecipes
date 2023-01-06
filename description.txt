@@ -74,6 +74,7 @@ Fixed cross-mod Terra Blade recipe
 Metal Bricks are crafted with a 1:5 Ore:Stone ratio
 Hardened Sand and Sandstone blocks are craftable
 Serveral furniture items are crafted at a Sawmill or Anvil, rather than a Workbench
+Merchant stops selling Lesser Potions in Hardmode
 
 1.5.0 - NPCs:
 
