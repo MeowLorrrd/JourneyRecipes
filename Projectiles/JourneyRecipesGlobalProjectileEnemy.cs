@@ -23,7 +23,7 @@ namespace JourneyRecipes.Projectiles
                     target.AddBuff(44, 360);
                 }
             }
-            if (projectile.type == 299)
+            else if (projectile.type == 299)
             {
                 if (Main.rand.NextBool(3))
                 {
