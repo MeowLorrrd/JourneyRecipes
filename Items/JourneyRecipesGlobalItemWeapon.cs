@@ -775,7 +775,7 @@ namespace JourneyRecipes.Items
                 {
                     return rand.Next(prefix);
                 }
-                if (item.type == 561)
+                else if (item.type == 561)
                 {
                     //return rand.Next(prefix2);
                 }
