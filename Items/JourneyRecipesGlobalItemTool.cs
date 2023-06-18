@@ -17,18 +17,18 @@ namespace JourneyRecipes.Items
             {
                 item.fishingPole = 30;
             }
-            if (item.type == 2295)
+            else if (item.type == 2295)
             {
                 item.fishingPole = 35;
             }
-            if (item.type == 2341)
+            else if (item.type == 2341)
             {
                 item.pick = 59;
                 item.useTime = 13;
                 item.useAnimation = 22;
                 item.useTurn = true;
             }
-            if (item.type == 2798)
+            else if (item.type == 2798)
             {
                 item.axe = 0;
                 item.useAnimation = 25;
@@ -36,7 +36,7 @@ namespace JourneyRecipes.Items
                 item.shootSpeed = 36f;
                 item.tileBoost = 11;
             }
-            if (item.type == ItemID.WireKite)
+            else if (item.type == ItemID.WireKite)
             {
                 item.value = Item.sellPrice(0, 4);
             }
