@@ -99,17 +99,17 @@ namespace JourneyRecipes.Buffs
                     p.ClearBuff(BuffID.Sharpened);//remove buff first, as this happens in same frame and buff timer will never show (otherwise single frame of timer will appear)
                     p.AddBuff(BuffID.Sharpened, 2);//give 2 frame of buff, but in Update() will constantly refresh with 2 frames
                 }
-                if (type == TileID.BewitchingTable)
+                else if (type == TileID.BewitchingTable)
                 {
                     p.ClearBuff(BuffID.Bewitched);
                     p.AddBuff(BuffID.Bewitched, 2);
                 }
-                if (type == TileID.AmmoBox)
+                else if (type == TileID.AmmoBox)
                 {
                     p.ClearBuff(BuffID.AmmoBox);
                     p.AddBuff(BuffID.AmmoBox, 2);
                 }
-                if (type == TileID.CrystalBall)
+                else if (type == TileID.CrystalBall)
                 {
                     p.ClearBuff(BuffID.Clairvoyance);
                     p.AddBuff(BuffID.Clairvoyance, 2);
