@@ -38,14 +38,14 @@ namespace JourneyRecipes.NPCs
                     shop.item[nextSlot++].SetDefaults(ItemID.Furnace);
                 }
             }
-            if (type == NPCID.ArmsDealer)
+            else if (type == NPCID.ArmsDealer)
             {
                 if (Main.hardMode)
                 {
                     shop.item[nextSlot++].SetDefaults(ItemID.AmmoBox);
                 }
             }
-            if (type == NPCID.Mechanic)
+            else if (type == NPCID.Mechanic)
             {
                 shop.item[nextSlot].SetDefaults(ItemID.Timer1Second);
                 shop.item[nextSlot].shopCustomPrice = 10000;
@@ -59,7 +59,7 @@ namespace JourneyRecipes.NPCs
                 shop.item[nextSlot++].SetDefaults(ItemID.Teleporter);
                 shop.item[nextSlot++].SetDefaults(ItemID.PixelBox);
             }
-            if (type == NPCID.Steampunker)//TODO: remove Teleporter from shop
+            else if (type == NPCID.Steampunker)//TODO: remove Teleporter from shop
             {
                 for (int i = 0; i < 40; i++)
                 {
@@ -69,13 +69,13 @@ namespace JourneyRecipes.NPCs
                     }
                 }
             }
-            if (type == NPCID.Wizard)
+            else if (type == NPCID.Wizard)
             {
                 shop.item[nextSlot].SetDefaults(ItemID.Book);
                 shop.item[nextSlot].shopCustomPrice = 1500;
                 nextSlot++;
             }
-            if (type == NPCID.SkeletonMerchant)
+            else if (type == NPCID.SkeletonMerchant)
             {
                 switch (Main.moonPhase)
                 {
@@ -108,7 +108,7 @@ namespace JourneyRecipes.NPCs
                         break;
                 }
             }
-            if (type == NPCID.WitchDoctor)
+            else if (type == NPCID.WitchDoctor)
             {//TODO:
              //Remove old shops for these items
                 /*
