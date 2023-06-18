@@ -48,31 +48,31 @@ namespace JourneyRecipes.Items
                 p.meleeCrit += 3;
                 p.rangedCrit += 3;
             }
-            if (item.type == 257)
+            else if (item.type == 257)
             {
                 p.thrownDamage -= .15f;
                 p.magicCrit += 3;
                 p.meleeCrit += 3;
                 p.rangedCrit += 3;
             }
-            if (item.type == 258)
+            else if (item.type == 258)
             {
                 p.thrownCrit -= 10;
                 p.magicCrit += 3;
                 p.meleeCrit += 3;
                 p.rangedCrit += 3;
             }
-            if (item.type == 3374)
+            else if (item.type == 3374)
             {
                 p.thrownVelocity -= .2f;
                 p.rangedCrit += 4;
             }
-            if (item.type == 3375)
+            else if (item.type == 3375)
             {
                 p.thrownCrit -= 15;
                 p.rangedDamage += .05f;
             }
-            if (item.type == 3376)
+            else if (item.type == 3376)
             {
                 p.thrownDamage -= .2f;
                 p.rangedCrit += 4;
@@ -99,7 +99,7 @@ namespace JourneyRecipes.Items
                 player.thrownCost50 = false;
                 player.ammoCost80 = true;
             }
-            if (set == Ninja)
+            else if (set == Ninja)
             {
                 player.setBonus = Language.GetTextValue("Mods.JourneyRecipes.ArmorSetBonus.Ninja");
                 player.thrownCost33 = false;
