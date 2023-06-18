@@ -146,7 +146,7 @@ namespace JourneyRecipes.NPCs
                     NPCLoader.blockLoot.Add(2882);
                     NPCLoader.blockLoot.Add(2798);
                 }
-                if (npc.type == -18 || npc.type == -19 || npc.type == -20 || npc.type == -21 || npc.type == 176)
+                else if (npc.type == -18 || npc.type == -19 || npc.type == -20 || npc.type == -21 || npc.type == 176)
                 {
                     if (!NPC.downedMechBoss1 || !NPC.downedMechBoss2 || !NPC.downedMechBoss3)
                     {
