@@ -24,10 +24,7 @@ namespace JourneyRecipes.Items
                 {
                     return mod.PrefixType("Legendary");//select this prefix
                 }
-                else//chance 14/15
-                {
-                    return prefix[Main.rand.Next(0, 14)];//select one of the prefixes from above
-                }
+                return prefix[Main.rand.Next(0, 14)];//select one of the prefixes from above
             }
             return -1;
         }
@@ -45,35 +42,35 @@ namespace JourneyRecipes.Items
                             {
                                 line.text = $"{item.Name} (Legendär)";
                             }
-                            if (Language.ActiveCulture == GameCulture.English)
+                            else if (Language.ActiveCulture == GameCulture.English)
                             {
                                 line.text = $"Legendary {item.Name}";
                             }
-                            if (Language.ActiveCulture == GameCulture.Spanish)
+                            else if (Language.ActiveCulture == GameCulture.Spanish)
                             {
                                 line.text = $"{item.Name} (Legendario)";
                             }
-                            if (Language.ActiveCulture == GameCulture.French)
+                            else if (Language.ActiveCulture == GameCulture.French)
                             {
                                 line.text = $"{item.Name} (Légendaire)";
                             }
-                            if (Language.ActiveCulture == GameCulture.Italian)
+                            else if (Language.ActiveCulture == GameCulture.Italian)
                             {
                                 line.text = $"{item.Name} (Leggendario)";
                             }
-                            if (Language.ActiveCulture == GameCulture.Polish)
+                            else if (Language.ActiveCulture == GameCulture.Polish)
                             {
                                 line.text = $"{item.Name} (Legendarny)";
                             }
-                            if (Language.ActiveCulture == GameCulture.Portuguese)
+                            else if (Language.ActiveCulture == GameCulture.Portuguese)
                             {
                                 line.text = $"{item.Name} (Lendário)";
                             }
-                            if (Language.ActiveCulture == GameCulture.Russian)
+                            else if (Language.ActiveCulture == GameCulture.Russian)
                             {
                                 line.text = $"Легендарный {item.Name}";
                             }
-                            if (Language.ActiveCulture == GameCulture.Chinese)
+                            else if (Language.ActiveCulture == GameCulture.Chinese)
                             {
                                 line.text = $"传奇 {item.Name}";
                             }
